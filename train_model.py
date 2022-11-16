@@ -9,8 +9,6 @@ from transformers import EncoderDecoderModel, BertTokenizer, GPT2TokenizerFast, 
 
 from tqdm.auto import tqdm
 
-import logging
-logging.basicConfig(level=logging.INFO)
 
 def set_seed(seed):
     random.seed(seed)
@@ -21,6 +19,7 @@ def set_seed(seed):
 SEED = 595
 set_seed(SEED)
 device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
+# device = torch.device("cpu")
 
 
 # custom dataset class to load data from the .txt files
@@ -44,8 +43,8 @@ class BrownStyleDataset(Dataset):
         # if applicable (should always be!), tokenize data
         if self.tokenizer is not None:
             input_ids = tokenizer(sentences, return_tensors="pt", padding=True).input_ids
-            self.sentences = torch.tensor(input_ids)
-            self.labels = torch.tensor(labels)
+            self.sentences = torch.tensor(input_ids, device=device)
+            self.labels = torch.tensor(labels, device=device)
         else:
             self.sentences = sentences
             self.labels = labels
@@ -91,13 +90,8 @@ def train(model, train_dataloader, eval_dataloader, params):
     for epoch in range(params.num_epochs):
 
         model.train()
-        for batch in train_dataloader:
-            batch[0].to(device)
-            batch[1].to(device)
+        for batch in train_dataloader:           
 
-            print(batch[0].device)
-            print(batch[1].device)
-            print(model.device)
             outputs = model(input_ids=batch[0], labels=batch[0])
             loss = outputs.loss
             loss.backward()
@@ -112,7 +106,7 @@ def train(model, train_dataloader, eval_dataloader, params):
         model.eval()
 
         for batch in eval_dataloader:
-            batch = {k: v.to(device) for k, v in batch.items()}
+            batch = {k: v.to(device) for k, v in batch}
             with torch.no_grad():
                 outputs = model(**batch)
 
@@ -134,8 +128,12 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, params)
 
     if params.train:
+
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
         print("created model")
+        model.config.decoder_start_token_id = input_tokenizer.cls_token_id
+        model.config.pad_token_id = input_tokenizer.pad_token_id
+        model.config.vocab_size = model.config.decoder.vocab_size
         model.to(device)
         model = train(model, train_dataloader, eval_dataloader, params)
 
