@@ -9,6 +9,9 @@ from transformers import EncoderDecoderModel, BertTokenizer, GPT2TokenizerFast, 
 
 from tqdm.auto import tqdm
 
+import logging
+logging.basicConfig(level=logging.INFO)
+
 def set_seed(seed):
     random.seed(seed)
     torch.manual_seed(seed)
