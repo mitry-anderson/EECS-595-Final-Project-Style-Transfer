@@ -131,7 +131,7 @@ def train(model, train_dataloader, eval_dataloader, params):
 
             logits = outputs.logits
             predictions = torch.argmax(logits, dim=-1)
-            metric.add_batch(predictions=predictions, references=batch[0])
+            metric.add_batch(predictions=predictions.squeeze(), references=batch[0].squeeze())
         
         score = metric.compute()
         print('Validation Accuracy:', score['accuracy'])
