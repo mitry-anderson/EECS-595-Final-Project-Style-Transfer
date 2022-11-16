@@ -9,6 +9,7 @@ from transformers import EncoderDecoderModel, BertTokenizer, GPT2TokenizerFast, 
 
 from tqdm.auto import tqdm
 
+import logging
 
 def set_seed(seed):
     random.seed(seed)
@@ -21,6 +22,28 @@ set_seed(SEED)
 device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
 # device = torch.device("cpu")
 
+
+# To control logging level for various modules used in the application:
+import logging
+import re
+def set_global_logging_level(level=logging.ERROR, prefices=[""]):
+    """
+    Override logging levels of different modules based on their name as a prefix.
+    It needs to be invoked after the modules have been loaded so that their loggers have been initialized.
+
+    Args:
+        - level: desired level. e.g. logging.INFO. Optional. Default is logging.ERROR
+        - prefices: list of one or more str prefices to match (e.g. ["transformers", "torch"]). Optional.
+          Default is `[""]` to match all active loggers.
+          The match is a case-sensitive `module_name.startswith(prefix)`
+    """
+    prefix_re = re.compile(fr'^(?:{ "|".join(prefices) })')
+    for name in logging.root.manager.loggerDict:
+        if re.match(prefix_re, name):
+            logging.getLogger(name).setLevel(level)
+
+
+set_global_logging_level(logging.DEBUG, ["transformers", "nlp", "torch", "tensorflow", "tensorboard", "wandb"])
 
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
@@ -43,7 +66,7 @@ class BrownStyleDataset(Dataset):
         # if applicable (should always be!), tokenize data
         if self.tokenizer is not None:
             input_ids = tokenizer(sentences, return_tensors="pt", padding=True).input_ids
-            self.sentences = torch.tensor(input_ids, device=device)
+            self.sentences = input_ids.to(device)
             self.labels = torch.tensor(labels, device=device)
         else:
             self.sentences = sentences
