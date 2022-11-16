@@ -24,25 +24,25 @@ device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("
 
 
 # To control logging level for various modules used in the application:
-import logging
-import re
-def set_global_logging_level(level=logging.ERROR, prefices=[""]):
-    """
-    Override logging levels of different modules based on their name as a prefix.
-    It needs to be invoked after the modules have been loaded so that their loggers have been initialized.
+# import logging
+# import re
+# def set_global_logging_level(level=logging.ERROR, prefices=[""]):
+#     """
+#     Override logging levels of different modules based on their name as a prefix.
+#     It needs to be invoked after the modules have been loaded so that their loggers have been initialized.
 
-    Args:
-        - level: desired level. e.g. logging.INFO. Optional. Default is logging.ERROR
-        - prefices: list of one or more str prefices to match (e.g. ["transformers", "torch"]). Optional.
-          Default is `[""]` to match all active loggers.
-          The match is a case-sensitive `module_name.startswith(prefix)`
-    """
-    prefix_re = re.compile(fr'^(?:{ "|".join(prefices) })')
-    for name in logging.root.manager.loggerDict:
-        if re.match(prefix_re, name):
-            logging.getLogger(name).setLevel(level)
+#     Args:
+#         - level: desired level. e.g. logging.INFO. Optional. Default is logging.ERROR
+#         - prefices: list of one or more str prefices to match (e.g. ["transformers", "torch"]). Optional.
+#           Default is `[""]` to match all active loggers.
+#           The match is a case-sensitive `module_name.startswith(prefix)`
+#     """
+#     prefix_re = re.compile(fr'^(?:{ "|".join(prefices) })')
+#     for name in logging.root.manager.loggerDict:
+#         if re.match(prefix_re, name):
+#             logging.getLogger(name).setLevel(level)
 
-set_global_logging_level(logging.DEBUG, ["transformers", "nlp", "torch", "tensorflow", "tensorboard", "wandb"])
+# set_global_logging_level(logging.DEBUG, ["transformers", "nlp", "torch", "tensorflow", "tensorboard", "wandb"])
 
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
@@ -65,8 +65,8 @@ class BrownStyleDataset(Dataset):
         # if applicable (should always be!), tokenize data
         if self.tokenizer is not None:
             input_ids = tokenizer(sentences, return_tensors="pt", padding=True).input_ids
-            self.sentences = input_ids.to(device)
-            self.labels = torch.tensor(labels, device=device)
+            self.sentences = input_ids
+            self.labels = torch.tensor(labels)
         else:
             self.sentences = sentences
             self.labels = labels
@@ -113,7 +113,8 @@ def train(model, train_dataloader, eval_dataloader, params):
 
         model.train()
         for batch in train_dataloader:           
-
+            batch[0].to(device)
+            batch[1].to(device)
             outputs = model(input_ids=batch[0], labels=batch[0])
             loss = outputs.loss
             loss.backward()
@@ -122,13 +123,13 @@ def train(model, train_dataloader, eval_dataloader, params):
             lr_scheduler.step()
             optimizer.zero_grad()
             progress_bar.update(1)
+        print('loss:', loss.item())
             
-
         metric = evaluate.load("accuracy")
         model.eval()
-        print('loss:', loss.item())
         for batch in eval_dataloader:
-            batch = {k: v.to(device) for k, v in batch}
+            batch[0].to(device)
+            batch[1].to(device)
             with torch.no_grad():
                 outputs = model(**batch)
 
