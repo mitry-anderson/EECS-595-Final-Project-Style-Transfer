@@ -65,8 +65,8 @@ class BrownStyleDataset(Dataset):
         # if applicable (should always be!), tokenize data
         if self.tokenizer is not None:
             input_ids = tokenizer(sentences, return_tensors="pt", padding=True).input_ids
-            self.sentences = input_ids
-            self.labels = torch.tensor(labels)
+            self.sentences = input_ids.to(device)
+            self.labels = torch.tensor(labels,device=device)
         else:
             self.sentences = sentences
             self.labels = labels
@@ -112,9 +112,7 @@ def train(model, train_dataloader, eval_dataloader, params):
     for epoch in range(params.num_epochs):
 
         model.train()
-        for batch in train_dataloader:           
-            batch[0].to(device)
-            batch[1].to(device)
+        for batch in train_dataloader:
             outputs = model(input_ids=batch[0], labels=batch[0])
             loss = outputs.loss
             loss.backward()
@@ -128,8 +126,6 @@ def train(model, train_dataloader, eval_dataloader, params):
         metric = evaluate.load("accuracy")
         model.eval()
         for batch in eval_dataloader:
-            batch[0].to(device)
-            batch[1].to(device)
             with torch.no_grad():
                 outputs = model(**batch)
 
