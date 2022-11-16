@@ -127,7 +127,7 @@ def train(model, train_dataloader, eval_dataloader, params):
         model.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(**batch)
+                outputs = model(input_ids=batch[0], labels=batch[0])
 
             logits = outputs.logits
             predictions = torch.argmax(logits, dim=-1)
