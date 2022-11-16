@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition=spgpu
-#SBATCH --time=00-02:20:00
+#SBATCH --time=00-00:20:00
 #SBATCH --gpus=1
 #SBATCH --cpus-per-gpu=4
 #SBATCH --mem-per-gpu=32GB
@@ -13,8 +13,8 @@
 # set up job
 module load python/3.10.4 
 module load cuda
-# pushd /home/kpyu/great-lakes-tutorial
+
 source venv/bin/activate
 
 # run job
-python train_model.py --batch_size=16 --num_epochs=12
+python train_model.py --batch_size=8 --num_epochs=1
