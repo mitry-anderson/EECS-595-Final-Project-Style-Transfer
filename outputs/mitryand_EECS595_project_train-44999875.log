@@ -1,0 +1,12 @@
+Downloading:   0%|          | 0.00/232k [00:00<?, ?B/s]Downloading: 100%|██████████| 232k/232k [00:00<00:00, 2.86MB/s]
+Downloading:   0%|          | 0.00/28.0 [00:00<?, ?B/s]Downloading: 100%|██████████| 28.0/28.0 [00:00<00:00, 48.5kB/s]
+Downloading:   0%|          | 0.00/570 [00:00<?, ?B/s]Downloading: 100%|██████████| 570/570 [00:00<00:00, 955kB/s]
+Downloading:   0%|          | 0.00/1.04M [00:00<?, ?B/s]Downloading:  77%|███████▋  | 800k/1.04M [00:00<00:00, 7.38MB/s]Downloading: 100%|██████████| 1.04M/1.04M [00:00<00:00, 9.35MB/s]
+Downloading:   0%|          | 0.00/456k [00:00<?, ?B/s]Downloading:  79%|███████▉  | 360k/456k [00:00<00:00, 3.04MB/s]Downloading: 100%|██████████| 456k/456k [00:00<00:00, 3.79MB/s]
+Downloading:   0%|          | 0.00/1.36M [00:00<?, ?B/s]Downloading:  31%|███       | 419k/1.36M [00:00<00:00, 3.54MB/s]Downloading: 100%|██████████| 1.36M/1.36M [00:00<00:00, 9.16MB/s]
+Downloading:   0%|          | 0.00/665 [00:00<?, ?B/s]Downloading: 100%|██████████| 665/665 [00:00<00:00, 1.04MB/s]
+/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py:44: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  self.sentences = torch.tensor(input_ids)
+loaded 463 training samples
+loaded 105 validation samples
+loaded 12 test samples
