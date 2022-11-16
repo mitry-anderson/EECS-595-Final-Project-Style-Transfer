@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition=spgpu
-#SBATCH --time=00-00:20:00
+#SBATCH --time=00-01:00:00
 #SBATCH --gpus=1
 #SBATCH --cpus-per-gpu=4
 #SBATCH --mem-per-gpu=32GB
@@ -17,4 +17,4 @@ module load cuda
 source venv/bin/activate
 
 # run job
-python train_model.py --batch_size=8 --num_epochs=1
+python train_model.py --train=True --batch_size=8 --num_epochs=1

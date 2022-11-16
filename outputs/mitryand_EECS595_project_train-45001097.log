@@ -1,0 +1,167 @@
+loading file vocab.txt from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/vocab.txt
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/tokenizer_config.json
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/config.json
+Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+loading file vocab.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/vocab.json
+loading file merges.txt from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/merges.txt
+loading file tokenizer.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at None
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/config.json
+Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.24.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/config.json
+Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+loaded 926 training samples
+loaded 209 validation samples
+loaded 24 test samples
+Downloading:   0%|          | 0.00/440M [00:00<?, ?B/s]Downloading:   2%|▏         | 7.13M/440M [00:00<00:06, 71.3MB/s]Downloading:   4%|▍         | 18.9M/440M [00:00<00:04, 98.4MB/s]Downloading:   7%|▋         | 30.4M/440M [00:00<00:03, 106MB/s] Downloading:  10%|▉         | 42.2M/440M [00:00<00:03, 111MB/s]Downloading:  12%|█▏        | 54.0M/440M [00:00<00:03, 113MB/s]Downloading:  15%|█▍        | 65.7M/440M [00:00<00:03, 115MB/s]Downloading:  18%|█▊        | 77.5M/440M [00:00<00:03, 116MB/s]Downloading:  20%|██        | 89.2M/440M [00:00<00:03, 116MB/s]Downloading:  23%|██▎       | 101M/440M [00:00<00:02, 117MB/s] Downloading:  26%|██▌       | 113M/440M [00:01<00:02, 116MB/s]Downloading:  28%|██▊       | 125M/440M [00:01<00:02, 117MB/s]Downloading:  31%|███       | 136M/440M [00:01<00:02, 117MB/s]Downloading:  34%|███▎      | 148M/440M [00:01<00:02, 117MB/s]Downloading:  36%|███▋      | 160M/440M [00:01<00:02, 117MB/s]Downloading:  39%|███▉      | 172M/440M [00:01<00:02, 117MB/s]Downloading:  42%|████▏     | 183M/440M [00:01<00:02, 117MB/s]Downloading:  44%|████▍     | 195M/440M [00:01<00:02, 117MB/s]Downloading:  47%|████▋     | 207M/440M [00:01<00:01, 117MB/s]Downloading:  50%|████▉     | 219M/440M [00:01<00:01, 117MB/s]Downloading:  52%|█████▏    | 230M/440M [00:02<00:01, 118MB/s]Downloading:  55%|█████▍    | 242M/440M [00:02<00:01, 118MB/s]Downloading:  58%|█████▊    | 254M/440M [00:02<00:01, 117MB/s]Downloading:  60%|██████    | 266M/440M [00:02<00:01, 117MB/s]Downloading:  63%|██████▎   | 277M/440M [00:02<00:01, 117MB/s]Downloading:  66%|██████▌   | 289M/440M [00:02<00:01, 117MB/s]Downloading:  68%|██████▊   | 301M/440M [00:02<00:01, 117MB/s]Downloading:  71%|███████   | 313M/440M [00:02<00:01, 117MB/s]Downloading:  74%|███████▎  | 324M/440M [00:02<00:00, 118MB/s]Downloading:  76%|███████▋  | 336M/440M [00:02<00:00, 116MB/s]Downloading:  79%|███████▉  | 348M/440M [00:03<00:00, 118MB/s]Downloading:  82%|████████▏ | 360M/440M [00:03<00:00, 118MB/s]Downloading:  84%|████████▍ | 372M/440M [00:03<00:00, 118MB/s]Downloading:  87%|████████▋ | 384M/440M [00:03<00:00, 118MB/s]Downloading:  90%|████████▉ | 395M/440M [00:03<00:00, 118MB/s]Downloading:  92%|█████████▏| 407M/440M [00:03<00:00, 118MB/s]Downloading:  95%|█████████▌| 419M/440M [00:03<00:00, 117MB/s]Downloading:  98%|█████████▊| 431M/440M [00:03<00:00, 118MB/s]Downloading: 100%|██████████| 440M/440M [00:03<00:00, 116MB/s]
+loading weights file pytorch_model.bin from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/pytorch_model.bin
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertModel: ['cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.bias', 'cls.seq_relationship.weight', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+All the weights of BertModel were initialized from the model checkpoint at bert-base-uncased.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertModel for predictions without further training.
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/config.json
+Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.24.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+Initializing gpt2 as a decoder model. Cross attention layers are added to gpt2 and randomly initialized if gpt2's architecture allows for cross attention layers.
+Downloading:   0%|          | 0.00/548M [00:00<?, ?B/s]Downloading:   1%|          | 2.75M/548M [00:00<00:21, 24.8MB/s]Downloading:   2%|▏         | 11.7M/548M [00:00<00:08, 61.2MB/s]Downloading:   3%|▎         | 18.0M/548M [00:00<00:08, 62.3MB/s]Downloading:   5%|▍         | 24.8M/548M [00:00<00:08, 64.4MB/s]Downloading:   6%|▌         | 31.3M/548M [00:00<00:08, 62.3MB/s]Downloading:   7%|▋         | 37.8M/548M [00:00<00:08, 63.0MB/s]Downloading:   8%|▊         | 44.1M/548M [00:00<00:08, 62.6MB/s]Downloading:   9%|▉         | 51.4M/548M [00:00<00:07, 64.3MB/s]Downloading:  11%|█         | 57.8M/548M [00:00<00:07, 63.8MB/s]Downloading:  12%|█▏        | 64.8M/548M [00:01<00:07, 65.6MB/s]Downloading:  13%|█▎        | 71.5M/548M [00:01<00:07, 65.9MB/s]Downloading:  15%|█▍        | 81.3M/548M [00:01<00:06, 75.6MB/s]Downloading:  17%|█▋        | 92.6M/548M [00:01<00:05, 86.7MB/s]Downloading:  19%|█▉        | 103M/548M [00:01<00:05, 88.8MB/s] Downloading:  20%|██        | 112M/548M [00:01<00:04, 89.1MB/s]Downloading:  23%|██▎       | 124M/548M [00:01<00:04, 97.5MB/s]Downloading:  24%|██▍       | 134M/548M [00:01<00:04, 89.4MB/s]Downloading:  26%|██▌       | 143M/548M [00:01<00:04, 85.1MB/s]Downloading:  28%|██▊       | 152M/548M [00:01<00:04, 88.2MB/s]Downloading:  30%|██▉       | 163M/548M [00:02<00:04, 93.2MB/s]Downloading:  32%|███▏      | 175M/548M [00:02<00:03, 100MB/s] Downloading:  34%|███▍      | 186M/548M [00:02<00:03, 105MB/s]Downloading:  36%|███▌      | 198M/548M [00:02<00:03, 109MB/s]Downloading:  38%|███▊      | 210M/548M [00:02<00:03, 110MB/s]Downloading:  40%|████      | 222M/548M [00:02<00:02, 114MB/s]Downloading:  43%|████▎     | 233M/548M [00:02<00:02, 115MB/s]Downloading:  45%|████▍     | 245M/548M [00:02<00:02, 116MB/s]Downloading:  47%|████▋     | 257M/548M [00:02<00:02, 116MB/s]Downloading:  49%|████▉     | 269M/548M [00:02<00:02, 117MB/s]Downloading:  51%|█████     | 280M/548M [00:03<00:02, 117MB/s]Downloading:  53%|█████▎    | 292M/548M [00:03<00:02, 111MB/s]Downloading:  55%|█████▌    | 304M/548M [00:03<00:02, 113MB/s]Downloading:  58%|█████▊    | 316M/548M [00:03<00:02, 114MB/s]Downloading:  60%|█████▉    | 327M/548M [00:03<00:01, 115MB/s]Downloading:  62%|██████▏   | 339M/548M [00:03<00:01, 116MB/s]Downloading:  64%|██████▍   | 351M/548M [00:03<00:01, 116MB/s]Downloading:  66%|██████▌   | 363M/548M [00:03<00:01, 116MB/s]Downloading:  68%|██████▊   | 374M/548M [00:03<00:01, 117MB/s]Downloading:  70%|███████   | 386M/548M [00:04<00:01, 117MB/s]Downloading:  73%|███████▎  | 398M/548M [00:04<00:01, 117MB/s]Downloading:  75%|███████▍  | 410M/548M [00:04<00:01, 117MB/s]Downloading:  77%|███████▋  | 421M/548M [00:04<00:01, 116MB/s]Downloading:  79%|███████▉  | 433M/548M [00:04<00:01, 98.1MB/s]Downloading:  81%|████████  | 443M/548M [00:04<00:01, 99.1MB/s]Downloading:  83%|████████▎ | 454M/548M [00:04<00:00, 94.9MB/s]Downloading:  85%|████████▍ | 463M/548M [00:04<00:00, 87.0MB/s]Downloading:  86%|████████▌ | 472M/548M [00:04<00:00, 80.7MB/s]Downloading:  88%|████████▊ | 481M/548M [00:05<00:00, 74.7MB/s]Downloading:  89%|████████▉ | 488M/548M [00:05<00:00, 71.6MB/s]Downloading:  90%|█████████ | 495M/548M [00:05<00:00, 68.7MB/s]Downloading:  92%|█████████▏| 502M/548M [00:05<00:00, 68.7MB/s]Downloading:  94%|█████████▎| 513M/548M [00:05<00:00, 78.7MB/s]Downloading:  96%|█████████▌| 525M/548M [00:05<00:00, 89.5MB/s]Downloading:  98%|█████████▊| 537M/548M [00:05<00:00, 97.5MB/s]Downloading: 100%|██████████| 548M/548M [00:05<00:00, 93.8MB/s]
+loading weights file pytorch_model.bin from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/pytorch_model.bin
+All model checkpoint weights were used when initializing GPT2LMHeadModel.
+
+Some weights of GPT2LMHeadModel were not initialized from the model checkpoint at gpt2 and are newly initialized: ['h.8.crossattention.c_proj.weight', 'h.7.crossattention.c_attn.weight', 'h.2.crossattention.c_proj.bias', 'h.1.crossattention.bias', 'h.8.crossattention.masked_bias', 'h.5.crossattention.q_attn.weight', 'h.6.crossattention.c_proj.weight', 'h.10.crossattention.bias', 'h.2.crossattention.c_proj.weight', 'h.0.crossattention.masked_bias', 'h.2.crossattention.bias', 'h.8.crossattention.q_attn.weight', 'h.2.ln_cross_attn.weight', 'h.10.crossattention.masked_bias', 'h.5.crossattention.c_attn.weight', 'h.3.crossattention.c_proj.weight', 'h.2.crossattention.q_attn.weight', 'h.10.ln_cross_attn.weight', 'h.7.crossattention.c_proj.weight', 'h.5.crossattention.c_proj.bias', 'h.3.crossattention.q_attn.weight', 'h.1.crossattention.q_attn.weight', 'h.5.crossattention.masked_bias', 'h.7.crossattention.bias', 'h.8.crossattention.c_proj.bias', 'h.6.crossattention.bias', 'h.1.crossattention.c_proj.weight', 'h.10.crossattention.q_attn.weight', 'h.9.crossattention.masked_bias', 'h.4.crossattention.c_proj.bias', 'h.4.crossattention.q_attn.weight', 'h.9.ln_cross_attn.weight', 'h.5.ln_cross_attn.weight', 'h.6.ln_cross_attn.weight', 'h.7.crossattention.masked_bias', 'h.0.crossattention.c_proj.weight', 'h.3.crossattention.c_attn.weight', 'h.6.crossattention.c_attn.weight', 'h.11.crossattention.q_attn.weight', 'h.8.ln_cross_attn.weight', 'h.8.crossattention.bias', 'h.0.crossattention.q_attn.weight', 'h.11.ln_cross_attn.weight', 'h.4.ln_cross_attn.weight', 'h.6.crossattention.c_proj.bias', 'h.3.crossattention.masked_bias', 'h.0.crossattention.c_proj.bias', 'h.4.crossattention.masked_bias', 'h.10.crossattention.c_attn.weight', 'h.1.crossattention.masked_bias', 'h.5.crossattention.c_proj.weight', 'h.2.crossattention.masked_bias', 'h.2.crossattention.c_attn.weight', 'h.7.ln_cross_attn.weight', 'h.6.crossattention.masked_bias', 'h.1.crossattention.c_proj.bias', 'h.8.crossattention.c_attn.weight', 'h.11.crossattention.c_proj.weight', 'h.11.crossattention.bias', 'h.3.ln_cross_attn.weight', 'h.5.crossattention.bias', 'h.4.crossattention.c_proj.weight', 'h.3.crossattention.c_proj.bias', 'h.1.crossattention.c_attn.weight', 'h.11.crossattention.masked_bias', 'h.0.crossattention.c_attn.weight', 'h.0.ln_cross_attn.weight', 'h.4.crossattention.bias', 'h.7.crossattention.q_attn.weight', 'h.9.crossattention.c_attn.weight', 'h.9.crossattention.c_proj.bias', 'h.10.crossattention.c_proj.weight', 'h.9.crossattention.q_attn.weight', 'h.4.crossattention.c_attn.weight', 'h.1.ln_cross_attn.weight', 'h.11.crossattention.c_proj.bias', 'h.9.crossattention.bias', 'h.3.crossattention.bias', 'h.6.crossattention.q_attn.weight', 'h.7.crossattention.c_proj.bias', 'h.0.crossattention.bias', 'h.10.crossattention.c_proj.bias', 'h.11.crossattention.c_attn.weight', 'h.9.crossattention.c_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Set `config.is_decoder=True` and `config.add_cross_attention=True` for decoder_config
+created model
+Begin training!
+  0%|          | 0/926 [00:00<?, ?it/s]/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:634: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  0%|          | 1/926 [00:04<1:14:18,  4.82s/it]  0%|          | 2/926 [00:05<32:51,  2.13s/it]    0%|          | 3/926 [00:05<19:31,  1.27s/it]  0%|          | 4/926 [00:05<13:15,  1.16it/s]  1%|          | 5/926 [00:05<09:48,  1.57it/s]  1%|          | 6/926 [00:06<07:43,  1.99it/s]  1%|          | 7/926 [00:06<06:23,  2.40it/s]  1%|          | 8/926 [00:06<05:31,  2.77it/s]  1%|          | 9/926 [00:06<04:56,  3.09it/s]  1%|          | 10/926 [00:06<04:33,  3.35it/s]  1%|          | 11/926 [00:07<04:16,  3.56it/s]  1%|▏         | 12/926 [00:07<04:05,  3.72it/s]  1%|▏         | 13/926 [00:07<03:57,  3.84it/s]  2%|▏         | 14/926 [00:07<03:52,  3.93it/s]  2%|▏         | 15/926 [00:08<03:48,  3.99it/s]  2%|▏         | 16/926 [00:08<03:45,  4.04it/s]  2%|▏         | 17/926 [00:08<03:43,  4.07it/s]  2%|▏         | 18/926 [00:08<03:41,  4.10it/s]  2%|▏         | 19/926 [00:09<03:40,  4.11it/s]  2%|▏         | 20/926 [00:09<03:39,  4.12it/s]  2%|▏         | 21/926 [00:09<03:39,  4.13it/s]  2%|▏         | 22/926 [00:09<03:38,  4.14it/s]  2%|▏         | 23/926 [00:10<03:38,  4.14it/s]  3%|▎         | 24/926 [00:10<03:37,  4.14it/s]  3%|▎         | 25/926 [00:10<03:37,  4.14it/s]  3%|▎         | 26/926 [00:10<03:37,  4.14it/s]  3%|▎         | 27/926 [00:11<03:37,  4.14it/s]  3%|▎         | 28/926 [00:11<03:37,  4.14it/s]  3%|▎         | 29/926 [00:11<03:36,  4.13it/s]  3%|▎         | 30/926 [00:11<03:36,  4.14it/s]  3%|▎         | 31/926 [00:12<03:36,  4.14it/s]  3%|▎         | 32/926 [00:12<03:35,  4.14it/s]  4%|▎         | 33/926 [00:12<03:35,  4.14it/s]  4%|▎         | 34/926 [00:12<03:35,  4.14it/s]  4%|▍         | 35/926 [00:13<03:35,  4.14it/s]  4%|▍         | 36/926 [00:13<03:34,  4.14it/s]  4%|▍         | 37/926 [00:13<03:34,  4.14it/s]  4%|▍         | 38/926 [00:13<03:34,  4.14it/s]  4%|▍         | 39/926 [00:13<03:34,  4.13it/s]  4%|▍         | 40/926 [00:14<03:34,  4.13it/s]  4%|▍         | 41/926 [00:14<03:34,  4.13it/s]  5%|▍         | 42/926 [00:14<03:33,  4.13it/s]  5%|▍         | 43/926 [00:14<03:33,  4.14it/s]  5%|▍         | 44/926 [00:15<03:33,  4.14it/s]  5%|▍         | 45/926 [00:15<03:32,  4.14it/s]  5%|▍         | 46/926 [00:15<03:32,  4.14it/s]  5%|▌         | 47/926 [00:15<03:32,  4.14it/s]  5%|▌         | 48/926 [00:16<03:32,  4.13it/s]  5%|▌         | 49/926 [00:16<03:32,  4.13it/s]  5%|▌         | 50/926 [00:16<03:31,  4.13it/s]  6%|▌         | 51/926 [00:16<03:31,  4.13it/s]  6%|▌         | 52/926 [00:17<03:31,  4.14it/s]  6%|▌         | 53/926 [00:17<03:30,  4.14it/s]  6%|▌         | 54/926 [00:17<03:30,  4.15it/s]  6%|▌         | 55/926 [00:17<03:29,  4.15it/s]  6%|▌         | 56/926 [00:18<03:29,  4.15it/s]  6%|▌         | 57/926 [00:18<03:29,  4.15it/s]  6%|▋         | 58/926 [00:18<03:28,  4.15it/s]  6%|▋         | 59/926 [00:18<03:28,  4.16it/s]  6%|▋         | 60/926 [00:19<03:28,  4.16it/s]  7%|▋         | 61/926 [00:19<03:28,  4.16it/s]  7%|▋         | 62/926 [00:19<03:27,  4.16it/s]  7%|▋         | 63/926 [00:19<03:27,  4.16it/s]  7%|▋         | 64/926 [00:20<03:27,  4.16it/s]  7%|▋         | 65/926 [00:20<03:27,  4.16it/s]  7%|▋         | 66/926 [00:20<03:26,  4.16it/s]  7%|▋         | 67/926 [00:20<03:26,  4.16it/s]  7%|▋         | 68/926 [00:20<03:26,  4.15it/s]  7%|▋         | 69/926 [00:21<03:26,  4.15it/s]  8%|▊         | 70/926 [00:21<03:26,  4.15it/s]  8%|▊         | 71/926 [00:21<03:26,  4.15it/s]  8%|▊         | 72/926 [00:21<03:25,  4.15it/s]  8%|▊         | 73/926 [00:22<03:25,  4.15it/s]  8%|▊         | 74/926 [00:22<03:25,  4.15it/s]  8%|▊         | 75/926 [00:22<03:25,  4.15it/s]  8%|▊         | 76/926 [00:22<03:24,  4.15it/s]  8%|▊         | 77/926 [00:23<03:24,  4.15it/s]  8%|▊         | 78/926 [00:23<03:24,  4.15it/s]  9%|▊         | 79/926 [00:23<03:24,  4.15it/s]  9%|▊         | 80/926 [00:23<03:23,  4.15it/s]  9%|▊         | 81/926 [00:24<03:23,  4.15it/s]  9%|▉         | 82/926 [00:24<03:23,  4.15it/s]  9%|▉         | 83/926 [00:24<03:22,  4.15it/s]  9%|▉         | 84/926 [00:24<03:22,  4.15it/s]  9%|▉         | 85/926 [00:25<03:22,  4.15it/s]  9%|▉         | 86/926 [00:25<03:22,  4.15it/s]  9%|▉         | 87/926 [00:25<03:22,  4.15it/s] 10%|▉         | 88/926 [00:25<03:22,  4.15it/s] 10%|▉         | 89/926 [00:26<03:22,  4.14it/s] 10%|▉         | 90/926 [00:26<03:21,  4.14it/s] 10%|▉         | 91/926 [00:26<03:21,  4.14it/s] 10%|▉         | 92/926 [00:26<03:21,  4.14it/s] 10%|█         | 93/926 [00:27<03:21,  4.14it/s] 10%|█         | 94/926 [00:27<03:20,  4.14it/s] 10%|█         | 95/926 [00:27<03:20,  4.14it/s] 10%|█         | 96/926 [00:27<03:20,  4.15it/s] 10%|█         | 97/926 [00:27<03:19,  4.15it/s] 11%|█         | 98/926 [00:28<03:19,  4.15it/s] 11%|█         | 99/926 [00:28<03:19,  4.14it/s] 11%|█         | 100/926 [00:28<03:19,  4.14it/s] 11%|█         | 101/926 [00:28<03:19,  4.14it/s] 11%|█         | 102/926 [00:29<03:19,  4.14it/s] 11%|█         | 103/926 [00:29<03:19,  4.13it/s] 11%|█         | 104/926 [00:29<03:18,  4.13it/s] 11%|█▏        | 105/926 [00:29<03:18,  4.13it/s] 11%|█▏        | 106/926 [00:30<03:18,  4.13it/s] 12%|█▏        | 107/926 [00:30<03:17,  4.14it/s] 12%|█▏        | 108/926 [00:30<03:17,  4.14it/s] 12%|█▏        | 109/926 [00:30<03:17,  4.14it/s] 12%|█▏        | 110/926 [00:31<03:17,  4.14it/s] 12%|█▏        | 111/926 [00:31<03:17,  4.13it/s] 12%|█▏        | 112/926 [00:31<03:16,  4.13it/s] 12%|█▏        | 113/926 [00:31<03:16,  4.13it/s] 12%|█▏        | 114/926 [00:32<03:16,  4.13it/s] 12%|█▏        | 115/926 [00:32<03:16,  4.13it/s] 13%|█▎        | 116/926 [00:32<03:16,  4.13it/s] 13%|█▎        | 117/926 [00:32<03:15,  4.13it/s] 13%|█▎        | 118/926 [00:33<03:15,  4.13it/s] 13%|█▎        | 119/926 [00:33<03:15,  4.13it/s] 13%|█▎        | 120/926 [00:33<03:15,  4.13it/s] 13%|█▎        | 121/926 [00:33<03:14,  4.13it/s] 13%|█▎        | 122/926 [00:34<03:14,  4.13it/s] 13%|█▎        | 123/926 [00:34<03:14,  4.13it/s] 13%|█▎        | 124/926 [00:34<03:14,  4.13it/s] 13%|█▎        | 125/926 [00:34<03:13,  4.13it/s] 14%|█▎        | 126/926 [00:35<03:13,  4.13it/s] 14%|█▎        | 127/926 [00:35<03:13,  4.13it/s] 14%|█▍        | 128/926 [00:35<03:12,  4.13it/s] 14%|█▍        | 129/926 [00:35<03:12,  4.13it/s] 14%|█▍        | 130/926 [00:35<03:12,  4.13it/s] 14%|█▍        | 131/926 [00:36<03:12,  4.13it/s] 14%|█▍        | 132/926 [00:36<03:12,  4.13it/s] 14%|█▍        | 133/926 [00:36<03:12,  4.13it/s] 14%|█▍        | 134/926 [00:36<03:11,  4.13it/s] 15%|█▍        | 135/926 [00:37<03:11,  4.13it/s] 15%|█▍        | 136/926 [00:37<03:11,  4.13it/s] 15%|█▍        | 137/926 [00:37<03:10,  4.13it/s] 15%|█▍        | 138/926 [00:37<03:10,  4.13it/s] 15%|█▌        | 139/926 [00:38<03:10,  4.13it/s] 15%|█▌        | 140/926 [00:38<03:10,  4.13it/s] 15%|█▌        | 141/926 [00:38<03:10,  4.12it/s] 15%|█▌        | 142/926 [00:38<03:10,  4.13it/s] 15%|█▌        | 143/926 [00:39<03:09,  4.13it/s] 16%|█▌        | 144/926 [00:39<03:09,  4.13it/s] 16%|█▌        | 145/926 [00:39<03:09,  4.13it/s] 16%|█▌        | 146/926 [00:39<03:08,  4.13it/s] 16%|█▌        | 147/926 [00:40<03:08,  4.13it/s] 16%|█▌        | 148/926 [00:40<03:08,  4.13it/s] 16%|█▌        | 149/926 [00:40<03:08,  4.12it/s] 16%|█▌        | 150/926 [00:40<03:08,  4.12it/s] 16%|█▋        | 151/926 [00:41<03:07,  4.12it/s] 16%|█▋        | 152/926 [00:41<03:07,  4.13it/s] 17%|█▋        | 153/926 [00:41<03:07,  4.12it/s] 17%|█▋        | 154/926 [00:41<03:07,  4.12it/s] 17%|█▋        | 155/926 [00:42<03:07,  4.12it/s] 17%|█▋        | 156/926 [00:42<03:06,  4.12it/s] 17%|█▋        | 157/926 [00:42<03:06,  4.12it/s] 17%|█▋        | 158/926 [00:42<03:06,  4.12it/s] 17%|█▋        | 159/926 [00:42<03:06,  4.12it/s] 17%|█▋        | 160/926 [00:43<03:05,  4.13it/s] 17%|█▋        | 161/926 [00:43<03:05,  4.13it/s] 17%|█▋        | 162/926 [00:43<03:05,  4.13it/s] 18%|█▊        | 163/926 [00:43<03:05,  4.12it/s] 18%|█▊        | 164/926 [00:44<03:04,  4.12it/s] 18%|█▊        | 165/926 [00:44<03:04,  4.12it/s] 18%|█▊        | 166/926 [00:44<03:04,  4.12it/s] 18%|█▊        | 167/926 [00:44<03:03,  4.13it/s] 18%|█▊        | 168/926 [00:45<03:03,  4.13it/s] 18%|█▊        | 169/926 [00:45<03:03,  4.13it/s] 18%|█▊        | 170/926 [00:45<03:03,  4.13it/s] 18%|█▊        | 171/926 [00:45<03:03,  4.12it/s] 19%|█▊        | 172/926 [00:46<03:02,  4.12it/s] 19%|█▊        | 173/926 [00:46<03:02,  4.12it/s] 19%|█▉        | 174/926 [00:46<03:02,  4.12it/s] 19%|█▉        | 175/926 [00:46<03:01,  4.13it/s] 19%|█▉        | 176/926 [00:47<03:01,  4.13it/s] 19%|█▉        | 177/926 [00:47<03:01,  4.13it/s] 19%|█▉        | 178/926 [00:47<03:01,  4.13it/s] 19%|█▉        | 179/926 [00:47<03:01,  4.12it/s] 19%|█▉        | 180/926 [00:48<03:00,  4.12it/s] 20%|█▉        | 181/926 [00:48<03:00,  4.12it/s] 20%|█▉        | 182/926 [00:48<03:00,  4.12it/s] 20%|█▉        | 183/926 [00:48<03:00,  4.12it/s] 20%|█▉        | 184/926 [00:49<02:59,  4.13it/s] 20%|█▉        | 185/926 [00:49<02:59,  4.13it/s] 20%|██        | 186/926 [00:49<02:59,  4.12it/s] 20%|██        | 187/926 [00:49<02:59,  4.12it/s] 20%|██        | 188/926 [00:50<02:59,  4.12it/s] 20%|██        | 189/926 [00:50<02:58,  4.12it/s] 21%|██        | 190/926 [00:50<02:58,  4.12it/s] 21%|██        | 191/926 [00:50<02:58,  4.12it/s] 21%|██        | 192/926 [00:50<02:57,  4.13it/s] 21%|██        | 193/926 [00:51<02:57,  4.12it/s] 21%|██        | 194/926 [00:51<02:57,  4.12it/s] 21%|██        | 195/926 [00:51<02:57,  4.12it/s] 21%|██        | 196/926 [00:51<02:57,  4.12it/s] 21%|██▏       | 197/926 [00:52<02:56,  4.12it/s]

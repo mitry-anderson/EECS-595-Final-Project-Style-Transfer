@@ -149,7 +149,6 @@ def main(params):
     output_tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, params)
-
     if params.train:
 
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
