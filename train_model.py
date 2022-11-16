@@ -154,7 +154,9 @@ def main(params):
         model.config.vocab_size = model.config.decoder.vocab_size
         model.to(device)
         model = train(model, train_dataloader, eval_dataloader, params)
-        model.save_pretrained(f'models/news_adventure.torch')
+        model.save_pretrained('models/news_adventure.torch')
+    else:
+        model = EncoderDecoderModel.from_pretrained('models/news_adventure.torch')
 
     if params.test:
         # first load model
@@ -167,6 +169,7 @@ if __name__ == "__main__":
     parser.add_argument("--num_epochs", type=int, default=1)
     parser.add_argument("--train", type=bool, default=False)
     parser.add_argument("--test", type=bool, default=False)
+    parser.add_argument("--model_name", type=str, default="news_adventure.torch")
 
     params, unknown = parser.parse_known_args()
     main(params)
