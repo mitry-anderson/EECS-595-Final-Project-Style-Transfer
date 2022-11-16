@@ -1,0 +1,415 @@
+loading file vocab.txt from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/vocab.txt
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/tokenizer_config.json
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/config.json
+Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+loading file vocab.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/vocab.json
+loading file merges.txt from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/merges.txt
+loading file tokenizer.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at None
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/config.json
+Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.24.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/config.json
+Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+loading weights file pytorch_model.bin from cache at /home/mitryand/.cache/huggingface/hub/models--bert-base-uncased/snapshots/0a6aa9128b6194f4f3c4db429b6cb4891cdb421b/pytorch_model.bin
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertModel: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.bias', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+All the weights of BertModel were initialized from the model checkpoint at bert-base-uncased.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertModel for predictions without further training.
+loading configuration file config.json from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/config.json
+Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.24.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+Initializing gpt2 as a decoder model. Cross attention layers are added to gpt2 and randomly initialized if gpt2's architecture allows for cross attention layers.
+loading weights file pytorch_model.bin from cache at /home/mitryand/.cache/huggingface/hub/models--gpt2/snapshots/75e09b43581151bd1d9ef6700faa605df408979f/pytorch_model.bin
+All model checkpoint weights were used when initializing GPT2LMHeadModel.
+
+Some weights of GPT2LMHeadModel were not initialized from the model checkpoint at gpt2 and are newly initialized: ['h.8.crossattention.q_attn.weight', 'h.4.crossattention.c_attn.weight', 'h.11.crossattention.c_proj.bias', 'h.5.crossattention.masked_bias', 'h.4.crossattention.masked_bias', 'h.11.crossattention.c_proj.weight', 'h.11.ln_cross_attn.weight', 'h.6.crossattention.q_attn.weight', 'h.9.crossattention.q_attn.weight', 'h.1.crossattention.bias', 'h.5.crossattention.c_proj.weight', 'h.8.crossattention.c_attn.weight', 'h.2.crossattention.c_proj.weight', 'h.2.crossattention.q_attn.weight', 'h.6.crossattention.masked_bias', 'h.4.crossattention.q_attn.weight', 'h.3.crossattention.masked_bias', 'h.7.crossattention.masked_bias', 'h.10.crossattention.masked_bias', 'h.8.crossattention.c_proj.weight', 'h.3.crossattention.c_attn.weight', 'h.5.crossattention.bias', 'h.7.crossattention.c_proj.bias', 'h.10.crossattention.c_proj.weight', 'h.9.crossattention.c_attn.weight', 'h.3.crossattention.c_proj.weight', 'h.8.crossattention.masked_bias', 'h.10.crossattention.q_attn.weight', 'h.11.crossattention.masked_bias', 'h.2.crossattention.bias', 'h.9.crossattention.bias', 'h.1.crossattention.c_proj.bias', 'h.0.crossattention.q_attn.weight', 'h.5.crossattention.c_attn.weight', 'h.1.crossattention.c_proj.weight', 'h.0.crossattention.c_proj.bias', 'h.11.crossattention.q_attn.weight', 'h.6.crossattention.bias', 'h.5.ln_cross_attn.weight', 'h.5.crossattention.q_attn.weight', 'h.0.crossattention.masked_bias', 'h.6.ln_cross_attn.weight', 'h.1.crossattention.masked_bias', 'h.6.crossattention.c_proj.weight', 'h.10.ln_cross_attn.weight', 'h.0.crossattention.bias', 'h.4.ln_cross_attn.weight', 'h.0.crossattention.c_attn.weight', 'h.6.crossattention.c_attn.weight', 'h.8.ln_cross_attn.weight', 'h.9.crossattention.masked_bias', 'h.3.ln_cross_attn.weight', 'h.8.crossattention.bias', 'h.1.crossattention.q_attn.weight', 'h.4.crossattention.bias', 'h.2.crossattention.c_attn.weight', 'h.11.crossattention.bias', 'h.2.crossattention.masked_bias', 'h.0.crossattention.c_proj.weight', 'h.10.crossattention.bias', 'h.7.crossattention.c_attn.weight', 'h.4.crossattention.c_proj.weight', 'h.11.crossattention.c_attn.weight', 'h.9.crossattention.c_proj.weight', 'h.2.ln_cross_attn.weight', 'h.7.crossattention.c_proj.weight', 'h.4.crossattention.c_proj.bias', 'h.9.ln_cross_attn.weight', 'h.10.crossattention.c_attn.weight', 'h.6.crossattention.c_proj.bias', 'h.7.crossattention.bias', 'h.1.ln_cross_attn.weight', 'h.8.crossattention.c_proj.bias', 'h.3.crossattention.bias', 'h.9.crossattention.c_proj.bias', 'h.7.crossattention.q_attn.weight', 'h.0.ln_cross_attn.weight', 'h.3.crossattention.c_proj.bias', 'h.3.crossattention.q_attn.weight', 'h.10.crossattention.c_proj.bias', 'h.1.crossattention.c_attn.weight', 'h.7.ln_cross_attn.weight', 'h.5.crossattention.c_proj.bias', 'h.2.crossattention.c_proj.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Set `config.is_decoder=True` and `config.add_cross_attention=True` for decoder_config
+loaded 232 training samples
+loaded 53 validation samples
+loaded 6 test samples
+created model
+Begin training!
+  0%|          | 0/232 [00:00<?, ?it/s]/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:634: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  0%|          | 1/232 [00:01<05:38,  1.47s/it]  1%|          | 2/232 [00:02<03:58,  1.04s/it]  1%|▏         | 3/232 [00:02<03:26,  1.11it/s]  2%|▏         | 4/232 [00:03<03:10,  1.20it/s]  2%|▏         | 5/232 [00:04<03:01,  1.25it/s]  3%|▎         | 6/232 [00:05<02:55,  1.28it/s]  3%|▎         | 7/232 [00:05<02:51,  1.31it/s]  3%|▎         | 8/232 [00:06<02:49,  1.32it/s]  4%|▍         | 9/232 [00:07<02:47,  1.33it/s]  4%|▍         | 10/232 [00:08<02:45,  1.34it/s]  5%|▍         | 11/232 [00:08<02:44,  1.34it/s]  5%|▌         | 12/232 [00:09<02:43,  1.35it/s]  6%|▌         | 13/232 [00:10<02:42,  1.35it/s]  6%|▌         | 14/232 [00:11<02:41,  1.35it/s]  6%|▋         | 15/232 [00:11<02:40,  1.35it/s]  7%|▋         | 16/232 [00:12<02:39,  1.35it/s]  7%|▋         | 17/232 [00:13<02:38,  1.35it/s]  8%|▊         | 18/232 [00:14<02:38,  1.35it/s]  8%|▊         | 19/232 [00:14<02:37,  1.35it/s]  9%|▊         | 20/232 [00:15<02:36,  1.35it/s]  9%|▉         | 21/232 [00:16<02:36,  1.35it/s]  9%|▉         | 22/232 [00:16<02:35,  1.35it/s] 10%|▉         | 23/232 [00:17<02:34,  1.35it/s] 10%|█         | 24/232 [00:18<02:33,  1.35it/s] 11%|█         | 25/232 [00:19<02:33,  1.35it/s] 11%|█         | 26/232 [00:19<02:32,  1.35it/s] 12%|█▏        | 27/232 [00:20<02:31,  1.35it/s] 12%|█▏        | 28/232 [00:21<02:31,  1.35it/s] 12%|█▎        | 29/232 [00:22<02:30,  1.35it/s] 13%|█▎        | 30/232 [00:22<02:29,  1.35it/s] 13%|█▎        | 31/232 [00:23<02:28,  1.35it/s] 14%|█▍        | 32/232 [00:24<02:28,  1.35it/s] 14%|█▍        | 33/232 [00:25<02:27,  1.35it/s] 15%|█▍        | 34/232 [00:25<02:26,  1.35it/s] 15%|█▌        | 35/232 [00:26<02:25,  1.35it/s] 16%|█▌        | 36/232 [00:27<02:25,  1.35it/s] 16%|█▌        | 37/232 [00:28<02:24,  1.35it/s] 16%|█▋        | 38/232 [00:28<02:23,  1.35it/s] 17%|█▋        | 39/232 [00:29<02:22,  1.35it/s] 17%|█▋        | 40/232 [00:30<02:22,  1.35it/s] 18%|█▊        | 41/232 [00:31<02:21,  1.35it/s] 18%|█▊        | 42/232 [00:31<02:20,  1.35it/s] 19%|█▊        | 43/232 [00:32<02:19,  1.35it/s] 19%|█▉        | 44/232 [00:33<02:19,  1.35it/s] 19%|█▉        | 45/232 [00:33<02:18,  1.35it/s] 20%|█▉        | 46/232 [00:34<02:17,  1.35it/s] 20%|██        | 47/232 [00:35<02:17,  1.35it/s] 21%|██        | 48/232 [00:36<02:16,  1.35it/s] 21%|██        | 49/232 [00:36<02:15,  1.35it/s] 22%|██▏       | 50/232 [00:37<02:14,  1.35it/s] 22%|██▏       | 51/232 [00:38<02:14,  1.35it/s] 22%|██▏       | 52/232 [00:39<02:13,  1.35it/s] 23%|██▎       | 53/232 [00:39<02:12,  1.35it/s] 23%|██▎       | 54/232 [00:40<02:12,  1.35it/s] 24%|██▎       | 55/232 [00:41<02:11,  1.35it/s] 24%|██▍       | 56/232 [00:42<02:10,  1.35it/s] 25%|██▍       | 57/232 [00:42<02:09,  1.35it/s] 25%|██▌       | 58/232 [00:43<02:09,  1.35it/s] 25%|██▌       | 59/232 [00:44<02:08,  1.35it/s] 26%|██▌       | 60/232 [00:45<02:07,  1.35it/s] 26%|██▋       | 61/232 [00:45<02:07,  1.35it/s] 27%|██▋       | 62/232 [00:46<02:06,  1.35it/s] 27%|██▋       | 63/232 [00:47<02:05,  1.34it/s] 28%|██▊       | 64/232 [00:48<02:04,  1.34it/s] 28%|██▊       | 65/232 [00:48<02:04,  1.34it/s] 28%|██▊       | 66/232 [00:49<02:03,  1.35it/s] 29%|██▉       | 67/232 [00:50<02:02,  1.34it/s] 29%|██▉       | 68/232 [00:51<02:01,  1.34it/s] 30%|██▉       | 69/232 [00:51<02:01,  1.34it/s] 30%|███       | 70/232 [00:52<02:00,  1.34it/s] 31%|███       | 71/232 [00:53<01:59,  1.34it/s] 31%|███       | 72/232 [00:54<01:58,  1.34it/s] 31%|███▏      | 73/232 [00:54<01:58,  1.34it/s] 32%|███▏      | 74/232 [00:55<01:57,  1.34it/s] 32%|███▏      | 75/232 [00:56<01:56,  1.34it/s] 33%|███▎      | 76/232 [00:57<01:56,  1.34it/s] 33%|███▎      | 77/232 [00:57<01:55,  1.34it/s] 34%|███▎      | 78/232 [00:58<01:54,  1.34it/s] 34%|███▍      | 79/232 [00:59<01:53,  1.34it/s] 34%|███▍      | 80/232 [01:00<01:53,  1.34it/s] 35%|███▍      | 81/232 [01:00<01:52,  1.34it/s] 35%|███▌      | 82/232 [01:01<01:51,  1.34it/s] 36%|███▌      | 83/232 [01:02<01:50,  1.34it/s] 36%|███▌      | 84/232 [01:02<01:50,  1.34it/s] 37%|███▋      | 85/232 [01:03<01:49,  1.34it/s] 37%|███▋      | 86/232 [01:04<01:48,  1.34it/s] 38%|███▊      | 87/232 [01:05<01:47,  1.34it/s] 38%|███▊      | 88/232 [01:05<01:47,  1.34it/s] 38%|███▊      | 89/232 [01:06<01:46,  1.34it/s] 39%|███▉      | 90/232 [01:07<01:45,  1.34it/s] 39%|███▉      | 91/232 [01:08<01:44,  1.34it/s] 40%|███▉      | 92/232 [01:08<01:44,  1.34it/s] 40%|████      | 93/232 [01:09<01:43,  1.34it/s] 41%|████      | 94/232 [01:10<01:42,  1.34it/s] 41%|████      | 95/232 [01:11<01:41,  1.34it/s] 41%|████▏     | 96/232 [01:11<01:41,  1.34it/s] 42%|████▏     | 97/232 [01:12<01:40,  1.34it/s] 42%|████▏     | 98/232 [01:13<01:39,  1.34it/s] 43%|████▎     | 99/232 [01:14<01:39,  1.34it/s] 43%|████▎     | 100/232 [01:14<01:38,  1.34it/s] 44%|████▎     | 101/232 [01:15<01:37,  1.34it/s] 44%|████▍     | 102/232 [01:16<01:36,  1.34it/s] 44%|████▍     | 103/232 [01:17<01:36,  1.34it/s] 45%|████▍     | 104/232 [01:17<01:35,  1.34it/s] 45%|████▌     | 105/232 [01:18<01:34,  1.34it/s] 46%|████▌     | 106/232 [01:19<01:33,  1.34it/s] 46%|████▌     | 107/232 [01:20<01:33,  1.34it/s] 47%|████▋     | 108/232 [01:20<01:32,  1.34it/s] 47%|████▋     | 109/232 [01:21<01:31,  1.34it/s] 47%|████▋     | 110/232 [01:22<01:30,  1.34it/s] 48%|████▊     | 111/232 [01:23<01:30,  1.34it/s] 48%|████▊     | 112/232 [01:23<01:29,  1.34it/s] 49%|████▊     | 113/232 [01:24<01:28,  1.34it/s] 49%|████▉     | 114/232 [01:25<01:28,  1.34it/s] 50%|████▉     | 115/232 [01:26<01:27,  1.34it/s] 50%|█████     | 116/232 [01:26<01:26,  1.34it/s] 50%|█████     | 117/232 [01:27<01:25,  1.34it/s] 51%|█████     | 118/232 [01:28<01:25,  1.34it/s] 51%|█████▏    | 119/232 [01:29<01:24,  1.34it/s] 52%|█████▏    | 120/232 [01:29<01:23,  1.34it/s] 52%|█████▏    | 121/232 [01:30<01:22,  1.34it/s] 53%|█████▎    | 122/232 [01:31<01:22,  1.34it/s] 53%|█████▎    | 123/232 [01:32<01:21,  1.34it/s] 53%|█████▎    | 124/232 [01:32<01:20,  1.34it/s] 54%|█████▍    | 125/232 [01:33<01:19,  1.34it/s] 54%|█████▍    | 126/232 [01:34<01:19,  1.34it/s] 55%|█████▍    | 127/232 [01:35<01:18,  1.34it/s] 55%|█████▌    | 128/232 [01:35<01:17,  1.34it/s] 56%|█████▌    | 129/232 [01:36<01:16,  1.34it/s] 56%|█████▌    | 130/232 [01:37<01:16,  1.34it/s] 56%|█████▋    | 131/232 [01:38<01:15,  1.34it/s] 57%|█████▋    | 132/232 [01:38<01:14,  1.34it/s] 57%|█████▋    | 133/232 [01:39<01:13,  1.34it/s] 58%|█████▊    | 134/232 [01:40<01:13,  1.34it/s] 58%|█████▊    | 135/232 [01:41<01:12,  1.34it/s] 59%|█████▊    | 136/232 [01:41<01:11,  1.34it/s] 59%|█████▉    | 137/232 [01:42<01:10,  1.34it/s] 59%|█████▉    | 138/232 [01:43<01:10,  1.34it/s] 60%|█████▉    | 139/232 [01:43<01:09,  1.34it/s] 60%|██████    | 140/232 [01:44<01:08,  1.34it/s] 61%|██████    | 141/232 [01:45<01:07,  1.34it/s] 61%|██████    | 142/232 [01:46<01:07,  1.34it/s] 62%|██████▏   | 143/232 [01:46<01:06,  1.34it/s] 62%|██████▏   | 144/232 [01:47<01:05,  1.34it/s] 62%|██████▎   | 145/232 [01:48<01:04,  1.34it/s] 63%|██████▎   | 146/232 [01:49<01:04,  1.34it/s] 63%|██████▎   | 147/232 [01:49<01:03,  1.34it/s] 64%|██████▍   | 148/232 [01:50<01:02,  1.34it/s] 64%|██████▍   | 149/232 [01:51<01:02,  1.34it/s] 65%|██████▍   | 150/232 [01:52<01:01,  1.34it/s] 65%|██████▌   | 151/232 [01:52<01:00,  1.34it/s] 66%|██████▌   | 152/232 [01:53<00:59,  1.34it/s] 66%|██████▌   | 153/232 [01:54<00:59,  1.34it/s] 66%|██████▋   | 154/232 [01:55<00:58,  1.34it/s] 67%|██████▋   | 155/232 [01:55<00:57,  1.34it/s] 67%|██████▋   | 156/232 [01:56<00:56,  1.34it/s] 68%|██████▊   | 157/232 [01:57<00:56,  1.34it/s] 68%|██████▊   | 158/232 [01:58<00:55,  1.34it/s] 69%|██████▊   | 159/232 [01:58<00:54,  1.34it/s] 69%|██████▉   | 160/232 [01:59<00:53,  1.34it/s] 69%|██████▉   | 161/232 [02:00<00:53,  1.34it/s] 70%|██████▉   | 162/232 [02:01<00:52,  1.34it/s] 70%|███████   | 163/232 [02:01<00:51,  1.34it/s] 71%|███████   | 164/232 [02:02<00:50,  1.34it/s] 71%|███████   | 165/232 [02:03<00:50,  1.34it/s] 72%|███████▏  | 166/232 [02:04<00:49,  1.34it/s] 72%|███████▏  | 167/232 [02:04<00:48,  1.34it/s] 72%|███████▏  | 168/232 [02:05<00:47,  1.34it/s] 73%|███████▎  | 169/232 [02:06<00:46,  1.34it/s] 73%|███████▎  | 170/232 [02:07<00:46,  1.34it/s] 74%|███████▎  | 171/232 [02:07<00:45,  1.34it/s] 74%|███████▍  | 172/232 [02:08<00:44,  1.34it/s] 75%|███████▍  | 173/232 [02:09<00:44,  1.34it/s] 75%|███████▌  | 174/232 [02:10<00:43,  1.34it/s] 75%|███████▌  | 175/232 [02:10<00:42,  1.34it/s] 76%|███████▌  | 176/232 [02:11<00:41,  1.34it/s] 76%|███████▋  | 177/232 [02:12<00:41,  1.34it/s] 77%|███████▋  | 178/232 [02:13<00:40,  1.34it/s] 77%|███████▋  | 179/232 [02:13<00:39,  1.34it/s] 78%|███████▊  | 180/232 [02:14<00:38,  1.34it/s] 78%|███████▊  | 181/232 [02:15<00:38,  1.34it/s] 78%|███████▊  | 182/232 [02:16<00:37,  1.34it/s] 79%|███████▉  | 183/232 [02:16<00:36,  1.34it/s] 79%|███████▉  | 184/232 [02:17<00:35,  1.34it/s] 80%|███████▉  | 185/232 [02:18<00:35,  1.34it/s] 80%|████████  | 186/232 [02:19<00:34,  1.34it/s] 81%|████████  | 187/232 [02:19<00:33,  1.34it/s] 81%|████████  | 188/232 [02:20<00:32,  1.34it/s] 81%|████████▏ | 189/232 [02:21<00:32,  1.34it/s] 82%|████████▏ | 190/232 [02:22<00:31,  1.34it/s] 82%|████████▏ | 191/232 [02:22<00:30,  1.34it/s] 83%|████████▎ | 192/232 [02:23<00:29,  1.34it/s] 83%|████████▎ | 193/232 [02:24<00:29,  1.34it/s] 84%|████████▎ | 194/232 [02:25<00:28,  1.34it/s] 84%|████████▍ | 195/232 [02:25<00:27,  1.34it/s] 84%|████████▍ | 196/232 [02:26<00:26,  1.34it/s] 85%|████████▍ | 197/232 [02:27<00:26,  1.34it/s] 85%|████████▌ | 198/232 [02:28<00:25,  1.34it/s] 86%|████████▌ | 199/232 [02:28<00:24,  1.34it/s] 86%|████████▌ | 200/232 [02:29<00:23,  1.34it/s] 87%|████████▋ | 201/232 [02:30<00:23,  1.34it/s] 87%|████████▋ | 202/232 [02:31<00:22,  1.34it/s] 88%|████████▊ | 203/232 [02:31<00:21,  1.34it/s] 88%|████████▊ | 204/232 [02:32<00:20,  1.34it/s] 88%|████████▊ | 205/232 [02:33<00:20,  1.34it/s] 89%|████████▉ | 206/232 [02:34<00:19,  1.34it/s] 89%|████████▉ | 207/232 [02:34<00:18,  1.34it/s] 90%|████████▉ | 208/232 [02:35<00:17,  1.34it/s] 90%|█████████ | 209/232 [02:36<00:17,  1.34it/s] 91%|█████████ | 210/232 [02:36<00:16,  1.34it/s] 91%|█████████ | 211/232 [02:37<00:15,  1.34it/s] 91%|█████████▏| 212/232 [02:38<00:14,  1.34it/s] 92%|█████████▏| 213/232 [02:39<00:14,  1.34it/s] 92%|█████████▏| 214/232 [02:39<00:13,  1.34it/s] 93%|█████████▎| 215/232 [02:40<00:12,  1.34it/s] 93%|█████████▎| 216/232 [02:41<00:11,  1.34it/s] 94%|█████████▎| 217/232 [02:42<00:11,  1.34it/s] 94%|█████████▍| 218/232 [02:42<00:10,  1.34it/s] 94%|█████████▍| 219/232 [02:43<00:09,  1.34it/s] 95%|█████████▍| 220/232 [02:44<00:08,  1.34it/s] 95%|█████████▌| 221/232 [02:45<00:08,  1.34it/s] 96%|█████████▌| 222/232 [02:45<00:07,  1.34it/s] 96%|█████████▌| 223/232 [02:46<00:06,  1.34it/s] 97%|█████████▋| 224/232 [02:47<00:05,  1.34it/s] 97%|█████████▋| 225/232 [02:48<00:05,  1.34it/s] 97%|█████████▋| 226/232 [02:48<00:04,  1.34it/s] 98%|█████████▊| 227/232 [02:49<00:03,  1.34it/s] 98%|█████████▊| 228/232 [02:50<00:02,  1.34it/s] 99%|█████████▊| 229/232 [02:51<00:02,  1.34it/s] 99%|█████████▉| 230/232 [02:51<00:01,  1.34it/s]100%|█████████▉| 231/232 [02:52<00:00,  1.34it/s]100%|██████████| 232/232 [02:53<00:00,  1.56it/s]1.8967981338500977
+2.0366785526275635
+2.078751802444458
+1.9655758142471313
+1.8869303464889526
+1.4757283926010132
+1.5627425909042358
+1.5919133424758911
+1.8776671886444092
+1.5860743522644043
+1.4722375869750977
+1.2544234991073608
+1.3433492183685303
+1.4537931680679321
+1.6111546754837036
+1.517929196357727
+1.8417431116104126
+1.2520267963409424
+1.3931881189346313
+1.4432991743087769
+1.43660306930542
+1.2510788440704346
+1.3300412893295288
+1.316330075263977
+1.1490925550460815
+1.1711013317108154
+1.2985265254974365
+1.33903169631958
+1.150439739227295
+1.229297399520874
+1.4323458671569824
+1.2509084939956665
+1.1887811422348022
+1.1883114576339722
+1.196693778038025
+1.5887178182601929
+1.2331054210662842
+1.1434316635131836
+1.1231034994125366
+1.094162940979004
+1.1419070959091187
+1.2672834396362305
+1.1624642610549927
+1.1706944704055786
+1.2267394065856934
+1.0949167013168335
+1.1715528964996338
+1.0816726684570312
+1.4106855392456055
+0.984134316444397
+1.051105260848999
+1.1634719371795654
+1.099042534828186
+1.2324718236923218
+1.2463809251785278
+1.327663779258728
+1.2616678476333618
+1.04274582862854
+1.0424412488937378
+0.9296181797981262
+1.1104317903518677
+1.1709253787994385
+0.9221747517585754
+1.0353931188583374
+0.9405709505081177
+0.9816228747367859
+1.0103418827056885
+0.8700146079063416
+0.9551578164100647
+1.0778908729553223
+0.9672987461090088
+1.3404158353805542
+1.5679569244384766
+1.0286924839019775
+0.9640224575996399
+1.018090009689331
+1.1478017568588257
+0.8586745262145996
+1.1026859283447266
+0.9211212396621704
+1.0662486553192139
+1.0095252990722656
+1.3079075813293457
+1.2275065183639526
+1.06666100025177
+1.1029958724975586
+1.0411754846572876
+1.150185465812683
+1.216867208480835
+1.0121999979019165
+1.0231631994247437
+0.9219634532928467
+1.0476728677749634
+1.1805189847946167
+1.1001487970352173
+0.842225193977356
+0.9622169733047485
+1.1186628341674805
+0.9522181749343872
+0.8516778349876404
+1.047696828842163
+1.0729093551635742
+1.0004810094833374
+1.0143777132034302
+1.0183193683624268
+1.1072978973388672
+0.9825282096862793
+1.1771119832992554
+0.907349705696106
+1.0755959749221802
+0.9229282736778259
+0.9120134115219116
+1.122458577156067
+1.1615211963653564
+0.9553049802780151
+0.8769278526306152
+0.9073708057403564
+1.0605432987213135
+1.133719801902771
+0.9234240055084229
+1.1710249185562134
+0.8884543776512146
+1.0053995847702026
+1.062032699584961
+0.7937650084495544
+1.0433176755905151
+1.0339592695236206
+1.0366604328155518
+1.1321591138839722
+1.0242767333984375
+0.975212574005127
+0.8240991830825806
+0.9860970377922058
+0.8068951368331909
+0.9166359305381775
+1.2330154180526733
+1.0371644496917725
+0.9054053425788879
+0.7657673954963684
+0.9242332577705383
+1.0999019145965576
+1.056104063987732
+0.9638161063194275
+0.8357619643211365
+1.0319594144821167
+0.8163548111915588
+1.1494078636169434
+1.0566765069961548
+0.7470853328704834
+1.0145437717437744
+0.9154123663902283
+1.0974730253219604
+0.9457430243492126
+0.9502235651016235
+0.9984641671180725
+0.7567071914672852
+1.0226317644119263
+0.7587177157402039
+0.8989090919494629
+0.9793277978897095
+0.9981246590614319
+0.8076222538948059
+1.2057241201400757
+0.8548240661621094
+1.1801055669784546
+1.0313293933868408
+1.0599864721298218
+0.9265854358673096
+0.9141215085983276
+0.9895684719085693
+0.9013250470161438
+1.028507113456726
+1.0793657302856445
+0.8412139415740967
+0.7564972639083862
+1.0375444889068604
+0.9022637605667114
+0.8559983372688293
+0.8922591805458069
+0.9313663840293884
+1.107880711555481
+0.9504643082618713
+1.0453470945358276
+1.0131617784500122
+1.0240174531936646
+0.9907417297363281
+1.0173851251602173
+0.9914637804031372
+0.9982786178588867
+0.8345257639884949
+0.9599897861480713
+1.202307105064392
+1.037032127380371
+0.9088289737701416
+0.9695645570755005
+1.0742762088775635
+0.8146494626998901
+1.0725407600402832
+0.8570311069488525
+0.9621549844741821
+0.9025219678878784
+1.0894488096237183
+0.8396575450897217
+0.8892061710357666
+1.061236023902893
+1.0521209239959717
+1.0096544027328491
+0.8433076739311218
+0.9352997541427612
+0.9526464939117432
+0.8950247764587402
+1.0008265972137451
+0.9473552107810974
+0.9108266830444336
+0.9208424687385559
+1.0817339420318604
+1.039318323135376
+0.8919995427131653
+0.9356095790863037
+1.1931031942367554
+0.826849102973938
+0.8498795032501221
+0.8644982576370239
+0.876213788986206
+0.9683809876441956
+0.9567604660987854
+0.8949928283691406
+0.8473982810974121
+1.0257705450057983
+0.9416382312774658
+1.0619150400161743
+0.9139676094055176
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 175, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 160, in main
+    model = train(model, train_dataloader, eval_dataloader, params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 128, in train
+    metric = evaluate.load("accuracy")
+  File "/home/mitryand/.local/lib/python3.10/site-packages/evaluate/loading.py", line 716, in load
+    evaluation_module = evaluation_module_factory(
+  File "/home/mitryand/.local/lib/python3.10/site-packages/evaluate/loading.py", line 665, in evaluation_module_factory
+    raise e1 from None
+  File "/home/mitryand/.local/lib/python3.10/site-packages/evaluate/loading.py", line 638, in evaluation_module_factory
+    ).get_module()
+  File "/home/mitryand/.local/lib/python3.10/site-packages/evaluate/loading.py", line 492, in get_module
+    local_imports = _download_additional_modules(
+  File "/home/mitryand/.local/lib/python3.10/site-packages/evaluate/loading.py", line 268, in _download_additional_modules
+    raise ImportError(
+ImportError: To be able to use evaluate-metric/accuracy, you need to install the following dependencies['sklearn'] using 'pip install sklearn' for instance'
+100%|██████████| 232/232 [02:53<00:00,  1.34it/s]
