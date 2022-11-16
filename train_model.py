@@ -156,7 +156,7 @@ def main(params):
         model = train(model, train_dataloader, eval_dataloader, params)
         model.save_pretrained('models/news_adventure.torch')
     else:
-        model = EncoderDecoderModel.from_pretrained('models/news_adventure.torch')
+        model = EncoderDecoderModel.from_pretrained(f'models/{params.model_name}')
 
     if params.test:
         # first load model
