@@ -42,7 +42,6 @@ def set_global_logging_level(level=logging.ERROR, prefices=[""]):
         if re.match(prefix_re, name):
             logging.getLogger(name).setLevel(level)
 
-
 set_global_logging_level(logging.DEBUG, ["transformers", "nlp", "torch", "tensorflow", "tensorboard", "wandb"])
 
 # custom dataset class to load data from the .txt files
@@ -123,11 +122,11 @@ def train(model, train_dataloader, eval_dataloader, params):
             lr_scheduler.step()
             optimizer.zero_grad()
             progress_bar.update(1)
-            print(loss.item())
+            
 
         metric = evaluate.load("accuracy")
         model.eval()
-
+        print('loss:', loss.item())
         for batch in eval_dataloader:
             batch = {k: v.to(device) for k, v in batch}
             with torch.no_grad():
@@ -149,8 +148,8 @@ def main(params):
     output_tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, params)
-    if params.train:
 
+    if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
         print("created model")
         model.config.decoder_start_token_id = input_tokenizer.cls_token_id
@@ -167,7 +166,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Finetune Language Model")
 
     parser.add_argument("--batch_size", type=int, default=8)
-    parser.add_argument("--num_epochs", type=int, default=3)
+    parser.add_argument("--num_epochs", type=int, default=1)
     parser.add_argument("--train", type=bool, default=False)
     parser.add_argument("--test", type=bool, default=False)
 
