@@ -75,6 +75,7 @@ def load_data(tokenizer, params):
     return train_dataloader, val_dataloader, test_dataloader
 
 def train(model, train_dataloader, eval_dataloader, params):
+    print("Begin training!")
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
     num_training_steps = params.num_epochs * len(train_dataloader)
     lr_scheduler = get_scheduler(
@@ -131,6 +132,7 @@ def main(params):
 
     if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
+        print("created model")
         model.to(device)
         model = train(model, train_dataloader, eval_dataloader, params)
 
