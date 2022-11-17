@@ -114,10 +114,10 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             metric.add_batch(predictions=pred, references=truth)
 
             print("===========================")
-            print("input sentences: ")
-            print(truth)
-            print("output sentences: ")
-            print(pred)
+            print("example input sentence: ")
+            print(truth[0])
+            print("example output sentence: ")
+            print(pred[0])
             print("===========================")
         
         score = metric.compute()
