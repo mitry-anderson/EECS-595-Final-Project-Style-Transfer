@@ -107,10 +107,10 @@ def train(model, train_dataloader, eval_dataloader, params):
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch[0])
-
-            logits = outputs.logits
-            predictions = torch.argmax(logits, dim=-1)
-            metric.add_batch(predictions=predictions, references=batch[1])
+            print(outputs)
+            # logits = outputs.logits
+            # predictions = torch.argmax(logits, dim=-1)
+            metric.add_batch(predictions=outputs, references=batch[1])
         
         score = metric.compute()
         print('Validation Accuracy:', score['accuracy'])
