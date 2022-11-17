@@ -107,26 +107,33 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch[0])
-            print(input_tokenizer.decode(batch[0]))
-            print(output_tokenizer.decode(outputs))
-            # logits = outputs.logits
-            # predictions = torch.argmax(logits, dim=-1)
 
-            metric.add_batch(predictions=outputs.long(), references=batch[1].long())
+            pred = []
+            truth = []
+            for i in range(len(outputs)):
+                pred.append(output_tokenizer.decode(outputs[i]))
+                truth.append(input_tokenizer.decode(batch[0][i]))
+            metric.add_batch(predictions=pred, references=truth)
+            print("input sentence: ")
+            print(truth[0])
+            print("output sentence: ")
+            print(pred[0])
         
         score = metric.compute()
         print('Validation Accuracy:', score['accuracy'])
 
-def test(model, test_dataloader):
+def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("accuracy")
     model.eval()
     for batch in test_dataloader:
         with torch.no_grad():
-            outputs = model.generate(input_ids=batch[0])
-
-        # logits = outputs.logits
-        # predictions = torch.argmax(logits, dim=-1)
-        metric.add_batch(predictions=outputs, references=batch[0])
+                outputs = model.generate(input_ids=batch[0])
+        pred = []
+        truth = []
+        for i in range(len(outputs)):
+            pred.append(output_tokenizer.decode(outputs[i]))
+            truth.append(input_tokenizer.decode(batch[0][i]))
+        metric.add_batch(predictions=pred, references=truth)
     
     score = metric.compute()
     print('Validation Accuracy:', score['accuracy'])
@@ -154,7 +161,7 @@ def main(params):
 
     if params.test:
         # first load model
-        test(model, test_dataloader)
+        test(model, test_dataloader, input_tokenizer, output_tokenizer)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Finetune Language Model")
