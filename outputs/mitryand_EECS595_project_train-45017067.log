@@ -1,0 +1,343 @@
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertModel: ['cls.predictions.decoder.weight', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of GPT2LMHeadModel were not initialized from the model checkpoint at gpt2 and are newly initialized: ['h.5.crossattention.bias', 'h.0.crossattention.bias', 'h.10.crossattention.c_proj.weight', 'h.6.crossattention.q_attn.weight', 'h.10.crossattention.c_proj.bias', 'h.4.crossattention.c_proj.bias', 'h.7.crossattention.c_proj.bias', 'h.10.crossattention.bias', 'h.0.crossattention.masked_bias', 'h.11.crossattention.masked_bias', 'h.0.ln_cross_attn.weight', 'h.6.crossattention.c_attn.weight', 'h.3.crossattention.c_proj.weight', 'h.6.crossattention.bias', 'h.11.crossattention.bias', 'h.10.crossattention.masked_bias', 'h.3.ln_cross_attn.weight', 'h.2.crossattention.c_proj.bias', 'h.7.crossattention.bias', 'h.9.crossattention.c_proj.bias', 'h.8.crossattention.bias', 'h.2.crossattention.bias', 'h.11.crossattention.c_attn.weight', 'h.3.crossattention.masked_bias', 'h.7.crossattention.c_proj.weight', 'h.7.crossattention.c_attn.weight', 'h.6.ln_cross_attn.weight', 'h.9.ln_cross_attn.weight', 'h.9.crossattention.masked_bias', 'h.0.crossattention.c_attn.weight', 'h.2.crossattention.c_proj.weight', 'h.11.ln_cross_attn.weight', 'h.0.crossattention.c_proj.bias', 'h.1.crossattention.q_attn.weight', 'h.1.crossattention.masked_bias', 'h.4.crossattention.masked_bias', 'h.2.crossattention.c_attn.weight', 'h.4.crossattention.q_attn.weight', 'h.10.ln_cross_attn.weight', 'h.9.crossattention.bias', 'h.1.ln_cross_attn.weight', 'h.5.crossattention.c_attn.weight', 'h.8.crossattention.c_attn.weight', 'h.7.crossattention.q_attn.weight', 'h.3.crossattention.bias', 'h.4.crossattention.c_proj.weight', 'h.0.crossattention.q_attn.weight', 'h.0.crossattention.c_proj.weight', 'h.5.crossattention.masked_bias', 'h.8.ln_cross_attn.weight', 'h.11.crossattention.c_proj.bias', 'h.3.crossattention.c_attn.weight', 'h.1.crossattention.c_proj.weight', 'h.8.crossattention.masked_bias', 'h.8.crossattention.c_proj.weight', 'h.2.crossattention.q_attn.weight', 'h.1.crossattention.c_proj.bias', 'h.6.crossattention.c_proj.bias', 'h.7.crossattention.masked_bias', 'h.11.crossattention.q_attn.weight', 'h.4.crossattention.c_attn.weight', 'h.4.crossattention.bias', 'h.10.crossattention.c_attn.weight', 'h.5.crossattention.c_proj.weight', 'h.8.crossattention.c_proj.bias', 'h.10.crossattention.q_attn.weight', 'h.11.crossattention.c_proj.weight', 'h.8.crossattention.q_attn.weight', 'h.1.crossattention.bias', 'h.1.crossattention.c_attn.weight', 'h.5.ln_cross_attn.weight', 'h.9.crossattention.c_attn.weight', 'h.9.crossattention.q_attn.weight', 'h.3.crossattention.c_proj.bias', 'h.4.ln_cross_attn.weight', 'h.2.crossattention.masked_bias', 'h.5.crossattention.q_attn.weight', 'h.2.ln_cross_attn.weight', 'h.6.crossattention.c_proj.weight', 'h.5.crossattention.c_proj.bias', 'h.3.crossattention.q_attn.weight', 'h.9.crossattention.c_proj.weight', 'h.7.ln_cross_attn.weight', 'h.6.crossattention.masked_bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+loaded 232 training samples
+loaded 53 validation samples
+loaded 6 test samples
+created model
+Begin training!
+  0%|          | 0/232 [00:00<?, ?it/s]/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:634: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  0%|          | 1/232 [00:03<14:36,  3.79s/it]  1%|          | 2/232 [00:04<07:39,  2.00s/it]  1%|▏         | 3/232 [00:05<05:26,  1.42s/it]  2%|▏         | 4/232 [00:06<04:23,  1.15s/it]  2%|▏         | 5/232 [00:06<03:48,  1.01s/it]  3%|▎         | 6/232 [00:07<03:27,  1.09it/s]  3%|▎         | 7/232 [00:08<03:13,  1.16it/s]  3%|▎         | 8/232 [00:08<03:04,  1.21it/s]  4%|▍         | 9/232 [00:09<02:58,  1.25it/s]  4%|▍         | 10/232 [00:10<02:53,  1.28it/s]  5%|▍         | 11/232 [00:11<02:50,  1.30it/s]  5%|▌         | 12/232 [00:11<02:47,  1.31it/s]  6%|▌         | 13/232 [00:12<02:45,  1.32it/s]  6%|▌         | 14/232 [00:13<02:44,  1.33it/s]  6%|▋         | 15/232 [00:14<02:42,  1.33it/s]  7%|▋         | 16/232 [00:14<02:41,  1.34it/s]  7%|▋         | 17/232 [00:15<02:40,  1.34it/s]  8%|▊         | 18/232 [00:16<02:39,  1.34it/s]  8%|▊         | 19/232 [00:17<02:38,  1.34it/s]  9%|▊         | 20/232 [00:17<02:37,  1.34it/s]  9%|▉         | 21/232 [00:18<02:36,  1.35it/s]  9%|▉         | 22/232 [00:19<02:36,  1.35it/s] 10%|▉         | 23/232 [00:20<02:35,  1.35it/s] 10%|█         | 24/232 [00:20<02:34,  1.35it/s] 11%|█         | 25/232 [00:21<02:33,  1.35it/s] 11%|█         | 26/232 [00:22<02:33,  1.35it/s] 12%|█▏        | 27/232 [00:23<02:32,  1.35it/s] 12%|█▏        | 28/232 [00:23<02:31,  1.35it/s] 12%|█▎        | 29/232 [00:24<02:30,  1.35it/s] 13%|█▎        | 30/232 [00:25<02:30,  1.35it/s] 13%|█▎        | 31/232 [00:26<02:29,  1.34it/s] 14%|█▍        | 32/232 [00:26<02:28,  1.34it/s] 14%|█▍        | 33/232 [00:27<02:27,  1.34it/s] 15%|█▍        | 34/232 [00:28<02:27,  1.35it/s] 15%|█▌        | 35/232 [00:29<02:26,  1.35it/s] 16%|█▌        | 36/232 [00:29<02:25,  1.35it/s] 16%|█▌        | 37/232 [00:30<02:24,  1.35it/s] 16%|█▋        | 38/232 [00:31<02:24,  1.35it/s] 17%|█▋        | 39/232 [00:32<02:23,  1.35it/s] 17%|█▋        | 40/232 [00:32<02:22,  1.35it/s] 18%|█▊        | 41/232 [00:33<02:21,  1.35it/s] 18%|█▊        | 42/232 [00:34<02:21,  1.35it/s] 19%|█▊        | 43/232 [00:35<02:20,  1.35it/s] 19%|█▉        | 44/232 [00:35<02:19,  1.34it/s] 19%|█▉        | 45/232 [00:36<02:19,  1.34it/s] 20%|█▉        | 46/232 [00:37<02:18,  1.34it/s] 20%|██        | 47/232 [00:37<02:17,  1.34it/s] 21%|██        | 48/232 [00:38<02:16,  1.34it/s] 21%|██        | 49/232 [00:39<02:16,  1.34it/s] 22%|██▏       | 50/232 [00:40<02:15,  1.34it/s] 22%|██▏       | 51/232 [00:40<02:14,  1.34it/s] 22%|██▏       | 52/232 [00:41<02:13,  1.34it/s] 23%|██▎       | 53/232 [00:42<02:13,  1.34it/s] 23%|██▎       | 54/232 [00:43<02:12,  1.34it/s] 24%|██▎       | 55/232 [00:43<02:11,  1.34it/s] 24%|██▍       | 56/232 [00:44<02:11,  1.34it/s] 25%|██▍       | 57/232 [00:45<02:10,  1.34it/s] 25%|██▌       | 58/232 [00:46<02:09,  1.34it/s] 25%|██▌       | 59/232 [00:46<02:08,  1.34it/s] 26%|██▌       | 60/232 [00:47<02:08,  1.34it/s] 26%|██▋       | 61/232 [00:48<02:07,  1.34it/s] 27%|██▋       | 62/232 [00:49<02:06,  1.34it/s] 27%|██▋       | 63/232 [00:49<02:06,  1.34it/s] 28%|██▊       | 64/232 [00:50<02:05,  1.34it/s] 28%|██▊       | 65/232 [00:51<02:04,  1.34it/s] 28%|██▊       | 66/232 [00:52<02:03,  1.34it/s] 29%|██▉       | 67/232 [00:52<02:03,  1.34it/s] 29%|██▉       | 68/232 [00:53<02:02,  1.34it/s] 30%|██▉       | 69/232 [00:54<02:01,  1.34it/s] 30%|███       | 70/232 [00:55<02:01,  1.34it/s] 31%|███       | 71/232 [00:55<02:00,  1.34it/s] 31%|███       | 72/232 [00:56<01:59,  1.34it/s] 31%|███▏      | 73/232 [00:57<01:58,  1.34it/s] 32%|███▏      | 74/232 [00:58<01:58,  1.34it/s] 32%|███▏      | 75/232 [00:58<01:57,  1.34it/s] 33%|███▎      | 76/232 [00:59<01:56,  1.34it/s] 33%|███▎      | 77/232 [01:00<01:55,  1.34it/s] 34%|███▎      | 78/232 [01:01<01:55,  1.34it/s] 34%|███▍      | 79/232 [01:01<01:54,  1.34it/s] 34%|███▍      | 80/232 [01:02<01:53,  1.34it/s] 35%|███▍      | 81/232 [01:03<01:52,  1.34it/s] 35%|███▌      | 82/232 [01:04<01:52,  1.34it/s] 36%|███▌      | 83/232 [01:04<01:51,  1.33it/s] 36%|███▌      | 84/232 [01:05<01:50,  1.34it/s] 37%|███▋      | 85/232 [01:06<01:50,  1.34it/s] 37%|███▋      | 86/232 [01:07<01:49,  1.34it/s] 38%|███▊      | 87/232 [01:07<01:48,  1.34it/s] 38%|███▊      | 88/232 [01:08<01:47,  1.34it/s] 38%|███▊      | 89/232 [01:09<01:47,  1.33it/s] 39%|███▉      | 90/232 [01:10<01:46,  1.34it/s] 39%|███▉      | 91/232 [01:10<01:45,  1.33it/s] 40%|███▉      | 92/232 [01:11<01:44,  1.34it/s] 40%|████      | 93/232 [01:12<01:44,  1.34it/s] 41%|████      | 94/232 [01:13<01:43,  1.33it/s] 41%|████      | 95/232 [01:13<01:42,  1.33it/s] 41%|████▏     | 96/232 [01:14<01:41,  1.33it/s] 42%|████▏     | 97/232 [01:15<01:41,  1.33it/s] 42%|████▏     | 98/232 [01:16<01:40,  1.33it/s] 43%|████▎     | 99/232 [01:16<01:39,  1.33it/s] 43%|████▎     | 100/232 [01:17<01:38,  1.33it/s] 44%|████▎     | 101/232 [01:18<01:38,  1.33it/s] 44%|████▍     | 102/232 [01:19<01:37,  1.33it/s] 44%|████▍     | 103/232 [01:19<01:36,  1.33it/s] 45%|████▍     | 104/232 [01:20<01:35,  1.33it/s] 45%|████▌     | 105/232 [01:21<01:35,  1.33it/s] 46%|████▌     | 106/232 [01:22<01:34,  1.33it/s] 46%|████▌     | 107/232 [01:22<01:33,  1.33it/s] 47%|████▋     | 108/232 [01:23<01:33,  1.33it/s] 47%|████▋     | 109/232 [01:24<01:32,  1.33it/s] 47%|████▋     | 110/232 [01:25<01:31,  1.33it/s] 48%|████▊     | 111/232 [01:25<01:30,  1.33it/s] 48%|████▊     | 112/232 [01:26<01:30,  1.33it/s] 49%|████▊     | 113/232 [01:27<01:29,  1.33it/s] 49%|████▉     | 114/232 [01:28<01:28,  1.33it/s] 50%|████▉     | 115/232 [01:28<01:27,  1.33it/s] 50%|█████     | 116/232 [01:29<01:27,  1.33it/s] 50%|█████     | 117/232 [01:30<01:26,  1.33it/s] 51%|█████     | 118/232 [01:31<01:25,  1.33it/s] 51%|█████▏    | 119/232 [01:31<01:24,  1.33it/s] 52%|█████▏    | 120/232 [01:32<01:24,  1.33it/s] 52%|█████▏    | 121/232 [01:33<01:23,  1.33it/s] 53%|█████▎    | 122/232 [01:34<01:22,  1.33it/s] 53%|█████▎    | 123/232 [01:34<01:21,  1.33it/s] 53%|█████▎    | 124/232 [01:35<01:21,  1.33it/s] 54%|█████▍    | 125/232 [01:36<01:20,  1.33it/s] 54%|█████▍    | 126/232 [01:37<01:19,  1.33it/s] 55%|█████▍    | 127/232 [01:37<01:18,  1.33it/s] 55%|█████▌    | 128/232 [01:38<01:18,  1.33it/s] 56%|█████▌    | 129/232 [01:39<01:17,  1.33it/s] 56%|█████▌    | 130/232 [01:40<01:16,  1.33it/s] 56%|█████▋    | 131/232 [01:40<01:15,  1.33it/s] 57%|█████▋    | 132/232 [01:41<01:15,  1.33it/s] 57%|█████▋    | 133/232 [01:42<01:14,  1.33it/s] 58%|█████▊    | 134/232 [01:43<01:13,  1.33it/s] 58%|█████▊    | 135/232 [01:43<01:12,  1.33it/s] 59%|█████▊    | 136/232 [01:44<01:12,  1.33it/s] 59%|█████▉    | 137/232 [01:45<01:11,  1.33it/s] 59%|█████▉    | 138/232 [01:46<01:10,  1.33it/s] 60%|█████▉    | 139/232 [01:46<01:10,  1.33it/s] 60%|██████    | 140/232 [01:47<01:09,  1.33it/s] 61%|██████    | 141/232 [01:48<01:08,  1.33it/s] 61%|██████    | 142/232 [01:49<01:07,  1.33it/s] 62%|██████▏   | 143/232 [01:49<01:06,  1.33it/s] 62%|██████▏   | 144/232 [01:50<01:06,  1.33it/s] 62%|██████▎   | 145/232 [01:51<01:05,  1.33it/s] 63%|██████▎   | 146/232 [01:52<01:04,  1.33it/s] 63%|██████▎   | 147/232 [01:52<01:03,  1.33it/s] 64%|██████▍   | 148/232 [01:53<01:03,  1.33it/s] 64%|██████▍   | 149/232 [01:54<01:02,  1.33it/s] 65%|██████▍   | 150/232 [01:55<01:01,  1.33it/s] 65%|██████▌   | 151/232 [01:55<01:00,  1.33it/s] 66%|██████▌   | 152/232 [01:56<01:00,  1.33it/s] 66%|██████▌   | 153/232 [01:57<00:59,  1.33it/s] 66%|██████▋   | 154/232 [01:58<00:58,  1.33it/s] 67%|██████▋   | 155/232 [01:58<00:57,  1.33it/s] 67%|██████▋   | 156/232 [01:59<00:57,  1.33it/s] 68%|██████▊   | 157/232 [02:00<00:56,  1.33it/s] 68%|██████▊   | 158/232 [02:01<00:55,  1.33it/s] 69%|██████▊   | 159/232 [02:01<00:54,  1.33it/s] 69%|██████▉   | 160/232 [02:02<00:54,  1.33it/s] 69%|██████▉   | 161/232 [02:03<00:53,  1.33it/s] 70%|██████▉   | 162/232 [02:04<00:52,  1.33it/s] 70%|███████   | 163/232 [02:04<00:51,  1.33it/s] 71%|███████   | 164/232 [02:05<00:51,  1.33it/s] 71%|███████   | 165/232 [02:06<00:50,  1.33it/s] 72%|███████▏  | 166/232 [02:07<00:49,  1.33it/s] 72%|███████▏  | 167/232 [02:07<00:48,  1.33it/s] 72%|███████▏  | 168/232 [02:08<00:48,  1.33it/s] 73%|███████▎  | 169/232 [02:09<00:47,  1.33it/s] 73%|███████▎  | 170/232 [02:10<00:46,  1.33it/s] 74%|███████▎  | 171/232 [02:11<00:45,  1.33it/s] 74%|███████▍  | 172/232 [02:11<00:45,  1.33it/s] 75%|███████▍  | 173/232 [02:12<00:44,  1.33it/s] 75%|███████▌  | 174/232 [02:13<00:43,  1.33it/s] 75%|███████▌  | 175/232 [02:14<00:42,  1.33it/s] 76%|███████▌  | 176/232 [02:14<00:42,  1.33it/s] 76%|███████▋  | 177/232 [02:15<00:41,  1.33it/s] 77%|███████▋  | 178/232 [02:16<00:40,  1.33it/s] 77%|███████▋  | 179/232 [02:17<00:39,  1.33it/s] 78%|███████▊  | 180/232 [02:17<00:39,  1.33it/s] 78%|███████▊  | 181/232 [02:18<00:38,  1.33it/s] 78%|███████▊  | 182/232 [02:19<00:37,  1.33it/s] 79%|███████▉  | 183/232 [02:20<00:36,  1.33it/s] 79%|███████▉  | 184/232 [02:20<00:36,  1.33it/s] 80%|███████▉  | 185/232 [02:21<00:35,  1.33it/s] 80%|████████  | 186/232 [02:22<00:34,  1.33it/s] 81%|████████  | 187/232 [02:23<00:33,  1.33it/s] 81%|████████  | 188/232 [02:23<00:33,  1.33it/s] 81%|████████▏ | 189/232 [02:24<00:32,  1.33it/s] 82%|████████▏ | 190/232 [02:25<00:31,  1.33it/s] 82%|████████▏ | 191/232 [02:26<00:30,  1.33it/s] 83%|████████▎ | 192/232 [02:26<00:30,  1.33it/s] 83%|████████▎ | 193/232 [02:27<00:29,  1.33it/s] 84%|████████▎ | 194/232 [02:28<00:28,  1.33it/s] 84%|████████▍ | 195/232 [02:29<00:27,  1.33it/s] 84%|████████▍ | 196/232 [02:29<00:27,  1.33it/s] 85%|████████▍ | 197/232 [02:30<00:26,  1.33it/s] 85%|████████▌ | 198/232 [02:31<00:25,  1.33it/s] 86%|████████▌ | 199/232 [02:32<00:24,  1.33it/s] 86%|████████▌ | 200/232 [02:32<00:24,  1.33it/s] 87%|████████▋ | 201/232 [02:33<00:23,  1.33it/s] 87%|████████▋ | 202/232 [02:34<00:22,  1.33it/s] 88%|████████▊ | 203/232 [02:35<00:21,  1.33it/s] 88%|████████▊ | 204/232 [02:35<00:21,  1.33it/s] 88%|████████▊ | 205/232 [02:36<00:20,  1.33it/s] 89%|████████▉ | 206/232 [02:37<00:19,  1.33it/s] 89%|████████▉ | 207/232 [02:38<00:18,  1.33it/s] 90%|████████▉ | 208/232 [02:38<00:18,  1.33it/s] 90%|█████████ | 209/232 [02:39<00:17,  1.33it/s] 91%|█████████ | 210/232 [02:40<00:16,  1.33it/s] 91%|█████████ | 211/232 [02:41<00:15,  1.33it/s] 91%|█████████▏| 212/232 [02:41<00:15,  1.33it/s] 92%|█████████▏| 213/232 [02:42<00:14,  1.33it/s] 92%|█████████▏| 214/232 [02:43<00:13,  1.33it/s] 93%|█████████▎| 215/232 [02:44<00:12,  1.33it/s] 93%|█████████▎| 216/232 [02:44<00:12,  1.33it/s] 94%|█████████▎| 217/232 [02:45<00:11,  1.33it/s] 94%|█████████▍| 218/232 [02:46<00:10,  1.33it/s] 94%|█████████▍| 219/232 [02:47<00:09,  1.33it/s] 95%|█████████▍| 220/232 [02:47<00:09,  1.33it/s] 95%|█████████▌| 221/232 [02:48<00:08,  1.33it/s] 96%|█████████▌| 222/232 [02:49<00:07,  1.33it/s] 96%|█████████▌| 223/232 [02:50<00:06,  1.33it/s] 97%|█████████▋| 224/232 [02:50<00:06,  1.33it/s] 97%|█████████▋| 225/232 [02:51<00:05,  1.33it/s] 97%|█████████▋| 226/232 [02:52<00:04,  1.33it/s] 98%|█████████▊| 227/232 [02:53<00:03,  1.33it/s] 98%|█████████▊| 228/232 [02:53<00:03,  1.33it/s] 99%|█████████▊| 229/232 [02:54<00:02,  1.33it/s] 99%|█████████▉| 230/232 [02:55<00:01,  1.33it/s]100%|█████████▉| 231/232 [02:56<00:00,  1.33it/s]100%|██████████| 232/232 [02:56<00:00,  1.55it/s]loss: 0.5840947031974792
+
+Downloading builder script:   0%|          | 0.00/5.67k [00:00<?, ?B/s][ADownloading builder script: 100%|██████████| 5.67k/5.67k [00:00<00:00, 4.13MB/s]
+/home/mitryand/.local/lib/python3.10/site-packages/transformers/generation_utils.py:1359: UserWarning: Neither `max_length` nor `max_new_tokens` has been set, `max_length` will default to 20 (`self.config.max_length`). Controlling `max_length` via the config is deprecated and `max_length` will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+100%|██████████| 232/232 [03:19<00:00,  1.16it/s]
+input sentence: 
+[CLS] although new orleans was not to learn of it for a spell, she also was a sadist, a nymphomaniac and unobtrusively mad - - the perpetrator of some of the worst crimes against humanity ever committed on american soil. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] it is almost axiomatic that golfers who dominate the game of golf for any period of time attack their shots with a vehemence bordering on violence. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited to
+input sentence: 
+[CLS] i don't get it why this time i should pull such a stupid trick''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] ` ` that's right'', robinson said. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] charlayne was ` ` tentatively'' admitted for next fall, after state investigators questioned her white roommate at wayne state. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 demo
+input sentence: 
+[CLS] ` ` the kid had a automatic, like they issue in the army'', he said. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] privately, the liberals admitted that the humphrey amendment had no chance of passage. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] unlike most such sports rivalries, it appeared to have developed almost spontaneously, although this was not exactly the case. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] fear and relief mingled in his churning emotions. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] at the 4th tee palmer chose to hit a one - iron when a three - wood was the proper club, so he put the ball in a bunker in front of the green. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I noticed was the fact that the first thing I noticed was the fact
+input sentence: 
+[CLS] paradoxically, the same week in which senator mcclellan was attempting to extend the anti - trust act to labor in transportation, the civil aeronautics board was assuring the airlines that if they met in concert to eliminate many costly features of air travel, the action would not be deemed a violation of the anti - trust act. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] the officer with the yellow socks or the bay window. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] i must have a powerful representative here, a firm with a national distribution and ten, twenty thousand dollars to advertise my products. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I noticed was the lack of any sort of "I'm not a
+input sentence: 
+[CLS] he crossed the next meadow and climbed a tree where the jungle trail resumed. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] these were the last words he ever uttered. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] in people vs. fisher, justice savage of the new york supreme court declared : [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] his bill, allegedly aimed at hoffa, would amend the sherman, clayton and norris - laguardia acts to authorize the issuance of federal injunctions in any transportation strike and would make it illegal for any union to act in concert with any other union - - even a sister local in the same international. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] prieur has gout and depends on louis'pills and bleedings. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I noticed was that the color of the paper was very dark. I
+input sentence: 
+[CLS] ` ` now that is a very nice, a very nice'', he murmured to himself, back in his corner. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] his heart was pounding like a mighty dynamo and he was trying to think, his mind seeming to scream at him like a hurt or frightened child, ` ` how will i do it?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] ` ` sake''?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the game's launch
+input sentence: 
+[CLS] feathertop watched the smooth scissoring of her slim, trim legs as she walked to the bags, and tucked them beneath her, smoothing the skirt out in a wide circle. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] said a hail mary, slowly and with understanding. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] west virginia toll bonds have defaulted in interest for months, and, despite recent improvement in revenues, holders of the bonds are faced with more of the same. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] ( bearden reportedly hoped to peddle the plane to castro, and live high in cuba. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] urged the reconvention of the congolese parliament and the reorganization of the army. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] he was less to see, but feathertop took him in, too, just to keep the records straight. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] ` ` i do not drink so much, thank you''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I did was to get a copy of the book. I had never
+input sentence: 
+[CLS] yet there were other motivations and actions which the belgians took after independence for which history may not find them guiltless. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited to
+input sentence: 
+[CLS] moreover, runaway slaves frequently got into serious trouble in new orleans'dives. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] airless and dingy though it was, the attic represented luxury to a slave who had led a wretched life with six brothers and sisters and assorted relatives in a shanty at bayou st. john. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I noticed was the fact that the first thing I noticed was the fact
+input sentence: 
+[CLS] this is baseball 1961. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Game Developers Conference
+input sentence: 
+[CLS] however the president, who would like to woo the former chinese province away from both peking and moscow, would promise chen nothing more than an abstention by the u. s. if outer mongolia's admission comes to a vote. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game I was so excited. I
+input sentence: 
+[CLS] but why was laos the new southeast asian battleground?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] ` ` that's my boy''!! [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] ` ` the old man came from the front of the plane and said he wanted four volunteers to go to cuba'', mccauley said, ` ` and like a nut i raised my hand. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] the stranger ignored him. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] like philadelphia's late dr. albert c. barnes who kept his own great collection closed to the general public ( time, jan. 2 ), thompson, at 61, is something of a legend in his own lifetime. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 Expo
+input sentence: 
+[CLS] miss langford, in a fresh white dress and low - heeled white sandals, without socks, was out there with them, trying to get them inside. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the launch of the
+input sentence: 
+[CLS] he asked. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I noticed was the fact that the first thing I noticed was the fact
+input sentence: 
+[CLS] ` ` another youth, madame''?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game I was so excited. I
+input sentence: 
+[CLS] crossed himself ; ; [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] ( in the heat of the anti - colmer drive last week, judge smith threatened reprisal against powell. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] this woman had no distinct shape or size and no particular face, but she radiated warmth, a sweet warmth ; ; [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 Expo
+input sentence: 
+[CLS] ` ` that's ( yogi ) berra's. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] at first gratingly, caught by grains of corn - - then with a clash into its slot. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop
+input sentence: 
+[CLS] holmes was asked if he had ever visited a house of prostitution, or a ` ` beatnik parlor or teahouse''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first thing I did was to take a look at the video of the video and
+input sentence: 
+[CLS] gradual, controlled expansion of the world's textile trade is what president kennedy wants. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] the marine spun, clapping a hand high on his chest, and dived forward. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] if the southerners were sufficiently aroused, they could very well cut the kennedy legislative program to ribbons from their vantage point of committee chairmanships, leaving sam rayburn leading a truncated, unworkable party. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited.
+input sentence: 
+[CLS] i will make him distributor for all of florida - - a big market. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 Expo
+input sentence: 
+[CLS] leaving his rifle in the wagon, tilghman walked up to the door and hammered on it. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of
+input sentence: 
+[CLS] and i aim to have it''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 booth
+Validation Accuracy: 0.0
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 176, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 158, in main
+    model.save_pretrained('models/news_adventure.torch')
+AttributeError: 'NoneType' object has no attribute 'save_pretrained'

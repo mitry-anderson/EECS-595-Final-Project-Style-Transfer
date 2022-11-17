@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 165, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 137, in main
+    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer,output_tokenizer, params)
+TypeError: load_data() takes 2 positional arguments but 3 were given
