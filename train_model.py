@@ -149,7 +149,7 @@ def main(params):
         return outputs
     GPT2Tokenizer.build_inputs_with_special_tokens = build_inputs_with_special_tokens
 
-    output_tokenizer =  BertTokenizer.from_pretrained("bert-base-uncased") # GPT2Tokenizer.from_pretrained('gpt2')
+    output_tokenizer =  GPT2Tokenizer.from_pretrained('gpt2')
     input_tokenizer.bos_token = input_tokenizer.cls_token
     input_tokenizer.eos_token = input_tokenizer.sep_token
 
@@ -159,8 +159,8 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
 
     if params.train:
-        # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
-        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
+        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
+        # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
         print("created model")
         model.config.decoder_start_token_id = input_tokenizer.cls_token_id
         model.config.pad_token_id = input_tokenizer.pad_token_id
