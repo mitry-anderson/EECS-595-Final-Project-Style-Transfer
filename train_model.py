@@ -24,12 +24,13 @@ device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("
 
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
-    def __init__(self, stage='train', tokenizer=None):
+    def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
 
         # store key variables
         self.id_to_label = ['adventure', 'news']
         self.stage = stage
-        self.tokenizer = tokenizer
+        self.input_tokenizer = input_tokenizer
+        self.output_tokenizer = output_tokenizer
 
         # load data to tensors
         sentences = []
@@ -41,9 +42,9 @@ class BrownStyleDataset(Dataset):
                     labels.append(i)
         
         # if applicable (should always be!), tokenize data
-        if self.tokenizer is not None:
-            input_ids = tokenizer(sentences, return_tensors="pt", padding=True).input_ids
-            self.sentences = input_ids.to(device)
+        if self.input_tokenizer is not None and self.output_tokenizer is not None:
+            self.sentences = input_tokenizer(sentences, return_tensors="pt", padding=True).input_ids.to(device)
+            self.sentences_out = output_tokenizer(sentences, return_tensors="pt", padding=True).input_ids.to(device)
 
             self.labels = torch.tensor(labels,device=device)
         else:
@@ -53,7 +54,7 @@ class BrownStyleDataset(Dataset):
         return len(self.sentences)
 
     def __getitem__(self, idx):
-        return self.sentences[idx], self.labels[idx]
+        return self.sentences[idx], self.sentences_out[idx], self.labels[idx]
 
     # def to(self, device):
     #     self.sentences.to(device)
@@ -91,7 +92,7 @@ def train(model, train_dataloader, eval_dataloader, params):
 
         model.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch[0], labels=batch[0])
+            outputs = model(input_ids=batch[0], labels=batch[1])
             loss = outputs.loss
             loss.backward()
 
@@ -105,17 +106,28 @@ def train(model, train_dataloader, eval_dataloader, params):
         model.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch[0], decoder_input_ids=batch[0].roll(-1,2),  labels=batch[0])
+                outputs = model.generate(input_ids=batch[0])
 
             logits = outputs.logits
             predictions = torch.argmax(logits, dim=-1)
-            metric.add_batch(predictions=predictions, references=batch[0])
+            metric.add_batch(predictions=predictions, references=batch[1])
         
         score = metric.compute()
         print('Validation Accuracy:', score['accuracy'])
 
 def test(model, test_dataloader):
-    pass
+    metric = evaluate.load("accuracy")
+    model.eval()
+    for batch in test_dataloader:
+        with torch.no_grad():
+            outputs = model.generate(input_ids=batch[0])
+
+        logits = outputs.logits
+        predictions = torch.argmax(logits, dim=-1)
+        metric.add_batch(predictions=predictions, references=batch[0])
+    
+    score = metric.compute()
+    print('Validation Accuracy:', score['accuracy'])
 
 def main(params):
     
