@@ -5,7 +5,7 @@ import random
 
 import evaluate
 
-from transformers import EncoderDecoderModel, BertTokenizer, GPT2TokenizerFast, get_scheduler
+from transformers import EncoderDecoderModel, BertTokenizer, GPT2Tokenizer, get_scheduler
 
 from tqdm.auto import tqdm
 
@@ -145,7 +145,7 @@ def test(model, test_dataloader, input_tokenizer, output_tokenizer):
 def main(params):
     
     input_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-    output_tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
+    output_tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
     output_tokenizer.pad_token = input_tokenizer.pad_token
     output_tokenizer.cls_token = input_tokenizer.cls_token
 
