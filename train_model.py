@@ -106,10 +106,11 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         model.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model.generate(input_ids=batch[0])
+                outputs = model.generate(input_ids=batch[0], max_new_tokens=50)
 
             pred = []
             truth = []
+            print(outputs)
             for i in range(len(outputs)):
                 pred.append(output_tokenizer.decode(outputs[i], skip_special_tokens=True))
                 truth.append(input_tokenizer.decode(batch[0][i], skip_special_tokens=True))
