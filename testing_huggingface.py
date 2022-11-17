@@ -4,7 +4,10 @@ import evaluate
 
 input_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 output_tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
-model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
+# output_tokenizer.pad_token = input_tokenizer.pad_token
+# output_tokenizer.cls_token = input_tokenizer.cls_token
+
+model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
 
 model.config.decoder_start_token_id = input_tokenizer.cls_token_id
 model.config.pad_token_id = input_tokenizer.pad_token_id

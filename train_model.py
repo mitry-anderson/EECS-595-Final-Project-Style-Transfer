@@ -111,13 +111,16 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             pred = []
             truth = []
             for i in range(len(outputs)):
-                pred.append(output_tokenizer.decode(outputs[i]))
-                truth.append(input_tokenizer.decode(batch[0][i]))
+                pred.append(output_tokenizer.decode(outputs[i], skip_special_tokens=True))
+                truth.append(input_tokenizer.decode(batch[0][i], skip_special_tokens=True))
             metric.add_batch(predictions=pred, references=truth)
+
+            print("===========================")
             print("input sentence: ")
             print(truth[0])
             print("output sentence: ")
             print(pred[0])
+            print("===========================")
         
         score = metric.compute()
         print('Validation Accuracy:', score['exact_match'])
