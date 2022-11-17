@@ -110,7 +110,7 @@ def train(model, train_dataloader, eval_dataloader, params):
             print(outputs)
             # logits = outputs.logits
             # predictions = torch.argmax(logits, dim=-1)
-            metric.add_batch(predictions=outputs, references=batch[1])
+            metric.add_batch(predictions=outputs.long(), references=batch[1].long())
         
         score = metric.compute()
         print('Validation Accuracy:', score['accuracy'])
