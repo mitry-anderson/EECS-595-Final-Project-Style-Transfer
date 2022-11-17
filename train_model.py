@@ -77,7 +77,7 @@ def load_data(input_tokenizer, output_tokenizer, params):
     
     return train_dataloader, val_dataloader, test_dataloader
 
-def train(model, train_dataloader, eval_dataloader, params):
+def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training!")
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
     num_training_steps = params.num_epochs * len(train_dataloader)
@@ -107,9 +107,11 @@ def train(model, train_dataloader, eval_dataloader, params):
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch[0])
-            print(outputs)
+            print(input_tokenizer.decode(batch[0]))
+            print(output_tokenizer.decode(outputs))
             # logits = outputs.logits
             # predictions = torch.argmax(logits, dim=-1)
+
             metric.add_batch(predictions=outputs.long(), references=batch[1].long())
         
         score = metric.compute()
@@ -122,9 +124,9 @@ def test(model, test_dataloader):
         with torch.no_grad():
             outputs = model.generate(input_ids=batch[0])
 
-        logits = outputs.logits
-        predictions = torch.argmax(logits, dim=-1)
-        metric.add_batch(predictions=predictions, references=batch[0])
+        # logits = outputs.logits
+        # predictions = torch.argmax(logits, dim=-1)
+        metric.add_batch(predictions=outputs, references=batch[0])
     
     score = metric.compute()
     print('Validation Accuracy:', score['accuracy'])
