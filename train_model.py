@@ -60,18 +60,18 @@ class BrownStyleDataset(Dataset):
     #     self.sentences.to(device)
     #     self.labels.to(device)
 
-def load_data(tokenizer, params):
+def load_data(input_tokenizer, output_tokenizer, params):
 
     # make a bunch of datasets and dataloaders therefrom
-    train_dataset = BrownStyleDataset(stage='train',tokenizer=tokenizer)
+    train_dataset = BrownStyleDataset(stage='train', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
     train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size, shuffle=True)
     print(f"loaded {len(train_dataloader)} training samples")
     
-    val_dataset = BrownStyleDataset(stage='validation',tokenizer=tokenizer)
+    val_dataset = BrownStyleDataset(stage='validation', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
     val_dataloader = DataLoader(val_dataset, batch_size=params.batch_size, shuffle=True)
     print(f"loaded {len(val_dataloader)} validation samples")
    
-    test_dataset = BrownStyleDataset(stage='test',tokenizer=tokenizer)
+    test_dataset = BrownStyleDataset(stage='test', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
     test_dataloader = DataLoader(test_dataset, batch_size=params.batch_size, shuffle=True)
     print(f"loaded {len(test_dataloader)} test samples")
     
@@ -134,7 +134,7 @@ def main(params):
     input_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
     output_tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
 
-    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer,output_tokenizer, params)
+    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
 
     if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
