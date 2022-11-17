@@ -1,0 +1,19 @@
+Using pad_token, but it is not set yet.
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 165, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 137, in main
+    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 66, in load_data
+    train_dataset = BrownStyleDataset(stage='train', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 47, in __init__
+    self.sentences_out = output_tokenizer(sentences, return_tensors="pt", padding=True).input_ids.to(device)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2488, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2574, in _call_one
+    return self.batch_encode_plus(
+  File "/home/mitryand/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2756, in batch_encode_plus
+    padding_strategy, truncation_strategy, max_length, kwargs = self._get_padding_truncation_strategies(
+  File "/home/mitryand/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2393, in _get_padding_truncation_strategies
+    raise ValueError(
+ValueError: Asking to pad but the tokenizer does not have a padding token. Please select a token to use as `pad_token` `(tokenizer.pad_token = tokenizer.eos_token e.g.)` or add a new pad token via `tokenizer.add_special_tokens({'pad_token': '[PAD]'})`.
