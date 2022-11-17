@@ -141,6 +141,8 @@ def main(params):
         print("created model")
         model.config.decoder_start_token_id = input_tokenizer.cls_token_id
         model.config.pad_token_id = input_tokenizer.pad_token_id
+        output_tokenizer.pad_token = input_tokenizer.pad_token
+        output_tokenizer.cls_token = input_tokenizer.cls_token
         model.config.vocab_size = model.config.decoder.vocab_size
         model.to(device)
         model = train(model, train_dataloader, eval_dataloader, params)
