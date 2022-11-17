@@ -22,28 +22,6 @@ set_seed(SEED)
 device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
 # device = torch.device("cpu")
 
-
-# To control logging level for various modules used in the application:
-# import logging
-# import re
-# def set_global_logging_level(level=logging.ERROR, prefices=[""]):
-#     """
-#     Override logging levels of different modules based on their name as a prefix.
-#     It needs to be invoked after the modules have been loaded so that their loggers have been initialized.
-
-#     Args:
-#         - level: desired level. e.g. logging.INFO. Optional. Default is logging.ERROR
-#         - prefices: list of one or more str prefices to match (e.g. ["transformers", "torch"]). Optional.
-#           Default is `[""]` to match all active loggers.
-#           The match is a case-sensitive `module_name.startswith(prefix)`
-#     """
-#     prefix_re = re.compile(fr'^(?:{ "|".join(prefices) })')
-#     for name in logging.root.manager.loggerDict:
-#         if re.match(prefix_re, name):
-#             logging.getLogger(name).setLevel(level)
-
-# set_global_logging_level(logging.DEBUG, ["transformers", "nlp", "torch", "tensorflow", "tensorboard", "wandb"])
-
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', tokenizer=None):
@@ -66,10 +44,10 @@ class BrownStyleDataset(Dataset):
         if self.tokenizer is not None:
             input_ids = tokenizer(sentences, return_tensors="pt", padding=True).input_ids
             self.sentences = input_ids.to(device)
+
             self.labels = torch.tensor(labels,device=device)
         else:
-            self.sentences = sentences
-            self.labels = labels
+            raise RuntimeError("need to feed the dataset a tokenizer bro")
         
     def __len__(self):
         return len(self.sentences)
@@ -122,12 +100,12 @@ def train(model, train_dataloader, eval_dataloader, params):
             optimizer.zero_grad()
             progress_bar.update(1)
         print('loss:', loss.item())
-            
+        
         metric = evaluate.load("accuracy")
         model.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch[0])
+                outputs = model(input_ids=batch[0], decoder_input_ids=batch[0].roll(-1,2),  labels=batch[0])
 
             logits = outputs.logits
             predictions = torch.argmax(logits, dim=-1)
