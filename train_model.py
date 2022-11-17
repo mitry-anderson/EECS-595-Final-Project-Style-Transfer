@@ -127,11 +127,11 @@ def train(model, train_dataloader, eval_dataloader, params):
         model.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch[0], labels=batch[0])
+                outputs = model(input_ids=batch[0])
 
             logits = outputs.logits
             predictions = torch.argmax(logits, dim=-1)
-            metric.add_batch(predictions=predictions.squeeze(), references=batch[0].squeeze())
+            metric.add_batch(predictions=predictions, references=batch[0])
         
         score = metric.compute()
         print('Validation Accuracy:', score['accuracy'])
