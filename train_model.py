@@ -102,7 +102,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             progress_bar.update(1)
         print('loss:', loss.item())
         
-        metric = evaluate.load("accuracy")
+        metric = evaluate.load("exact_match")
         model.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
@@ -120,10 +120,10 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             print(pred[0])
         
         score = metric.compute()
-        print('Validation Accuracy:', score['accuracy'])
+        print('Validation Accuracy:', score['exact_match'])
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
-    metric = evaluate.load("accuracy")
+    metric = evaluate.load("exact_match")
     model.eval()
     for batch in test_dataloader:
         with torch.no_grad():
@@ -136,7 +136,7 @@ def test(model, test_dataloader, input_tokenizer, output_tokenizer):
         metric.add_batch(predictions=pred, references=truth)
     
     score = metric.compute()
-    print('Validation Accuracy:', score['accuracy'])
+    print('Validation Accuracy:', score['exact_match'])
 
 def main(params):
     
