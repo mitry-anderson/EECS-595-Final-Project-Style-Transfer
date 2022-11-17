@@ -110,7 +110,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
 
             pred = []
             truth = []
-            print(outputs)
+            print(output_tokenizer.decode_batch(outputs))
             for i in range(len(outputs)):
                 pred.append(output_tokenizer.decode(outputs[i], skip_special_tokens=True))
                 truth.append(input_tokenizer.decode(batch[0][i], skip_special_tokens=True))
