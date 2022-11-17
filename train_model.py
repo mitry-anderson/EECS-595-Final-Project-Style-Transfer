@@ -92,7 +92,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
 
         model.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch[0], labels=batch[0])
+            outputs = model(input_ids=batch[0], labels=batch[1])
             loss = outputs.loss
             loss.backward()
 
@@ -108,7 +108,6 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch[0], max_new_tokens=50)
 
-            
             pred = output_tokenizer.batch_decode(outputs, skip_special_tokens=True)
             truth = input_tokenizer.batch_decode(batch[0], skip_special_tokens=True)
 
@@ -143,8 +142,18 @@ def test(model, test_dataloader, input_tokenizer, output_tokenizer):
 def main(params):
     
     input_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+
+    # pro tip: https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
+    def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
+        outputs = [self.bos_token_id] + token_ids_0 + [self.eos_token_id]
+        return outputs
+    GPT2Tokenizer.build_inputs_with_special_tokens = build_inputs_with_special_tokens
+
     output_tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-    output_tokenizer.pad_token = input_tokenizer.pad_token
+    input_tokenizer.bos_token = input_tokenizer.cls_token
+    input_tokenizer.eos_token = input_tokenizer.sep_token
+
+    output_tokenizer.pad_token = output_tokenizer.unk_token
     output_tokenizer.cls_token = input_tokenizer.cls_token
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
