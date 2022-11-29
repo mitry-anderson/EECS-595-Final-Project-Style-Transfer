@@ -41,7 +41,7 @@ class GenreClassifier(torch.nn.Module):
         self.lin2.bias.data.zero_()
 
     def forward(self, hidden_outputs):
-        return self.lin2(self.relu(self.lin1(hidden_outputs)))
+        return self.lin2(self.relu(self.lin1(torch.flatten(hidden_outputs,1,2))))
 
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
