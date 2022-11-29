@@ -240,7 +240,10 @@ def main(params):
         model.early_stopping = True
         model.config.pad_token_id = input_tokenizer.pad_token_id
         model.config.vocab_size = model.config.decoder.vocab_size
+        
         model.to(device)
+        classifier.to(device)
+        
         model, classifier = train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         model.save_pretrained('models/news_adventure.torch')
     else:
