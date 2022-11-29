@@ -152,7 +152,6 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
             loss.backward(retain_graph=True)
 
             z = outputs.encoder_last_hidden_state
-            z.no_grad()
             cls_outputs = classifier(z)
 
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
@@ -180,7 +179,6 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch['input_sentences'])
             z = outputs.encoder_last_hidden_state
-            z.no_grad()
             cls_outputs = classifier(z)
             
             pred = output_tokenizer.batch_decode(outputs)
