@@ -105,6 +105,8 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         
         metric = evaluate.load("exact_match")
         model.eval()
+        pred = []
+        truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch[0], max_new_tokens=50)
@@ -114,12 +116,12 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
 
             metric.add_batch(predictions=pred, references=truth)
 
-            print("===========================")
-            print("example input sentence: ")
-            print(truth[0])
-            print("example output sentence: ")
-            print(pred[0])
-            print("===========================")
+        print("===========================")
+        print("example input sentence: ")
+        print(truth[0])
+        print("example output sentence: ")
+        print(pred[0])
+        print("===========================")
         
         score = metric.compute()
         print('Validation Accuracy:', score['exact_match'])
