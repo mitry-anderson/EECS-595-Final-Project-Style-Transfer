@@ -87,7 +87,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
-    progress_bar = tqdm(range(num_training_steps))
+    # progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
         model.train()
@@ -99,8 +99,9 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             optimizer.step()
             lr_scheduler.step()
             optimizer.zero_grad()
-            progress_bar.update(1)
-        print('loss:', loss.item())
+            # progress_bar.update(1)
+        # print('loss:', loss.item())
+        print(f'epoch {epoch}/{params.num_epochs} | loss: {loss.item()}')
         
         metric = evaluate.load("exact_match")
         model.eval()
