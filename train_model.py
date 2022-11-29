@@ -54,9 +54,9 @@ class BrownStyleDataset(Dataset):
             self.attention_masks_out = ot.attention_mask.to(device)
 
             # from https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
-            self.attention_masks_out = [
+            self.attention_masks_out = torch.tensor([
                 [-100 if mask == 0 else token for mask, token in mask_and_tokens] for mask_and_tokens in [zip(masks, labels) for masks, labels in zip(self.attention_masks_out, self.sentences_out)]
-            ]
+            ], device=device)
 
             self.labels = torch.tensor(labels,device=device)
         else:
