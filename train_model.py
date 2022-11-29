@@ -226,8 +226,8 @@ def main(params):
 
     if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
-        print(model.config.output_hidden_states.shape)
-        classifier = GenreClassifier(model.config.output_hidden_states.shape[1], 32, 2)
+        print(model)
+        classifier = GenreClassifier(128, 32, 2)
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
         print("created model")
         model.decoder.config.use_cache = False
