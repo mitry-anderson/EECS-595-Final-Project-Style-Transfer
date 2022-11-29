@@ -1,0 +1,854 @@
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertModel: ['cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of GPT2LMHeadModel were not initialized from the model checkpoint at gpt2 and are newly initialized: ['h.4.crossattention.c_attn.weight', 'h.0.crossattention.bias', 'h.5.crossattention.masked_bias', 'h.6.crossattention.c_attn.weight', 'h.1.crossattention.bias', 'h.0.crossattention.c_attn.weight', 'h.7.crossattention.c_attn.weight', 'h.3.crossattention.bias', 'h.9.crossattention.c_proj.weight', 'h.11.crossattention.c_attn.weight', 'h.7.ln_cross_attn.weight', 'h.0.crossattention.q_attn.weight', 'h.6.ln_cross_attn.weight', 'h.4.crossattention.c_proj.bias', 'h.8.ln_cross_attn.weight', 'h.4.crossattention.masked_bias', 'h.6.crossattention.bias', 'h.4.crossattention.c_proj.weight', 'h.7.crossattention.c_proj.weight', 'h.8.crossattention.c_proj.weight', 'h.1.ln_cross_attn.weight', 'h.6.crossattention.q_attn.weight', 'h.8.crossattention.c_proj.bias', 'h.6.crossattention.c_proj.bias', 'h.9.crossattention.bias', 'h.0.crossattention.c_proj.weight', 'h.4.ln_cross_attn.weight', 'h.10.crossattention.masked_bias', 'h.9.crossattention.q_attn.weight', 'h.9.crossattention.c_attn.weight', 'h.0.crossattention.c_proj.bias', 'h.5.crossattention.bias', 'h.10.ln_cross_attn.weight', 'h.5.ln_cross_attn.weight', 'h.3.crossattention.q_attn.weight', 'h.7.crossattention.masked_bias', 'h.11.crossattention.q_attn.weight', 'h.2.crossattention.c_attn.weight', 'h.8.crossattention.masked_bias', 'h.1.crossattention.masked_bias', 'h.3.ln_cross_attn.weight', 'h.4.crossattention.bias', 'h.5.crossattention.c_attn.weight', 'h.5.crossattention.c_proj.bias', 'h.10.crossattention.c_proj.bias', 'h.1.crossattention.q_attn.weight', 'h.1.crossattention.c_attn.weight', 'h.1.crossattention.c_proj.weight', 'h.3.crossattention.c_proj.weight', 'h.1.crossattention.c_proj.bias', 'h.5.crossattention.c_proj.weight', 'h.10.crossattention.q_attn.weight', 'h.11.crossattention.c_proj.weight', 'h.2.ln_cross_attn.weight', 'h.11.crossattention.c_proj.bias', 'h.3.crossattention.masked_bias', 'h.9.crossattention.c_proj.bias', 'h.2.crossattention.c_proj.bias', 'h.11.crossattention.masked_bias', 'h.8.crossattention.bias', 'h.2.crossattention.bias', 'h.6.crossattention.c_proj.weight', 'h.2.crossattention.masked_bias', 'h.10.crossattention.c_proj.weight', 'h.10.crossattention.bias', 'h.6.crossattention.masked_bias', 'h.7.crossattention.c_proj.bias', 'h.3.crossattention.c_attn.weight', 'h.7.crossattention.q_attn.weight', 'h.4.crossattention.q_attn.weight', 'h.0.ln_cross_attn.weight', 'h.11.ln_cross_attn.weight', 'h.9.crossattention.masked_bias', 'h.8.crossattention.q_attn.weight', 'h.10.crossattention.c_attn.weight', 'h.9.ln_cross_attn.weight', 'h.2.crossattention.c_proj.weight', 'h.0.crossattention.masked_bias', 'h.5.crossattention.q_attn.weight', 'h.3.crossattention.c_proj.bias', 'h.8.crossattention.c_attn.weight', 'h.11.crossattention.bias', 'h.2.crossattention.q_attn.weight', 'h.7.crossattention.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+loaded 232 training samples
+loaded 53 validation samples
+loaded 6 test samples
+created model
+Begin training!
+  0%|          | 0/232 [00:00<?, ?it/s]/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:634: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  0%|          | 1/232 [00:02<09:56,  2.58s/it]  1%|          | 2/232 [00:03<06:00,  1.57s/it]  1%|▏         | 3/232 [00:04<04:33,  1.19s/it]  2%|▏         | 4/232 [00:04<03:50,  1.01s/it]  2%|▏         | 5/232 [00:05<03:26,  1.10it/s]  3%|▎         | 6/232 [00:06<03:12,  1.18it/s]  3%|▎         | 7/232 [00:07<03:02,  1.23it/s]  3%|▎         | 8/232 [00:07<02:56,  1.27it/s]  4%|▍         | 9/232 [00:08<02:52,  1.30it/s]  4%|▍         | 10/232 [00:09<02:48,  1.32it/s]  5%|▍         | 11/232 [00:10<02:46,  1.33it/s]  5%|▌         | 12/232 [00:10<02:44,  1.34it/s]  6%|▌         | 13/232 [00:11<02:43,  1.34it/s]  6%|▌         | 14/232 [00:12<02:41,  1.35it/s]  6%|▋         | 15/232 [00:13<02:40,  1.35it/s]  7%|▋         | 16/232 [00:13<02:39,  1.35it/s]  7%|▋         | 17/232 [00:14<02:38,  1.35it/s]  8%|▊         | 18/232 [00:15<02:37,  1.35it/s]  8%|▊         | 19/232 [00:15<02:37,  1.36it/s]  9%|▊         | 20/232 [00:16<02:36,  1.36it/s]  9%|▉         | 21/232 [00:17<02:35,  1.36it/s]  9%|▉         | 22/232 [00:18<02:34,  1.36it/s] 10%|▉         | 23/232 [00:18<02:33,  1.36it/s] 10%|█         | 24/232 [00:19<02:32,  1.36it/s] 11%|█         | 25/232 [00:20<02:32,  1.36it/s] 11%|█         | 26/232 [00:21<02:31,  1.36it/s] 12%|█▏        | 27/232 [00:21<02:30,  1.36it/s] 12%|█▏        | 28/232 [00:22<02:29,  1.36it/s] 12%|█▎        | 29/232 [00:23<02:29,  1.36it/s] 13%|█▎        | 30/232 [00:24<02:28,  1.36it/s] 13%|█▎        | 31/232 [00:24<02:27,  1.36it/s] 14%|█▍        | 32/232 [00:25<02:26,  1.36it/s] 14%|█▍        | 33/232 [00:26<02:26,  1.36it/s] 15%|█▍        | 34/232 [00:26<02:25,  1.36it/s] 15%|█▌        | 35/232 [00:27<02:24,  1.36it/s] 16%|█▌        | 36/232 [00:28<02:24,  1.36it/s] 16%|█▌        | 37/232 [00:29<02:23,  1.36it/s] 16%|█▋        | 38/232 [00:29<02:22,  1.36it/s] 17%|█▋        | 39/232 [00:30<02:22,  1.36it/s] 17%|█▋        | 40/232 [00:31<02:21,  1.36it/s] 18%|█▊        | 41/232 [00:32<02:20,  1.36it/s] 18%|█▊        | 42/232 [00:32<02:20,  1.36it/s] 19%|█▊        | 43/232 [00:33<02:19,  1.36it/s] 19%|█▉        | 44/232 [00:34<02:18,  1.36it/s] 19%|█▉        | 45/232 [00:35<02:17,  1.36it/s] 20%|█▉        | 46/232 [00:35<02:17,  1.36it/s] 20%|██        | 47/232 [00:36<02:16,  1.36it/s] 21%|██        | 48/232 [00:37<02:15,  1.36it/s] 21%|██        | 49/232 [00:38<02:15,  1.35it/s] 22%|██▏       | 50/232 [00:38<02:14,  1.35it/s] 22%|██▏       | 51/232 [00:39<02:13,  1.35it/s] 22%|██▏       | 52/232 [00:40<02:13,  1.35it/s] 23%|██▎       | 53/232 [00:40<02:12,  1.35it/s] 23%|██▎       | 54/232 [00:41<02:11,  1.35it/s] 24%|██▎       | 55/232 [00:42<02:10,  1.35it/s] 24%|██▍       | 56/232 [00:43<02:10,  1.35it/s] 25%|██▍       | 57/232 [00:43<02:09,  1.35it/s] 25%|██▌       | 58/232 [00:44<02:08,  1.35it/s] 25%|██▌       | 59/232 [00:45<02:08,  1.35it/s] 26%|██▌       | 60/232 [00:46<02:07,  1.35it/s] 26%|██▋       | 61/232 [00:46<02:06,  1.35it/s] 27%|██▋       | 62/232 [00:47<02:05,  1.35it/s] 27%|██▋       | 63/232 [00:48<02:05,  1.35it/s] 28%|██▊       | 64/232 [00:49<02:04,  1.35it/s] 28%|██▊       | 65/232 [00:49<02:03,  1.35it/s] 28%|██▊       | 66/232 [00:50<02:02,  1.35it/s] 29%|██▉       | 67/232 [00:51<02:02,  1.35it/s] 29%|██▉       | 68/232 [00:52<02:01,  1.35it/s] 30%|██▉       | 69/232 [00:52<02:00,  1.35it/s] 30%|███       | 70/232 [00:53<01:59,  1.35it/s] 31%|███       | 71/232 [00:54<01:59,  1.35it/s] 31%|███       | 72/232 [00:55<01:58,  1.35it/s] 31%|███▏      | 73/232 [00:55<01:57,  1.35it/s] 32%|███▏      | 74/232 [00:56<01:56,  1.35it/s] 32%|███▏      | 75/232 [00:57<01:56,  1.35it/s] 33%|███▎      | 76/232 [00:58<01:55,  1.35it/s] 33%|███▎      | 77/232 [00:58<01:54,  1.35it/s] 34%|███▎      | 78/232 [00:59<01:54,  1.35it/s] 34%|███▍      | 79/232 [01:00<01:53,  1.35it/s] 34%|███▍      | 80/232 [01:00<01:52,  1.35it/s] 35%|███▍      | 81/232 [01:01<01:51,  1.35it/s] 35%|███▌      | 82/232 [01:02<01:51,  1.35it/s] 36%|███▌      | 83/232 [01:03<01:50,  1.35it/s] 36%|███▌      | 84/232 [01:03<01:49,  1.35it/s] 37%|███▋      | 85/232 [01:04<01:49,  1.35it/s] 37%|███▋      | 86/232 [01:05<01:48,  1.35it/s] 38%|███▊      | 87/232 [01:06<01:47,  1.35it/s] 38%|███▊      | 88/232 [01:06<01:46,  1.35it/s] 38%|███▊      | 89/232 [01:07<01:46,  1.35it/s] 39%|███▉      | 90/232 [01:08<01:45,  1.35it/s] 39%|███▉      | 91/232 [01:09<01:44,  1.35it/s] 40%|███▉      | 92/232 [01:09<01:43,  1.35it/s] 40%|████      | 93/232 [01:10<01:43,  1.35it/s] 41%|████      | 94/232 [01:11<01:42,  1.35it/s] 41%|████      | 95/232 [01:12<01:41,  1.35it/s] 41%|████▏     | 96/232 [01:12<01:41,  1.35it/s] 42%|████▏     | 97/232 [01:13<01:40,  1.35it/s] 42%|████▏     | 98/232 [01:14<01:39,  1.35it/s] 43%|████▎     | 99/232 [01:15<01:38,  1.35it/s] 43%|████▎     | 100/232 [01:15<01:38,  1.35it/s] 44%|████▎     | 101/232 [01:16<01:37,  1.35it/s] 44%|████▍     | 102/232 [01:17<01:36,  1.35it/s] 44%|████▍     | 103/232 [01:18<01:35,  1.34it/s] 45%|████▍     | 104/232 [01:18<01:35,  1.34it/s] 45%|████▌     | 105/232 [01:19<01:34,  1.34it/s] 46%|████▌     | 106/232 [01:20<01:33,  1.34it/s] 46%|████▌     | 107/232 [01:21<01:33,  1.34it/s] 47%|████▋     | 108/232 [01:21<01:32,  1.34it/s] 47%|████▋     | 109/232 [01:22<01:31,  1.34it/s] 47%|████▋     | 110/232 [01:23<01:30,  1.34it/s] 48%|████▊     | 111/232 [01:24<01:30,  1.34it/s] 48%|████▊     | 112/232 [01:24<01:29,  1.34it/s] 49%|████▊     | 113/232 [01:25<01:28,  1.34it/s] 49%|████▉     | 114/232 [01:26<01:27,  1.34it/s] 50%|████▉     | 115/232 [01:27<01:27,  1.34it/s] 50%|█████     | 116/232 [01:27<01:26,  1.34it/s] 50%|█████     | 117/232 [01:28<01:25,  1.34it/s] 51%|█████     | 118/232 [01:29<01:25,  1.34it/s] 51%|█████▏    | 119/232 [01:29<01:24,  1.34it/s] 52%|█████▏    | 120/232 [01:30<01:23,  1.34it/s] 52%|█████▏    | 121/232 [01:31<01:22,  1.34it/s] 53%|█████▎    | 122/232 [01:32<01:22,  1.34it/s] 53%|█████▎    | 123/232 [01:32<01:21,  1.34it/s] 53%|█████▎    | 124/232 [01:33<01:20,  1.34it/s] 54%|█████▍    | 125/232 [01:34<01:19,  1.34it/s] 54%|█████▍    | 126/232 [01:35<01:19,  1.34it/s] 55%|█████▍    | 127/232 [01:35<01:18,  1.34it/s] 55%|█████▌    | 128/232 [01:36<01:17,  1.34it/s] 56%|█████▌    | 129/232 [01:37<01:16,  1.34it/s] 56%|█████▌    | 130/232 [01:38<01:16,  1.34it/s] 56%|█████▋    | 131/232 [01:38<01:15,  1.34it/s] 57%|█████▋    | 132/232 [01:39<01:14,  1.34it/s] 57%|█████▋    | 133/232 [01:40<01:13,  1.34it/s] 58%|█████▊    | 134/232 [01:41<01:13,  1.34it/s] 58%|█████▊    | 135/232 [01:41<01:12,  1.34it/s] 59%|█████▊    | 136/232 [01:42<01:11,  1.34it/s] 59%|█████▉    | 137/232 [01:43<01:10,  1.34it/s] 59%|█████▉    | 138/232 [01:44<01:10,  1.34it/s] 60%|█████▉    | 139/232 [01:44<01:09,  1.34it/s] 60%|██████    | 140/232 [01:45<01:08,  1.34it/s] 61%|██████    | 141/232 [01:46<01:07,  1.34it/s] 61%|██████    | 142/232 [01:47<01:07,  1.34it/s] 62%|██████▏   | 143/232 [01:47<01:06,  1.34it/s] 62%|██████▏   | 144/232 [01:48<01:05,  1.34it/s] 62%|██████▎   | 145/232 [01:49<01:05,  1.34it/s] 63%|██████▎   | 146/232 [01:50<01:04,  1.34it/s] 63%|██████▎   | 147/232 [01:50<01:03,  1.34it/s] 64%|██████▍   | 148/232 [01:51<01:02,  1.34it/s] 64%|██████▍   | 149/232 [01:52<01:02,  1.34it/s] 65%|██████▍   | 150/232 [01:53<01:01,  1.34it/s] 65%|██████▌   | 151/232 [01:53<01:00,  1.34it/s] 66%|██████▌   | 152/232 [01:54<00:59,  1.34it/s] 66%|██████▌   | 153/232 [01:55<00:59,  1.34it/s] 66%|██████▋   | 154/232 [01:56<00:58,  1.34it/s] 67%|██████▋   | 155/232 [01:56<00:57,  1.34it/s] 67%|██████▋   | 156/232 [01:57<00:56,  1.34it/s] 68%|██████▊   | 157/232 [01:58<00:56,  1.34it/s] 68%|██████▊   | 158/232 [01:59<00:55,  1.34it/s] 69%|██████▊   | 159/232 [01:59<00:54,  1.34it/s] 69%|██████▉   | 160/232 [02:00<00:53,  1.34it/s] 69%|██████▉   | 161/232 [02:01<00:53,  1.34it/s] 70%|██████▉   | 162/232 [02:02<00:52,  1.34it/s] 70%|███████   | 163/232 [02:02<00:51,  1.34it/s] 71%|███████   | 164/232 [02:03<00:50,  1.34it/s] 71%|███████   | 165/232 [02:04<00:50,  1.34it/s] 72%|███████▏  | 166/232 [02:05<00:49,  1.34it/s] 72%|███████▏  | 167/232 [02:05<00:48,  1.34it/s] 72%|███████▏  | 168/232 [02:06<00:47,  1.34it/s] 73%|███████▎  | 169/232 [02:07<00:47,  1.34it/s] 73%|███████▎  | 170/232 [02:08<00:46,  1.34it/s] 74%|███████▎  | 171/232 [02:08<00:45,  1.34it/s] 74%|███████▍  | 172/232 [02:09<00:44,  1.34it/s] 75%|███████▍  | 173/232 [02:10<00:44,  1.33it/s] 75%|███████▌  | 174/232 [02:11<00:43,  1.34it/s] 75%|███████▌  | 175/232 [02:11<00:42,  1.33it/s] 76%|███████▌  | 176/232 [02:12<00:41,  1.33it/s] 76%|███████▋  | 177/232 [02:13<00:41,  1.33it/s] 77%|███████▋  | 178/232 [02:14<00:40,  1.33it/s] 77%|███████▋  | 179/232 [02:14<00:39,  1.33it/s] 78%|███████▊  | 180/232 [02:15<00:38,  1.33it/s] 78%|███████▊  | 181/232 [02:16<00:38,  1.33it/s] 78%|███████▊  | 182/232 [02:17<00:37,  1.34it/s] 79%|███████▉  | 183/232 [02:17<00:36,  1.33it/s] 79%|███████▉  | 184/232 [02:18<00:35,  1.34it/s] 80%|███████▉  | 185/232 [02:19<00:35,  1.33it/s] 80%|████████  | 186/232 [02:20<00:34,  1.33it/s] 81%|████████  | 187/232 [02:20<00:33,  1.33it/s] 81%|████████  | 188/232 [02:21<00:32,  1.33it/s] 81%|████████▏ | 189/232 [02:22<00:32,  1.33it/s] 82%|████████▏ | 190/232 [02:23<00:31,  1.33it/s] 82%|████████▏ | 191/232 [02:23<00:30,  1.33it/s] 83%|████████▎ | 192/232 [02:24<00:30,  1.33it/s] 83%|████████▎ | 193/232 [02:25<00:29,  1.33it/s] 84%|████████▎ | 194/232 [02:26<00:28,  1.33it/s] 84%|████████▍ | 195/232 [02:26<00:27,  1.33it/s] 84%|████████▍ | 196/232 [02:27<00:26,  1.33it/s] 85%|████████▍ | 197/232 [02:28<00:26,  1.33it/s] 85%|████████▌ | 198/232 [02:29<00:25,  1.33it/s] 86%|████████▌ | 199/232 [02:29<00:24,  1.33it/s] 86%|████████▌ | 200/232 [02:30<00:24,  1.33it/s] 87%|████████▋ | 201/232 [02:31<00:23,  1.33it/s] 87%|████████▋ | 202/232 [02:32<00:22,  1.33it/s] 88%|████████▊ | 203/232 [02:32<00:21,  1.33it/s] 88%|████████▊ | 204/232 [02:33<00:21,  1.33it/s] 88%|████████▊ | 205/232 [02:34<00:20,  1.33it/s] 89%|████████▉ | 206/232 [02:35<00:19,  1.33it/s] 89%|████████▉ | 207/232 [02:35<00:18,  1.33it/s] 90%|████████▉ | 208/232 [02:36<00:18,  1.33it/s] 90%|█████████ | 209/232 [02:37<00:17,  1.33it/s] 91%|█████████ | 210/232 [02:38<00:16,  1.33it/s] 91%|█████████ | 211/232 [02:38<00:15,  1.33it/s] 91%|█████████▏| 212/232 [02:39<00:15,  1.33it/s] 92%|█████████▏| 213/232 [02:40<00:14,  1.33it/s] 92%|█████████▏| 214/232 [02:41<00:13,  1.33it/s] 93%|█████████▎| 215/232 [02:41<00:12,  1.33it/s] 93%|█████████▎| 216/232 [02:42<00:12,  1.33it/s] 94%|█████████▎| 217/232 [02:43<00:11,  1.33it/s] 94%|█████████▍| 218/232 [02:44<00:10,  1.33it/s] 94%|█████████▍| 219/232 [02:44<00:09,  1.33it/s] 95%|█████████▍| 220/232 [02:45<00:09,  1.33it/s] 95%|█████████▌| 221/232 [02:46<00:08,  1.33it/s] 96%|█████████▌| 222/232 [02:47<00:07,  1.33it/s] 96%|█████████▌| 223/232 [02:47<00:06,  1.33it/s] 97%|█████████▋| 224/232 [02:48<00:06,  1.33it/s] 97%|█████████▋| 225/232 [02:49<00:05,  1.33it/s] 97%|█████████▋| 226/232 [02:50<00:04,  1.33it/s] 98%|█████████▊| 227/232 [02:50<00:03,  1.33it/s] 98%|█████████▊| 228/232 [02:51<00:03,  1.33it/s] 99%|█████████▊| 229/232 [02:52<00:02,  1.33it/s] 99%|█████████▉| 230/232 [02:53<00:01,  1.33it/s]100%|█████████▉| 231/232 [02:53<00:00,  1.33it/s]100%|██████████| 232/232 [02:54<00:00,  1.55it/s]100%|██████████| 232/232 [03:52<00:00,  1.00s/it]
+loss: 0.5840947031974792
+tensor([[ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,  373,  523, 6568],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        ...,
+        [ 101,  198,  198,  ...,  373,  991,  287],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+although new orleans was not to learn of it for a spell, she also was a sadist, a nymphomaniac and unobtrusively mad - - the perpetrator of some of the worst crimes against humanity ever committed on american soil.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was so excited to see the new version of the game. I was so excited to see the new version of the game.!!!
+===========================
+tensor([[ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ...,  262,  983,  373],
+        ...,
+        [ 101,  198,  198,  ...,  262,  717, 1517],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ..., 4217,   11,  290]], device='cuda:0')
+===========================
+input sentence: 
+it is almost axiomatic that golfers who dominate the game of golf for any period of time attack their shots with a vehemence bordering on violence.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited to see the new version of the game. I was so excited to see the new version of the game.!!!!!!!!!
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        ...,
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  262,  649, 9382],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+i don't get it why this time i should pull such a stupid trick''.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[ 101,  198,  198,  ..., 1903, 9539,  286],
+        [ 101,  198,  198,  ...,  262,  717, 1517],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        ...,
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ...,  340,   13,  198]], device='cuda:0')
+===========================
+input sentence: 
+` ` that's right'', robinson said.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game, when I was playing the first version of the game. I was a little surprised to see that the game was still in the early stages of
+===========================
+tensor([[  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ..., 16591,   471,    13],
+        ...,
+        [  101,   198,   198,  ...,   373,  2712,   262],
+        [  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,   766,   326,   262]], device='cuda:0')
+===========================
+input sentence: 
+charlayne was ` ` tentatively'' admitted for next fall, after state investigators questioned her white roommate at wayne state.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 demo. I was so excited to see the new version of the game. I was so excited to see the new version of the game.!!!
+===========================
+tensor([[ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ..., 2196,  286,  262],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        ...,
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ..., 3706, 3977,  367]], device='cuda:0')
+===========================
+input sentence: 
+` ` the kid had a automatic, like they issue in the army'', he said.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game, when I was playing the first version of the game. I was playing the first version of the game on my PC, and I was playing
+===========================
+tensor([[101, 198, 198,  ...,  40, 373, 523],
+        [101, 198, 198,  ..., 766, 262, 649],
+        [101, 198, 198,  ...,  13, 314, 373],
+        ...,
+        [101, 198, 198,  ...,  40, 373, 523],
+        [101, 198, 198,  ...,  40, 373, 523],
+        [101, 198, 198,  ..., 326, 262, 983]], device='cuda:0')
+===========================
+input sentence: 
+privately, the liberals admitted that the humphrey amendment had no chance of passage.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[ 101,  198,  198,  ...,  373,  257, 1049],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        ...,
+        [ 101,  198,  198,  ...,  766,  262, 2008],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+unlike most such sports rivalries, it appeared to have developed almost spontaneously, although this was not exactly the case.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game, when I was playing the first version of the game. I was playing the first version of the game on the PC and it was a great
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        ...,
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  373,  257, 1049],
+        [ 101,  198,  198,  ...,  373,  523, 6568]], device='cuda:0')
+===========================
+input sentence: 
+fear and relief mingled in his churning emotions.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[ 101,  198,  198,  ...,  262,  717, 1517],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        ...,
+        [ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  257, 3807, 1444]], device='cuda:0')
+===========================
+input sentence: 
+at the 4th tee palmer chose to hit a one - iron when a three - wood was the proper club, so he put the ball in a bunker in front of the green.
+output sentence: 
+�
+
+The first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  373, 2712,  262],
+        ...,
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+paradoxically, the same week in which senator mcclellan was attempting to extend the anti - trust act to labor in transportation, the civil aeronautics board was assuring the airlines that if they met in concert to eliminate many costly features of air travel, the action would not be deemed a violation of the anti - trust act.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ...,  314,  373,  523],
+        ...,
+        [ 101,  198,  198,  ...,  373,  523, 6568],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  766,  262,  649]], device='cuda:0')
+===========================
+input sentence: 
+the officer with the yellow socks or the bay window.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was
+===========================
+tensor([[  101,   198,   198,  ...,   257,  1051,   329],
+        [  101,   198,   198,  ...,    13, 50256,     0],
+        [  101,   198,   198,  ...,   198,    40,   373],
+        ...,
+        [  101,   198,   198,  ...,   766,   262,  2008],
+        [  101,   198,   198,  ...,   326,   262,   983],
+        [  101,   198,   198,  ...,   314,   373,  2712]], device='cuda:0')
+===========================
+input sentence: 
+i must have a powerful representative here, a firm with a national distribution and ten, twenty thousand dollars to advertise my products.
+output sentence: 
+�
+
+The first thing I noticed was the lack of any sort of "I'm not a fan of this" or "I'm not a fan of this" signs. I was a little surprised to see that the sign was actually a sign for
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  262,  983,  373],
+        [ 101,  198,  198,  ...,  523, 6568,  284],
+        ...,
+        [ 101,  198,  198,  ...,  262,  717, 1517],
+        [ 101,  198,  198,  ...,  991,  287, 2478],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+he crossed the next meadow and climbed a tree where the jungle trail resumed.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[  101,   198,   198,  ...,  1695,   319,   262],
+        [  101,   198,   198,  ..., 11679,   326,   262],
+        [  101,   198,   198,  ...,   983,   373,   991],
+        ...,
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,   649,  2196,   286],
+        [  101,   198,   198,  ...,   766,   326,   262]], device='cuda:0')
+===========================
+input sentence: 
+these were the last words he ever uttered.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was a little disappointed that the game was not available on the Wii U. I was also a little disappointed that the game was not available on the
+===========================
+tensor([[ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ...,  286,  262,  983],
+        ...,
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  262,  983,  373],
+        [ 101,  198,  198,  ...,  523, 6568,  284]], device='cuda:0')
+===========================
+input sentence: 
+in people vs. fisher, justice savage of the new york supreme court declared :
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's release. I was a little surprised to see that the game was still in development. I was also a little surprised to see that the game
+===========================
+tensor([[ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ...,  835,  262,  983],
+        [ 101,  198,  198,  ..., 6568,  284,  766],
+        ...,
+        [ 101,  198,  198,  ...,  766,  262, 2008],
+        [ 101,  198,  198,  ...,  262,  983,  373],
+        [ 101,  198,  198,  ...,  262,  649, 2196]], device='cuda:0')
+===========================
+input sentence: 
+his bill, allegedly aimed at hoffa, would amend the sherman, clayton and norris - laguardia acts to authorize the issuance of federal injunctions in any transportation strike and would make it illegal for any union to act in concert with any other union - - even a sister local in the same international.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game, when I was playing the first version of the game. I was playing the first version of the game on my PC, and I was playing
+===========================
+tensor([[  101,   198,   198,  ...,  6655,   326,   340],
+        [  101,   198,   198,  ...,   314,   373,  2712],
+        [  101,   198,   198,  ...,   766,   326,   262],
+        ...,
+        [  101,   198,   198,  ...,   198,   464,   983],
+        [  101,   198,   198,  ...,  1643,   517, 23895],
+        [  101,   198,   198,  ...,    40,   373,   523]], device='cuda:0')
+===========================
+input sentence: 
+prieur has gout and depends on louis'pills and bleedings.
+output sentence: 
+�
+
+The first thing I noticed was that the color of the paper was very dark. I was surprised that it was so dark. I was surprised that it was so dark. I was surprised that it was so dark. I was surprised that it
+===========================
+tensor([[101, 198, 198,  ...,  40, 373, 523],
+        [101, 198, 198,  ...,   0,   0,   0],
+        [101, 198, 198,  ...,   0,   0,   0],
+        ...,
+        [101, 198, 198,  ..., 262, 983,  13],
+        [101, 198, 198,  ..., 983, 373, 991],
+        [101, 198, 198,  ...,  40, 373, 523]], device='cuda:0')
+===========================
+input sentence: 
+` ` now that is a very nice, a very nice'', he murmured to himself, back in his corner.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[ 101,  198,  198,  ..., 6655,  284,  766],
+        [ 101,  198,  198,  ...,  983,   13,  198],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        ...,
+        [ 101,  198,  198,  ...,  286,  262,  983],
+        [ 101,  198,  198,  ...,  766,  326,  262],
+        [ 101,  198,  198,  ...,  326,  262,  983]], device='cuda:0')
+===========================
+input sentence: 
+his heart was pounding like a mighty dynamo and he was trying to think, his mind seeming to scream at him like a hurt or frightened child, ` ` how will i do it??
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game. I was a little bit surprised to see that the game was still in the early stages of development. I was a little bit surprised to see
+===========================
+tensor([[ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  314,  373, 2712],
+        ...,
+        [ 101,  198,  198,  ...,  373,  991,  287],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  983,   13,  198]], device='cuda:0')
+===========================
+input sentence: 
+` ` sake''??
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the game's launch in March of last year. I was a little disappointed that the game was not available on the PlayStation 4. I was also a little disappointed that the game
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  307,   13,  314],
+        [ 101,  198,  198,  ...,  983,  373,  991],
+        ...,
+        [ 101,  198,  198,  ...,  257, 3807, 2686],
+        [ 101,  198,  198,  ..., 4217,   11,  290],
+        [ 101,  198,  198,  ...,  286,  257, 2085]], device='cuda:0')
+===========================
+input sentence: 
+feathertop watched the smooth scissoring of her slim, trim legs as she walked to the bags, and tucked them beneath her, smoothing the skirt out in a wide circle.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[  101,   198,   198,  ...,   326,   262,   983],
+        [  101,   198,   198,  ..., 12617,   351,   262],
+        [  101,   198,   198,  ...,   326,   262,   983],
+        ...,
+        [  101,   198,   198,  ...,   373,   523,   881],
+        [  101,   198,   198,  ...,   257,  1643,   517],
+        [  101,   198,   198,  ...,   262,   717,  1517]], device='cuda:0')
+===========================
+input sentence: 
+said a hail mary, slowly and with understanding.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's development. I was a little surprised to see that the game was still in development. I was also a little surprised to see that the game
+===========================
+tensor([[  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,    13, 50256,     0],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        ...,
+        [  101,   198,   198,  ...,   314,   373,  2712],
+        [  101,   198,   198,  ...,   314,   373,   523],
+        [  101,   198,   198,  ...,   523,  6568,   284]], device='cuda:0')
+===========================
+input sentence: 
+west virginia toll bonds have defaulted in interest for months, and, despite recent improvement in revenues, holders of the bonds are faced with more of the same.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[  101,   198,   198,  ...,   373,   991,   287],
+        [  101,   198,   198,  ..., 16591,   471,    13],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        ...,
+        [  101,   198,   198,  ...,   766,   326,   262],
+        [  101,   198,   198,  ...,   326,   262,   983],
+        [  101,   198,   198,  ...,   262,   983,   373]], device='cuda:0')
+===========================
+input sentence: 
+( bearden reportedly hoped to peddle the plane to castro, and live high in cuba.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was a little surprised to see that the game was still in the beta. I was also a little surprised to see that the game was still in
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  983,   13,  198],
+        [ 101,  198,  198,  ...,  262,  717, 1517],
+        ...,
+        [ 101,  198,  198,  ...,  287,  640,  329],
+        [ 101,  198,  198,  ...,  983,   13,  198],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+urged the reconvention of the congolese parliament and the reorganization of the army.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[101, 198, 198,  ..., 983, 373, 991],
+        [101, 198, 198,  ...,  40, 373, 523],
+        [101, 198, 198,  ...,  40, 373, 523],
+        ...,
+        [101, 198, 198,  ...,  40, 373, 523],
+        [101, 198, 198,  ..., 373, 635, 257],
+        [101, 198, 198,  ...,   0,   0,   0]], device='cuda:0')
+===========================
+input sentence: 
+he was less to see, but feathertop took him in, too, just to keep the records straight.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was a little surprised to see that the game was still in the beta stage. I was also a little surprised to see that the game was still
+===========================
+tensor([[ 101,  198,  198,  ...,  314,  373,  523],
+        [ 101,  198,  198,  ...,  766,  262, 2008],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        ...,
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+` ` i do not drink so much, thank you''.
+output sentence: 
+�
+
+The first thing I did was to get a copy of the book. I had never read it before, but I was so excited to read it. I was so excited to read it that I started to read it again. I was so
+===========================
+tensor([[  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ..., 11679,   326,   262],
+        [  101,   198,   198,  ...,   262,   983,   373],
+        ...,
+        [  101,   198,   198,  ...,   373,   523,  6568],
+        [  101,   198,   198,  ...,   635, 12617,   416],
+        [  101,   198,   198,  ...,   766,   262,  2008]], device='cuda:0')
+===========================
+input sentence: 
+yet there were other motivations and actions which the belgians took after independence for which history may not find them guiltless.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited to see the new version of the game. I was so excited to see the new version of the game.!!!!!!!!!
+===========================
+tensor([[ 101,  198,  198,  ...,  262,  983,  373],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        ...,
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  766,  262,  649],
+        [ 101,  198,  198,  ..., 1903, 9539,  286]], device='cuda:0')
+===========================
+input sentence: 
+moreover, runaway slaves frequently got into serious trouble in new orleans'dives.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's release. I was a little surprised to see that the game was still in beta, but I was pleasantly surprised to see that the game was
+===========================
+tensor([[ 101,  198,  198,  ...,  262,  717, 1517],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,  286,  262,  983],
+        ...,
+        [ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ...,  766,  262, 2008],
+        [ 101,  198,  198,  ...,  326,  262,  983]], device='cuda:0')
+===========================
+input sentence: 
+airless and dingy though it was, the attic represented luxury to a slave who had led a wretched life with six brothers and sisters and assorted relatives in a shanty at bayou st. john.
+output sentence: 
+�
+
+The first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing
+===========================
+tensor([[  101,   198,   198,  ...,   649,  2196,   286],
+        [  101,   198,   198,  ...,   373,   257,  1049],
+        [  101,   198,   198,  ...,   881,   517, 23895],
+        ...,
+        [  101,   198,   198,  ...,   198,   198,    40],
+        [  101,   198,   198,  ...,   766,   262,  2008],
+        [  101,   198,   198,  ..., 44346,   290,  2822]], device='cuda:0')
+===========================
+input sentence: 
+this is baseball 1961.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Game Developers Conference in San Francisco. I was there to see the game and to see the new version of the game. I was so excited to see the new version of
+===========================
+tensor([[  101,   198,   198,  ...,   373,   523,  6568],
+        [  101,   198,   198,  ..., 16591,   471,    13],
+        [  101,   198,   198,  ...,   262,   983,    11],
+        ...,
+        [  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,   373,  2712,   262],
+        [  101,   198,   198,  ...,   326,   262,   983]], device='cuda:0')
+===========================
+input sentence: 
+however the president, who would like to woo the former chinese province away from both peking and moscow, would promise chen nothing more than an abstention by the u. s. if outer mongolia's admission comes to a vote.
+output sentence: 
+�
+
+The first time I saw the new version of the game I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so excited
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  766,  326,  262],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        ...,
+        [ 101,  198,  198,  ...,  523, 6568,  284],
+        [ 101,  198,  198,  ...,  523, 6568,  284],
+        [ 101,  198,  198,  ...,  373,  523, 6568]], device='cuda:0')
+===========================
+input sentence: 
+but why was laos the new southeast asian battleground??
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[  101,   198,   198,  ...,   373,  2712,   262],
+        [  101,   198,   198,  ...,   262,   649, 12268],
+        [  101,   198,   198,  ...,   523,  6568,   284],
+        ...,
+        [  101,   198,   198,  ...,   766,   262,  2008],
+        [  101,   198,   198,  ...,   314,   373,   523],
+        [  101,   198,   198,  ...,   649,  2196,   286]], device='cuda:0')
+===========================
+input sentence: 
+` ` that's my boy''!!
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game, when I was playing the first version of the game. I was playing the first version of the game on my PC and I was playing the
+===========================
+tensor([[ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ..., 6568,  284,  766],
+        ...,
+        [ 101,  198,  198,  ...,  262,  983,   13],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  262,  983,  373]], device='cuda:0')
+===========================
+input sentence: 
+` ` the old man came from the front of the plane and said he wanted four volunteers to go to cuba'', mccauley said, ` ` and like a nut i raised my hand.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game, when I was playing the first version of the game. I was playing the first version of the game on my PC, and I was playing
+===========================
+tensor([[  101,   198,   198,  ..., 16591,   471,    13],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        ...,
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,   290,   314,   373],
+        [  101,   198,   198,  ...,   326,   262,   983]], device='cuda:0')
+===========================
+input sentence: 
+the stranger ignored him.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was excited to see the new version of the game, but I was also a little disappointed that the game was not available on the Wii U.
+===========================
+tensor([[ 101,  198,  198,  ...,  983,   13,  198],
+        [ 101,  198,  198,  ..., 1695,  319,  262],
+        [ 101,  198,  198,  ...,  766,  262, 2008],
+        ...,
+        [ 101,  198,  198,  ..., 2008,  286,  262],
+        [ 101,  198,  198,  ...,  284,  766,  326],
+        [ 101,  198,  198,  ...,  373, 2712,  262]], device='cuda:0')
+===========================
+input sentence: 
+like philadelphia's late dr. albert c. barnes who kept his own great collection closed to the general public ( time, jan. 2 ), thompson, at 61, is something of a legend in his own lifetime.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 Expo in San Francisco. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+===========================
+tensor([[ 101,  198,  198,  ...,  373,  407, 1695],
+        [ 101,  198,  198,  ...,  262,  983,  373],
+        [ 101,  198,  198,  ...,  257, 3807, 1444],
+        ...,
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  314,  373, 2712],
+        [ 101,  198,  198,  ...,  766,  262,  649]], device='cuda:0')
+===========================
+input sentence: 
+miss langford, in a fresh white dress and low - heeled white sandals, without socks, was out there with them, trying to get them inside.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the launch of the PlayStation 4. I was a little disappointed that the game was not available on the PlayStation 3. I was also a little disappointed that the game was not available
+===========================
+tensor([[  101,   198,   198,  ...,   262,   717,  1517],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,   314,   373,  2712],
+        ...,
+        [  101,   198,   198,  ...,   326,   262,   983],
+        [  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,   616,  9445, 11470]], device='cuda:0')
+===========================
+input sentence: 
+he asked.
+output sentence: 
+�
+
+The first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing I noticed was the fact that the first thing
+===========================
+tensor([[  101,   198,   198,  ...,   373,   523,  6568],
+        [  101,   198,   198,  ...,   314,   373,   635],
+        [  101,   198,   198,  ...,   284,   766,   326],
+        ...,
+        [  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,   881,   517, 23895]], device='cuda:0')
+===========================
+input sentence: 
+` ` another youth, madame''??
+output sentence: 
+�
+
+The first time I saw the new version of the game I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so excited
+===========================
+tensor([[  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ..., 22849,   983,   810],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        ...,
+        [  101,   198,   198,  ...,   326,   262,   983],
+        [  101,   198,   198,  ...,   766,   326,   262],
+        [  101,   198,   198,  ...,     0,     0,     0]], device='cuda:0')
+===========================
+input sentence: 
+crossed himself ; ;
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[ 101,  198,  198,  ...,  262,  983,  373],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        [ 101,  198,  198,  ...,  262,  717, 1517],
+        ...,
+        [ 101,  198,  198,  ...,  257, 5141,  618],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  983,   13,  314]], device='cuda:0')
+===========================
+input sentence: 
+( in the heat of the anti - colmer drive last week, judge smith threatened reprisal against powell.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's release. I was a little surprised to see that the game was still in development. I was a little surprised to see that the game was
+===========================
+tensor([[  101,   198,   198,  ..., 12617,   351,   262],
+        [  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,     0,     0,     0],
+        ...,
+        [  101,   198,   198,  ...,   262,   983,   373],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,   262,  2003,    13]], device='cuda:0')
+===========================
+input sentence: 
+this woman had no distinct shape or size and no particular face, but she radiated warmth, a sweet warmth ; ;
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 Expo in San Francisco. I was there to play the game and was impressed by the level design and the way it was presented. I was also impressed with the
+===========================
+tensor([[ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,  262,  717, 1517],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        ...,
+        [ 101,  198,  198,  ..., 3807, 1444,  366],
+        [ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,   40,  373,  523]], device='cuda:0')
+===========================
+input sentence: 
+` ` that's ( yogi ) berra's.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's release. I was a little surprised to see that the game was still in development. I was also a little surprised to see that the game
+===========================
+tensor([[  101,   198,   198,  ..., 16591,   471,    13],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,   983,    13,   198],
+        ...,
+        [  101,   198,   198,  ...,     0,     0,     0],
+        [  101,   198,   198,  ...,   314,   373,  2712],
+        [  101,   198,   198,  ...,   257,  1643,   286]], device='cuda:0')
+===========================
+input sentence: 
+at first gratingly, caught by grains of corn - - then with a clash into its slot.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the Nintendo eShop. I was excited to see the new version of the game, but I was also a little disappointed that the game was not available on the Wii U.
+===========================
+tensor([[  101,   198,   198,  ...,   326,   262,  2008],
+        [  101,   198,   198,  ...,   262,   717,  1517],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        ...,
+        [  101,   198,   198,  ...,   262,   717,  1517],
+        [  101,   198,   198,  ...,   766,   262,   649],
+        [  101,   198,   198,  ..., 16591,   471,    13]], device='cuda:0')
+===========================
+input sentence: 
+holmes was asked if he had ever visited a house of prostitution, or a ` ` beatnik parlor or teahouse''.
+output sentence: 
+�
+
+The first thing I did was to take a look at the video of the video and see what I could find. I was surprised to see that the video was not a video of the actual shooting. I was surprised to see that the video
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  314,  373, 2712],
+        ...,
+        [ 101,  198,  198,  ...,  523, 6568,  284],
+        [ 101,  198,  198,  ...,  373,  991,  287],
+        [ 101,  198,  198,  ...,  326,  262,  983]], device='cuda:0')
+===========================
+input sentence: 
+gradual, controlled expansion of the world's textile trade is what president kennedy wants.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[  101,   198,   198,  ...,   262,   983,   373],
+        [  101,   198,   198,  ...,  2196,   286,   262],
+        [  101,   198,   198,  ...,   766,   326,   262],
+        ...,
+        [  101,   198,   198,  ...,   649,  2196,   286],
+        [  101,   198,   198,  ...,   338, 21751,    13],
+        [  101,   198,   198,  ...,   262,   983,   373]], device='cuda:0')
+===========================
+input sentence: 
+the marine spun, clapping a hand high on his chest, and dived forward.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's release. I was a little surprised to see that the game was still in development. I was a little surprised to see that the game was
+===========================
+tensor([[ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  523, 6568,  284],
+        [ 101,  198,  198,  ...,    0,    0,    0],
+        ...,
+        [ 101,  198,  198,  ...,  766,  326,  262],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  766,  262,  649]], device='cuda:0')
+===========================
+input sentence: 
+if the southerners were sufficiently aroused, they could very well cut the kennedy legislative program to ribbons from their vantage point of committee chairmanships, leaving sam rayburn leading a truncated, unworkable party.
+output sentence: 
+�
+
+The first time I saw the new version of the game, I was so excited. I was so excited to see the new version of the game. I was so excited to see the new version of the game.
+
+I was so
+===========================
+tensor([[  101,   198,   198,  ...,  6568,   284,   766],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        [  101,   198,   198,  ...,    40,   373,   523],
+        ...,
+        [  101,   198,   198,  ..., 16591,   471,    13],
+        [  101,   198,   198,  ...,  2061,   338,  1016],
+        [  101,   198,   198,  ...,   766,   262,  2008]], device='cuda:0')
+===========================
+input sentence: 
+i will make him distributor for all of florida - - a big market.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 Expo in San Francisco. I was there to play the game and I was so excited to see the new version of the game. I was so excited to see
+===========================
+tensor([[ 101,  198,  198,  ...,  326,  262,  983],
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ..., 2196,  286,  262],
+        ...,
+        [ 101,  198,  198,  ...,   40,  373,  523],
+        [ 101,  198,  198,  ...,  198,   40,  373],
+        [ 101,  198,  198,  ...,  983,  373,  991]], device='cuda:0')
+===========================
+input sentence: 
+leaving his rifle in the wagon, tilghman walked up to the door and hammered on it.
+output sentence: 
+�
+
+The first time I saw the new version of the game was in the early days of the game's release. I was a little surprised to see that the game was still in development. I was also a little surprised to see that the game
+===========================
+tensor([[  101,   198,   198,   464,   717,   640,   314,  2497,   262,   649,
+          2196,   286,   262,   983,   373,   379,   262,   412,    18, 18600,
+           287,  5401,  5652,    13,   314,   373,   257,  1310, 10927,    11,
+           475,   314,   373,  1498,   284,   651,   257,   922,   804,   379,
+           262,   983,   290,   373,  1498,   284,   651,   257,  1254,   329,
+           262],
+        [  101,   198,   198,   464,   717,   640,   314,  2497,   262,   649,
+          2196,   286,   262,   983,    11,   314,   373,   523,  6568,    13,
+           314,   373,   523,  6568,   284,   766,   262,   649,  2196,   286,
+           262,   983,    13,   314,   373,   523,  6568,   284,   766,   262,
+           649,  2196,   286,   262,   983,    13,   198,   198,    40,   373,
+           523]], device='cuda:0')
+===========================
+input sentence: 
+and i aim to have it''.
+output sentence: 
+�
+
+The first time I saw the new version of the game was at the E3 booth in Los Angeles. I was a little nervous, but I was able to get a good look at the game and was able to get a feel for the
+===========================
+Validation Accuracy: 0.0
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 180, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 162, in main
+    model.save_pretrained('models/news_adventure.torch')
+AttributeError: 'NoneType' object has no attribute 'save_pretrained'
