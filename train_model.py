@@ -27,6 +27,7 @@ MAX_LENGTH = 100
 class GenreClassifier(torch.nn.Module):
 
     def __init__(self, hidden_dim, middle_dim, num_class):
+        super(GenreClassifier, self).__init__()
         self.lin1 = torch.nn.Linear(hidden_dim, middle_dim)
         self.relu = torch.nn.ReLU()
         self.lin2 = torch.nn.Linear(middle_dim, num_class)
@@ -227,7 +228,7 @@ def main(params):
     if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
         print(model)
-        classifier = GenreClassifier(128, 32, 2)
+        classifier = GenreClassifier(768, 32, 2)
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
         print("created model")
         model.decoder.config.use_cache = False
