@@ -149,10 +149,14 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
             print(batch['genre_labels'])
             
             loss = outputs.loss
-            loss.backward()
+            loss.backward(retain_graph=True)
+
+            z = outputs.encoder_last_hidden_state
+            z.no_grad()
+            cls_outputs = classifier(z)
 
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
-            cls_loss.backward()
+            cls_loss.backward(retain_graph=True)
             
             optimizer.step()
             lr_scheduler.step()
