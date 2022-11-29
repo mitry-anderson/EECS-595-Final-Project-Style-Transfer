@@ -86,11 +86,11 @@ def load_data(input_tokenizer, output_tokenizer, params):
     print(f"loaded {len(train_dataloader)} training samples")
     
     val_dataset = BrownStyleDataset(stage='validation', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
-    val_dataloader = DataLoader(val_dataset, batch_size=params.batch_size, shuffle=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=params.batch_size, shuffle=False)
     print(f"loaded {len(val_dataloader)} validation samples")
    
     test_dataset = BrownStyleDataset(stage='test', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
-    test_dataloader = DataLoader(test_dataset, batch_size=params.batch_size, shuffle=True)
+    test_dataloader = DataLoader(test_dataset, batch_size=params.batch_size, shuffle=False)
     print(f"loaded {len(test_dataloader)} test samples")
     
     return train_dataloader, val_dataloader, test_dataloader
