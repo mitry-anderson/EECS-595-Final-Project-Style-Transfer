@@ -169,12 +169,13 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch['input_sentences'])
 
+            cls_outputs = classifier(outputs.encoder_last_hidden_state)
             
             pred = output_tokenizer.batch_decode(outputs)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
-            metric2.add_batch(predictions=)
+            metric2.add_batch(predictions=cls_outputs.argmax(1), references=batch['genre_labels'])
 
         print("---------------------------")
         print("example input sentences: ")
