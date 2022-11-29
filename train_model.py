@@ -24,6 +24,24 @@ device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("
 
 MAX_LENGTH = 100
 
+class GenreClassifier(torch.nn.Module):
+
+    def __init__(self, hidden_dim, middle_dim, num_class):
+        self.lin1 = torch.nn.Linear(hidden_dim, middle_dim)
+        self.relu = torch.nn.ReLU()
+        self.lin2 = torch.nn.Linear(middle_dim, num_class)
+        self.init_weights()
+
+    def init_weights(self):
+        initrange = 0.5
+        self.lin1.weight.data.uniform_(-initrange, initrange)
+        self.lin1.bias.data.zero_()
+        self.lin2.weight.data.uniform_(-initrange, initrange)
+        self.lin2.bias.data.zero_()
+
+    def forward(self, hidden_outputs):
+        return self.lin2(self.relu(self.lin1(hidden_outputs)))
+
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
@@ -95,7 +113,7 @@ def load_data(input_tokenizer, output_tokenizer, params):
     
     return train_dataloader, val_dataloader, test_dataloader
 
-def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
+def train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training!")
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
     num_training_steps = params.num_epochs * len(train_dataloader)
@@ -105,35 +123,58 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
+
+    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-5)
+    cls_lr_scheduler = get_scheduler(
+        name="linear", 
+        optimizer=optimizer, 
+        num_warmup_steps=0.1*num_training_steps, 
+        num_training_steps=num_training_steps
+    )
+    cls_criterion = torch.nn.CrossEntropyLoss()
     # progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
         model.train()
+        classifier.train()
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"])
+            cls_outputs = classifier(outputs.encoder_last_hidden_state)
+            
             loss = outputs.loss
             loss.backward()
 
+            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
+            cls_loss.backward()
+            
             optimizer.step()
             lr_scheduler.step()
             optimizer.zero_grad()
+
+            cls_optimizer.step()
+            cls_lr_scheduler.step()
+            cls_optimizer.zero_grad()
             # progress_bar.update(1)
         # print('loss:', loss.item())
         print("===========================")
         print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
         
         metric = evaluate.load("exact_match")
+        metric2 = evaluate.load("accuracy")
         model.eval()
+        classifier.eval()
         pred = []
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch['input_sentences'])
 
+            
             pred = output_tokenizer.batch_decode(outputs)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
+            metric2.add_batch(predictions=)
 
         print("---------------------------")
         print("example input sentences: ")
@@ -184,6 +225,7 @@ def main(params):
 
     if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
+        classifier = GenreClassifier(model.hidden_size, 32, 2)
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
         print("created model")
         model.decoder.config.use_cache = False
@@ -196,7 +238,7 @@ def main(params):
         model.config.pad_token_id = input_tokenizer.pad_token_id
         model.config.vocab_size = model.config.decoder.vocab_size
         model.to(device)
-        model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+        model, classifier = train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         model.save_pretrained('models/news_adventure.torch')
     else:
         model = EncoderDecoderModel.from_pretrained(f'models/{params.model_name}')
