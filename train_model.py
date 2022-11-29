@@ -144,7 +144,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         print("---------------------------")
         score = metric.compute()
         print('Validation Accuracy:', score['exact_match'])
-        print("===========================")
+        print("===========================",flush=True)
     return model
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
