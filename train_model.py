@@ -27,9 +27,9 @@ MAX_LENGTH = 100
 class GenreClassifier(torch.nn.Module):
 
     def __init__(self, hidden_dim, middle_dim, num_class):
-        self.lin1 = torch.nn.Linear((hidden_dim, middle_dim))
+        self.lin1 = torch.nn.Linear(hidden_dim, middle_dim)
         self.relu = torch.nn.ReLU()
-        self.lin2 = torch.nn.Linear((middle_dim, num_class))
+        self.lin2 = torch.nn.Linear(middle_dim, num_class)
         self.init_weights()
 
     def init_weights(self):
