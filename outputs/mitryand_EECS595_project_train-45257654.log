@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 216, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 182, in main
+    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 84, in load_data
+    train_dataset = BrownStyleDataset(stage='train', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 53, in __init__
+    self.sentences_out = ot.input_ids.to(device).copy()
+AttributeError: 'Tensor' object has no attribute 'copy'. Did you mean: 'copy_'?
