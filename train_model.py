@@ -188,7 +188,8 @@ def main(params):
         model.decoder.config.use_cache = False
         model.config.decoder_start_token_id = output_tokenizer.bos_token_id
         model.config.eos_token_id = output_tokenizer.eos_token_id
-        model.config.max_length = MAX_LENGTH
+        # model.config.max_length = MAX_LENGTH
+        model.config.max_new_tokens = MAX_LENGTH
         model.config.no_repeat_ngram_size = 3
         model.early_stopping = True
         model.config.pad_token_id = input_tokenizer.pad_token_id
