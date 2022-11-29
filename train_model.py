@@ -175,8 +175,9 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch['input_sentences'])
-
-            cls_outputs = classifier(outputs.encoder_last_hidden_state)
+            z = outputs.encoder_last_hidden_state
+            z.no_grad()
+            cls_outputs = classifier(z)
             
             pred = output_tokenizer.batch_decode(outputs)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
