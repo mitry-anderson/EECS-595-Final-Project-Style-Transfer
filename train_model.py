@@ -141,8 +141,11 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"])
             cls_outputs = classifier(outputs.encoder_last_hidden_state)
+
             print(f"cls_outputs: {cls_outputs.shape}")
             print(f"label: {batch['genre_labels'].shape}")
+            print(cls_outputs)
+            print(batch['genre_labels'])
             
             loss = outputs.loss
             loss.backward()
