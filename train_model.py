@@ -50,8 +50,8 @@ class BrownStyleDataset(Dataset):
             self.attention_masks = it.attention_mask.to(device)
 
             ot = output_tokenizer(sentences, return_tensors="pt", padding="max_length", truncation=True, max_length=MAX_LENGTH)
-            self.sentences_out = ot.input_ids.to(device)
-            self.attention_masks_out = ot.attention_mask.to(device).copy()
+            self.sentences_out = ot.input_ids.to(device).copy()
+            self.attention_masks_out = ot.attention_mask.to(device)
 
             # from https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
             self.attention_masks_out = [
