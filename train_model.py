@@ -22,6 +22,8 @@ set_seed(SEED)
 device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
 # device = torch.device("cpu")
 
+MAX_LENGTH = 100
+
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
@@ -43,8 +45,18 @@ class BrownStyleDataset(Dataset):
         
         # if applicable (should always be!), tokenize data
         if self.input_tokenizer is not None and self.output_tokenizer is not None:
-            self.sentences = input_tokenizer(sentences, return_tensors="pt", padding=True).input_ids.to(device)
-            self.sentences_out = output_tokenizer(sentences, return_tensors="pt", padding=True).input_ids.to(device)
+            it = input_tokenizer(sentences, return_tensors="pt", padding="max_length", truncation=True, max_length=MAX_LENGTH)
+            self.sentences = it.input_ids.to(device)
+            self.attention_masks = it.attention_mask.to(device)
+
+            ot = output_tokenizer(sentences, return_tensors="pt", padding="max_length", truncation=True, max_length=MAX_LENGTH)
+            self.sentences_out = ot.input_ids.to(device)
+            self.attention_masks_out = ot.attention_mask.to(device).copy()
+
+            # from https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
+            self.attention_masks_out = [
+                [-100 if mask == 0 else token for mask, token in mask_and_tokens] for mask_and_tokens in [zip(masks, labels) for masks, labels in zip(self.attention_masks_out, self.sentences_out)]
+            ]
 
             self.labels = torch.tensor(labels,device=device)
         else:
@@ -54,7 +66,13 @@ class BrownStyleDataset(Dataset):
         return len(self.sentences)
 
     def __getitem__(self, idx):
-        return self.sentences[idx], self.sentences_out[idx], self.labels[idx]
+        return {
+            "input_sentences" : self.sentences[idx], 
+            "input_attention_masks" : self.attention_masks[idx], 
+            "output_sentences" : self.sentences_out[idx], 
+            "output_attention_masks" : self.attention_masks_out[idx], 
+            "genre_labels" : self.labels[idx]
+        }
 
     # def to(self, device):
     #     self.sentences.to(device)
@@ -92,7 +110,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
 
         model.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch[0], labels=batch[0])
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"])
             loss = outputs.loss
             loss.backward()
 
@@ -101,7 +119,8 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
             optimizer.zero_grad()
             # progress_bar.update(1)
         # print('loss:', loss.item())
-        print(f'epoch {epoch}/{params.num_epochs} | loss: {loss.item()}')
+        print("===========================")
+        print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
         
         metric = evaluate.load("exact_match")
         model.eval()
@@ -109,22 +128,23 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model.generate(input_ids=batch[0], max_new_tokens=50)
+                outputs = model.generate(input_ids=batch['input_sentences'])
 
-            pred = output_tokenizer.batch_decode(outputs, skip_special_tokens=True)
-            truth = input_tokenizer.batch_decode(batch[0], skip_special_tokens=True)
+            pred = output_tokenizer.batch_decode(outputs)
+            truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
 
-        print("===========================")
+        print("---------------------------")
         print("example input sentence: ")
         print(truth[0])
+        print("---------------------------")
         print("example output sentence: ")
         print(pred[0])
-        print("===========================")
-        
+        print("---------------------------")
         score = metric.compute()
         print('Validation Accuracy:', score['exact_match'])
+        print("===========================")
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("exact_match")
@@ -168,7 +188,7 @@ def main(params):
         model.decoder.config.use_cache = False
         model.config.decoder_start_token_id = output_tokenizer.bos_token_id
         model.config.eos_token_id = output_tokenizer.eos_token_id
-        model.config.max_length = 100
+        model.config.max_length = MAX_LENGTH
         model.config.no_repeat_ngram_size = 3
         model.early_stopping = True
         model.config.pad_token_id = input_tokenizer.pad_token_id
