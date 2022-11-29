@@ -92,7 +92,7 @@ def train(model, train_dataloader, eval_dataloader, params, input_tokenizer, out
 
         model.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch[0], labels=batch[1])
+            outputs = model(input_ids=batch[0], labels=batch[0])
             loss = outputs.loss
             loss.backward()
 
