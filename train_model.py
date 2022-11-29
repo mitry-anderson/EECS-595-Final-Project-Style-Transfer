@@ -141,7 +141,7 @@ def test(model, test_dataloader, input_tokenizer, output_tokenizer):
 
 def main(params):
     
-    input_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+    input_tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
 
     # pro tip: https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
     def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
@@ -154,15 +154,20 @@ def main(params):
     input_tokenizer.eos_token = input_tokenizer.sep_token
 
     output_tokenizer.pad_token = output_tokenizer.unk_token
-    output_tokenizer.cls_token = input_tokenizer.cls_token
+    # output_tokenizer.cls_token = input_tokenizer.cls_token
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
 
     if params.train:
-        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "gpt2")
+        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
         print("created model")
-        model.config.decoder_start_token_id = input_tokenizer.cls_token_id
+        model.decoder.config.use_cache = False
+        model.config.decoder_start_token_id = output_tokenizer.bos_token_id
+        model.config.eos_token_id = output_tokenizer.eos_token_id
+        model.config.max_length = 100
+        model.config.no_repeat_ngram_size = 3
+        model.early_stopping = True
         model.config.pad_token_id = input_tokenizer.pad_token_id
         model.config.vocab_size = model.config.decoder.vocab_size
         model.to(device)
