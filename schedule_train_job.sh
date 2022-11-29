@@ -17,4 +17,4 @@ module load cuda
 source venv/bin/activate
 
 # run job
-python train_model.py --train=True --batch_size=32 --num_epochs=3
+python train_model.py --train=True --batch_size=4 --num_epochs=8
