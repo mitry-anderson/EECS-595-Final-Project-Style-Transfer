@@ -120,7 +120,8 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
     num_training_steps = params.num_epochs * len(train_dataloader)
     lr_scheduler = get_scheduler(
         name="linear", 
-        optimizer=optimizer, 
+        optimizer=optimizer,
+        num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
 
