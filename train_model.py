@@ -178,11 +178,11 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch['input_sentences'], return_dict_in_generate=True, output_hidden_states=True)
-            print(outputs)
+            
             z = outputs.encoder_hidden_states[0]
             cls_outputs = classifier(z)
             
-            pred = output_tokenizer.batch_decode(outputs)
+            pred = output_tokenizer.batch_decode(outputs.sequences)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
