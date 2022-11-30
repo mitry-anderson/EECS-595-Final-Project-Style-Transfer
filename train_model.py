@@ -177,7 +177,8 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch['input_sentences'])
+                outputs = model.generate(input_ids=batch['input_sentences'], output_hidden_states=True)
+            print(outputs)
             z = outputs.encoder_last_hidden_state
             cls_outputs = classifier(z)
             
