@@ -190,7 +190,9 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         print(pred[0:3])
         print("---------------------------")
         score = metric.compute()
-        print('Validation Accuracy:', score['exact_match'])
+        score2 = metric.compute()
+        print('Validation Exact Match %:', score['exact_match'])
+        print('Validation Classifier Accuracy:', score2['accuracy'])
         print("===========================",flush=True)
     return model
 
