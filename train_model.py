@@ -116,12 +116,11 @@ def load_data(input_tokenizer, output_tokenizer, params):
 
 def train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training!")
-    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-6)
     num_training_steps = params.num_epochs * len(train_dataloader)
     lr_scheduler = get_scheduler(
         name="linear", 
         optimizer=optimizer, 
-        num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
 
