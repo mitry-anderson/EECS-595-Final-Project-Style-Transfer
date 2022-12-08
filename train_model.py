@@ -128,7 +128,7 @@ def load_data(input_tokenizer, output_tokenizer, params):
 
 def train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training!")
-    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-6)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
     num_training_steps = params.num_epochs * len(train_dataloader)
     lr_scheduler = get_scheduler(
         name="linear", 
@@ -151,7 +151,7 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         model.train()
         # classifier.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"])
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"])
             # cls_outputs = classifier(outputs.encoder_last_hidden_state)
             
             loss = outputs.loss
@@ -238,10 +238,10 @@ def main(params):
     input_tokenizer.bos_token = input_tokenizer.cls_token
     input_tokenizer.eos_token = input_tokenizer.sep_token
 
-    output_tokenizer.pad_token = output_tokenizer.unk_token
+    # output_tokenizer.pad_token = output_tokenizer.unk_token
     # output_tokenizer.cls_token = input_tokenizer.cls_token
 
-    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
+    train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
     if params.train:
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased", tie_encoder_decoder=True)
