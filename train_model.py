@@ -11,6 +11,8 @@ from tqdm.auto import tqdm
 
 import logging
 
+from nltk.corpus import brown
+
 def set_seed(seed):
     random.seed(seed)
     torch.manual_seed(seed)
@@ -48,7 +50,7 @@ class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
 
         # store key variables
-        self.id_to_label = ['adventure', 'news']
+        self.id_to_label = brown.categories()
         self.stage = stage
         self.input_tokenizer = input_tokenizer
         self.output_tokenizer = output_tokenizer
@@ -93,10 +95,6 @@ class BrownStyleDataset(Dataset):
             "genre_labels" : self.labels[idx]
         }
 
-    # def to(self, device):
-    #     self.sentences.to(device)
-    #     self.labels.to(device)
-
 def load_data(input_tokenizer, output_tokenizer, params):
 
     # make a bunch of datasets and dataloaders therefrom
@@ -125,62 +123,62 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         num_training_steps=num_training_steps
     )
 
-    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-5)
-    cls_lr_scheduler = get_scheduler(
-        name="linear", 
-        optimizer=optimizer, 
-        num_warmup_steps=0.1*num_training_steps, 
-        num_training_steps=num_training_steps
-    )
-    cls_criterion = torch.nn.CrossEntropyLoss()
+    # cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-5)
+    # cls_lr_scheduler = get_scheduler(
+    #     name="linear", 
+    #     optimizer=optimizer, 
+    #     num_warmup_steps=0.1*num_training_steps, 
+    #     num_training_steps=num_training_steps
+    # )
+    # cls_criterion = torch.nn.CrossEntropyLoss()
     # progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
         model.train()
-        classifier.train()
+        # classifier.train()
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"])
-            cls_outputs = classifier(outputs.encoder_last_hidden_state)
+            # cls_outputs = classifier(outputs.encoder_last_hidden_state)
             
             loss = outputs.loss
-            loss.backward(retain_graph=True)
+            loss.backward()
 
-            z = outputs.encoder_last_hidden_state
-            cls_outputs = classifier(z)
+            # z = outputs.encoder_last_hidden_state
+            # cls_outputs = classifier(z)
 
-            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
-            cls_loss.backward(retain_graph=True)
+            # cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
+            # cls_loss.backward(retain_graph=True)
             
             optimizer.step()
             lr_scheduler.step()
             optimizer.zero_grad()
 
-            cls_optimizer.step()
-            cls_lr_scheduler.step()
-            cls_optimizer.zero_grad()
+            # cls_optimizer.step()
+            # cls_lr_scheduler.step()
+            # cls_optimizer.zero_grad()
             # progress_bar.update(1)
         # print('loss:', loss.item())
         print("===========================")
         print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
         
         metric = evaluate.load("exact_match")
-        metric2 = evaluate.load("accuracy")
+        # metric2 = evaluate.load("accuracy")
         model.eval()
-        classifier.eval()
+        # classifier.eval()
         pred = []
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model.generate(input_ids=batch['input_sentences'], return_dict_in_generate=True, output_hidden_states=True)
             
-            z = outputs.encoder_hidden_states[0]
-            cls_outputs = classifier(z)
+            # z = outputs.encoder_hidden_states[0]
+            # cls_outputs = classifier(z)
             
             pred = output_tokenizer.batch_decode(outputs.sequences)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
-            metric2.add_batch(predictions=cls_outputs.argmax(1), references=batch['genre_labels'])
+            # metric2.add_batch(predictions=cls_outputs.argmax(1), references=batch['genre_labels'])
 
         print("---------------------------")
         print("example input sentences: ")
@@ -190,9 +188,9 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         print(pred[0:3])
         print("---------------------------")
         score = metric.compute()
-        score2 = metric2.compute()
+        # score2 = metric2.compute()
         print('Validation Exact Match %:', score['exact_match'])
-        print('Validation Classifier Accuracy:', score2['accuracy'])
+        # print('Validation Classifier Accuracy:', score2['accuracy'])
         print("===========================",flush=True)
     return model
 
@@ -216,13 +214,13 @@ def main(params):
     
     input_tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
 
-    # pro tip: https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
-    def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
-        outputs = [self.bos_token_id] + token_ids_0 + [self.eos_token_id]
-        return outputs
-    GPT2Tokenizer.build_inputs_with_special_tokens = build_inputs_with_special_tokens
+    # # pro tip: https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
+    # def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
+    #     outputs = [self.bos_token_id] + token_ids_0 + [self.eos_token_id]
+    #     return outputs
+    # GPT2Tokenizer.build_inputs_with_special_tokens = build_inputs_with_special_tokens
 
-    output_tokenizer =  GPT2Tokenizer.from_pretrained('gpt2')
+    output_tokenizer =  input_tokenizer
     input_tokenizer.bos_token = input_tokenizer.cls_token
     input_tokenizer.eos_token = input_tokenizer.sep_token
 
@@ -232,7 +230,7 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, output_tokenizer, params)
 
     if params.train:
-        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "gpt2")
+        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
         print(model)
         classifier = GenreClassifier(768, 256, 2)
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
