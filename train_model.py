@@ -50,7 +50,22 @@ class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
 
         # store key variables
-        self.id_to_label = brown.categories()
+        self.id_to_label = ['adventure', 
+                            'belles_lettres', 
+                            'editorial', 
+                            'fiction', 
+                            'government', 
+                            'hobbies', 
+                            'humor', 
+                            'learned', 
+                            'lore', 
+                            'mystery', 
+                            'news', 
+                            'religion', 
+                            'reviews', 
+                            'romance', 
+                            'science_fiction'
+                            ]
         self.stage = stage
         self.input_tokenizer = input_tokenizer
         self.output_tokenizer = output_tokenizer
