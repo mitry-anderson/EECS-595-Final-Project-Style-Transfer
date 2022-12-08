@@ -11,7 +11,6 @@ from tqdm.auto import tqdm
 
 import logging
 
-from nltk.corpus import brown
 
 def set_seed(seed):
     random.seed(seed)
