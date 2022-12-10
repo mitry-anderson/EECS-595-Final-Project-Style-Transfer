@@ -48,31 +48,66 @@
 # print('Validation Accuracy:', score['exact_match'])
 
 
-from transformers import EncoderDecoderModel, BertTokenizer
+
+
+
+
+
+# from transformers import EncoderDecoderModel, BertTokenizer
+# import torch
+
+# tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+# model = EncoderDecoderModel.from_encoder_decoder_pretrained(
+#     "bert-base-uncased", "bert-base-uncased"
+# )  # initialize Bert2Bert from pre-trained checkpoints
+
+# # training
+# model.config.decoder_start_token_id = tokenizer.cls_token_id
+# model.config.pad_token_id = tokenizer.pad_token_id
+# model.config.vocab_size = model.config.decoder.vocab_size
+
+# input_ids = tokenizer("This is a really long text", return_tensors="pt").input_ids
+# labels = tokenizer("This is the corresponding summary", return_tensors="pt").input_ids
+# outputs = model(input_ids=input_ids, labels=input_ids)
+# loss, logits = outputs.loss, outputs.logits
+
+# # save and load from pretrained
+# model.save_pretrained("bert2bert")
+# model = EncoderDecoderModel.from_pretrained("bert2bert")
+
+# # generation
+# generated = model.generate(input_ids)
+# print(input_ids)
+# print(labels)
+# print(generated)
+# print(tokenizer.batch_decode(generated))
+
+
+
 import torch
+from transformers import BertTokenizer, BertLMHeadModel
 
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-model = EncoderDecoderModel.from_encoder_decoder_pretrained(
-    "bert-base-uncased", "bert-base-uncased"
-)  # initialize Bert2Bert from pre-trained checkpoints
+model = BertLMHeadModel.from_pretrained("bert-base-uncased")
 
-# training
-model.config.decoder_start_token_id = tokenizer.cls_token_id
-model.config.pad_token_id = tokenizer.pad_token_id
-model.config.vocab_size = model.config.decoder.vocab_size
+inputs = tokenizer("Cappy looked wary , but he moved off the floorboards and followed the dirty ex-musician to the center of the refuse-littered boxcar .", return_tensors="pt")
+outputs = model(**inputs, labels=inputs["input_ids"], output_hidden_states=True)
+print(outputs.loss)
+guess = torch.argmax(outputs.logits,dim=2).long()
+print(guess)
+print(tokenizer.batch_decode(guess))
+print(outputs.hidden_states[0])
 
-input_ids = tokenizer("This is a really long text", return_tensors="pt").input_ids
-labels = tokenizer("This is the corresponding summary", return_tensors="pt").input_ids
-outputs = model(input_ids=input_ids, labels=input_ids)
-loss, logits = outputs.loss, outputs.logits
 
-# save and load from pretrained
-model.save_pretrained("bert2bert")
-model = EncoderDecoderModel.from_pretrained("bert2bert")
 
-# generation
-generated = model.generate(input_ids)
-print(input_ids)
-print(labels)
-print(generated)
-print(tokenizer.batch_decode(generated))
+
+
+
+
+
+
+
+
+
+
+
