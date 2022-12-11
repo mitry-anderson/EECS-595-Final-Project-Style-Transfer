@@ -306,7 +306,7 @@ def main(params):
         model.to(device)
 
     if params.train_classifier:
-        classifier = GenreClassifier(768, 256, 2)
+        classifier = GenreClassifier(768, 256, 14)
         model.to(device)
         classifier.to(device)
         print(classifier)
