@@ -301,7 +301,8 @@ def main(params):
         model.to(device)
         classifier.to(device)
         
-        model, classifier = train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+        model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+        classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         model.save_pretrained('models/brown_autoencoder.torch')
     else:
         model = BertLMHeadModel.from_pretrained(f'models/{params.model_name}')
