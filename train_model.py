@@ -153,7 +153,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
 
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
             print("2")
-            print(cls_loss.item())
+            print(cls_loss)
             cls_loss.backward()
             print("3")
             cls_optimizer.step()
