@@ -296,7 +296,7 @@ def main(params):
         classifier.to(device)
         
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
-        torch.save(model.state_dict,'models/brown_autoencoder.torch')
+        torch.save(model.state_dict(),'models/brown_autoencoder.torch')
         # model.save_pretrained('models/brown_autoencoder.torch')
     else:
         model = BertLMHeadModel.from_pretrained("bert-base-uncased")
