@@ -125,7 +125,7 @@ def load_data(input_tokenizer, output_tokenizer, params):
     return train_dataloader, val_dataloader, test_dataloader
 
 def train_classifier(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
-    print("Begin training autoencoder!")
+    print("Begin training classifier!")
     
     num_training_steps = params.num_epochs * len(train_dataloader)
 
@@ -285,10 +285,10 @@ def main(params):
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
-    if params.train:
+    if params.train_autoencoder:
         model = BertLMHeadModel.from_pretrained("bert-base-uncased")
         print(model)
-        classifier = GenreClassifier(768, 256, 2)
+        
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
         print("created model")
         
@@ -296,10 +296,19 @@ def main(params):
         classifier.to(device)
         
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
-        classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         model.save_pretrained('models/brown_autoencoder.torch')
     else:
         model = BertLMHeadModel.from_pretrained(f'models/{params.model_name}')
+
+    if params.train_classifier:
+        classifier = GenreClassifier(768, 256, 2)
+        print(classifier)
+        classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+        torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
+        
+    else:
+        GenreClassifier(768, 256, 2)
+        classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
 
     if params.test:
         # first load model
@@ -310,9 +319,11 @@ if __name__ == "__main__":
 
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--num_epochs", type=int, default=1)
-    parser.add_argument("--train", type=bool, default=False)
+    parser.add_argument("--train_autoencoder", type=bool, default=False)
+    parser.add_argument("--train_classifier", type=bool, default=False)
     parser.add_argument("--test", type=bool, default=False)
-    parser.add_argument("--model_name", type=str, default="news_adventure.torch")
+    parser.add_argument("--model_name", type=str, default="brown_autoencoder.torch")
+    parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
 
     params, unknown = parser.parse_known_args()
     main(params)
