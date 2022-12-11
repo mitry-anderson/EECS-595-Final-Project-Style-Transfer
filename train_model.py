@@ -137,76 +137,76 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         num_training_steps=num_training_steps
     )
 
-    # cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-5)
-    # cls_lr_scheduler = get_scheduler(
-    #     name="linear", 
-    #     optimizer=optimizer, 
-    #     num_warmup_steps=0.1*num_training_steps, 
-    #     num_training_steps=num_training_steps
-    # )
-    # cls_criterion = torch.nn.CrossEntropyLoss()
-    # progress_bar = tqdm(range(num_training_steps))
+    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-5)
+    cls_lr_scheduler = get_scheduler(
+        name="linear", 
+        optimizer=optimizer, 
+        num_warmup_steps=0.1*num_training_steps, 
+        num_training_steps=num_training_steps
+    )
+    cls_criterion = torch.nn.CrossEntropyLoss()
+    progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
         model.train()
-        # classifier.train()
+        classifier.train()
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
-            # cls_outputs = classifier(outputs.encoder_last_hidden_state)
+            cls_outputs = classifier(outputs.encoder_last_hidden_state)
             
             loss = outputs.loss
             loss.backward()
 
-            # z = outputs.encoder_last_hidden_state
-            # cls_outputs = classifier(z)
+            z = outputs.encoder_last_hidden_state
+            cls_outputs = classifier(z)
 
-            # cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
-            # cls_loss.backward(retain_graph=True)
+            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
+            cls_loss.backward(retain_graph=True)
             
             optimizer.step()
             lr_scheduler.step()
             optimizer.zero_grad()
 
-            # cls_optimizer.step()
-            # cls_lr_scheduler.step()
-            # cls_optimizer.zero_grad()
-            # progress_bar.update(1)
-        # print('loss:', loss.item())
+            cls_optimizer.step()
+            cls_lr_scheduler.step()
+            cls_optimizer.zero_grad()
+            progress_bar.update(1)
+        print('loss:', loss.item())
         print("===========================")
         print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
         
         metric = evaluate.load("exact_match")
-        # metric2 = evaluate.load("accuracy")
+        metric2 = evaluate.load("accuracy")
         model.eval()
-        # classifier.eval()
+        classifier.eval()
         pred = []
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
             
-            # z = outputs.encoder_hidden_states[0]
-            # cls_outputs = classifier(z)
+            z = outputs.encoder_hidden_states[0]
+            cls_outputs = classifier(z)
             guess = torch.argmax(outputs.logits,dim=2).long()
             pred = output_tokenizer.batch_decode(guess)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
-            # metric2.add_batch(predictions=cls_outputs.argmax(1), references=batch['genre_labels'])
+            metric2.add_batch(predictions=cls_outputs.argmax(1), references=batch['genre_labels'])
 
         print("---------------------------")
         print("example input sentences: ")
-        print(truth[0:3])
+        print(truth[0:5])
         print("---------------------------")
         print("example output sentences: ")
-        print(pred[0:3])
+        print(pred[0:5])
         print("---------------------------")
         score = metric.compute()
-        # score2 = metric2.compute()
+        score2 = metric2.compute()
         print('Validation Exact Match %:', score['exact_match'])
-        # print('Validation Classifier Accuracy:', score2['accuracy'])
+        print('Validation Classifier Accuracy:', score2['accuracy'])
         print("===========================",flush=True)
-    return model
+    return model, classifier
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("exact_match")
@@ -244,7 +244,7 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
     if params.train:
-        model = BertLMHeadModel.from_pretrained("bert-base-uncased")
+        model = BertLMHeadModel.from_pretrained("bert-base-uncased", is_decoder=True)
         print(model)
         classifier = GenreClassifier(768, 256, 2)
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
@@ -256,7 +256,7 @@ def main(params):
         model, classifier = train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         model.save_pretrained('models/brown_autoencoder.torch')
     else:
-        model = EncoderDecoderModel.from_pretrained(f'models/{params.model_name}')
+        model = BertLMHeadModel.from_pretrained(f'models/{params.model_name}')
 
     if params.test:
         # first load model
