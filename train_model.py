@@ -84,14 +84,12 @@ class BrownStyleDataset(Dataset):
             self.sentences = it.input_ids.to(device)
             self.attention_masks = it.attention_mask.to(device)
 
-            ot = output_tokenizer(sentences, return_tensors="pt", padding="max_length", truncation=True, max_length=MAX_LENGTH)
-            self.sentences_out = ot.input_ids.to(device)
+            ot = input_tokenizer(sentences, return_tensors="pt", padding="max_length", truncation=True, max_length=MAX_LENGTH)
+            self.sentences_out = torch.roll(ot.input_ids.to(device), shifts=(-1), dims=(0))
             self.attention_masks_out = ot.attention_mask.to(device)
 
             # from https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
-            self.attention_masks_out = torch.tensor([
-                [-100 if mask == 0 else token for mask, token in mask_and_tokens] for mask_and_tokens in [zip(masks, labels) for masks, labels in zip(self.attention_masks_out, self.sentences_out)]
-            ], device=device)
+            
 
             self.labels = torch.tensor(labels,device=device)
         else:
@@ -128,19 +126,13 @@ def load_data(input_tokenizer, output_tokenizer, params):
 
 def train_classifier(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training autoencoder!")
-    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
+    
     num_training_steps = params.num_epochs * len(train_dataloader)
-    lr_scheduler = get_scheduler(
-        name="linear", 
-        optimizer=optimizer,
-        num_warmup_steps=0.1*num_training_steps, 
-        num_training_steps=num_training_steps
-    )
 
     cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-5)
     cls_lr_scheduler = get_scheduler(
         name="linear", 
-        optimizer=optimizer, 
+        optimizer=cls_optimizer, 
         num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
@@ -210,7 +202,7 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         model.train()
         
         for batch in train_dataloader:
-            outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
             z = outputs.hidden_states[0]
            
             loss = outputs.loss
@@ -220,7 +212,6 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
             lr_scheduler.step()
             optimizer.zero_grad()
 
-            
             progress_bar.update(1)
         print('loss:', loss.item())
         print("===========================")
