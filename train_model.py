@@ -69,7 +69,7 @@ class BrownStyleDataset(Dataset):
         #                     'romance', 
         #                     'science_fiction'
         #                     ]
-        self.id_to_label = ['adventure', 'news']
+        self.id_to_label = ['adventure', 'editorial']
         self.stage = stage
         self.input_tokenizer = input_tokenizer
         self.output_tokenizer = output_tokenizer
