@@ -117,7 +117,7 @@ def load_data(input_tokenizer, output_tokenizer, params):
     print(f"loaded {len(train_dataloader)} training samples")
     
     val_dataset = BrownStyleDataset(stage='validation', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
-    val_dataloader = DataLoader(val_dataset, batch_size=params.batch_size, shuffle=False)
+    val_dataloader = DataLoader(val_dataset, batch_size=params.batch_size, shuffle=True)
     print(f"loaded {len(val_dataloader)} validation samples")
    
     test_dataset = BrownStyleDataset(stage='test', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
@@ -126,8 +126,8 @@ def load_data(input_tokenizer, output_tokenizer, params):
     
     return train_dataloader, val_dataloader, test_dataloader
 
-def train(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
-    print("Begin training!")
+def train_classifier(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
+    print("Begin training autoencoder!")
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
     num_training_steps = params.num_epochs * len(train_dataloader)
     lr_scheduler = get_scheduler(
@@ -148,28 +148,79 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
     progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
-        model.train()
+        model.eval()
         classifier.train()
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
             z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
-            
-            loss = outputs.loss
-            loss.backward()
-
-            cls_outputs = classifier(z)
 
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
-            cls_loss.backward(retain_graph=True)
+            cls_loss.backward()
+            
+            cls_optimizer.step()
+            cls_lr_scheduler.step()
+            cls_optimizer.zero_grad()
+            progress_bar.update(1)
+        print("===========================")
+        print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {cls_loss.item()}')
+        
+        metric = evaluate.load("accuracy")
+        model.eval()
+        classifier.eval()
+        for batch in eval_dataloader:
+            with torch.no_grad():
+                outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
+            
+            z = outputs.hidden_states[0]
+            cls_outputs = classifier(z)
+            cls_pred = cls_outputs.argmax(1)
+            cls_truth = batch['genre_labels']
+
+            metric.add_batch(predictions=cls_pred, references=cls_truth)
+
+        print("---------------------------")
+        print("example input sentences: ")
+        print(cls_truth[0:5])
+        print("---------------------------")
+        print("example output sentences: ")
+        print(cls_pred[0:5])
+        print("---------------------------")
+        score = metric.compute()
+        print('Validation Classifier Accuracy:', score['accuracy'])
+        print("===========================",flush=True)
+
+    return classifier
+
+def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
+    print("Begin training autoencoder!")
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
+    num_training_steps = params.num_epochs * len(train_dataloader)
+    lr_scheduler = get_scheduler(
+        name="linear", 
+        optimizer=optimizer,
+        num_warmup_steps=0.1*num_training_steps, 
+        num_training_steps=num_training_steps
+    )
+
+    
+    progress_bar = tqdm(range(num_training_steps))
+    for epoch in range(params.num_epochs):
+
+        model.train()
+        
+        for batch in train_dataloader:
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
+            z = outputs.hidden_states[0]
+           
+            loss = outputs.loss
+            loss.backward()
             
             optimizer.step()
             lr_scheduler.step()
             optimizer.zero_grad()
 
-            cls_optimizer.step()
-            cls_lr_scheduler.step()
-            cls_optimizer.zero_grad()
+            
             progress_bar.update(1)
         print('loss:', loss.item())
         print("===========================")
@@ -178,7 +229,6 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         metric = evaluate.load("exact_match")
         metric2 = evaluate.load("accuracy")
         model.eval()
-        classifier.eval()
         pred = []
         truth = []
         for batch in eval_dataloader:
@@ -186,13 +236,13 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
                 outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
             
             z = outputs.hidden_states[0]
-            cls_outputs = classifier(z)
+            
             guess = torch.argmax(outputs.logits,dim=2).long()
             pred = output_tokenizer.batch_decode(guess)
             truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
             metric.add_batch(predictions=pred, references=truth)
-            metric2.add_batch(predictions=cls_outputs.argmax(1), references=batch['genre_labels'])
+            
 
         print("---------------------------")
         print("example input sentences: ")
@@ -202,11 +252,9 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         print(pred[0:5])
         print("---------------------------")
         score = metric.compute()
-        score2 = metric2.compute()
         print('Validation Exact Match %:', score['exact_match'])
-        print('Validation Classifier Accuracy:', score2['accuracy'])
         print("===========================",flush=True)
-    return model, classifier
+    return model
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("exact_match")
