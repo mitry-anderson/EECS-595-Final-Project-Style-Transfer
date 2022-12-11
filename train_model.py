@@ -152,7 +152,7 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
         classifier.train()
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
-            z = outputs.last_hidden_states[0]
+            z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
             
             loss = outputs.loss
@@ -185,7 +185,7 @@ def train(model, classifier, train_dataloader, eval_dataloader, params, input_to
             with torch.no_grad():
                 outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
             
-            z = outputs.encoder_hidden_states[0]
+            z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
             guess = torch.argmax(outputs.logits,dim=2).long()
             pred = output_tokenizer.batch_decode(guess)
