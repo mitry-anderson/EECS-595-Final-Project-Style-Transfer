@@ -151,7 +151,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
             cls_outputs = classifier(z)
             print(cls_outputs)
 
-            cls_loss = cls_criterion(torch.argmax(cls_outputs,dim=1), batch["genre_labels"])
+            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
             print("2")
             print(cls_loss.item())
             cls_loss.backward()
