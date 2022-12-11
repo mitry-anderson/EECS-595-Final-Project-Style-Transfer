@@ -293,7 +293,6 @@ def main(params):
         print("created model")
         
         model.to(device)
-        classifier.to(device)
         
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         torch.save(model.state_dict(),'models/brown_autoencoder.torch')
@@ -301,20 +300,22 @@ def main(params):
     else:
         model = BertLMHeadModel.from_pretrained("bert-base-uncased")
         model.load_state_dict(f'models/{params.model_name}')
+        model.to(device)
 
     if params.train_classifier:
         classifier = GenreClassifier(768, 256, 2)
         print(classifier)
         classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
-        
     else:
         GenreClassifier(768, 256, 2)
         classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
+        classifier.to(device)
 
     if params.test:
         # first load model
         test(model, test_dataloader, input_tokenizer, output_tokenizer)
+        
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Finetune Language Model")
