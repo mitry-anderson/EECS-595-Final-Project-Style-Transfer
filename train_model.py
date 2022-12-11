@@ -146,8 +146,8 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
             z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
-            print(z.shape)
-            print(batch["genre_labels"].shape)
+            # print(z.shape)
+            # print(batch["genre_labels"].shape)
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
             cls_loss.backward()
             cls_optimizer.step()
@@ -297,14 +297,14 @@ def main(params):
         model.to(device)
 
     if params.train_classifier:
-        classifier = GenreClassifier(768, 256, 14)
+        classifier = GenreClassifier(768, 256, 15)
         model.to(device)
         classifier.to(device)
         print(classifier)
         classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
     else:
-        GenreClassifier(768, 256, 14)
+        GenreClassifier(768, 256, 15)
         classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
         classifier.to(device)
 
