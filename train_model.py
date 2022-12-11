@@ -30,8 +30,10 @@ class GenreClassifier(torch.nn.Module):
     def __init__(self, hidden_dim, middle_dim, num_class):
         super(GenreClassifier, self).__init__()
         self.lin1 = torch.nn.Linear(hidden_dim*MAX_LENGTH, middle_dim)
-        self.relu = torch.nn.ReLU()
-        self.lin2 = torch.nn.Linear(middle_dim, num_class)
+        self.relu1 = torch.nn.LeakyReLU()
+        self.lin2 = torch.nn.Linear(middle_dim, 50)
+        self.relu2 = torch.nn.LeakyReLU()
+        self.lin3 = torch.nn.Linear(50, num_class)
         self.init_weights()
 
     def init_weights(self):
@@ -297,14 +299,14 @@ def main(params):
         model.to(device)
 
     if params.train_classifier:
-        classifier = GenreClassifier(768, 768, 15)
+        classifier = GenreClassifier(768, 256, 15)
         model.to(device)
         classifier.to(device)
         print(classifier)
         classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
     else:
-        GenreClassifier(768, 768, 15)
+        GenreClassifier(768, 256, 15)
         classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
         classifier.to(device)
 
