@@ -146,6 +146,8 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
             z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
+            print(z.shape)
+            print(batch["genre_labels"].shape)
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
             cls_loss.backward()
             cls_optimizer.step()
