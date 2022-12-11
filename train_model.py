@@ -304,6 +304,7 @@ def main(params):
 
     if params.train_classifier:
         classifier = GenreClassifier(768, 256, 2)
+        model.to(device)
         print(classifier)
         classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
