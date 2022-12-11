@@ -283,7 +283,7 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
     if params.train:
-        model = BertLMHeadModel.from_pretrained("bert-base-uncased", is_decoder=True)
+        model = BertLMHeadModel.from_pretrained("bert-base-uncased")
         print(model)
         classifier = GenreClassifier(768, 256, 2)
         # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
