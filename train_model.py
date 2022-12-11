@@ -299,7 +299,7 @@ def main(params):
         
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
-        model.save_pretrained('models/brown_autoencoder.torch')
+        model.save_pretrained('models/brown_autoencoder')
     else:
         model = BertLMHeadModel.from_pretrained(f'./models/{params.model_name}')
         # model.load_state_dict(f'./models/{params.model_name}')
@@ -330,7 +330,7 @@ if __name__ == "__main__":
     parser.add_argument("--train_autoencoder", type=bool, default=False)
     parser.add_argument("--train_classifier", type=bool, default=False)
     parser.add_argument("--test", type=bool, default=False)
-    parser.add_argument("--model_name", type=str, default="brown_autoencoder.torch")
+    parser.add_argument("--model_name", type=str, default="brown_autoencoder")
     parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
 
     params, unknown = parser.parse_known_args()
