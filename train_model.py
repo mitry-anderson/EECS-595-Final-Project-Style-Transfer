@@ -202,7 +202,7 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         model.train()
         
         for batch in train_dataloader:
-            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
+            outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
             z = outputs.hidden_states[0]
            
             loss = outputs.loss
@@ -224,7 +224,7 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
+                outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
             
             z = outputs.hidden_states[0]
             
