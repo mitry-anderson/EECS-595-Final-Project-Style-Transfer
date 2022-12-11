@@ -13,17 +13,26 @@ for category in categories:
     sentences = brown.sents(categories=[category])
 
     # join into a space separated line
-    sentences_list = [' '.join(sentence) for sentence in list(sentences)]
+    i = 0
+    paragraphs_list = []
+    paragraph = ''
+    for sentence in list(sentences):
+        paragraph += ' '.join(sentence)
+        i += 1
+        if i == 5:
+            paragraphs_list.append(paragraph)
+            paragraph = ''
+            i = 0
 
     # calculate indices
-    num_sentences = len(sentences_list)
+    num_sentences = len(paragraphs_list)
     num_train = int(train_percent*num_sentences)
     num_val = int(val_percent*num_sentences)
 
     # separate into 3 datasets
-    train_sentences = sentences_list[:num_train]
-    val_sentences = sentences_list[num_train:(num_train + num_val)]
-    test_sentences = sentences_list[(num_train + num_val):]
+    train_sentences = paragraphs_list[:num_train]
+    val_sentences = paragraphs_list[num_train:(num_train + num_val)]
+    test_sentences = paragraphs_list[(num_train + num_val):]
 
     # write dataset files
     with open('dataset/' + category + '_train.txt','w') as file:
@@ -34,7 +43,7 @@ for category in categories:
         file.write('\n'.join(test_sentences))
 
     # print a nifty little message
-    print(f"{category}: {num_sentences} total sentences, {len(train_sentences)} training, {len(val_sentences)} validation, {len(test_sentences)} test")
+    print(f"{category}: {num_sentences} total paragraphs, {len(train_sentences)} training, {len(val_sentences)} validation, {len(test_sentences)} test")
 
 
 
