@@ -143,7 +143,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         model.eval()
         classifier.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
             z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
 
@@ -162,7 +162,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         classifier.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch["input_sentences"], labels=batch["input_sentences"], output_hidden_states=True)
+                outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
             
             z = outputs.hidden_states[0]
             cls_outputs = classifier(z)
