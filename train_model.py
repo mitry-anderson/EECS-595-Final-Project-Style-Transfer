@@ -143,19 +143,11 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         model.eval()
         classifier.train()
         for batch in train_dataloader:
-            print("0")
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
-            print("1")
             z = outputs.hidden_states[0]
-            print(batch["genre_labels"])
             cls_outputs = classifier(z)
-            print(cls_outputs)
-
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
-            print("2")
-            print(cls_loss)
             cls_loss.backward()
-            print("3")
             cls_optimizer.step()
             cls_lr_scheduler.step()
             cls_optimizer.zero_grad()
@@ -224,15 +216,12 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
         
         metric = evaluate.load("exact_match")
-        metric2 = evaluate.load("accuracy")
         model.eval()
         pred = []
         truth = []
         for batch in eval_dataloader:
             with torch.no_grad():
                 outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
-            
-            z = outputs.hidden_states[0]
             
             guess = torch.argmax(outputs.logits,dim=2).long()
             pred = output_tokenizer.batch_decode(guess)
