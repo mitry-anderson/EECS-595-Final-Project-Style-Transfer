@@ -298,7 +298,7 @@ def main(params):
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         model.save_pretrained('models/brown_autoencoder.torch')
     else:
-        model = BertLMHeadModel.from_pretrained(f'models/{params.model_name}')
+        model = BertLMHeadModel.from_pretrained(f'models/{params.model_name}',local_files_only=True)
 
     if params.train_classifier:
         classifier = GenreClassifier(768, 256, 2)
