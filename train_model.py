@@ -50,18 +50,22 @@ class GenreClassifier(torch.nn.Module):
         return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(torch.flatten(hidden_outputs,1,2))))))
 
 # fast gradient iterative method from paper Wang et al 2019
-def fgim_attack(classifier, target_class, origen_data):
+def fgim_attack(model, classifier, target_class, origen_data):
     i = 0
     data = Variable(origen_data.data.clone(), requires_grad=True)
-    epsilon = 1.0 # modify and play with this
+    epsilon = 0.1 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
+    sentence_og = model.cls(data)
     while True:
         # to_var? what do it do?
         # print(data.requires_grad)
         # print(data.shape)
         # print(data)
         output = classifier(data)
-        loss = cls_criterion(output, target_class)
+        sentence_now = model.cls(data)
+        L_BOW = ((sentence_og - sentence_now)/(sentence_og - sentence_now))
+        L_CLS = cls_criterion(output, target_class)
+        loss = L_BOW + L_CLS
         classifier.zero_grad()
         data.retain_grad()
         loss.backward()
@@ -69,7 +73,7 @@ def fgim_attack(classifier, target_class, origen_data):
         if data.grad is None:
             break
         data_grad = data.grad.data
-        data = data - epsilon*(0.1)*data_grad
+        data = data - epsilon*data_grad
         i += 1
         epsilon = epsilon*0.9
         # print(data.shape)
@@ -177,7 +181,7 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         cls_pred = cls_outputs.argmax(1)
         cls_truth = batch['genre_labels']
 
-        z_alt = fgim_attack(classifier, ((cls_pred + 1)%2), z)
+        z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
         
         # outputs_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
         logits_alt = model.cls(z_alt)
