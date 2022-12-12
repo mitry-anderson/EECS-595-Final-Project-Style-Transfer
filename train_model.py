@@ -298,7 +298,7 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         print("===========================")
         print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
         
-        metric = evaluate.load("exact_match")
+        metric = evaluate.load("perplexity", module_type='metric')
         model.eval()
         pred = []
         truth = []
@@ -320,8 +320,8 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         print("example output sentences: ")
         print(pred[0:5])
         print("---------------------------")
-        score = metric.compute()
-        print('Validation Exact Match %:', score['exact_match'])
+        score = metric.compute(model_id='gpt2')
+        print('Mean Perplexity:', score['mean_perplexity'])
         print("===========================",flush=True)
     return model
 
