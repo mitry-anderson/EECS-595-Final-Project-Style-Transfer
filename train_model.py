@@ -178,14 +178,14 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
 
         z_alt = fgim_attack(classifier, ((cls_pred + 1)%2), z)
         
-        logits_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
+        outputs_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
         print(outputs.logits.shape)
-        print(logits_alt.shape)
-        print(logits_alt - outputs.logits_alt)
+        print(outputs_alt.logits.shape)
+        print(outputs_alt.logits - outputs.logits)
         
         guess = torch.argmax(outputs.logits, dim=2).long()
         pred = output_tokenizer.batch_decode(guess)
-        guess_alt = torch.argmax(logits_alt, dim=2).long()
+        guess_alt = torch.argmax(outputs_alt.logits, dim=2).long()
         pred_alt = output_tokenizer.batch_decode(guess_alt)
         truth = input_tokenizer.batch_decode(batch['input_sentences'])
 
