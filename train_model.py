@@ -67,7 +67,7 @@ def bow_criterion(guess, target):
 def fgim_attack(model, classifier, target_class, origen_data):
     i = 0
     data = Variable(origen_data.data.clone(), requires_grad=True)
-    epsilon = 0.1 # modify and play with this
+    epsilon = 1.0 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     # bow_criterion = torch.nn.NLLLoss()
     sentence_og = model.cls(data)
