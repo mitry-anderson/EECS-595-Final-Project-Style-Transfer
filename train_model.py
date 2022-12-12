@@ -52,8 +52,8 @@ class GenreClassifier(torch.nn.Module):
 
 def sent_vec_to_bow(sent_vec):
     num_samples, num_words, vocab_size = sent_vec.shape
-    word_vec = torch.argmax(sent_vec,dim=2).long()
-    output = torch.zeros((num_samples, vocab_size)).to(sent_vec.device)
+    word_vec = torch.argmax(sent_vec,dim=2)
+    output = torch.zeros((num_samples, vocab_size)).to(sent_vec.device).long()
     for i in range(num_samples):
         for j in range(num_words):
             output[i,word_vec[i,j]] += 1
