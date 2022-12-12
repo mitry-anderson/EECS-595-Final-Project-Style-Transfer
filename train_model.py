@@ -66,6 +66,7 @@ def fgim_attack(classifier, target_class, origen_data):
         data = data - epsilon*data_grad
         i += 1
         epsilon = epsilon*0.9
+        print(data)
         if i >= 5:
             break
 
