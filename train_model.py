@@ -60,7 +60,7 @@ def fgim_attack(classifier, target_class, origen_data):
         print(data.requires_grad)
         output = classifier(data)
         loss = cls_criterion(output, target_class)
-        data.zero_grad()
+        classifier.zero_grad()
         loss.backward()
         data_grad = data.grad.data
         data = data - epsilon*data_grad
