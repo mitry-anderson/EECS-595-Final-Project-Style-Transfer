@@ -134,7 +134,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
     
     num_training_steps = params.num_epochs * len(train_dataloader)
 
-    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-7)
+    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-4)
     cls_lr_scheduler = get_scheduler(
         name="linear", 
         optimizer=cls_optimizer, 
