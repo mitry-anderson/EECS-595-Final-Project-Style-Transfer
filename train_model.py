@@ -56,7 +56,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
     epsilon = 0.1 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     sentence_og = model.cls(data)
-    sentence_og.requires_grad=False
+    sentence_og.detach()
     while True:
         # to_var? what do it do?
         # print(data.requires_grad)
