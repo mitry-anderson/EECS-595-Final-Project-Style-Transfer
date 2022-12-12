@@ -64,7 +64,8 @@ def fgim_attack(model, classifier, target_class, origen_data):
         # print(data)
         output = classifier(data)
         sentence_now = model.cls(data)
-        L_BOW = torch.mean(((sentence_og - sentence_now)/(sentence_og - sentence_now)))
+        tmp = ((sentence_og - sentence_now)/(sentence_og - sentence_now))
+        L_BOW = torch.sum(tmp[not (tmp == 1)])
         L_CLS = cls_criterion(output, target_class)
         loss = L_BOW + L_CLS
         classifier.zero_grad()
