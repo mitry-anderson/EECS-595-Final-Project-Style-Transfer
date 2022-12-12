@@ -76,7 +76,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         # print(data)
         output = classifier(data)
         sentence_now = model.cls(data)
-        L_BOW = bow_criterion(sent_vec_to_bow(sentence_now), sent_vec_to_bow(sentence_og))
+        L_BOW = bow_criterion(sent_vec_to_bow(sentence_now).flatten(), sent_vec_to_bow(sentence_og).flatten())
         L_CLS = cls_criterion(output, target_class)
         loss = L_BOW + L_CLS
         classifier.zero_grad()
