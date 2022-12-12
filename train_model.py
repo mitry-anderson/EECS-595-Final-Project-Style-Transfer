@@ -186,8 +186,8 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         guess = torch.argmax(outputs.logits, dim=2).long()
         pred = output_tokenizer.batch_decode(guess)
         guess_alt = torch.argmax(outputs_alt.logits, dim=2).long()
-        pred_alt = output_tokenizer.batch_decode(guess_alt)
-        truth = input_tokenizer.batch_decode(batch['input_sentences'])
+        pred_alt = output_tokenizer.batch_decode(guess_alt, skip_special_tokens=True)
+        truth = input_tokenizer.batch_decode(batch['input_sentences'], skip_special_tokens=True)
 
         print("---------------------------")
         print("example input sentences: ")
