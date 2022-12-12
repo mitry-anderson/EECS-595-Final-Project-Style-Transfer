@@ -1,6 +1,7 @@
 import argparse
 import torch
 from torch.utils.data import DataLoader, Dataset
+from torch.autograd import Variable
 import random 
 
 import evaluate
@@ -51,7 +52,7 @@ class GenreClassifier(torch.nn.Module):
 # fast gradient iterative method from paper Wang et al 2019
 def fgim_attack(classifier, target_class, origen_data):
     i = 0
-    data = origen_data.data.detach().clone()
+    data = Variable(origen_data.data.detach().clone(), requires_grad=True)
     epsilon = 4.0 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     while True:
