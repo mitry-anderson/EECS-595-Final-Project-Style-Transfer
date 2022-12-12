@@ -94,9 +94,15 @@ inputs = tokenizer("Cappy looked wary , but he moved off the floorboards and fol
 outputs = model(**inputs, labels=inputs["input_ids"], output_hidden_states=True)
 print(outputs.loss)
 guess = torch.argmax(outputs.logits,dim=2).long()
-print(guess)
+# print(guess)
 print(tokenizer.batch_decode(guess))
-print(outputs.hidden_states[0])
+
+z_new = outputs.hidden_states[12] + (torch.zeros_like(outputs.hidden_states[12]) + 1)
+prediction_scores = model.cls(z_new)
+guess2 = torch.argmax(prediction_scores,dim=2).long()
+# print(guess2)
+print(tokenizer.batch_decode(guess2))
+
 
 
 
