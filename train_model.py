@@ -76,6 +76,8 @@ def fgim_attack(classifier, target_class, origen_data):
         if i >= 5:
             break
 
+    return data
+
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
@@ -175,7 +177,8 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         cls_truth = batch['genre_labels']
 
         z_alt = fgim_attack(classifier, ((cls_pred + 1)%2), z)
-        logits_alt = model.BertOnlyMLMHead(z_alt)
+        
+        logits_alt = model(encoder_hidden_states=z_alt)
         print(outputs.logits.shape)
         print(logits_alt.shape)
         print(logits_alt - outputs.logits_alt)
