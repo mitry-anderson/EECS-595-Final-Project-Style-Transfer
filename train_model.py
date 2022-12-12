@@ -48,6 +48,26 @@ class GenreClassifier(torch.nn.Module):
     def forward(self, hidden_outputs):
         return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(torch.flatten(hidden_outputs,1,2))))))
 
+# fast gradient iterative method from paper Wang et al 2019
+def fgim_attack(classifier, target_class, origen_data):
+    i = 0
+    data = origen_data.clone()
+    epsilon = 4.0 # modify and play with this
+    cls_criterion = torch.nn.BCELoss(size_average=True)
+    while True:
+        # to_var? what do it do?
+        data.requires_grad = True
+        output = classifier(data)
+        loss = cls_criterion(output, target_class)
+        classifier.zero_grad()
+        loss.backward()
+        data_grad = data.grad.data
+        data = data - epsilon*data_grad
+        i += 1
+        epsilon = epsilon*0.9
+        if i >= 5:
+            break
+
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
     def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
@@ -129,6 +149,53 @@ def load_data(input_tokenizer, output_tokenizer, params):
     
     return train_dataloader, val_dataloader, test_dataloader
 
+def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
+    print("Begin testing style transfer!")
+    
+    metric = evaluate.load("accuracy")
+    model.eval()
+    classifier.eval()
+    pred = []
+    truth = []
+    for batch in eval_dataloader:
+        with torch.no_grad():
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
+
+        z = outputs.hidden_states[0]
+
+        cls_outputs = classifier(z)
+        cls_pred = cls_outputs.argmax(1)
+        cls_truth = batch['genre_labels']
+
+        z_alt = fgim_attack(classifier, ((cls_pred + 1)%2), z)
+        logits_alt = model.BertOnlyMLMHead(z_alt)
+        print(outputs.logits.shape)
+        print(logits_alt.shape)
+        print(logits_alt - outputs.logits_alt)
+        
+        guess = torch.argmax(outputs.logits, dim=2).long()
+        pred = output_tokenizer.batch_decode(guess)
+        guess_alt = torch.argmax(logits_alt, dim=2).long()
+        pred_alt = output_tokenizer.batch_decode(guess_alt)
+        truth = input_tokenizer.batch_decode(batch['input_sentences'])
+
+        print("---------------------------")
+        print("example input sentences: ")
+        print(truth[0:5])
+        print("---------------------------")
+        print("example initial output sentences: ")
+        print(pred[0:5])
+        print("example altered output sentences: ")
+        print(pred_alt[0:5])
+        print("---------------------------")
+        print("true class: ")
+        print(cls_truth[0:5])
+        print("---------------------------")
+        print("predicted class: ")
+        print(cls_pred[0:5])
+        print("---------------------------")
+        print("===========================",flush=True)
+
 def train_classifier(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training classifier!")
     
@@ -141,7 +208,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
-    cls_criterion = torch.nn.CrossEntropyLoss()
+    cls_criterion = torch.nn.BCELoss(size_average=True) # torch.nn.CrossEntropyLoss()
     progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
