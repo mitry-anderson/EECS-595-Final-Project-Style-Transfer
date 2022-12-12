@@ -68,7 +68,7 @@ def fgim_attack(classifier, target_class, origen_data):
         if data.grad is None:
             break
         data_grad = data.grad.data
-        data = data - epsilon*data_grad
+        data = data - epsilon*(10**-2)*data_grad
         i += 1
         epsilon = epsilon*0.9
         # print(data.shape)
