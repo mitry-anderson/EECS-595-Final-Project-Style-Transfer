@@ -53,7 +53,7 @@ class GenreClassifier(torch.nn.Module):
 def fgim_attack(classifier, target_class, origen_data):
     i = 0
     data = Variable(origen_data.data.clone(), requires_grad=True)
-    epsilon = 4.0 # modify and play with this
+    epsilon = 1.0 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     while True:
         # to_var? what do it do?
@@ -63,10 +63,12 @@ def fgim_attack(classifier, target_class, origen_data):
         classifier.zero_grad()
         loss.backward()
         data_grad = data.grad.data
+        print(data.shape)
         print(data)
         data = data - epsilon*data_grad
         i += 1
         epsilon = epsilon*0.9
+        print(data.shape)
         print(data)
         if i >= 5:
             break
