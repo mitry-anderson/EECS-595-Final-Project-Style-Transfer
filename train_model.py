@@ -178,7 +178,7 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
 
         z_alt = fgim_attack(classifier, ((cls_pred + 1)%2), z)
         
-        logits_alt = model(encoder_hidden_states=z_alt)
+        logits_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
         print(outputs.logits.shape)
         print(logits_alt.shape)
         print(logits_alt - outputs.logits_alt)
