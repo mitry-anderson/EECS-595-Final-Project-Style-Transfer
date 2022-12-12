@@ -60,7 +60,7 @@ def sent_vec_to_bow(sent_vec):
     return output
 
 def bow_criterion(guess, target):
-    return (target - guess)/torch.abs(target - guess)
+    return torch.mean(target - guess)/torch.abs(target - guess)
 
 
 # fast gradient iterative method from paper Wang et al 2019
