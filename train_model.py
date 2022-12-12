@@ -170,7 +170,7 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         with torch.no_grad():
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
 
-        z = outputs.hidden_states[0]
+        z = outputs.hidden_states[12]
 
         cls_outputs = classifier(z)
         cls_pred = cls_outputs.argmax(1)
@@ -179,12 +179,9 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         z_alt = fgim_attack(classifier, ((cls_pred + 1)%2), z)
         
         outputs_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
-        print(outputs.logits.shape)
-        print(outputs_alt.logits.shape)
-        print(outputs_alt.logits - outputs.logits)
         
         guess = torch.argmax(outputs.logits, dim=2).long()
-        pred = output_tokenizer.batch_decode(guess)
+        pred = output_tokenizer.batch_decode(guess, skip_special_tokens=True)
         guess_alt = torch.argmax(outputs_alt.logits, dim=2).long()
         pred_alt = output_tokenizer.batch_decode(guess_alt, skip_special_tokens=True)
         truth = input_tokenizer.batch_decode(batch['input_sentences'], skip_special_tokens=True)
@@ -226,7 +223,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         classifier.train()
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
-            z = outputs.hidden_states[0]
+            z = outputs.hidden_states[12]
             cls_outputs = classifier(z)
             # print(z.shape)
             # print(batch["genre_labels"].shape)
@@ -246,7 +243,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
             with torch.no_grad():
                 outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
             
-            z = outputs.hidden_states[0]
+            z = outputs.hidden_states[12]
             cls_outputs = classifier(z)
             cls_pred = cls_outputs.argmax(1)
             cls_truth = batch['genre_labels']
@@ -285,7 +282,7 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
-            z = outputs.hidden_states[0]
+            z = outputs.hidden_states[12]
            
             loss = outputs.loss
             loss.backward()
