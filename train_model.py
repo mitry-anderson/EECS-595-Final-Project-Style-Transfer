@@ -57,20 +57,22 @@ def fgim_attack(classifier, target_class, origen_data):
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     while True:
         # to_var? what do it do?
-        print(data.requires_grad)
-        print(data.shape)
-        print(data)
+        # print(data.requires_grad)
+        # print(data.shape)
+        # print(data)
         output = classifier(data)
         loss = cls_criterion(output, target_class)
         classifier.zero_grad()
         loss.backward()
-        print(loss)
+        # print(loss)
+        if data.grad is None:
+            break
         data_grad = data.grad.data
         data = data - epsilon*data_grad
         i += 1
         epsilon = epsilon*0.9
-        print(data.shape)
-        print(data)
+        # print(data.shape)
+        # print(data)
         if i >= 5:
             break
 
