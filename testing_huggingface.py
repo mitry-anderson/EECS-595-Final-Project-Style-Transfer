@@ -97,7 +97,7 @@ guess = torch.argmax(outputs.logits,dim=2).long()
 # print(guess)
 print(tokenizer.batch_decode(guess))
 
-z_new = outputs.hidden_states[12] + (torch.zeros_like(outputs.hidden_states[12]) + 1)
+z_new = outputs.hidden_states[12] - 1*(torch.zeros_like(outputs.hidden_states[12]) + 1)
 prediction_scores = model.cls(z_new)
 guess2 = torch.argmax(prediction_scores,dim=2).long()
 # print(guess2)
