@@ -55,6 +55,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
     data = Variable(origen_data.data.clone(), requires_grad=True)
     epsilon = 0.1 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
+    bow_criterion = torch.nn.NLLLoss()
     sentence_og = model.cls(data)
     sentence_og.detach()
     while True:
@@ -64,8 +65,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         # print(data)
         output = classifier(data)
         sentence_now = model.cls(data)
-        tmp = ((sentence_og - sentence_now)/(sentence_og - sentence_now))
-        L_BOW = torch.sum(tmp[(tmp != 1)])
+        L_BOW = bow_criterion(sentence_now, sentence_og)
         L_CLS = cls_criterion(output, target_class)
         loss = L_BOW + L_CLS
         classifier.zero_grad()
