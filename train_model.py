@@ -341,7 +341,7 @@ def test(model, test_dataloader, input_tokenizer, output_tokenizer):
 
 def main(params):
     
-    input_tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    input_tokenizer = BertTokenizer.from_pretrained("bert-base-cased", is_decoder=True)
 
     # # pro tip: https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
     # def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
