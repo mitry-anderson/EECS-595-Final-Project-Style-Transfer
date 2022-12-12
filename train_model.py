@@ -68,6 +68,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         loss = L_BOW + L_CLS
         classifier.zero_grad()
         data.retain_grad()
+        classifier.retain_grad()
         loss.backward()
         # print(loss)
         if data.grad is None:
