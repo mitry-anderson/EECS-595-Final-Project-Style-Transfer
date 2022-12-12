@@ -51,12 +51,12 @@ class GenreClassifier(torch.nn.Module):
 # fast gradient iterative method from paper Wang et al 2019
 def fgim_attack(classifier, target_class, origen_data):
     i = 0
-    data = origen_data.clone()
+    data = origen_data.data.detach().clone()
     epsilon = 4.0 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     while True:
         # to_var? what do it do?
-        # data.requires_grad = True
+        data.requires_grad = True
         output = classifier(data)
         loss = cls_criterion(output, target_class)
         classifier.zero_grad()
