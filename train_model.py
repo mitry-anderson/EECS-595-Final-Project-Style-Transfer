@@ -53,7 +53,7 @@ def fgim_attack(classifier, target_class, origen_data):
     i = 0
     data = origen_data.clone()
     epsilon = 4.0 # modify and play with this
-    cls_criterion = torch.nn.BCELoss(size_average=True)
+    cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     while True:
         # to_var? what do it do?
         data.requires_grad = True
@@ -208,7 +208,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         num_warmup_steps=0.1*num_training_steps, 
         num_training_steps=num_training_steps
     )
-    cls_criterion = torch.nn.BCELoss(size_average=True) # torch.nn.CrossEntropyLoss()
+    cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     progress_bar = tqdm(range(num_training_steps))
     for epoch in range(params.num_epochs):
 
