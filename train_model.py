@@ -59,6 +59,9 @@ def sent_vec_to_bow(sent_vec):
             output[i,word_vec[i,j]] += 1
     return output
 
+def bow_criterion(guess, target):
+    return (target - guess)/torch.abs(target - guess)
+
 
 # fast gradient iterative method from paper Wang et al 2019
 def fgim_attack(model, classifier, target_class, origen_data):
@@ -66,7 +69,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
     data = Variable(origen_data.data.clone(), requires_grad=True)
     epsilon = 0.1 # modify and play with this
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
-    bow_criterion = torch.nn.NLLLoss()
+    # bow_criterion = torch.nn.NLLLoss()
     sentence_og = model.cls(data)
     sentence_og.detach()
     while True:
