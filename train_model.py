@@ -49,6 +49,17 @@ class GenreClassifier(torch.nn.Module):
     def forward(self, hidden_outputs):
         return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(torch.flatten(hidden_outputs,1,2))))))
 
+
+def sent_vec_to_bow(sent_vec):
+    num_samples, num_words, vocab_size = sent_vec.shape
+    word_vec = torch.argmax(sent_vec,dim=2)
+    output = torch.zeros((num_samples, vocab_size)).to(sent_vec.device)
+    for i in range(num_samples):
+        for j in range(num_words):
+            output[i,word_vec[j]] += 1
+    return output
+
+
 # fast gradient iterative method from paper Wang et al 2019
 def fgim_attack(model, classifier, target_class, origen_data):
     i = 0
@@ -65,7 +76,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         # print(data)
         output = classifier(data)
         sentence_now = model.cls(data)
-        L_BOW = bow_criterion(sentence_now, sentence_og)
+        L_BOW = bow_criterion(sent_vec_to_bow(sentence_now), sent_vec_to_bow(sentence_og))
         L_CLS = cls_criterion(output, target_class)
         loss = L_BOW + L_CLS
         classifier.zero_grad()
