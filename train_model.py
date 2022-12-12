@@ -380,6 +380,8 @@ def main(params):
         classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
         classifier.to(device)
 
+    evaluate_transfer(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+
     if params.test:
         # first load model
         test(model, test_dataloader, input_tokenizer, output_tokenizer)
