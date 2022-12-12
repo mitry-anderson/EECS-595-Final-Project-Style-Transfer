@@ -69,7 +69,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         loss = L_BOW + L_CLS
         classifier.zero_grad()
         data.retain_grad()
-        loss.backward()
+        loss.backward(retain_graph=True)
         # print(loss)
         if data.grad is None:
             break
