@@ -56,7 +56,7 @@ def sent_vec_to_bow(sent_vec):
     output = torch.zeros((num_samples, vocab_size)).to(sent_vec.device)
     for i in range(num_samples):
         for j in range(num_words):
-            output[i,word_vec[j]] += 1
+            output[i,word_vec[i,j]] += 1
     return output
 
 
