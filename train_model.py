@@ -386,6 +386,7 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             outputs_alt = model.decoder(input_ids=decoder_input_ids, encoder_hidden_states=outputs.encoder_hidden_states[12])
 
             guess_sentence = torch.argmax(outputs_alt.logits, dim=2).long()
+            print(batch['input_sentences'].shape)
             L_bow = bow_criterion(sent_vec_to_bow(guess_sentence).flatten(), sent_vec_to_bow(batch['input_sentences']).flatten())
             L_cls = cls_criterion(cls_outputs, batch["genre_labels"])
             cls_loss = L_bow + L_cls
