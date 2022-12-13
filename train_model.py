@@ -459,8 +459,12 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
         print("example output paragraph: ")
         print(pred[0:5])
         print("---------------------------")
-        score = metric.compute(model_id='gpt2')
-        print('Mean Perplexity:', score['mean_perplexity'])
+        try:
+            score = metric.compute(model_id='gpt2')
+            print('Mean Perplexity:', score['mean_perplexity'])
+        except:
+            print('failed to calculate perplexity')
+        
         print("===========================",flush=True)
         model.save_pretrained(f'models/brown_autoencoder_15_{time.time()}')
         torch.save(classifier.state_dict(), f'models/brown_latent_classifier_15_{time.time()}.torch')
