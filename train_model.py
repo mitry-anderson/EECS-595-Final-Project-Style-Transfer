@@ -365,7 +365,7 @@ def test(model, test_dataloader, input_tokenizer, output_tokenizer):
 
 def main(params):
     
-    input_tokenizer = BertTokenizer.from_pretrained("bert-base-cased", is_decoder=True)
+    input_tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
 
     # # pro tip: https://huggingface.co/patrickvonplaten/bert2gpt2-cnn_dailymail-fp16
     # def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
@@ -383,17 +383,15 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
     if params.train_autoencoder:
-        model = BertLMHeadModel.from_pretrained("bert-base-uncased")
+        # model = BertLMHeadModel.from_pretrained("bert-base-uncased")
+        model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
         print(model)
-        
-        # model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-uncased", "bert-base-uncased")
-        print("created model")
         
         model.to(device)
         
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
-        model.save_pretrained('models/brown_autoencoder')
+        model.save_pretrained('models/brown_autoencoder_2')
     else:
         model = BertLMHeadModel.from_pretrained(f'./models/{params.model_name}')
         # model.load_state_dict(f'./models/{params.model_name}')
@@ -426,7 +424,7 @@ if __name__ == "__main__":
     parser.add_argument("--train_autoencoder", type=bool, default=False)
     parser.add_argument("--train_classifier", type=bool, default=False)
     parser.add_argument("--test", type=bool, default=False)
-    parser.add_argument("--model_name", type=str, default="brown_autoencoder")
+    parser.add_argument("--model_name", type=str, default="brown_autoencoder_2")
     parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
 
     params, unknown = parser.parse_known_args()
