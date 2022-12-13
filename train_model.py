@@ -178,15 +178,15 @@ class BrownStyleDataset(Dataset):
 def load_data(input_tokenizer, output_tokenizer, params):
 
     # make a bunch of datasets and dataloaders therefrom
-    train_dataset = BrownStyleDataset(stage='train', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
+    train_dataset = BrownStyleDataset(stage='train', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer, params=params)
     train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size, shuffle=True)
     print(f"loaded {len(train_dataloader)} training samples")
     
-    val_dataset = BrownStyleDataset(stage='validation', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
+    val_dataset = BrownStyleDataset(stage='validation', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer, params=params)
     val_dataloader = DataLoader(val_dataset, batch_size=params.batch_size, shuffle=True)
     print(f"loaded {len(val_dataloader)} validation samples")
    
-    test_dataset = BrownStyleDataset(stage='test', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer)
+    test_dataset = BrownStyleDataset(stage='test', input_tokenizer=input_tokenizer, output_tokenizer=output_tokenizer, params=params)
     test_dataloader = DataLoader(test_dataset, batch_size=params.batch_size, shuffle=False)
     print(f"loaded {len(test_dataloader)} test samples")
     
