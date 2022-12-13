@@ -1,0 +1,21 @@
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+loaded 1220 training samples
+loaded 273 validation samples
+loaded 33 test samples
+Begin testing style transfer!
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 428, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 409, in main
+    evaluate_transfer(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 197, in evaluate_transfer
+    z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 79, in fgim_attack
+    L_BOW = bow_criterion(sent_vec_to_bow(sentence_now), sent_vec_to_bow(sentence_og))
+  File "/home/mitryand/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/torch/nn/modules/loss.py", line 211, in forward
+    return F.nll_loss(input, target, weight=self.weight, ignore_index=self.ignore_index, reduction=self.reduction)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/torch/nn/functional.py", line 2689, in nll_loss
+    return torch._C._nn.nll_loss_nd(input, target, weight, _Reduction.get_enum(reduction), ignore_index)
+RuntimeError: 0D or 1D target tensor expected, multi-target not supported

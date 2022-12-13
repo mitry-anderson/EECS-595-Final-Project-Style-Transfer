@@ -1,0 +1,17 @@
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+loaded 1220 training samples
+loaded 273 validation samples
+loaded 33 test samples
+Begin testing style transfer!
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 416, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 397, in main
+    evaluate_transfer(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 185, in evaluate_transfer
+    z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 71, in fgim_attack
+    classifier.retain_grad()
+  File "/home/mitryand/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1207, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'GenreClassifier' object has no attribute 'retain_grad'
