@@ -400,8 +400,8 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             cls_loss = L_bow + L_cls
             loss = outputs.loss
 
-            loss.backward(retain_grad=True)
-            cls_loss.backward(retain_grad=True)
+            loss.backward(retain_graph=True)
+            cls_loss.backward(retain_graph=True)
 
             cls_optimizer.step()
             cls_lr_scheduler.step()
