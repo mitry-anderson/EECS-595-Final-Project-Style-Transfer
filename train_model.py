@@ -348,6 +348,102 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         print("===========================",flush=True)
     return model
 
+
+
+def train_all(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
+    print("Begin training all of them!")
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
+    num_training_steps = params.num_epochs * len(train_dataloader)
+    lr_scheduler = get_scheduler(
+        name="linear", 
+        optimizer=optimizer,
+        num_warmup_steps=0.1*num_training_steps, 
+        num_training_steps=num_training_steps
+    )
+
+    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-4)
+    cls_lr_scheduler = get_scheduler(
+        name="linear", 
+        optimizer=cls_optimizer, 
+        num_warmup_steps=0.1*num_training_steps, 
+        num_training_steps=num_training_steps
+    )
+    cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
+    
+    progress_bar = tqdm(range(num_training_steps))
+    for epoch in range(params.num_epochs):
+
+        model.train()
+        classifier.train()
+        for batch in train_dataloader:
+            outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
+            z = outputs.encoder_hidden_states[12]
+            cls_outputs = classifier(z)
+            # print(z.shape)
+            # print(batch["genre_labels"].shape)
+            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
+            loss = outputs.loss
+
+            loss.backward(retain_grad=True)
+            cls_loss.backward(retain_grad=True)
+
+            cls_optimizer.step()
+            cls_lr_scheduler.step()
+            optimizer.step()
+            lr_scheduler.step()
+
+            cls_optimizer.zero_grad()
+            optimizer.zero_grad()
+
+            progress_bar.update(1)
+        print('loss:', loss.item())
+        print("===========================")
+        print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {loss.item()}')
+        
+        metric = evaluate.load("perplexity", module_type='metric')
+        cls_metric = evaluate.load("accuracy")
+        model.eval()
+        pred = []
+        truth = []
+        for batch in eval_dataloader:
+            with torch.no_grad():
+                outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
+            
+            guess = torch.argmax(outputs.logits,dim=2).long()
+            pred = output_tokenizer.batch_decode(guess, skip_special_tokens=True)
+            truth = input_tokenizer.batch_decode(batch['input_sentences'], skip_special_tokens=True)
+
+            metric.add_batch(predictions=pred, references=truth)
+
+            z = outputs.encoder_hidden_states[12]
+            cls_outputs = classifier(z)
+            cls_pred = cls_outputs.argmax(1)
+            cls_truth = batch['genre_labels']
+
+            cls_metric.add_batch(predictions=cls_pred, references=cls_truth)
+
+        print("---------------------------")
+        print("example true genres: ")
+        print(cls_truth[0:5])
+        print("---------------------------")
+        print("example predicted genres: ")
+        print(cls_pred[0:5])
+        print("---------------------------")
+        score_cls = cls_metric.compute()
+        print('Validation Classifier Accuracy:', score_cls['accuracy'])
+        print("===========================",flush=True)
+
+        print("---------------------------")
+        print("example input paragraph: ")
+        print(truth[0])
+        print("---------------------------")
+        print("example output paragraph: ")
+        print(pred[0])
+        print("---------------------------")
+        score = metric.compute(model_id='gpt2')
+        print('Mean Perplexity:', score['mean_perplexity'])
+        print("===========================",flush=True)
+
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("exact_match")
     model.eval()
@@ -383,34 +479,53 @@ def main(params):
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
-    if params.train_autoencoder:
-        # model = BertLMHeadModel.from_pretrained("bert-base-uncased")
+    if params.train_all:
+        classifier = GenreClassifier(768, 256, 2)
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
         print(model)
         
+        print(classifier)
+        
         model.to(device)
+        classifier.to(device)
+
         model.config.decoder_start_token_id = input_tokenizer.bos_token_id
         model.config.pad_token_id = input_tokenizer.pad_token_id
-        
-        model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+
+        model, classifier = train_all(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
         model.save_pretrained('models/brown_autoencoder_2')
-    else:
-        model = BertLMHeadModel.from_pretrained(f'./models/{params.model_name}')
-        # model.load_state_dict(f'./models/{params.model_name}')
-        model.to(device)
-
-    if params.train_classifier:
-        classifier = GenreClassifier(768, 256, 2)
-        model.to(device)
-        classifier.to(device)
-        print(classifier)
-        classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
+
     else:
-        classifier = GenreClassifier(768, 256, 2)
-        classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
-        classifier.to(device)
+        if params.train_autoencoder:
+            # model = BertLMHeadModel.from_pretrained("bert-base-uncased")
+            model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
+            print(model)
+            
+            model.to(device)
+            model.config.decoder_start_token_id = input_tokenizer.bos_token_id
+            model.config.pad_token_id = input_tokenizer.pad_token_id
+            
+            model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+            # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
+            model.save_pretrained('models/brown_autoencoder_2')
+        else:
+            model = BertLMHeadModel.from_pretrained(f'./models/{params.model_name}')
+            # model.load_state_dict(f'./models/{params.model_name}')
+            model.to(device)
+
+        if params.train_classifier:
+            classifier = GenreClassifier(768, 256, 2)
+            model.to(device)
+            classifier.to(device)
+            print(classifier)
+            classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+            torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
+        else:
+            classifier = GenreClassifier(768, 256, 2)
+            classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
+            classifier.to(device)
 
     evaluate_transfer(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
 
@@ -430,6 +545,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, default="brown_autoencoder_2")
     parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
     parser.add_argument("--full_dataset", type=bool, default=False)
+    parser.add_argument("--train_all", type=bool, default=True)
 
     params, unknown = parser.parse_known_args()
     main(params)
