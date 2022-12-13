@@ -389,6 +389,7 @@ def main(params):
         
         model.to(device)
         model.config.decoder_start_token_id = input_tokenizer.bos_token_id
+        model.config.pad_token_id = input_tokenizer.pad_token_id
         
         model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
