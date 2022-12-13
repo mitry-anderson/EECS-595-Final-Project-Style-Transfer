@@ -204,11 +204,11 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
         
         # outputs_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
-        logits_alt = model.decoder(z_alt)
+        outputs_alt = model.decoder(z_alt)
         
         guess = torch.argmax(outputs.logits, dim=2).long()
         pred = output_tokenizer.batch_decode(guess, skip_special_tokens=True)
-        guess_alt = torch.argmax(logits_alt, dim=2).long()
+        guess_alt = torch.argmax(outputs_alt.logits, dim=2).long()
         pred_alt = output_tokenizer.batch_decode(guess_alt, skip_special_tokens=True)
         truth = input_tokenizer.batch_decode(batch['input_sentences'], skip_special_tokens=True)
 
@@ -381,7 +381,11 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             cls_outputs = classifier(z)
             # print(z.shape)
             # print(batch["genre_labels"].shape)
-            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
+            outputs_alt = model.decoder(outputs.encoder_hidden_states[12])
+            guess_sentence = torch.argmax(outputs_alt.logits, dim=2).long()
+            L_bow = bow_criterion(sent_vec_to_bow(guess_sentence).flatten(), sent_vec_to_bow(batch['input_sentences']).flatten())
+            L_cls = cls_criterion(cls_outputs, batch["genre_labels"])
+            cls_loss = L_bow + L_cls
             loss = outputs.loss
 
             loss.backward(retain_grad=True)
@@ -435,10 +439,10 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
 
         print("---------------------------")
         print("example input paragraph: ")
-        print(truth[0])
+        print(truth[0:5])
         print("---------------------------")
         print("example output paragraph: ")
-        print(pred[0])
+        print(pred[0:5])
         print("---------------------------")
         score = metric.compute(model_id='gpt2')
         print('Mean Perplexity:', score['mean_perplexity'])
