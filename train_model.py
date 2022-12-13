@@ -68,6 +68,8 @@ def fgim_attack(model, classifier, target_class, origen_data):
     i = 0
     data = Variable(origen_data.data.clone(), requires_grad=True)
     epsilon = 1.0 # modify and play with this
+    l1 = 0.75
+    l2 = 0.2
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     # bow_criterion = torch.nn.NLLLoss()
     sentence_og = model.cls(data)
@@ -81,7 +83,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         sentence_now = model.cls(data)
         L_BOW = bow_criterion(sent_vec_to_bow(sentence_now).flatten(), sent_vec_to_bow(sentence_og).flatten())
         L_CLS = cls_criterion(output, target_class)
-        loss = L_BOW + L_CLS
+        loss = l1*L_BOW + l2*L_CLS
         classifier.zero_grad()
         data.retain_grad()
         loss.backward(retain_graph=True)
