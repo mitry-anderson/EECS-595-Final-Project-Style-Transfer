@@ -6,7 +6,7 @@ import random
 
 import evaluate
 
-from transformers import EncoderDecoderModel, BertTokenizer, GPT2Tokenizer, get_scheduler,  BertLMHeadModel
+from transformers import EncoderDecoderModel, BertTokenizer, GPT2Tokenizer, get_scheduler,  BertLMHeadModel, BertModel, BertConfig
 from transformers.models.encoder_decoder.modeling_encoder_decoder import shift_tokens_right
 
 from tqdm.auto import tqdm
@@ -497,16 +497,16 @@ def main(params):
 
     if params.train_all:
         classifier = GenreClassifier(768, 256, 15)
+        print(classifier)
+
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
         print(model)
-        
-        print(classifier)
-        
-        model.to(device)
-        classifier.to(device)
 
         model.config.decoder_start_token_id = input_tokenizer.bos_token_id
         model.config.pad_token_id = input_tokenizer.pad_token_id
+
+        model.to(device)
+        classifier.to(device)
 
         model, classifier = train_all(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
         # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
@@ -516,16 +516,17 @@ def main(params):
     else:
         if params.train_autoencoder:
             # model = BertLMHeadModel.from_pretrained("bert-base-uncased")
+
             model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
             print(model)
-            
-            model.to(device)
+
             model.config.decoder_start_token_id = input_tokenizer.bos_token_id
             model.config.pad_token_id = input_tokenizer.pad_token_id
+            model.to(device)
             
             model = train(model, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
             # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
-            model.save_pretrained('models/brown_autoencoder_2')
+            model.save_pretrained('models/brown_autoencoder_3')
         else:
             model = BertLMHeadModel.from_pretrained(f'./models/{params.model_name}')
             # model.load_state_dict(f'./models/{params.model_name}')
