@@ -459,6 +459,8 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
         score = metric.compute(model_id='gpt2')
         print('Mean Perplexity:', score['mean_perplexity'])
         print("===========================",flush=True)
+        model.save_pretrained('models/brown_autoencoder_15')
+        torch.save(classifier.state_dict(), 'models/brown_latent_classifier_15.torch')
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("exact_match")
