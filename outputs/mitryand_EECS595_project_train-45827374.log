@@ -1,0 +1,6 @@
+usage: train_model.py [-h] [--batch_size BATCH_SIZE] [--num_epochs NUM_EPOCHS]
+                      [--train_autoencoder TRAIN_AUTOENCODER]
+                      [--train_classifier TRAIN_CLASSIFIER] [--test TEST]
+                      [--model_name MODEL_NAME]
+                      [--classifier_name CLASSIFIER_NAME]
+train_model.py: error: ambiguous option: --train=True could match --train_autoencoder, --train_classifier
