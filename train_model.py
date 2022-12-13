@@ -103,26 +103,28 @@ def fgim_attack(model, classifier, target_class, origen_data):
 
 # custom dataset class to load data from the .txt files
 class BrownStyleDataset(Dataset):
-    def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None):
+    def __init__(self, stage='train', input_tokenizer=None, output_tokenizer=None, params=None):
 
         # store key variables
-        # self.id_to_label = ['adventure', 
-        #                     'belles_lettres', 
-        #                     'editorial', 
-        #                     'fiction', 
-        #                     'government', 
-        #                     'hobbies', 
-        #                     'humor', 
-        #                     'learned', 
-        #                     'lore', 
-        #                     'mystery', 
-        #                     'news', 
-        #                     'religion', 
-        #                     'reviews', 
-        #                     'romance', 
-        #                     'science_fiction'
-        #                     ]
-        self.id_to_label = ['adventure', 'editorial']
+        if (params is not None) and (params.full_dataset):
+            self.id_to_label = ['adventure', 
+                                'belles_lettres', 
+                                'editorial', 
+                                'fiction', 
+                                'government', 
+                                'hobbies', 
+                                'humor', 
+                                'learned', 
+                                'lore', 
+                                'mystery', 
+                                'news', 
+                                'religion', 
+                                'reviews', 
+                                'romance', 
+                                'science_fiction'
+                                ]
+        else:
+            self.id_to_label = ['adventure', 'editorial']
         self.stage = stage
         self.input_tokenizer = input_tokenizer
         self.output_tokenizer = output_tokenizer
@@ -427,6 +429,7 @@ if __name__ == "__main__":
     parser.add_argument("--test", type=bool, default=False)
     parser.add_argument("--model_name", type=str, default="brown_autoencoder_2")
     parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
+    parser.add_argument("--full_dataset", type=bool, default=False)
 
     params, unknown = parser.parse_known_args()
     main(params)
