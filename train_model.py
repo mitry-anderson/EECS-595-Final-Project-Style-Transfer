@@ -72,7 +72,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
     l2 = 0.35
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     # bow_criterion = torch.nn.NLLLoss()
-    sentence_og = model.cls(data)
+    sentence_og = model.decoder(data)
     sentence_og.detach()
     while True:
         # to_var? what do it do?
@@ -80,7 +80,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         # print(data.shape)
         # print(data)
         output = classifier(data)
-        sentence_now = model.cls(data)
+        sentence_now = model.decoder(data)
         L_BOW = bow_criterion(sent_vec_to_bow(sentence_now).flatten(), sent_vec_to_bow(sentence_og).flatten())
         L_CLS = cls_criterion(output, target_class)
         loss = l1*L_BOW + l2*L_CLS
@@ -184,7 +184,7 @@ def load_data(input_tokenizer, output_tokenizer, params):
 def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin testing style transfer!")
     
-    metric = evaluate.load("accuracy")
+    # metric = evaluate.load("accuracy")
     model.eval()
     classifier.eval()
     pred = []
@@ -193,7 +193,7 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         with torch.no_grad():
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
 
-        z = outputs.hidden_states[12]
+        z = outputs.encoder_hidden_states[12]
 
         cls_outputs = classifier(z)
         cls_pred = cls_outputs.argmax(1)
@@ -202,7 +202,7 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
         
         # outputs_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
-        logits_alt = model.cls(z_alt)
+        logits_alt = model.decoder(z_alt)
         
         guess = torch.argmax(outputs.logits, dim=2).long()
         pred = output_tokenizer.batch_decode(guess, skip_special_tokens=True)
@@ -246,7 +246,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         model.eval()
         classifier.train()
         for batch in train_dataloader:
-            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
+            outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_encoder_hidden_states=True)
             z = outputs.hidden_states[12]
             cls_outputs = classifier(z)
             # print(z.shape)
@@ -265,9 +265,9 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
         classifier.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
+                outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_encoder_hidden_states=True)
             
-            z = outputs.hidden_states[12]
+            z = outputs.encoder_hidden_states[12]
             cls_outputs = classifier(z)
             cls_pred = cls_outputs.argmax(1)
             cls_truth = batch['genre_labels']
@@ -306,7 +306,6 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
         
         for batch in train_dataloader:
             outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
-            z = outputs.hidden_states[12]
            
             loss = outputs.loss
             loss.backward()
