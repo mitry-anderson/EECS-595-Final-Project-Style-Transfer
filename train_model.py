@@ -7,6 +7,7 @@ import random
 import evaluate
 
 from transformers import EncoderDecoderModel, BertTokenizer, GPT2Tokenizer, get_scheduler,  BertLMHeadModel
+from transformers.models.encoder_decoder.modeling_encoder_decoder import shift_tokens_right
 
 from tqdm.auto import tqdm
 
@@ -381,7 +382,9 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             cls_outputs = classifier(z)
             # print(z.shape)
             # print(batch["genre_labels"].shape)
-            outputs_alt = model.decoder(outputs.encoder_hidden_states[12])
+            decoder_input_ids = shift_tokens_right(batch["input_sentences"], model.config.pad_token_id, model.config.decoder_start_token_id)
+            outputs_alt = model.decoder(input_ids=decoder_input_ids, encoder_hidden_states=outputs.encoder_hidden_states[12])
+
             guess_sentence = torch.argmax(outputs_alt.logits, dim=2).long()
             L_bow = bow_criterion(sent_vec_to_bow(guess_sentence).flatten(), sent_vec_to_bow(batch['input_sentences']).flatten())
             L_cls = cls_criterion(cls_outputs, batch["genre_labels"])
