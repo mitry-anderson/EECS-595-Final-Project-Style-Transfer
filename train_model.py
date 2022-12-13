@@ -496,7 +496,7 @@ def main(params):
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
 
     if params.train_all:
-        classifier = GenreClassifier(768, 256, 2)
+        classifier = GenreClassifier(768, 256, 15)
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
         print(model)
         
