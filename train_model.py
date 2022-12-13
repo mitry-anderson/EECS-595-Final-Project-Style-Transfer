@@ -52,11 +52,11 @@ class GenreClassifier(torch.nn.Module):
 
 def sent_vec_to_bow2(sent_vec):
     num_samples, num_words = sent_vec.shape
-    word_vec = torch.argmax(sent_vec,dim=2)
+    # word_vec = torch.argmax(sent_vec,dim=2)
     output = torch.zeros((num_samples, 30522)).to(sent_vec.device).long()
     for i in range(num_samples):
         for j in range(num_words):
-            output[i,word_vec[i,j]] += 1
+            output[i,sent_vec[i,j]] += 1
     return output
 
 def sent_vec_to_bow(sent_vec):
@@ -395,7 +395,7 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
 
             guess_sentence = torch.argmax(outputs_alt.logits, dim=2).long()
             # print(batch['input_sentences'].shape)
-            L_bow = bow_criterion(sent_vec_to_bow(guess_sentence).flatten(), sent_vec_to_bow2(batch['input_sentences']).flatten())
+            L_bow = bow_criterion(sent_vec_to_bow2(guess_sentence).flatten(), sent_vec_to_bow2(batch['input_sentences']).flatten())
             L_cls = cls_criterion(cls_outputs, batch["genre_labels"])
             cls_loss = L_bow + L_cls
             loss = outputs.loss
