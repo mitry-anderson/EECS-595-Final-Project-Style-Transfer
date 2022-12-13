@@ -19,7 +19,7 @@ for category in categories:
     for sentence in list(sentences):
         paragraph += ' '.join(sentence)
         i += 1
-        if i == 5:
+        if i == 3:
             paragraphs_list.append(paragraph)
             paragraph = ''
             i = 0

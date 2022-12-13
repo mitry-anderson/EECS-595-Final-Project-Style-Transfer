@@ -330,18 +330,18 @@ def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, ou
                 outputs = model(input_ids=batch["input_sentences"], attention_mask=batch['input_attention_masks'], labels=batch["input_sentences"], output_hidden_states=True)
             
             guess = torch.argmax(outputs.logits,dim=2).long()
-            pred = output_tokenizer.batch_decode(guess)
-            truth = input_tokenizer.batch_decode(batch['input_sentences'])
+            pred = output_tokenizer.batch_decode(guess, skip_special_tokens=True)
+            truth = input_tokenizer.batch_decode(batch['input_sentences'], skip_special_tokens=True)
 
             metric.add_batch(predictions=pred, references=truth)
             
 
         print("---------------------------")
-        print("example input sentences: ")
-        print(truth[0:5])
+        print("example input paragraph: ")
+        print(truth[0])
         print("---------------------------")
-        print("example output sentences: ")
-        print(pred[0:5])
+        print("example output paragraph: ")
+        print(pred[0])
         print("---------------------------")
         score = metric.compute(model_id='gpt2')
         print('Mean Perplexity:', score['mean_perplexity'])
