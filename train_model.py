@@ -13,6 +13,8 @@ from tqdm.auto import tqdm
 
 import logging
 
+import time
+
 
 def set_seed(seed):
     random.seed(seed)
@@ -434,7 +436,9 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             z = outputs.encoder_hidden_states[12]
             cls_outputs = classifier(z)
             cls_pred = cls_outputs.argmax(1)
+            
             cls_truth = batch['genre_labels']
+            
 
             cls_metric.add_batch(predictions=cls_pred, references=cls_truth)
 
@@ -459,8 +463,8 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
         score = metric.compute(model_id='gpt2')
         print('Mean Perplexity:', score['mean_perplexity'])
         print("===========================",flush=True)
-        model.save_pretrained('models/brown_autoencoder_15')
-        torch.save(classifier.state_dict(), 'models/brown_latent_classifier_15.torch')
+        model.save_pretrained(f'models/brown_autoencoder_15_{time.time()}')
+        torch.save(classifier.state_dict(), f'models/brown_latent_classifier_15_{time.time()}.torch')
 
 def test(model, test_dataloader, input_tokenizer, output_tokenizer):
     metric = evaluate.load("exact_match")
