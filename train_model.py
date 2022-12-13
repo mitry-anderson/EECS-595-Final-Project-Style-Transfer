@@ -26,6 +26,7 @@ SEED = 595
 set_seed(SEED)
 device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
 # device = torch.device("cpu")
+# device = torch.device("cpu")
 
 MAX_LENGTH = 100
 
@@ -75,7 +76,8 @@ def bow_criterion(guess, target):
 
 
 # fast gradient iterative method from paper Wang et al 2019
-def fgim_attack(model, classifier, target_class, origen_data):
+def fgim_attack(model, classifier, target_class, origen_data, sentence_input):
+    print(origen_data.shape)
     i = 0
     data = Variable(origen_data.data.clone(), requires_grad=True)
     epsilon = 1.0 # modify and play with this
@@ -83,16 +85,22 @@ def fgim_attack(model, classifier, target_class, origen_data):
     l2 = 0.35
     cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
     # bow_criterion = torch.nn.NLLLoss()
-    sentence_og = model.decoder(data)
-    sentence_og.detach()
+    decoder_input_ids = shift_tokens_right(sentence_input, model.config.pad_token_id, model.config.decoder_start_token_id)
+    outputs_og = model.decoder(input_ids=decoder_input_ids, encoder_hidden_states=data)
+    sentence_og = torch.argmax(outputs_og.logits, dim=2).long()
+    # sentence_og.detach()
     while True:
         # to_var? what do it do?
         # print(data.requires_grad)
         # print(data.shape)
         # print(data)
         output = classifier(data)
-        sentence_now = model.decoder(data)
-        L_BOW = bow_criterion(sent_vec_to_bow(sentence_now).flatten(), sent_vec_to_bow(sentence_og).flatten())
+        decoder_input_ids = shift_tokens_right(sentence_input, model.config.pad_token_id, model.config.decoder_start_token_id)
+        outputs_alt = model.decoder(input_ids=decoder_input_ids, encoder_hidden_states=data)
+        guess_sentence = torch.argmax(outputs_alt.logits, dim=2).long()
+        # print(batch['input_sentences'].shape)
+
+        L_BOW = bow_criterion(sent_vec_to_bow2(guess_sentence).flatten(), sent_vec_to_bow2(sentence_og).flatten())
         L_CLS = cls_criterion(output, target_class)
         loss = l1*L_BOW + l2*L_CLS
         classifier.zero_grad()
@@ -110,6 +118,7 @@ def fgim_attack(model, classifier, target_class, origen_data):
         if i >= 5:
             break
 
+    print(data.shape)
     return data
 
 # custom dataset class to load data from the .txt files
@@ -212,10 +221,13 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         cls_pred = cls_outputs.argmax(1)
         cls_truth = batch['genre_labels']
 
-        z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
+        z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z, batch['input_sentences'])
         
         # outputs_alt = model(input_ids=batch["input_sentences"], encoder_hidden_states=z_alt)
-        outputs_alt = model.decoder(z_alt)
+        # outputs_alt = model.decoder(z_alt)
+
+        decoder_input_ids = shift_tokens_right(batch['input_sentences'], model.config.pad_token_id, model.config.decoder_start_token_id)
+        outputs_alt = model.decoder(input_ids=decoder_input_ids, encoder_hidden_states=z_alt)
         
         guess = torch.argmax(outputs.logits, dim=2).long()
         pred = output_tokenizer.batch_decode(guess, skip_special_tokens=True)
@@ -537,19 +549,19 @@ def main(params):
             # torch.save(model.state_dict(),'models/brown_autoencoder.torch')
             model.save_pretrained('models/brown_autoencoder_3')
         else:
-            model = BertLMHeadModel.from_pretrained(f'./models/{params.model_name}')
+            model = EncoderDecoderModel.from_pretrained(f'./models/{params.model_name}')
             # model.load_state_dict(f'./models/{params.model_name}')
             model.to(device)
 
         if params.train_classifier:
-            classifier = GenreClassifier(768, 256, 2)
+            classifier = GenreClassifier(768, 256, 15)
             model.to(device)
             classifier.to(device)
             print(classifier)
             classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
             torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
         else:
-            classifier = GenreClassifier(768, 256, 2)
+            classifier = GenreClassifier(768, 256, 15)
             classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
             classifier.to(device)
 
@@ -571,9 +583,10 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, default="brown_autoencoder_2")
     parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
     parser.add_argument("--full_dataset", type=bool, default=False)
-    parser.add_argument("--train_all", type=bool, default=True)
-
+    parser.add_argument("--train_all", type=bool, default=False)
+    
     params, unknown = parser.parse_known_args()
+    
     main(params)
 
 
