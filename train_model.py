@@ -399,7 +399,7 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             # print(batch['input_sentences'].shape)
             L_bow = bow_criterion(sent_vec_to_bow2(guess_sentence).flatten(), sent_vec_to_bow2(batch['input_sentences']).flatten())
             L_cls = cls_criterion(cls_outputs, batch["genre_labels"])
-            cls_loss = 0.9*(L_bow + L_cls)
+            cls_loss = L_bow + L_cls
             loss = outputs.loss
 
             loss.backward(retain_graph=True)
@@ -439,7 +439,6 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             
             cls_truth = batch['genre_labels']
             
-
             cls_metric.add_batch(predictions=cls_pred, references=cls_truth)
 
         print("---------------------------")
