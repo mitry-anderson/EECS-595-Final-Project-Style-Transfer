@@ -565,6 +565,12 @@ def main(params):
             classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
             classifier.to(device)
 
+    if params.train_all_checkpoint:
+        model, classifier = train_all(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+        model.save_pretrained('models/brown_autoencoder_2')
+        torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
+
+
     evaluate_transfer(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
 
     if params.test:
@@ -573,7 +579,7 @@ def main(params):
         
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Finetune Language Model")
+    parser = argparse.ArgumentParser(description="Finetune Language Model for text to text genre transfer")
 
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--num_epochs", type=int, default=1)
@@ -584,6 +590,7 @@ if __name__ == "__main__":
     parser.add_argument("--classifier_name", type=str, default="brown_latent_classifier.torch")
     parser.add_argument("--full_dataset", type=bool, default=False)
     parser.add_argument("--train_all", type=bool, default=False)
+    parser.add_argument("--train_all_checkpoint", type=bool, default=False)
     
     params, unknown = parser.parse_known_args()
     
