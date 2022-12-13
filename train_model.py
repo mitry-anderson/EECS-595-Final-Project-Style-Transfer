@@ -312,6 +312,57 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
 
     return classifier
 
+
+def train_input_classifier(classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
+    print("Begin training classifier!")
+    
+    num_training_steps = params.num_epochs * len(train_dataloader)
+
+    cls_optimizer = torch.optim.AdamW(classifier.parameters(), lr=1e-4)
+    cls_lr_scheduler = get_scheduler(
+        name="linear", 
+        optimizer=cls_optimizer, 
+        num_warmup_steps=0.1*num_training_steps, 
+        num_training_steps=num_training_steps
+    )
+    cls_criterion = torch.nn.CrossEntropyLoss() # torch.nn.BCELoss(size_average=True) # 
+    progress_bar = tqdm(range(num_training_steps))
+    for epoch in range(params.num_epochs):
+
+        classifier.train()
+        for batch in train_dataloader:
+            cls_outputs = classifier(batch['input_sentences'])
+            cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
+            cls_loss.backward()
+            cls_optimizer.step()
+            cls_lr_scheduler.step()
+            cls_optimizer.zero_grad()
+            progress_bar.update(1)
+        print("===========================")
+        print(f'epoch {epoch + 1}/{params.num_epochs} | loss: {cls_loss.item()}')
+        
+        metric = evaluate.load("accuracy")
+        
+        classifier.eval()
+        for batch in eval_dataloader:
+            with torch.no_grad():
+                cls_outputs = classifier(batch['input_sentences']) 
+            cls_pred = cls_outputs.argmax(1)
+            cls_truth = batch['genre_labels']
+            metric.add_batch(predictions=cls_pred, references=cls_truth)
+
+        print("---------------------------")
+        print("example input sentences: ")
+        print(cls_truth[0:5])
+        print("---------------------------")
+        print("example output sentences: ")
+        print(cls_pred[0:5])
+        print("---------------------------")
+        score = metric.compute()
+        print('Validation Classifier Accuracy:', score['accuracy'])
+        print("===========================",flush=True)
+    return classifier
+
 def train(model,  train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training autoencoder!")
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
@@ -515,6 +566,12 @@ def main(params):
     # output_tokenizer.cls_token = input_tokenizer.cls_token
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
+    if params.train_input_classifier:
+        classifier = GenreClassifier(100, 256, 15)
+        print(classifier)
+        classifier = train_input_classifier(classifier,train_dataloader,eval_dataloader,params,input_tokenizer,output_tokenizer)
+        torch.save(classifier.state_dict(), 'models/brown_input_classifier.torch')
+        return
 
     if params.train_all:
         classifier = GenreClassifier(768, 256, 15)
@@ -591,6 +648,7 @@ if __name__ == "__main__":
     parser.add_argument("--full_dataset", type=bool, default=False)
     parser.add_argument("--train_all", type=bool, default=False)
     parser.add_argument("--train_all_checkpoint", type=bool, default=False)
+    parser.add_argument("--train_input_classifier",type=bool,default=False)
     
     params, unknown = parser.parse_known_args()
     
