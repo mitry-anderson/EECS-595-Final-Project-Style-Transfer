@@ -50,6 +50,14 @@ class GenreClassifier(torch.nn.Module):
     def forward(self, hidden_outputs):
         return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(torch.flatten(hidden_outputs,1,2))))))
 
+def sent_vec_to_bow2(sent_vec):
+    num_samples, num_words = sent_vec.shape
+    word_vec = torch.argmax(sent_vec,dim=2)
+    output = torch.zeros((num_samples, 30522)).to(sent_vec.device).long()
+    for i in range(num_samples):
+        for j in range(num_words):
+            output[i,word_vec[i,j]] += 1
+    return output
 
 def sent_vec_to_bow(sent_vec):
     num_samples, num_words, vocab_size = sent_vec.shape
@@ -386,8 +394,8 @@ def train_all(model, classifier, train_dataloader, eval_dataloader, params, inpu
             outputs_alt = model.decoder(input_ids=decoder_input_ids, encoder_hidden_states=outputs.encoder_hidden_states[12])
 
             guess_sentence = torch.argmax(outputs_alt.logits, dim=2).long()
-            print(batch['input_sentences'].shape)
-            L_bow = bow_criterion(sent_vec_to_bow(guess_sentence).flatten(), sent_vec_to_bow(batch['input_sentences']).flatten())
+            # print(batch['input_sentences'].shape)
+            L_bow = bow_criterion(sent_vec_to_bow(guess_sentence).flatten(), sent_vec_to_bow2(batch['input_sentences']).flatten())
             L_cls = cls_criterion(cls_outputs, batch["genre_labels"])
             cls_loss = L_bow + L_cls
             loss = outputs.loss
