@@ -1,0 +1,830 @@
+Some weights of the model checkpoint at bert-base-cased were not used when initializing BertModel: ['cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.weight', 'cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of the model checkpoint at bert-base-cased were not used when initializing BertLMHeadModel: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertLMHeadModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertLMHeadModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertLMHeadModel were not initialized from the model checkpoint at bert-base-cased and are newly initialized: ['bert.encoder.layer.8.crossattention.self.query.weight', 'bert.encoder.layer.3.crossattention.self.key.bias', 'bert.encoder.layer.4.crossattention.self.value.weight', 'bert.encoder.layer.9.crossattention.self.query.weight', 'bert.encoder.layer.8.crossattention.self.value.weight', 'bert.encoder.layer.6.crossattention.self.query.bias', 'bert.encoder.layer.2.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.11.crossattention.self.query.weight', 'bert.encoder.layer.10.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.self.value.weight', 'bert.encoder.layer.11.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.5.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.2.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.7.crossattention.self.query.bias', 'bert.encoder.layer.1.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.2.crossattention.output.dense.weight', 'bert.encoder.layer.11.crossattention.self.value.bias', 'bert.encoder.layer.9.crossattention.self.query.bias', 'bert.encoder.layer.4.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.10.crossattention.self.query.weight', 'bert.encoder.layer.10.crossattention.output.dense.bias', 'bert.encoder.layer.11.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.11.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.1.crossattention.self.value.bias', 'bert.encoder.layer.5.crossattention.self.value.weight', 'bert.encoder.layer.6.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.3.crossattention.self.key.weight', 'bert.encoder.layer.2.crossattention.self.query.weight', 'bert.encoder.layer.7.crossattention.self.key.weight', 'bert.encoder.layer.4.crossattention.self.value.bias', 'bert.encoder.layer.2.crossattention.self.key.bias', 'bert.encoder.layer.7.crossattention.self.value.weight', 'bert.encoder.layer.5.crossattention.output.dense.weight', 'bert.encoder.layer.6.crossattention.output.dense.weight', 'bert.encoder.layer.9.crossattention.self.value.bias', 'bert.encoder.layer.0.crossattention.self.query.bias', 'bert.encoder.layer.5.crossattention.self.query.bias', 'bert.encoder.layer.5.crossattention.self.key.bias', 'bert.encoder.layer.6.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.2.crossattention.self.value.weight', 'bert.encoder.layer.3.crossattention.self.query.weight', 'bert.encoder.layer.8.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.0.crossattention.self.key.weight', 'bert.encoder.layer.5.crossattention.self.key.weight', 'bert.encoder.layer.10.crossattention.self.key.bias', 'bert.encoder.layer.1.crossattention.self.key.weight', 'bert.encoder.layer.11.crossattention.self.value.weight', 'bert.encoder.layer.7.crossattention.output.dense.weight', 'bert.encoder.layer.5.crossattention.output.dense.bias', 'bert.encoder.layer.3.crossattention.output.dense.bias', 'bert.encoder.layer.11.crossattention.self.key.bias', 'bert.encoder.layer.1.crossattention.self.query.bias', 'bert.encoder.layer.8.crossattention.output.dense.bias', 'bert.encoder.layer.10.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.9.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.3.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.6.crossattention.self.key.weight', 'bert.encoder.layer.0.crossattention.self.value.bias', 'bert.encoder.layer.0.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.6.crossattention.output.dense.bias', 'bert.encoder.layer.11.crossattention.self.query.bias', 'bert.encoder.layer.8.crossattention.self.query.bias', 'bert.encoder.layer.5.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.7.crossattention.self.query.weight', 'bert.encoder.layer.7.crossattention.self.key.bias', 'bert.encoder.layer.4.crossattention.self.query.weight', 'bert.encoder.layer.4.crossattention.self.key.weight', 'bert.encoder.layer.10.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.0.crossattention.self.query.weight', 'bert.encoder.layer.4.crossattention.self.query.bias', 'bert.encoder.layer.3.crossattention.self.value.bias', 'bert.encoder.layer.8.crossattention.self.key.bias', 'bert.encoder.layer.1.crossattention.self.key.bias', 'bert.encoder.layer.1.crossattention.output.dense.bias', 'bert.encoder.layer.7.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.3.crossattention.self.query.bias', 'bert.encoder.layer.7.crossattention.self.value.bias', 'bert.encoder.layer.4.crossattention.self.key.bias', 'bert.encoder.layer.9.crossattention.self.value.weight', 'bert.encoder.layer.1.crossattention.self.query.weight', 'bert.encoder.layer.8.crossattention.self.value.bias', 'bert.encoder.layer.9.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.1.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.value.bias', 'bert.encoder.layer.9.crossattention.self.key.bias', 'bert.encoder.layer.4.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.11.crossattention.output.dense.bias', 'bert.encoder.layer.3.crossattention.output.dense.weight', 'bert.encoder.layer.3.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.10.crossattention.self.value.weight', 'bert.encoder.layer.9.crossattention.output.dense.weight', 'bert.encoder.layer.2.crossattention.self.query.bias', 'bert.encoder.layer.0.crossattention.self.key.bias', 'bert.encoder.layer.8.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.key.weight', 'bert.encoder.layer.2.crossattention.self.key.weight', 'bert.encoder.layer.6.crossattention.self.value.bias', 'bert.encoder.layer.5.crossattention.self.query.weight', 'bert.encoder.layer.7.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.2.crossattention.output.dense.bias', 'bert.encoder.layer.6.crossattention.self.key.bias', 'bert.encoder.layer.11.crossattention.self.key.weight', 'bert.encoder.layer.6.crossattention.self.query.weight', 'bert.encoder.layer.2.crossattention.self.value.bias', 'bert.encoder.layer.0.crossattention.self.value.weight', 'bert.encoder.layer.9.crossattention.output.dense.bias', 'bert.encoder.layer.10.crossattention.self.query.bias', 'bert.encoder.layer.4.crossattention.output.dense.bias', 'bert.encoder.layer.7.crossattention.output.dense.bias', 'bert.encoder.layer.5.crossattention.self.value.bias', 'bert.encoder.layer.8.crossattention.self.key.weight', 'bert.encoder.layer.0.crossattention.output.dense.weight', 'bert.encoder.layer.0.crossattention.output.dense.bias', 'bert.encoder.layer.3.crossattention.self.value.weight', 'bert.encoder.layer.9.crossattention.self.key.weight', 'bert.encoder.layer.0.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.4.crossattention.output.dense.weight', 'bert.encoder.layer.6.crossattention.self.value.weight', 'bert.encoder.layer.8.crossattention.output.LayerNorm.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+loaded 1433 training samples
+loaded 322 validation samples
+loaded 37 test samples
+GenreClassifier(
+  (lin1): Linear(in_features=76800, out_features=256, bias=True)
+  (relu1): LeakyReLU(negative_slope=0.01)
+  (lin2): Linear(in_features=256, out_features=50, bias=True)
+  (relu2): LeakyReLU(negative_slope=0.01)
+  (lin3): Linear(in_features=50, out_features=15, bias=True)
+)
+EncoderDecoderModel(
+  (encoder): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(28996, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (decoder): BertLMHeadModel(
+    (bert): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(28996, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (1): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (2): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (3): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (4): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (5): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (6): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (7): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (8): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (9): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (10): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (11): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+    (cls): BertOnlyMLMHead(
+      (predictions): BertLMPredictionHead(
+        (transform): BertPredictionHeadTransform(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (transform_act_fn): GELUActivation()
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (decoder): Linear(in_features=768, out_features=28996, bias=True)
+      )
+    )
+  )
+)
+Begin training all of them!
+  0%|          | 0/45856 [00:00<?, ?it/s]/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:634: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  0%|          | 1/45856 [00:01<16:43:28,  1.31s/it]  0%|          | 2/45856 [00:01<10:21:23,  1.23it/s]  0%|          | 3/45856 [00:02<8:06:28,  1.57it/s]   0%|          | 4/45856 [00:02<7:05:09,  1.80it/s]  0%|          | 5/45856 [00:03<6:32:34,  1.95it/s]  0%|          | 6/45856 [00:03<6:13:34,  2.05it/s]  0%|          | 7/45856 [00:03<6:02:00,  2.11it/s]  0%|          | 8/45856 [00:04<5:53:56,  2.16it/s]  0%|          | 9/45856 [00:04<5:48:49,  2.19it/s]  0%|          | 10/45856 [00:05<5:45:16,  2.21it/s]  0%|          | 11/45856 [00:05<5:42:22,  2.23it/s]  0%|          | 12/45856 [00:06<5:39:05,  2.25it/s]  0%|          | 13/45856 [00:06<5:36:37,  2.27it/s]  0%|          | 14/45856 [00:07<5:35:02,  2.28it/s]  0%|          | 15/45856 [00:07<5:34:38,  2.28it/s]  0%|          | 16/45856 [00:07<5:35:17,  2.28it/s]  0%|          | 17/45856 [00:08<5:33:05,  2.29it/s]  0%|          | 18/45856 [00:08<5:31:17,  2.31it/s]  0%|          | 19/45856 [00:09<5:30:36,  2.31it/s]  0%|          | 20/45856 [00:09<5:29:56,  2.32it/s]  0%|          | 21/45856 [00:10<5:29:40,  2.32it/s]  0%|          | 22/45856 [00:10<5:29:44,  2.32it/s]  0%|          | 23/45856 [00:10<5:30:34,  2.31it/s]  0%|          | 24/45856 [00:11<5:31:09,  2.31it/s]  0%|          | 25/45856 [00:11<5:31:25,  2.30it/s]  0%|          | 26/45856 [00:12<5:32:00,  2.30it/s]  0%|          | 27/45856 [00:12<5:33:07,  2.29it/s]  0%|          | 28/45856 [00:13<5:33:45,  2.29it/s]  0%|          | 29/45856 [00:13<5:34:18,  2.28it/s]  0%|          | 30/45856 [00:13<5:34:22,  2.28it/s]  0%|          | 31/45856 [00:14<5:34:26,  2.28it/s]  0%|          | 32/45856 [00:14<5:34:43,  2.28it/s]  0%|          | 33/45856 [00:15<5:34:49,  2.28it/s]  0%|          | 34/45856 [00:15<5:34:47,  2.28it/s]  0%|          | 35/45856 [00:16<5:34:29,  2.28it/s]  0%|          | 36/45856 [00:16<5:34:39,  2.28it/s]  0%|          | 37/45856 [00:17<5:34:22,  2.28it/s]  0%|          | 38/45856 [00:17<5:34:06,  2.29it/s]  0%|          | 39/45856 [00:17<5:33:40,  2.29it/s]  0%|          | 40/45856 [00:18<5:33:48,  2.29it/s]  0%|          | 41/45856 [00:18<5:34:07,  2.29it/s]  0%|          | 42/45856 [00:19<5:34:40,  2.28it/s]  0%|          | 43/45856 [00:19<5:35:11,  2.28it/s]  0%|          | 44/45856 [00:20<5:35:13,  2.28it/s]  0%|          | 45/45856 [00:20<5:35:02,  2.28it/s]  0%|          | 46/45856 [00:20<5:34:57,  2.28it/s]  0%|          | 47/45856 [00:21<5:34:48,  2.28it/s]  0%|          | 48/45856 [00:21<5:34:57,  2.28it/s]  0%|          | 49/45856 [00:22<5:35:36,  2.27it/s]  0%|          | 50/45856 [00:22<5:36:42,  2.27it/s]  0%|          | 51/45856 [00:23<5:36:57,  2.27it/s]  0%|          | 52/45856 [00:23<5:37:12,  2.26it/s]  0%|          | 53/45856 [00:24<5:37:09,  2.26it/s]  0%|          | 54/45856 [00:24<5:36:47,  2.27it/s]  0%|          | 55/45856 [00:24<5:36:28,  2.27it/s]  0%|          | 56/45856 [00:25<5:35:47,  2.27it/s]  0%|          | 57/45856 [00:25<5:36:05,  2.27it/s]  0%|          | 58/45856 [00:26<5:35:52,  2.27it/s]  0%|          | 59/45856 [00:26<5:35:54,  2.27it/s]  0%|          | 60/45856 [00:27<5:36:26,  2.27it/s]  0%|          | 61/45856 [00:27<5:36:58,  2.27it/s]  0%|          | 62/45856 [00:28<5:37:44,  2.26it/s]  0%|          | 63/45856 [00:28<5:37:36,  2.26it/s]  0%|          | 64/45856 [00:28<5:37:36,  2.26it/s]  0%|          | 65/45856 [00:29<5:37:48,  2.26it/s]  0%|          | 66/45856 [00:29<5:37:20,  2.26it/s]  0%|          | 67/45856 [00:30<5:36:50,  2.27it/s]  0%|          | 68/45856 [00:30<5:36:26,  2.27it/s]  0%|          | 69/45856 [00:31<5:35:53,  2.27it/s]  0%|          | 70/45856 [00:31<5:36:02,  2.27it/s]  0%|          | 71/45856 [00:32<5:36:15,  2.27it/s]  0%|          | 72/45856 [00:32<5:36:09,  2.27it/s]  0%|          | 73/45856 [00:32<5:35:45,  2.27it/s]  0%|          | 74/45856 [00:33<5:35:11,  2.28it/s]  0%|          | 75/45856 [00:33<5:34:37,  2.28it/s]  0%|          | 76/45856 [00:34<5:34:28,  2.28it/s]  0%|          | 77/45856 [00:34<5:34:20,  2.28it/s]  0%|          | 78/45856 [00:35<5:34:12,  2.28it/s]  0%|          | 79/45856 [00:35<5:33:51,  2.29it/s]  0%|          | 80/45856 [00:35<5:33:42,  2.29it/s]  0%|          | 81/45856 [00:36<5:34:01,  2.28it/s]  0%|          | 82/45856 [00:36<5:34:07,  2.28it/s]  0%|          | 83/45856 [00:37<5:34:05,  2.28it/s]  0%|          | 84/45856 [00:37<5:34:24,  2.28it/s]  0%|          | 85/45856 [00:38<5:34:33,  2.28it/s]  0%|          | 86/45856 [00:38<5:34:30,  2.28it/s]  0%|          | 87/45856 [00:39<5:34:43,  2.28it/s]  0%|          | 88/45856 [00:39<5:35:12,  2.28it/s]  0%|          | 89/45856 [00:39<5:34:57,  2.28it/s]  0%|          | 90/45856 [00:40<5:34:49,  2.28it/s]  0%|          | 91/45856 [00:40<5:34:50,  2.28it/s]  0%|          | 92/45856 [00:41<5:34:19,  2.28it/s]  0%|          | 93/45856 [00:41<5:34:02,  2.28it/s]  0%|          | 94/45856 [00:42<5:34:46,  2.28it/s]  0%|          | 95/45856 [00:42<5:33:55,  2.28it/s]  0%|          | 96/45856 [00:42<5:33:54,  2.28it/s]  0%|          | 97/45856 [00:43<5:33:24,  2.29it/s]  0%|          | 98/45856 [00:43<5:33:29,  2.29it/s]  0%|          | 99/45856 [00:44<5:33:45,  2.28it/s]  0%|          | 100/45856 [00:44<5:34:19,  2.28it/s]  0%|          | 101/45856 [00:45<5:34:31,  2.28it/s]  0%|          | 102/45856 [00:45<5:35:04,  2.28it/s]  0%|          | 103/45856 [00:46<5:36:05,  2.27it/s]  0%|          | 104/45856 [00:46<5:36:08,  2.27it/s]  0%|          | 105/45856 [00:46<5:36:26,  2.27it/s]  0%|          | 106/45856 [00:47<5:36:42,  2.26it/s]  0%|          | 107/45856 [00:47<5:36:51,  2.26it/s]  0%|          | 108/45856 [00:48<5:36:46,  2.26it/s]  0%|          | 109/45856 [00:48<5:37:10,  2.26it/s]  0%|          | 110/45856 [00:49<5:37:06,  2.26it/s]  0%|          | 111/45856 [00:49<5:37:01,  2.26it/s]  0%|          | 112/45856 [00:50<5:37:09,  2.26it/s]  0%|          | 113/45856 [00:50<5:37:17,  2.26it/s]  0%|          | 114/45856 [00:50<5:37:55,  2.26it/s]  0%|          | 115/45856 [00:51<5:38:31,  2.25it/s]  0%|          | 116/45856 [00:51<5:38:18,  2.25it/s]  0%|          | 117/45856 [00:52<5:38:05,  2.25it/s]  0%|          | 118/45856 [00:52<5:38:00,  2.26it/s]  0%|          | 119/45856 [00:53<5:38:15,  2.25it/s]  0%|          | 120/45856 [00:53<5:38:03,  2.25it/s]  0%|          | 121/45856 [00:54<5:37:41,  2.26it/s]  0%|          | 122/45856 [00:54<5:37:03,  2.26it/s]  0%|          | 123/45856 [00:54<5:36:21,  2.27it/s]  0%|          | 124/45856 [00:55<5:35:32,  2.27it/s]  0%|          | 125/45856 [00:55<5:34:26,  2.28it/s]  0%|          | 126/45856 [00:56<5:33:47,  2.28it/s]  0%|          | 127/45856 [00:56<5:33:28,  2.29it/s]  0%|          | 128/45856 [00:57<5:33:23,  2.29it/s]  0%|          | 129/45856 [00:57<5:33:32,  2.28it/s]  0%|          | 130/45856 [00:57<5:33:51,  2.28it/s]  0%|          | 131/45856 [00:58<5:33:41,  2.28it/s]  0%|          | 132/45856 [00:58<5:33:46,  2.28it/s]  0%|          | 133/45856 [00:59<5:33:56,  2.28it/s]  0%|          | 134/45856 [00:59<5:34:11,  2.28it/s]  0%|          | 135/45856 [01:00<5:34:07,  2.28it/s]  0%|          | 136/45856 [01:00<5:34:10,  2.28it/s]  0%|          | 137/45856 [01:01<5:34:11,  2.28it/s]  0%|          | 138/45856 [01:01<5:33:33,  2.28it/s]  0%|          | 139/45856 [01:01<5:33:10,  2.29it/s]  0%|          | 140/45856 [01:02<5:33:21,  2.29it/s]  0%|          | 141/45856 [01:02<5:33:45,  2.28it/s]  0%|          | 142/45856 [01:03<5:34:07,  2.28it/s]  0%|          | 143/45856 [01:03<5:34:45,  2.28it/s]  0%|          | 144/45856 [01:04<5:34:37,  2.28it/s]  0%|          | 145/45856 [01:04<5:35:06,  2.27it/s]  0%|          | 146/45856 [01:04<5:35:30,  2.27it/s]  0%|          | 147/45856 [01:05<5:35:34,  2.27it/s]  0%|          | 148/45856 [01:05<5:35:48,  2.27it/s]  0%|          | 149/45856 [01:06<5:36:02,  2.27it/s]  0%|          | 150/45856 [01:06<5:36:50,  2.26it/s]  0%|          | 151/45856 [01:07<5:36:50,  2.26it/s]  0%|          | 152/45856 [01:07<5:37:15,  2.26it/s]  0%|          | 153/45856 [01:08<5:36:49,  2.26it/s]  0%|          | 154/45856 [01:08<5:36:18,  2.26it/s]  0%|          | 155/45856 [01:08<5:36:31,  2.26it/s]  0%|          | 156/45856 [01:09<5:36:19,  2.26it/s]  0%|          | 157/45856 [01:09<5:35:58,  2.27it/s]  0%|          | 158/45856 [01:10<5:35:48,  2.27it/s]  0%|          | 159/45856 [01:10<5:35:52,  2.27it/s]  0%|          | 160/45856 [01:11<5:36:04,  2.27it/s]  0%|          | 161/45856 [01:11<5:36:07,  2.27it/s]  0%|          | 162/45856 [01:12<5:36:33,  2.26it/s]  0%|          | 163/45856 [01:12<5:36:16,  2.26it/s]  0%|          | 164/45856 [01:12<5:36:05,  2.27it/s]  0%|          | 165/45856 [01:13<5:35:55,  2.27it/s]  0%|          | 166/45856 [01:13<5:35:41,  2.27it/s]  0%|          | 167/45856 [01:14<5:36:06,  2.27it/s]  0%|          | 168/45856 [01:14<5:35:57,  2.27it/s]  0%|          | 169/45856 [01:15<5:35:48,  2.27it/s]  0%|          | 170/45856 [01:15<5:35:46,  2.27it/s]  0%|          | 171/45856 [01:16<5:32:16,  2.29it/s]  0%|          | 172/45856 [01:16<5:29:36,  2.31it/s]  0%|          | 173/45856 [01:16<5:28:22,  2.32it/s]  0%|          | 174/45856 [01:17<5:26:46,  2.33it/s]  0%|          | 175/45856 [01:17<5:25:50,  2.34it/s]  0%|          | 176/45856 [01:18<5:25:13,  2.34it/s]  0%|          | 177/45856 [01:18<5:27:19,  2.33it/s]  0%|          | 178/45856 [01:18<5:27:11,  2.33it/s]  0%|          | 179/45856 [01:19<5:26:34,  2.33it/s]  0%|          | 180/45856 [01:19<5:26:02,  2.33it/s]  0%|          | 181/45856 [01:20<5:26:19,  2.33it/s]  0%|          | 182/45856 [01:20<5:26:44,  2.33it/s]  0%|          | 183/45856 [01:21<5:26:55,  2.33it/s]  0%|          | 184/45856 [01:21<5:27:33,  2.32it/s]  0%|          | 185/45856 [01:22<5:28:25,  2.32it/s]  0%|          | 186/45856 [01:22<5:29:40,  2.31it/s]  0%|          | 187/45856 [01:22<5:30:44,  2.30it/s]  0%|          | 188/45856 [01:23<5:31:54,  2.29it/s]  0%|          | 189/45856 [01:23<5:32:43,  2.29it/s]  0%|          | 190/45856 [01:24<5:32:56,  2.29it/s]  0%|          | 191/45856 [01:24<5:32:23,  2.29it/s]  0%|          | 192/45856 [01:25<5:31:59,  2.29it/s]  0%|          | 193/45856 [01:25<5:31:46,  2.29it/s]  0%|          | 194/45856 [01:25<5:31:40,  2.29it/s]  0%|          | 195/45856 [01:26<5:31:59,  2.29it/s]  0%|          | 196/45856 [01:26<5:32:25,  2.29it/s]  0%|          | 197/45856 [01:27<5:32:34,  2.29it/s]  0%|          | 198/45856 [01:27<5:32:40,  2.29it/s]  0%|          | 199/45856 [01:28<5:33:00,  2.29it/s]  0%|          | 200/45856 [01:28<5:33:32,  2.28it/s]  0%|          | 201/45856 [01:29<5:34:24,  2.28it/s]  0%|          | 202/45856 [01:29<5:34:33,  2.27it/s]  0%|          | 203/45856 [01:29<5:34:31,  2.27it/s]  0%|          | 204/45856 [01:30<5:34:32,  2.27it/s]  0%|          | 205/45856 [01:30<5:34:27,  2.27it/s]  0%|          | 206/45856 [01:31<5:34:07,  2.28it/s]  0%|          | 207/45856 [01:31<5:34:27,  2.27it/s]  0%|          | 208/45856 [01:32<5:34:11,  2.28it/s]  0%|          | 209/45856 [01:32<5:33:51,  2.28it/s]  0%|          | 210/45856 [01:32<5:33:03,  2.28it/s]  0%|          | 211/45856 [01:33<5:32:59,  2.28it/s]  0%|          | 212/45856 [01:33<5:33:02,  2.28it/s]  0%|          | 213/45856 [01:34<5:32:42,  2.29it/s]  0%|          | 214/45856 [01:34<5:32:45,  2.29it/s]  0%|          | 215/45856 [01:35<5:32:23,  2.29it/s]  0%|          | 216/45856 [01:35<5:32:11,  2.29it/s]  0%|          | 217/45856 [01:36<5:32:17,  2.29it/s]  0%|          | 218/45856 [01:36<5:32:28,  2.29it/s]  0%|          | 219/45856 [01:36<5:33:03,  2.28it/s]  0%|          | 220/45856 [01:37<5:33:56,  2.28it/s]  0%|          | 221/45856 [01:37<5:34:26,  2.27it/s]  0%|          | 222/45856 [01:38<5:34:40,  2.27it/s]  0%|          | 223/45856 [01:38<5:35:09,  2.27it/s]  0%|          | 224/45856 [01:39<5:35:25,  2.27it/s]  0%|          | 225/45856 [01:39<5:35:06,  2.27it/s]  0%|          | 226/45856 [01:39<5:34:20,  2.27it/s]  0%|          | 227/45856 [01:40<5:33:52,  2.28it/s]  0%|          | 228/45856 [01:40<5:32:57,  2.28it/s]  0%|          | 229/45856 [01:41<5:32:57,  2.28it/s]  1%|          | 230/45856 [01:41<5:32:53,  2.28it/s]  1%|          | 231/45856 [01:42<5:33:02,  2.28it/s]  1%|          | 232/45856 [01:42<5:33:14,  2.28it/s]  1%|          | 233/45856 [01:43<5:33:17,  2.28it/s]  1%|          | 234/45856 [01:43<5:32:54,  2.28it/s]  1%|          | 235/45856 [01:43<5:32:36,  2.29it/s]  1%|          | 236/45856 [01:44<5:32:14,  2.29it/s]  1%|          | 237/45856 [01:44<5:32:05,  2.29it/s]  1%|          | 238/45856 [01:45<5:31:54,  2.29it/s]  1%|          | 239/45856 [01:45<5:32:25,  2.29it/s]  1%|          | 240/45856 [01:46<5:32:54,  2.28it/s]  1%|          | 241/45856 [01:46<5:33:32,  2.28it/s]  1%|          | 242/45856 [01:46<5:33:54,  2.28it/s]  1%|          | 243/45856 [01:47<5:33:40,  2.28it/s]  1%|          | 244/45856 [01:47<5:33:28,  2.28it/s]  1%|          | 245/45856 [01:48<5:32:40,  2.29it/s]  1%|          | 246/45856 [01:48<5:31:53,  2.29it/s]  1%|          | 247/45856 [01:49<5:30:59,  2.30it/s]  1%|          | 248/45856 [01:49<5:30:06,  2.30it/s]  1%|          | 249/45856 [01:50<5:29:45,  2.31it/s]  1%|          | 250/45856 [01:50<5:29:52,  2.30it/s]  1%|          | 251/45856 [01:50<5:29:15,  2.31it/s]  1%|          | 252/45856 [01:51<5:29:05,  2.31it/s]  1%|          | 253/45856 [01:51<5:29:44,  2.30it/s]  1%|          | 254/45856 [01:52<5:30:17,  2.30it/s]  1%|          | 255/45856 [01:52<5:30:47,  2.30it/s]  1%|          | 256/45856 [01:53<5:31:08,  2.30it/s]  1%|          | 257/45856 [01:53<5:31:43,  2.29it/s]  1%|          | 258/45856 [01:53<5:32:43,  2.28it/s]  1%|          | 259/45856 [01:54<5:33:30,  2.28it/s]  1%|          | 260/45856 [01:54<5:33:41,  2.28it/s]  1%|          | 261/45856 [01:55<5:33:50,  2.28it/s]  1%|          | 262/45856 [01:55<5:34:09,  2.27it/s]  1%|          | 263/45856 [01:56<5:34:13,  2.27it/s]  1%|          | 264/45856 [01:56<5:34:32,  2.27it/s]  1%|          | 265/45856 [01:57<5:34:56,  2.27it/s]  1%|          | 266/45856 [01:57<5:34:54,  2.27it/s]  1%|          | 267/45856 [01:57<5:34:51,  2.27it/s]  1%|          | 268/45856 [01:58<5:34:50,  2.27it/s]  1%|          | 269/45856 [01:58<5:35:12,  2.27it/s]  1%|          | 270/45856 [01:59<5:35:37,  2.26it/s]  1%|          | 271/45856 [01:59<5:35:51,  2.26it/s]  1%|          | 272/45856 [02:00<5:35:36,  2.26it/s]  1%|          | 273/45856 [02:00<5:35:29,  2.26it/s]  1%|          | 274/45856 [02:01<5:35:44,  2.26it/s]  1%|          | 275/45856 [02:01<5:36:00,  2.26it/s]  1%|          | 276/45856 [02:01<5:36:25,  2.26it/s]  1%|          | 277/45856 [02:02<5:36:37,  2.26it/s]  1%|          | 278/45856 [02:02<5:36:48,  2.26it/s]  1%|          | 279/45856 [02:03<5:37:07,  2.25it/s]  1%|          | 280/45856 [02:03<5:37:20,  2.25it/s]  1%|          | 281/45856 [02:04<5:37:19,  2.25it/s]  1%|          | 282/45856 [02:04<5:37:19,  2.25it/s]  1%|          | 283/45856 [02:05<5:37:07,  2.25it/s]  1%|          | 284/45856 [02:05<5:37:04,  2.25it/s]  1%|          | 285/45856 [02:05<5:37:09,  2.25it/s]  1%|          | 286/45856 [02:06<5:36:55,  2.25it/s]  1%|          | 287/45856 [02:06<5:36:45,  2.26it/s]  1%|          | 288/45856 [02:07<5:36:36,  2.26it/s]  1%|          | 289/45856 [02:07<5:36:21,  2.26it/s]  1%|          | 290/45856 [02:08<5:36:19,  2.26it/s]  1%|          | 291/45856 [02:08<5:36:19,  2.26it/s]  1%|          | 292/45856 [02:08<5:36:28,  2.26it/s]  1%|          | 293/45856 [02:09<5:36:32,  2.26it/s]  1%|          | 294/45856 [02:09<5:36:35,  2.26it/s]  1%|          | 295/45856 [02:10<5:36:36,  2.26it/s]  1%|          | 296/45856 [02:10<5:36:27,  2.26it/s]  1%|          | 297/45856 [02:11<5:36:14,  2.26it/s]  1%|          | 298/45856 [02:11<5:35:44,  2.26it/s]  1%|          | 299/45856 [02:12<5:35:41,  2.26it/s]  1%|          | 300/45856 [02:12<5:35:36,  2.26it/s]  1%|          | 301/45856 [02:12<5:35:12,  2.27it/s]  1%|          | 302/45856 [02:13<5:34:59,  2.27it/s]  1%|          | 303/45856 [02:13<5:34:41,  2.27it/s]  1%|          | 304/45856 [02:14<5:34:13,  2.27it/s]  1%|          | 305/45856 [02:14<5:33:36,  2.28it/s]  1%|          | 306/45856 [02:15<5:32:51,  2.28it/s]  1%|          | 307/45856 [02:15<5:32:41,  2.28it/s]  1%|          | 308/45856 [02:16<5:32:46,  2.28it/s]  1%|          | 309/45856 [02:16<5:32:35,  2.28it/s]  1%|          | 310/45856 [02:16<5:32:28,  2.28it/s]  1%|          | 311/45856 [02:17<5:32:14,  2.28it/s]  1%|          | 312/45856 [02:17<5:32:09,  2.29it/s]  1%|          | 313/45856 [02:18<5:31:36,  2.29it/s]  1%|          | 314/45856 [02:18<5:31:25,  2.29it/s]  1%|          | 315/45856 [02:19<5:30:54,  2.29it/s]  1%|          | 316/45856 [02:19<5:30:29,  2.30it/s]  1%|          | 317/45856 [02:19<5:30:31,  2.30it/s]  1%|          | 318/45856 [02:20<5:30:48,  2.29it/s]  1%|          | 319/45856 [02:20<5:30:38,  2.30it/s]  1%|          | 320/45856 [02:21<5:30:25,  2.30it/s]  1%|          | 321/45856 [02:21<5:30:51,  2.29it/s]  1%|          | 322/45856 [02:22<5:30:52,  2.29it/s]  1%|          | 323/45856 [02:22<5:30:37,  2.30it/s]  1%|          | 324/45856 [02:23<5:30:36,  2.30it/s]  1%|          | 325/45856 [02:23<5:30:42,  2.29it/s]  1%|          | 326/45856 [02:23<5:31:06,  2.29it/s]  1%|          | 327/45856 [02:24<5:31:24,  2.29it/s]  1%|          | 328/45856 [02:24<5:31:47,  2.29it/s]  1%|          | 329/45856 [02:25<5:31:53,  2.29it/s]  1%|          | 330/45856 [02:25<5:32:35,  2.28it/s]  1%|          | 331/45856 [02:26<5:33:06,  2.28it/s]  1%|          | 332/45856 [02:26<5:32:52,  2.28it/s]  1%|          | 333/45856 [02:26<5:32:20,  2.28it/s]  1%|          | 334/45856 [02:27<5:32:26,  2.28it/s]  1%|          | 335/45856 [02:27<5:33:00,  2.28it/s]  1%|          | 336/45856 [02:28<5:33:03,  2.28it/s]  1%|          | 337/45856 [02:28<5:33:15,  2.28it/s]  1%|          | 338/45856 [02:29<5:33:24,  2.28it/s]  1%|          | 339/45856 [02:29<5:33:25,  2.28it/s]  1%|          | 340/45856 [02:30<5:33:10,  2.28it/s]  1%|          | 341/45856 [02:30<5:33:26,  2.27it/s]  1%|          | 342/45856 [02:30<5:34:33,  2.27it/s]  1%|          | 343/45856 [02:31<5:34:09,  2.27it/s]  1%|          | 344/45856 [02:31<5:34:19,  2.27it/s]  1%|          | 345/45856 [02:32<5:34:21,  2.27it/s]  1%|          | 346/45856 [02:32<5:33:52,  2.27it/s]  1%|          | 347/45856 [02:33<5:33:29,  2.27it/s]  1%|          | 348/45856 [02:33<5:33:02,  2.28it/s]  1%|          | 349/45856 [02:34<5:32:56,  2.28it/s]  1%|          | 350/45856 [02:34<5:32:41,  2.28it/s]  1%|          | 351/45856 [02:34<5:32:41,  2.28it/s]  1%|          | 352/45856 [02:35<5:32:18,  2.28it/s]  1%|          | 353/45856 [02:35<5:32:14,  2.28it/s]  1%|          | 354/45856 [02:36<5:32:31,  2.28it/s]  1%|          | 355/45856 [02:36<5:32:43,  2.28it/s]  1%|          | 356/45856 [02:37<5:32:51,  2.28it/s]  1%|          | 357/45856 [02:37<5:32:57,  2.28it/s]  1%|          | 358/45856 [02:37<5:33:12,  2.28it/s]  1%|          | 359/45856 [02:38<5:33:42,  2.27it/s]  1%|          | 360/45856 [02:38<5:34:05,  2.27it/s]  1%|          | 361/45856 [02:39<5:34:03,  2.27it/s]  1%|          | 362/45856 [02:39<5:34:03,  2.27it/s]  1%|          | 363/45856 [02:40<5:34:00,  2.27it/s]  1%|          | 364/45856 [02:40<5:34:14,  2.27it/s]  1%|          | 365/45856 [02:41<5:33:50,  2.27it/s]  1%|          | 366/45856 [02:41<5:33:17,  2.27it/s]  1%|          | 367/45856 [02:41<5:32:41,  2.28it/s]  1%|          | 368/45856 [02:42<5:32:45,  2.28it/s]  1%|          | 369/45856 [02:42<5:33:08,  2.28it/s]  1%|          | 370/45856 [02:43<5:33:17,  2.27it/s]  1%|          | 371/45856 [02:43<5:33:48,  2.27it/s]  1%|          | 372/45856 [02:44<5:34:12,  2.27it/s]  1%|          | 373/45856 [02:44<5:34:14,  2.27it/s]  1%|          | 374/45856 [02:44<5:34:23,  2.27it/s]  1%|          | 375/45856 [02:45<5:34:12,  2.27it/s]  1%|          | 376/45856 [02:45<5:34:04,  2.27it/s]  1%|          | 377/45856 [02:46<5:33:42,  2.27it/s]  1%|          | 378/45856 [02:46<5:33:47,  2.27it/s]  1%|          | 379/45856 [02:47<5:34:31,  2.27it/s]  1%|          | 380/45856 [02:47<5:35:35,  2.26it/s]  1%|          | 381/45856 [02:48<5:35:32,  2.26it/s]  1%|          | 382/45856 [02:48<5:35:25,  2.26it/s]  1%|          | 383/45856 [02:48<5:35:17,  2.26it/s]  1%|          | 384/45856 [02:49<5:35:01,  2.26it/s]  1%|          | 385/45856 [02:49<5:34:14,  2.27it/s]  1%|          | 386/45856 [02:50<5:33:57,  2.27it/s]  1%|          | 387/45856 [02:50<5:33:22,  2.27it/s]  1%|          | 388/45856 [02:51<5:32:42,  2.28it/s]  1%|          | 389/45856 [02:51<5:32:35,  2.28it/s]  1%|          | 390/45856 [02:52<5:32:23,  2.28it/s]  1%|          | 391/45856 [02:52<5:32:11,  2.28it/s]  1%|          | 392/45856 [02:52<5:32:12,  2.28it/s]  1%|          | 393/45856 [02:53<5:32:28,  2.28it/s]  1%|          | 394/45856 [02:53<5:32:18,  2.28it/s]  1%|          | 395/45856 [02:54<5:31:53,  2.28it/s]  1%|          | 396/45856 [02:54<5:31:57,  2.28it/s]  1%|          | 397/45856 [02:55<5:32:16,  2.28it/s]  1%|          | 398/45856 [02:55<5:32:25,  2.28it/s]  1%|          | 399/45856 [02:55<5:32:12,  2.28it/s]  1%|          | 400/45856 [02:56<5:32:06,  2.28it/s]  1%|          | 401/45856 [02:56<5:32:17,  2.28it/s]  1%|          | 402/45856 [02:57<5:32:36,  2.28it/s]  1%|          | 403/45856 [02:57<5:33:25,  2.27it/s]  1%|          | 404/45856 [02:58<5:33:52,  2.27it/s]  1%|          | 405/45856 [02:58<5:34:10,  2.27it/s]  1%|          | 406/45856 [02:59<5:34:17,  2.27it/s]  1%|          | 407/45856 [02:59<5:33:32,  2.27it/s]  1%|          | 408/45856 [02:59<5:33:21,  2.27it/s]  1%|          | 409/45856 [03:00<5:33:18,  2.27it/s]  1%|          | 410/45856 [03:00<5:32:48,  2.28it/s]  1%|          | 411/45856 [03:01<5:32:17,  2.28it/s]  1%|          | 412/45856 [03:01<5:32:15,  2.28it/s]  1%|          | 413/45856 [03:02<5:31:27,  2.29it/s]  1%|          | 414/45856 [03:02<5:31:03,  2.29it/s]  1%|          | 415/45856 [03:03<5:30:44,  2.29it/s]  1%|          | 416/45856 [03:03<5:30:53,  2.29it/s]  1%|          | 417/45856 [03:03<5:31:08,  2.29it/s]  1%|          | 418/45856 [03:04<5:30:46,  2.29it/s]  1%|          | 419/45856 [03:04<5:29:58,  2.29it/s]  1%|          | 420/45856 [03:05<5:28:51,  2.30it/s]  1%|          | 421/45856 [03:05<5:27:10,  2.31it/s]  1%|          | 422/45856 [03:06<5:27:36,  2.31it/s]  1%|          | 423/45856 [03:06<5:28:32,  2.30it/s]  1%|          | 424/45856 [03:06<5:29:18,  2.30it/s]  1%|          | 425/45856 [03:07<5:29:41,  2.30it/s]  1%|          | 426/45856 [03:07<5:29:49,  2.30it/s]  1%|          | 427/45856 [03:08<5:29:50,  2.30it/s]  1%|          | 428/45856 [03:08<5:29:25,  2.30it/s]  1%|          | 429/45856 [03:09<5:28:58,  2.30it/s]  1%|          | 430/45856 [03:09<5:29:01,  2.30it/s]  1%|          | 431/45856 [03:09<5:28:48,  2.30it/s]  1%|          | 432/45856 [03:10<5:28:57,  2.30it/s]  1%|          | 433/45856 [03:10<5:29:34,  2.30it/s]  1%|          | 434/45856 [03:11<5:30:27,  2.29it/s]  1%|          | 435/45856 [03:11<5:30:35,  2.29it/s]  1%|          | 436/45856 [03:12<5:30:01,  2.29it/s]  1%|          | 437/45856 [03:12<5:29:56,  2.29it/s]  1%|          | 438/45856 [03:13<5:29:43,  2.30it/s]  1%|          | 439/45856 [03:13<5:29:44,  2.30it/s]  1%|          | 440/45856 [03:13<5:30:12,  2.29it/s]  1%|          | 441/45856 [03:14<5:30:26,  2.29it/s]  1%|          | 442/45856 [03:14<5:31:20,  2.28it/s]  1%|          | 443/45856 [03:15<5:31:45,  2.28it/s]  1%|          | 444/45856 [03:15<5:31:39,  2.28it/s]  1%|          | 445/45856 [03:16<5:31:50,  2.28it/s]  1%|          | 446/45856 [03:16<5:32:13,  2.28it/s]  1%|          | 447/45856 [03:16<5:32:06,  2.28it/s]  1%|          | 448/45856 [03:17<5:31:57,  2.28it/s]  1%|          | 449/45856 [03:17<5:32:05,  2.28it/s]  1%|          | 450/45856 [03:18<5:32:16,  2.28it/s]  1%|          | 451/45856 [03:18<5:32:34,  2.28it/s]  1%|          | 452/45856 [03:19<5:33:29,  2.27it/s]  1%|          | 453/45856 [03:19<5:44:25,  2.20it/s]  1%|          | 454/45856 [03:20<5:39:59,  2.23it/s]  1%|          | 455/45856 [03:20<5:41:28,  2.22it/s]  1%|          | 456/45856 [03:20<5:36:55,  2.25it/s]  1%|          | 457/45856 [03:21<5:34:08,  2.26it/s]  1%|          | 458/45856 [03:21<5:32:32,  2.28it/s]  1%|          | 459/45856 [03:22<5:31:56,  2.28it/s]  1%|          | 460/45856 [03:22<5:31:42,  2.28it/s]  1%|          | 461/45856 [03:23<5:31:23,  2.28it/s]  1%|          | 462/45856 [03:23<5:30:50,  2.29it/s]  1%|          | 463/45856 [03:24<5:30:56,  2.29it/s]  1%|          | 464/45856 [03:24<5:30:54,  2.29it/s]  1%|          | 465/45856 [03:24<5:30:39,  2.29it/s]  1%|          | 466/45856 [03:25<5:30:49,  2.29it/s]  1%|          | 467/45856 [03:25<5:30:57,  2.29it/s]  1%|          | 468/45856 [03:26<5:30:39,  2.29it/s]  1%|          | 469/45856 [03:26<5:30:21,  2.29it/s]  1%|          | 470/45856 [03:27<5:30:16,  2.29it/s]  1%|          | 471/45856 [03:27<5:30:31,  2.29it/s]  1%|          | 472/45856 [03:27<5:29:45,  2.29it/s]  1%|          | 473/45856 [03:28<5:29:26,  2.30it/s]  1%|          | 474/45856 [03:28<5:29:18,  2.30it/s]  1%|          | 475/45856 [03:29<5:29:17,  2.30it/s]  1%|          | 476/45856 [03:29<5:29:08,  2.30it/s]  1%|          | 477/45856 [03:30<5:28:55,  2.30it/s]  1%|          | 478/45856 [03:30<5:29:01,  2.30it/s]  1%|          | 479/45856 [03:31<5:28:42,  2.30it/s]  1%|          | 480/45856 [03:31<5:28:17,  2.30it/s]  1%|          | 481/45856 [03:31<5:28:14,  2.30it/s]  1%|          | 482/45856 [03:32<5:28:14,  2.30it/s]  1%|          | 483/45856 [03:32<5:27:57,  2.31it/s]  1%|          | 484/45856 [03:33<5:28:06,  2.30it/s]  1%|          | 485/45856 [03:33<5:28:26,  2.30it/s]  1%|          | 486/45856 [03:34<5:29:06,  2.30it/s]  1%|          | 487/45856 [03:34<5:30:06,  2.29it/s]  1%|          | 488/45856 [03:34<5:31:19,  2.28it/s]  1%|          | 489/45856 [03:35<5:31:49,  2.28it/s]  1%|          | 490/45856 [03:35<5:32:22,  2.27it/s]  1%|          | 491/45856 [03:36<5:32:09,  2.28it/s]  1%|          | 492/45856 [03:36<5:32:16,  2.28it/s]  1%|          | 493/45856 [03:37<5:32:36,  2.27it/s]  1%|          | 494/45856 [03:37<5:32:30,  2.27it/s]  1%|          | 495/45856 [03:38<5:32:30,  2.27it/s]  1%|          | 496/45856 [03:38<5:31:52,  2.28it/s]  1%|          | 497/45856 [03:38<5:31:30,  2.28it/s]  1%|          | 498/45856 [03:39<5:31:14,  2.28it/s]  1%|          | 499/45856 [03:39<5:31:07,  2.28it/s]  1%|          | 500/45856 [03:40<5:31:19,  2.28it/s]  1%|          | 501/45856 [03:40<5:31:07,  2.28it/s]  1%|          | 502/45856 [03:41<5:30:37,  2.29it/s]  1%|          | 503/45856 [03:41<5:30:56,  2.28it/s]  1%|          | 504/45856 [03:41<5:31:46,  2.28it/s]  1%|          | 505/45856 [03:42<5:32:00,  2.28it/s]  1%|          | 506/45856 [03:42<5:32:24,  2.27it/s]  1%|          | 507/45856 [03:43<5:32:45,  2.27it/s]  1%|          | 508/45856 [03:43<5:32:30,  2.27it/s]  1%|          | 509/45856 [03:44<5:32:27,  2.27it/s]  1%|          | 510/45856 [03:44<5:32:16,  2.27it/s]  1%|          | 511/45856 [03:45<5:32:23,  2.27it/s]  1%|          | 512/45856 [03:45<5:32:55,  2.27it/s]  1%|          | 513/45856 [03:45<5:33:28,  2.27it/s]  1%|          | 514/45856 [03:46<5:34:02,  2.26it/s]  1%|          | 515/45856 [03:46<5:34:24,  2.26it/s]  1%|          | 516/45856 [03:47<5:34:03,  2.26it/s]  1%|          | 517/45856 [03:47<5:34:18,  2.26it/s]  1%|          | 518/45856 [03:48<5:34:18,  2.26it/s]  1%|          | 519/45856 [03:48<5:34:20,  2.26it/s]  1%|          | 520/45856 [03:49<5:34:06,  2.26it/s]  1%|          | 521/45856 [03:49<5:33:32,  2.27it/s]  1%|          | 522/45856 [03:49<5:33:06,  2.27it/s]  1%|          | 523/45856 [03:50<5:33:03,  2.27it/s]  1%|          | 524/45856 [03:50<5:33:04,  2.27it/s]  1%|          | 525/45856 [03:51<5:32:49,  2.27it/s]  1%|          | 526/45856 [03:51<5:32:52,  2.27it/s]  1%|          | 527/45856 [03:52<5:33:19,  2.27it/s]  1%|          | 528/45856 [03:52<5:33:33,  2.26it/s]  1%|          | 529/45856 [03:52<5:33:22,  2.27it/s]  1%|          | 530/45856 [03:53<5:33:20,  2.27it/s]  1%|          | 531/45856 [03:53<5:33:00,  2.27it/s]  1%|          | 532/45856 [03:54<5:32:56,  2.27it/s]  1%|          | 533/45856 [03:54<5:32:36,  2.27it/s]  1%|          | 534/45856 [03:55<5:32:41,  2.27it/s]  1%|          | 535/45856 [03:55<5:32:15,  2.27it/s]  1%|          | 536/45856 [03:56<5:31:41,  2.28it/s]  1%|          | 537/45856 [03:56<5:30:44,  2.28it/s]  1%|          | 538/45856 [03:56<5:29:51,  2.29it/s]  1%|          | 539/45856 [03:57<5:29:18,  2.29it/s]  1%|          | 540/45856 [03:57<5:29:02,  2.30it/s]  1%|          | 541/45856 [03:58<5:29:15,  2.29it/s]  1%|          | 542/45856 [03:58<5:29:09,  2.29it/s]  1%|          | 543/45856 [03:59<5:29:11,  2.29it/s]  1%|          | 544/45856 [03:59<5:29:28,  2.29it/s]  1%|          | 545/45856 [03:59<5:29:38,  2.29it/s]  1%|          | 546/45856 [04:00<5:29:56,  2.29it/s]  1%|          | 547/45856 [04:00<5:30:01,  2.29it/s]  1%|          | 548/45856 [04:01<5:30:08,  2.29it/s]  1%|          | 549/45856 [04:01<5:30:12,  2.29it/s]  1%|          | 550/45856 [04:02<5:29:36,  2.29it/s]  1%|          | 551/45856 [04:02<5:29:42,  2.29it/s]  1%|          | 552/45856 [04:03<5:29:44,  2.29it/s]  1%|          | 553/45856 [04:03<5:29:17,  2.29it/s]  1%|          | 554/45856 [04:03<5:28:35,  2.30it/s]  1%|          | 555/45856 [04:04<5:28:25,  2.30it/s]  1%|          | 556/45856 [04:04<5:28:36,  2.30it/s]  1%|          | 557/45856 [04:05<5:29:07,  2.29it/s]  1%|          | 558/45856 [04:05<5:29:47,  2.29it/s]  1%|          | 559/45856 [04:06<5:30:19,  2.29it/s]  1%|          | 560/45856 [04:06<5:30:43,  2.28it/s]  1%|          | 561/45856 [04:06<5:31:13,  2.28it/s]  1%|          | 562/45856 [04:07<5:31:41,  2.28it/s]  1%|          | 563/45856 [04:07<5:32:06,  2.27it/s]  1%|          | 564/45856 [04:08<5:32:39,  2.27it/s]  1%|          | 565/45856 [04:08<5:32:59,  2.27it/s]  1%|          | 566/45856 [04:09<5:33:05,  2.27it/s]  1%|          | 567/45856 [04:09<5:32:52,  2.27it/s]  1%|          | 568/45856 [04:10<5:32:44,  2.27it/s]  1%|          | 569/45856 [04:10<5:32:42,  2.27it/s]  1%|          | 570/45856 [04:10<5:32:25,  2.27it/s]  1%|          | 571/45856 [04:11<5:32:14,  2.27it/s]  1%|          | 572/45856 [04:11<5:32:17,  2.27it/s]  1%|          | 573/45856 [04:12<5:32:19,  2.27it/s]  1%|▏         | 574/45856 [04:12<5:32:17,  2.27it/s]  1%|▏         | 575/45856 [04:13<5:32:29,  2.27it/s]  1%|▏         | 576/45856 [04:13<5:32:51,  2.27it/s]  1%|▏         | 577/45856 [04:14<5:32:44,  2.27it/s]  1%|▏         | 578/45856 [04:14<5:32:57,  2.27it/s]  1%|▏         | 579/45856 [04:14<5:33:34,  2.26it/s]  1%|▏         | 580/45856 [04:15<5:33:56,  2.26it/s]  1%|▏         | 581/45856 [04:15<5:34:41,  2.25it/s]  1%|▏         | 582/45856 [04:16<5:34:48,  2.25it/s]  1%|▏         | 583/45856 [04:16<5:35:00,  2.25it/s]  1%|▏         | 584/45856 [04:17<5:34:10,  2.26it/s]  1%|▏         | 585/45856 [04:17<5:34:12,  2.26it/s]  1%|▏         | 586/45856 [04:18<5:34:22,  2.26it/s]  1%|▏         | 587/45856 [04:18<5:34:38,  2.25it/s]  1%|▏         | 588/45856 [04:18<5:34:46,  2.25it/s]  1%|▏         | 589/45856 [04:19<5:35:03,  2.25it/s]  1%|▏         | 590/45856 [04:19<5:35:22,  2.25it/s]  1%|▏         | 591/45856 [04:20<5:35:26,  2.25it/s]  1%|▏         | 592/45856 [04:20<5:35:37,  2.25it/s]  1%|▏         | 593/45856 [04:21<5:35:31,  2.25it/s]  1%|▏         | 594/45856 [04:21<5:34:52,  2.25it/s]  1%|▏         | 595/45856 [04:22<5:34:02,  2.26it/s]  1%|▏         | 596/45856 [04:22<5:32:57,  2.27it/s]  1%|▏         | 597/45856 [04:22<5:32:26,  2.27it/s]  1%|▏         | 598/45856 [04:23<5:31:45,  2.27it/s]  1%|▏         | 599/45856 [04:23<5:31:15,  2.28it/s]  1%|▏         | 600/45856 [04:24<5:31:08,  2.28it/s]  1%|▏         | 601/45856 [04:24<5:31:15,  2.28it/s]  1%|▏         | 602/45856 [04:25<5:32:16,  2.27it/s]  1%|▏         | 603/45856 [04:25<5:32:54,  2.27it/s]  1%|▏         | 604/45856 [04:25<5:32:59,  2.26it/s]  1%|▏         | 605/45856 [04:26<5:32:50,  2.27it/s]  1%|▏         | 606/45856 [04:26<5:32:48,  2.27it/s]  1%|▏         | 607/45856 [04:27<5:32:50,  2.27it/s]  1%|▏         | 608/45856 [04:27<5:32:49,  2.27it/s]  1%|▏         | 609/45856 [04:28<5:32:48,  2.27it/s]  1%|▏         | 610/45856 [04:28<5:32:19,  2.27it/s]  1%|▏         | 611/45856 [04:29<5:32:14,  2.27it/s]  1%|▏         | 612/45856 [04:29<5:31:41,  2.27it/s]  1%|▏         | 613/45856 [04:29<5:31:29,  2.27it/s]  1%|▏         | 614/45856 [04:30<5:31:07,  2.28it/s]  1%|▏         | 615/45856 [04:30<5:30:46,  2.28it/s]  1%|▏         | 616/45856 [04:31<5:30:48,  2.28it/s]  1%|▏         | 617/45856 [04:31<5:30:44,  2.28it/s]  1%|▏         | 618/45856 [04:32<5:30:52,  2.28it/s]  1%|▏         | 619/45856 [04:32<5:31:00,  2.28it/s]  1%|▏         | 620/45856 [04:33<5:31:14,  2.28it/s]  1%|▏         | 621/45856 [04:33<5:31:21,  2.28it/s]  1%|▏         | 622/45856 [04:33<5:31:21,  2.28it/s]  1%|▏         | 623/45856 [04:34<5:31:28,  2.27it/s]  1%|▏         | 624/45856 [04:34<5:31:38,  2.27it/s]  1%|▏         | 625/45856 [04:35<5:31:07,  2.28it/s]  1%|▏         | 626/45856 [04:35<5:31:06,  2.28it/s]  1%|▏         | 627/45856 [04:36<5:31:18,  2.28it/s]  1%|▏         | 628/45856 [04:36<5:31:11,  2.28it/s]  1%|▏         | 629/45856 [04:36<5:30:49,  2.28it/s]  1%|▏         | 630/45856 [04:37<5:30:50,  2.28it/s]  1%|▏         | 631/45856 [04:37<5:31:43,  2.27it/s]  1%|▏         | 632/45856 [04:38<5:32:20,  2.27it/s]  1%|▏         | 633/45856 [04:38<5:32:54,  2.26it/s]  1%|▏         | 634/45856 [04:39<5:33:31,  2.26it/s]  1%|▏         | 635/45856 [04:39<5:33:18,  2.26it/s]  1%|▏         | 636/45856 [04:40<5:33:18,  2.26it/s]  1%|▏         | 637/45856 [04:40<5:33:24,  2.26it/s]  1%|▏         | 638/45856 [04:40<5:34:12,  2.26it/s]  1%|▏         | 639/45856 [04:41<5:34:30,  2.25it/s]  1%|▏         | 640/45856 [04:41<5:34:19,  2.25it/s]  1%|▏         | 641/45856 [04:42<5:33:32,  2.26it/s]  1%|▏         | 642/45856 [04:42<5:33:01,  2.26it/s]  1%|▏         | 643/45856 [04:43<5:32:24,  2.27it/s]  1%|▏         | 644/45856 [04:43<5:32:00,  2.27it/s]  1%|▏         | 645/45856 [04:44<5:31:48,  2.27it/s]  1%|▏         | 646/45856 [04:44<5:31:37,  2.27it/s]  1%|▏         | 647/45856 [04:44<5:31:03,  2.28it/s]  1%|▏         | 648/45856 [04:45<5:30:45,  2.28it/s]  1%|▏         | 649/45856 [04:45<5:30:55,  2.28it/s]  1%|▏         | 650/45856 [04:46<5:31:03,  2.28it/s]  1%|▏         | 651/45856 [04:46<5:31:17,  2.27it/s]  1%|▏         | 652/45856 [04:47<5:31:58,  2.27it/s]  1%|▏         | 653/45856 [04:47<5:32:30,  2.27it/s]  1%|▏         | 654/45856 [04:48<5:32:51,  2.26it/s]  1%|▏         | 655/45856 [04:48<5:32:55,  2.26it/s]  1%|▏         | 656/45856 [04:48<5:32:40,  2.26it/s]  1%|▏         | 657/45856 [04:49<5:32:41,  2.26it/s]  1%|▏         | 658/45856 [04:49<5:33:14,  2.26it/s]  1%|▏         | 659/45856 [04:50<5:32:27,  2.27it/s]  1%|▏         | 660/45856 [04:50<5:32:26,  2.27it/s]  1%|▏         | 661/45856 [04:51<5:32:41,  2.26it/s]  1%|▏         | 662/45856 [04:51<5:32:36,  2.26it/s]  1%|▏         | 663/45856 [04:51<5:32:07,  2.27it/s]  1%|▏         | 664/45856 [04:52<5:31:25,  2.27it/s]  1%|▏         | 665/45856 [04:52<5:31:01,  2.28it/s]  1%|▏         | 666/45856 [04:53<5:30:54,  2.28it/s]  1%|▏         | 667/45856 [04:53<5:30:50,  2.28it/s]  1%|▏         | 668/45856 [04:54<5:31:11,  2.27it/s]  1%|▏         | 669/45856 [04:54<5:31:34,  2.27it/s]  1%|▏         | 670/45856 [04:55<5:31:40,  2.27it/s]  1%|▏         | 671/45856 [04:55<5:31:18,  2.27it/s]  1%|▏         | 672/45856 [04:55<5:30:49,  2.28it/s]  1%|▏         | 673/45856 [04:56<5:31:30,  2.27it/s]  1%|▏         | 674/45856 [04:56<5:32:07,  2.27it/s]  1%|▏         | 675/45856 [04:57<5:32:10,  2.27it/s]  1%|▏         | 676/45856 [04:57<5:32:05,  2.27it/s]  1%|▏         | 677/45856 [04:58<5:31:39,  2.27it/s]  1%|▏         | 678/45856 [04:58<5:31:45,  2.27it/s]  1%|▏         | 679/45856 [04:59<5:31:46,  2.27it/s]  1%|▏         | 680/45856 [04:59<5:31:47,  2.27it/s]  1%|▏         | 681/45856 [04:59<5:32:08,  2.27it/s]  1%|▏         | 682/45856 [05:00<5:32:17,  2.27it/s]  1%|▏         | 683/45856 [05:00<5:32:36,  2.26it/s]  1%|▏         | 684/45856 [05:01<5:32:29,  2.26it/s]  1%|▏         | 685/45856 [05:01<5:32:52,  2.26it/s]  1%|▏         | 686/45856 [05:02<5:33:06,  2.26it/s]  1%|▏         | 687/45856 [05:02<5:33:21,  2.26it/s]  2%|▏         | 688/45856 [05:02<5:33:03,  2.26it/s]  2%|▏         | 689/45856 [05:03<5:33:36,  2.26it/s]  2%|▏         | 690/45856 [05:03<5:33:42,  2.26it/s]  2%|▏         | 691/45856 [05:04<5:33:35,  2.26it/s]  2%|▏         | 692/45856 [05:04<5:33:11,  2.26it/s]  2%|▏         | 693/45856 [05:05<5:32:28,  2.26it/s]  2%|▏         | 694/45856 [05:05<5:31:52,  2.27it/s]  2%|▏         | 695/45856 [05:06<5:31:47,  2.27it/s]  2%|▏         | 696/45856 [05:06<5:31:38,  2.27it/s]  2%|▏         | 697/45856 [05:06<5:31:34,  2.27it/s]  2%|▏         | 698/45856 [05:07<5:31:15,  2.27it/s]  2%|▏         | 699/45856 [05:07<5:31:00,  2.27it/s]  2%|▏         | 700/45856 [05:08<5:31:00,  2.27it/s]  2%|▏         | 701/45856 [05:08<5:31:02,  2.27it/s]  2%|▏         | 702/45856 [05:09<5:30:40,  2.28it/s]  2%|▏         | 703/45856 [05:09<5:30:40,  2.28it/s]  2%|▏         | 704/45856 [05:10<5:30:55,  2.27it/s]  2%|▏         | 705/45856 [05:10<5:31:10,  2.27it/s]  2%|▏         | 706/45856 [05:10<5:31:17,  2.27it/s]  2%|▏         | 707/45856 [05:11<5:31:18,  2.27it/s]  2%|▏         | 708/45856 [05:11<5:31:02,  2.27it/s]  2%|▏         | 709/45856 [05:12<5:31:05,  2.27it/s]  2%|▏         | 710/45856 [05:12<5:31:01,  2.27it/s]  2%|▏         | 711/45856 [05:13<5:31:04,  2.27it/s]  2%|▏         | 712/45856 [05:13<5:31:22,  2.27it/s]  2%|▏         | 713/45856 [05:14<5:31:44,  2.27it/s]  2%|▏         | 714/45856 [05:14<5:32:14,  2.26it/s]  2%|▏         | 715/45856 [05:14<5:32:19,  2.26it/s]  2%|▏         | 716/45856 [05:15<5:31:53,  2.27it/s]  2%|▏         | 717/45856 [05:15<5:30:52,  2.27it/s]  2%|▏         | 718/45856 [05:16<5:30:23,  2.28it/s]  2%|▏         | 719/45856 [05:16<5:30:17,  2.28it/s]  2%|▏         | 720/45856 [05:17<5:30:49,  2.27it/s]  2%|▏         | 721/45856 [05:17<5:30:17,  2.28it/s]  2%|▏         | 722/45856 [05:17<5:30:04,  2.28it/s]  2%|▏         | 723/45856 [05:18<5:30:18,  2.28it/s]  2%|▏         | 724/45856 [05:18<5:31:27,  2.27it/s]  2%|▏         | 725/45856 [05:19<5:32:39,  2.26it/s]  2%|▏         | 726/45856 [05:19<5:32:52,  2.26it/s]  2%|▏         | 727/45856 [05:20<5:32:30,  2.26it/s]  2%|▏         | 728/45856 [05:20<5:31:54,  2.27it/s]  2%|▏         | 729/45856 [05:21<5:31:43,  2.27it/s]  2%|▏         | 730/45856 [05:21<5:31:06,  2.27it/s]  2%|▏         | 731/45856 [05:21<5:30:42,  2.27it/s]  2%|▏         | 732/45856 [05:22<5:30:15,  2.28it/s]  2%|▏         | 733/45856 [05:22<5:29:57,  2.28it/s]  2%|▏         | 734/45856 [05:23<5:30:30,  2.28it/s]  2%|▏         | 735/45856 [05:23<5:31:27,  2.27it/s]  2%|▏         | 736/45856 [05:24<5:32:17,  2.26it/s]  2%|▏         | 737/45856 [05:24<5:32:24,  2.26it/s]  2%|▏         | 738/45856 [05:25<5:32:54,  2.26it/s]  2%|▏         | 739/45856 [05:25<5:32:47,  2.26it/s]  2%|▏         | 740/45856 [05:25<5:32:17,  2.26it/s]  2%|▏         | 741/45856 [05:26<5:31:50,  2.27it/s]  2%|▏         | 742/45856 [05:26<5:31:25,  2.27it/s]  2%|▏         | 743/45856 [05:27<5:31:12,  2.27it/s]  2%|▏         | 744/45856 [05:27<5:30:54,  2.27it/s]  2%|▏         | 745/45856 [05:28<5:30:23,  2.28it/s]  2%|▏         | 746/45856 [05:28<5:30:35,  2.27it/s]  2%|▏         | 747/45856 [05:28<5:30:44,  2.27it/s]  2%|▏         | 748/45856 [05:29<5:30:30,  2.27it/s]  2%|▏         | 749/45856 [05:29<5:30:16,  2.28it/s]  2%|▏         | 750/45856 [05:30<5:30:02,  2.28it/s]  2%|▏         | 751/45856 [05:30<5:30:12,  2.28it/s]  2%|▏         | 752/45856 [05:31<5:30:07,  2.28it/s]  2%|▏         | 753/45856 [05:31<5:29:50,  2.28it/s]  2%|▏         | 754/45856 [05:32<5:29:24,  2.28it/s]  2%|▏         | 755/45856 [05:32<5:29:44,  2.28it/s]  2%|▏         | 756/45856 [05:32<5:29:56,  2.28it/s]  2%|▏         | 757/45856 [05:33<5:29:45,  2.28it/s]  2%|▏         | 758/45856 [05:33<5:29:15,  2.28it/s]  2%|▏         | 759/45856 [05:34<5:29:11,  2.28it/s]  2%|▏         | 760/45856 [05:34<5:29:09,  2.28it/s]  2%|▏         | 761/45856 [05:35<5:29:25,  2.28it/s]  2%|▏         | 762/45856 [05:35<5:29:27,  2.28it/s]  2%|▏         | 763/45856 [05:36<5:29:03,  2.28it/s]  2%|▏         | 764/45856 [05:36<5:29:00,  2.28it/s]  2%|▏         | 765/45856 [05:36<5:29:16,  2.28it/s]  2%|▏         | 766/45856 [05:37<5:29:27,  2.28it/s]  2%|▏         | 767/45856 [05:37<5:29:47,  2.28it/s]  2%|▏         | 768/45856 [05:38<5:30:04,  2.28it/s]  2%|▏         | 769/45856 [05:38<5:30:19,  2.27it/s]  2%|▏         | 770/45856 [05:39<5:30:02,  2.28it/s]  2%|▏         | 771/45856 [05:39<5:29:52,  2.28it/s]  2%|▏         | 772/45856 [05:39<5:29:55,  2.28it/s]  2%|▏         | 773/45856 [05:40<5:29:30,  2.28it/s]  2%|▏         | 774/45856 [05:40<5:29:17,  2.28it/s]  2%|▏         | 775/45856 [05:41<5:29:18,  2.28it/s]  2%|▏         | 776/45856 [05:41<5:29:21,  2.28it/s]  2%|▏         | 777/45856 [05:42<5:29:26,  2.28it/s]  2%|▏         | 778/45856 [05:42<5:29:29,  2.28it/s]  2%|▏         | 779/45856 [05:43<5:29:27,  2.28it/s]  2%|▏         | 780/45856 [05:43<5:29:32,  2.28it/s]  2%|▏         | 781/45856 [05:43<5:29:13,  2.28it/s]  2%|▏         | 782/45856 [05:44<5:28:51,  2.28it/s]  2%|▏         | 783/45856 [05:44<5:28:25,  2.29it/s]  2%|▏         | 784/45856 [05:45<5:28:14,  2.29it/s]  2%|▏         | 785/45856 [05:45<5:28:28,  2.29it/s]  2%|▏         | 786/45856 [05:46<5:28:33,  2.29it/s]  2%|▏         | 787/45856 [05:46<5:28:43,  2.29it/s]  2%|▏         | 788/45856 [05:46<5:28:36,  2.29it/s]  2%|▏         | 789/45856 [05:47<5:29:12,  2.28it/s]  2%|▏         | 790/45856 [05:47<5:29:40,  2.28it/s]  2%|▏         | 791/45856 [05:48<5:30:03,  2.28it/s]  2%|▏         | 792/45856 [05:48<5:29:49,  2.28it/s]  2%|▏         | 793/45856 [05:49<5:29:08,  2.28it/s]  2%|▏         | 794/45856 [05:49<5:28:25,  2.29it/s]  2%|▏         | 795/45856 [05:50<5:28:23,  2.29it/s]  2%|▏         | 796/45856 [05:50<5:28:54,  2.28it/s]  2%|▏         | 797/45856 [05:50<5:28:41,  2.28it/s]  2%|▏         | 798/45856 [05:51<5:28:26,  2.29it/s]  2%|▏         | 799/45856 [05:51<5:27:59,  2.29it/s]  2%|▏         | 800/45856 [05:52<5:28:04,  2.29it/s]  2%|▏         | 801/45856 [05:52<5:28:06,  2.29it/s]  2%|▏         | 802/45856 [05:53<5:28:36,  2.29it/s]  2%|▏         | 803/45856 [05:53<5:29:17,  2.28it/s]  2%|▏         | 804/45856 [05:53<5:29:48,  2.28it/s]  2%|▏         | 805/45856 [05:54<5:29:44,  2.28it/s]  2%|▏         | 806/45856 [05:54<5:29:37,  2.28it/s]  2%|▏         | 807/45856 [05:55<5:29:24,  2.28it/s]  2%|▏         | 808/45856 [05:55<5:29:16,  2.28it/s]  2%|▏         | 809/45856 [05:56<5:28:37,  2.28it/s]  2%|▏         | 810/45856 [05:56<5:28:09,  2.29it/s]  2%|▏         | 811/45856 [05:57<5:27:57,  2.29it/s]  2%|▏         | 812/45856 [05:57<5:28:03,  2.29it/s]  2%|▏         | 813/45856 [05:57<5:27:44,  2.29it/s]  2%|▏         | 814/45856 [05:58<5:27:54,  2.29it/s]  2%|▏         | 815/45856 [05:58<5:27:56,  2.29it/s]  2%|▏         | 816/45856 [05:59<5:28:35,  2.28it/s]  2%|▏         | 817/45856 [05:59<5:29:01,  2.28it/s]  2%|▏         | 818/45856 [06:00<5:28:59,  2.28it/s]  2%|▏         | 819/45856 [06:00<5:28:39,  2.28it/s]  2%|▏         | 820/45856 [06:00<5:28:47,  2.28it/s]  2%|▏         | 821/45856 [06:01<5:28:59,  2.28it/s]  2%|▏         | 822/45856 [06:01<5:29:04,  2.28it/s]  2%|▏         | 823/45856 [06:02<5:29:03,  2.28it/s]  2%|▏         | 824/45856 [06:02<5:29:06,  2.28it/s]  2%|▏         | 825/45856 [06:03<5:29:12,  2.28it/s]  2%|▏         | 826/45856 [06:03<5:29:27,  2.28it/s]  2%|▏         | 827/45856 [06:04<5:29:32,  2.28it/s]  2%|▏         | 828/45856 [06:04<5:29:09,  2.28it/s]  2%|▏         | 829/45856 [06:04<5:29:11,  2.28it/s]  2%|▏         | 830/45856 [06:05<5:29:28,  2.28it/s]  2%|▏         | 831/45856 [06:05<5:29:16,  2.28it/s]  2%|▏         | 832/45856 [06:06<5:29:04,  2.28it/s]  2%|▏         | 833/45856 [06:06<5:29:05,  2.28it/s]  2%|▏         | 834/45856 [06:07<5:29:13,  2.28it/s]  2%|▏         | 835/45856 [06:07<5:28:58,  2.28it/s]  2%|▏         | 836/45856 [06:07<5:28:22,  2.29it/s]  2%|▏         | 837/45856 [06:08<5:28:02,  2.29it/s]  2%|▏         | 838/45856 [06:08<5:28:14,  2.29it/s]  2%|▏         | 839/45856 [06:09<5:27:54,  2.29it/s]  2%|▏         | 840/45856 [06:09<5:28:13,  2.29it/s]  2%|▏         | 841/45856 [06:10<5:28:33,  2.28it/s]  2%|▏         | 842/45856 [06:10<5:28:51,  2.28it/s]  2%|▏         | 843/45856 [06:11<5:29:26,  2.28it/s]  2%|▏         | 844/45856 [06:11<5:30:02,  2.27it/s]  2%|▏         | 845/45856 [06:11<5:30:16,  2.27it/s]  2%|▏         | 846/45856 [06:12<5:30:40,  2.27it/s]  2%|▏         | 847/45856 [06:12<5:30:27,  2.27it/s]  2%|▏         | 848/45856 [06:13<5:30:16,  2.27it/s]  2%|▏         | 849/45856 [06:13<5:30:05,  2.27it/s]  2%|▏         | 850/45856 [06:14<5:30:11,  2.27it/s]  2%|▏         | 851/45856 [06:14<5:29:30,  2.28it/s]  2%|▏         | 852/45856 [06:15<5:29:27,  2.28it/s]  2%|▏         | 853/45856 [06:15<5:30:02,  2.27it/s]  2%|▏         | 854/45856 [06:15<5:30:15,  2.27it/s]  2%|▏         | 855/45856 [06:16<5:30:19,  2.27it/s]  2%|▏         | 856/45856 [06:16<5:30:27,  2.27it/s]  2%|▏         | 857/45856 [06:17<5:31:06,  2.27it/s]  2%|▏         | 858/45856 [06:17<5:31:04,  2.27it/s]  2%|▏         | 859/45856 [06:18<5:30:40,  2.27it/s]  2%|▏         | 860/45856 [06:18<5:30:20,  2.27it/s]  2%|▏         | 861/45856 [06:18<5:30:06,  2.27it/s]  2%|▏         | 862/45856 [06:19<5:29:51,  2.27it/s]  2%|▏         | 863/45856 [06:19<5:29:49,  2.27it/s]  2%|▏         | 864/45856 [06:20<5:30:07,  2.27it/s]  2%|▏         | 865/45856 [06:20<5:30:19,  2.27it/s]  2%|▏         | 866/45856 [06:21<5:30:17,  2.27it/s]  2%|▏         | 867/45856 [06:21<5:30:05,  2.27it/s]  2%|▏         | 868/45856 [06:22<5:29:41,  2.27it/s]  2%|▏         | 869/45856 [06:22<5:29:26,  2.28it/s]  2%|▏         | 870/45856 [06:22<5:29:27,  2.28it/s]  2%|▏         | 871/45856 [06:23<5:29:17,  2.28it/s]  2%|▏         | 872/45856 [06:23<5:29:04,  2.28it/s]  2%|▏         | 873/45856 [06:24<5:29:09,  2.28it/s]  2%|▏         | 874/45856 [06:24<5:29:15,  2.28it/s]  2%|▏         | 875/45856 [06:25<5:29:18,  2.28it/s]  2%|▏         | 876/45856 [06:25<5:29:25,  2.28it/s]  2%|▏         | 877/45856 [06:26<5:29:14,  2.28it/s]  2%|▏         | 878/45856 [06:26<5:29:24,  2.28it/s]  2%|▏         | 879/45856 [06:26<5:29:58,  2.27it/s]  2%|▏         | 880/45856 [06:27<5:30:31,  2.27it/s]  2%|▏         | 881/45856 [06:27<5:30:54,  2.27it/s]  2%|▏         | 882/45856 [06:28<5:30:48,  2.27it/s]  2%|▏         | 883/45856 [06:28<5:30:36,  2.27it/s]  2%|▏         | 884/45856 [06:29<5:30:16,  2.27it/s]  2%|▏         | 885/45856 [06:29<5:29:55,  2.27it/s]  2%|▏         | 886/45856 [06:29<5:29:51,  2.27it/s]  2%|▏         | 887/45856 [06:30<5:29:37,  2.27it/s]  2%|▏         | 888/45856 [06:30<5:29:22,  2.28it/s]  2%|▏         | 889/45856 [06:31<5:29:04,  2.28it/s]  2%|▏         | 890/45856 [06:31<5:28:41,  2.28it/s]  2%|▏         | 891/45856 [06:32<5:28:38,  2.28it/s]  2%|▏         | 892/45856 [06:32<5:29:13,  2.28it/s]  2%|▏         | 893/45856 [06:33<5:29:22,  2.28it/s]  2%|▏         | 894/45856 [06:33<5:28:44,  2.28it/s]  2%|▏         | 895/45856 [06:33<5:28:06,  2.28it/s]  2%|▏         | 896/45856 [06:34<5:27:37,  2.29it/s]  2%|▏         | 897/45856 [06:34<5:27:30,  2.29it/s]  2%|▏         | 898/45856 [06:35<5:27:28,  2.29it/s]  2%|▏         | 899/45856 [06:35<5:26:54,  2.29it/s]  2%|▏         | 900/45856 [06:36<5:27:07,  2.29it/s]  2%|▏         | 901/45856 [06:36<5:27:41,  2.29it/s]  2%|▏         | 902/45856 [06:36<5:27:56,  2.28it/s]  2%|▏         | 903/45856 [06:37<5:28:06,  2.28it/s]  2%|▏         | 904/45856 [06:37<5:28:01,  2.28it/s]  2%|▏         | 905/45856 [06:38<5:28:21,  2.28it/s]  2%|▏         | 906/45856 [06:38<5:28:43,  2.28it/s]  2%|▏         | 907/45856 [06:39<5:29:07,  2.28it/s]  2%|▏         | 908/45856 [06:39<5:28:52,  2.28it/s]  2%|▏         | 909/45856 [06:40<5:29:12,  2.28it/s]  2%|▏         | 910/45856 [06:40<5:29:30,  2.27it/s]  2%|▏         | 911/45856 [06:40<5:29:15,  2.28it/s]  2%|▏         | 912/45856 [06:41<5:29:21,  2.27it/s]  2%|▏         | 913/45856 [06:41<5:29:12,  2.28it/s]  2%|▏         | 914/45856 [06:42<5:29:09,  2.28it/s]  2%|▏         | 915/45856 [06:42<5:29:12,  2.28it/s]  2%|▏         | 916/45856 [06:43<5:29:43,  2.27it/s]  2%|▏         | 917/45856 [06:43<5:29:52,  2.27it/s]  2%|▏         | 918/45856 [06:44<5:29:48,  2.27it/s]  2%|▏         | 919/45856 [06:44<5:29:13,  2.27it/s]  2%|▏         | 920/45856 [06:44<5:28:31,  2.28it/s]  2%|▏         | 921/45856 [06:45<5:27:50,  2.28it/s]  2%|▏         | 922/45856 [06:45<5:27:15,  2.29it/s]  2%|▏         | 923/45856 [06:46<5:26:43,  2.29it/s]  2%|▏         | 924/45856 [06:46<5:26:36,  2.29it/s]  2%|▏         | 925/45856 [06:47<5:26:22,  2.29it/s]  2%|▏         | 926/45856 [06:47<5:26:37,  2.29it/s]  2%|▏         | 927/45856 [06:47<5:27:10,  2.29it/s]  2%|▏         | 928/45856 [06:48<5:27:18,  2.29it/s]  2%|▏         | 929/45856 [06:48<5:27:32,  2.29it/s]  2%|▏         | 930/45856 [06:49<5:27:18,  2.29it/s]  2%|▏         | 931/45856 [06:49<5:27:16,  2.29it/s]  2%|▏         | 932/45856 [06:50<5:27:39,  2.29it/s]  2%|▏         | 933/45856 [06:50<5:27:19,  2.29it/s]  2%|▏         | 934/45856 [06:51<5:27:17,  2.29it/s]  2%|▏         | 935/45856 [06:51<5:27:07,  2.29it/s]  2%|▏         | 936/45856 [06:51<5:26:29,  2.29it/s]  2%|▏         | 937/45856 [06:52<5:26:10,  2.30it/s]  2%|▏         | 938/45856 [06:52<5:26:08,  2.30it/s]  2%|▏         | 939/45856 [06:53<5:26:29,  2.29it/s]  2%|▏         | 940/45856 [06:53<5:26:55,  2.29it/s]  2%|▏         | 941/45856 [06:54<5:26:51,  2.29it/s]  2%|▏         | 942/45856 [06:54<5:26:45,  2.29it/s]  2%|▏         | 943/45856 [06:54<5:26:23,  2.29it/s]  2%|▏         | 944/45856 [06:55<5:26:23,  2.29it/s]  2%|▏         | 945/45856 [06:55<5:26:25,  2.29it/s]  2%|▏         | 946/45856 [06:56<5:26:19,  2.29it/s]  2%|▏         | 947/45856 [06:56<5:26:32,  2.29it/s]  2%|▏         | 948/45856 [06:57<5:26:16,  2.29it/s]  2%|▏         | 949/45856 [06:57<5:26:09,  2.29it/s]  2%|▏         | 950/45856 [06:57<5:26:44,  2.29it/s]  2%|▏         | 951/45856 [06:58<5:27:08,  2.29it/s]  2%|▏         | 952/45856 [06:58<5:26:48,  2.29it/s]  2%|▏         | 953/45856 [06:59<5:26:16,  2.29it/s]  2%|▏         | 954/45856 [06:59<5:25:56,  2.30it/s]  2%|▏         | 955/45856 [07:00<5:25:52,  2.30it/s]  2%|▏         | 956/45856 [07:00<5:26:01,  2.30it/s]  2%|▏         | 957/45856 [07:01<5:26:20,  2.29it/s]  2%|▏         | 958/45856 [07:01<5:26:43,  2.29it/s]  2%|▏         | 959/45856 [07:01<5:27:00,  2.29it/s]  2%|▏         | 960/45856 [07:02<5:27:08,  2.29it/s]  2%|▏         | 961/45856 [07:02<5:27:18,  2.29it/s]  2%|▏         | 962/45856 [07:03<5:27:33,  2.28it/s]  2%|▏         | 963/45856 [07:03<5:27:44,  2.28it/s]  2%|▏         | 964/45856 [07:04<5:27:50,  2.28it/s]  2%|▏         | 965/45856 [07:04<5:27:46,  2.28it/s]  2%|▏         | 966/45856 [07:04<5:27:08,  2.29it/s]  2%|▏         | 967/45856 [07:05<5:26:34,  2.29it/s]  2%|▏         | 968/45856 [07:05<5:26:10,  2.29it/s]  2%|▏         | 969/45856 [07:06<5:26:00,  2.29it/s]  2%|▏         | 970/45856 [07:06<5:25:58,  2.29it/s]  2%|▏         | 971/45856 [07:07<5:25:21,  2.30it/s]  2%|▏         | 972/45856 [07:07<5:25:25,  2.30it/s]  2%|▏         | 973/45856 [07:08<5:26:01,  2.29it/s]  2%|▏         | 974/45856 [07:08<5:26:52,  2.29it/s]  2%|▏         | 975/45856 [07:08<5:27:39,  2.28it/s]  2%|▏         | 976/45856 [07:09<5:28:10,  2.28it/s]  2%|▏         | 977/45856 [07:09<5:28:21,  2.28it/s]  2%|▏         | 978/45856 [07:10<5:28:33,  2.28it/s]  2%|▏         | 979/45856 [07:10<5:28:20,  2.28it/s]  2%|▏         | 980/45856 [07:11<5:28:13,  2.28it/s]  2%|▏         | 981/45856 [07:11<5:28:03,  2.28it/s]  2%|▏         | 982/45856 [07:11<5:28:18,  2.28it/s]  2%|▏         | 983/45856 [07:12<5:28:10,  2.28it/s]  2%|▏         | 984/45856 [07:12<5:27:40,  2.28it/s]  2%|▏         | 985/45856 [07:13<5:27:29,  2.28it/s]  2%|▏         | 986/45856 [07:13<5:27:58,  2.28it/s]  2%|▏         | 987/45856 [07:14<5:27:49,  2.28it/s]  2%|▏         | 988/45856 [07:14<5:27:16,  2.28it/s]  2%|▏         | 989/45856 [07:15<5:26:42,  2.29it/s]  2%|▏         | 990/45856 [07:15<5:26:20,  2.29it/s]  2%|▏         | 991/45856 [07:15<5:26:22,  2.29it/s]  2%|▏         | 992/45856 [07:16<5:25:44,  2.30it/s]  2%|▏         | 993/45856 [07:16<5:24:51,  2.30it/s]  2%|▏         | 994/45856 [07:17<5:24:42,  2.30it/s]  2%|▏         | 995/45856 [07:17<5:24:33,  2.30it/s]  2%|▏         | 996/45856 [07:18<5:24:49,  2.30it/s]  2%|▏         | 997/45856 [07:18<5:25:01,  2.30it/s]  2%|▏         | 998/45856 [07:18<5:25:11,  2.30it/s]  2%|▏         | 999/45856 [07:19<5:25:48,  2.29it/s]  2%|▏         | 1000/45856 [07:19<5:26:32,  2.29it/s]  2%|▏         | 1001/45856 [07:20<5:27:24,  2.28it/s]  2%|▏         | 1002/45856 [07:20<5:27:55,  2.28it/s]  2%|▏         | 1003/45856 [07:21<5:28:18,  2.28it/s]  2%|▏         | 1004/45856 [07:21<5:27:52,  2.28it/s]  2%|▏         | 1005/45856 [07:22<5:27:36,  2.28it/s]  2%|▏         | 1006/45856 [07:22<5:27:34,  2.28it/s]  2%|▏         | 1007/45856 [07:22<5:28:06,  2.28it/s]  2%|▏         | 1008/45856 [07:23<5:28:27,  2.28it/s]  2%|▏         | 1009/45856 [07:23<5:28:43,  2.27it/s]  2%|▏         | 1010/45856 [07:24<5:29:01,  2.27it/s]  2%|▏         | 1011/45856 [07:24<5:29:19,  2.27it/s]  2%|▏         | 1012/45856 [07:25<5:28:57,  2.27it/s]  2%|▏         | 1013/45856 [07:25<5:28:49,  2.27it/s]  2%|▏         | 1014/45856 [07:25<5:28:50,  2.27it/s]  2%|▏         | 1015/45856 [07:26<5:28:50,  2.27it/s]  2%|▏         | 1016/45856 [07:26<5:28:15,  2.28it/s]  2%|▏         | 1017/45856 [07:27<5:27:27,  2.28it/s]  2%|▏         | 1018/45856 [07:27<5:26:57,  2.29it/s]  2%|▏         | 1019/45856 [07:28<5:27:01,  2.29it/s]  2%|▏         | 1020/45856 [07:28<5:26:50,  2.29it/s]  2%|▏         | 1021/45856 [07:29<5:26:41,  2.29it/s]  2%|▏         | 1022/45856 [07:29<5:26:55,  2.29it/s]  2%|▏         | 1023/45856 [07:29<5:27:19,  2.28it/s]  2%|▏         | 1024/45856 [07:30<5:27:09,  2.28it/s]  2%|▏         | 1025/45856 [07:30<5:27:04,  2.28it/s]  2%|▏         | 1026/45856 [07:31<5:27:04,  2.28it/s]  2%|▏         | 1027/45856 [07:31<5:26:52,  2.29it/s]  2%|▏         | 1028/45856 [07:32<5:27:08,  2.28it/s]  2%|▏         | 1029/45856 [07:32<5:27:48,  2.28it/s]  2%|▏         | 1030/45856 [07:32<5:27:58,  2.28it/s]  2%|▏         | 1031/45856 [07:33<5:28:14,  2.28it/s]  2%|▏         | 1032/45856 [07:33<5:28:16,  2.28it/s]  2%|▏         | 1033/45856 [07:34<5:28:16,  2.28it/s]  2%|▏         | 1034/45856 [07:34<5:28:16,  2.28it/s]  2%|▏         | 1035/45856 [07:35<5:28:19,  2.28it/s]  2%|▏         | 1036/45856 [07:35<5:28:43,  2.27it/s]  2%|▏         | 1037/45856 [07:36<5:28:38,  2.27it/s]  2%|▏         | 1038/45856 [07:36<5:28:53,  2.27it/s]  2%|▏         | 1039/45856 [07:36<5:28:53,  2.27it/s]  2%|▏         | 1040/45856 [07:37<5:28:26,  2.27it/s]  2%|▏         | 1041/45856 [07:37<5:28:34,  2.27it/s]  2%|▏         | 1042/45856 [07:38<5:28:31,  2.27it/s]  2%|▏         | 1043/45856 [07:38<5:28:35,  2.27it/s]  2%|▏         | 1044/45856 [07:39<5:28:29,  2.27it/s]  2%|▏         | 1045/45856 [07:39<5:28:29,  2.27it/s]  2%|▏         | 1046/45856 [07:40<5:28:48,  2.27it/s]  2%|▏         | 1047/45856 [07:40<5:29:18,  2.27it/s]  2%|▏         | 1048/45856 [07:40<5:29:48,  2.26it/s]  2%|▏         | 1049/45856 [07:41<5:30:28,  2.26it/s]  2%|▏         | 1050/45856 [07:41<5:30:51,  2.26it/s]  2%|▏         | 1051/45856 [07:42<5:31:16,  2.25it/s]  2%|▏         | 1052/45856 [07:42<5:31:34,  2.25it/s]  2%|▏         | 1053/45856 [07:43<5:31:47,  2.25it/s]  2%|▏         | 1054/45856 [07:43<5:32:38,  2.24it/s]  2%|▏         | 1055/45856 [07:44<5:32:06,  2.25it/s]  2%|▏         | 1056/45856 [07:44<5:31:08,  2.25it/s]  2%|▏         | 1057/45856 [07:44<5:30:48,  2.26it/s]  2%|▏         | 1058/45856 [07:45<5:29:57,  2.26it/s]  2%|▏         | 1059/45856 [07:45<5:29:03,  2.27it/s]  2%|▏         | 1060/45856 [07:46<5:28:32,  2.27it/s]  2%|▏         | 1061/45856 [07:46<5:28:12,  2.27it/s]  2%|▏         | 1062/45856 [07:47<5:27:56,  2.28it/s]  2%|▏         | 1063/45856 [07:47<5:28:21,  2.27it/s]  2%|▏         | 1064/45856 [07:47<5:28:32,  2.27it/s]  2%|▏         | 1065/45856 [07:48<5:28:47,  2.27it/s]  2%|▏         | 1066/45856 [07:48<5:28:47,  2.27it/s]  2%|▏         | 1067/45856 [07:49<5:28:45,  2.27it/s]  2%|▏         | 1068/45856 [07:49<5:28:21,  2.27it/s]  2%|▏         | 1069/45856 [07:50<5:28:21,  2.27it/s]  2%|▏         | 1070/45856 [07:50<5:28:30,  2.27it/s]  2%|▏         | 1071/45856 [07:51<5:28:25,  2.27it/s]  2%|▏         | 1072/45856 [07:51<5:28:39,  2.27it/s]  2%|▏         | 1073/45856 [07:51<5:28:43,  2.27it/s]  2%|▏         | 1074/45856 [07:52<5:28:50,  2.27it/s]  2%|▏         | 1075/45856 [07:52<5:28:45,  2.27it/s]  2%|▏         | 1076/45856 [07:53<5:28:47,  2.27it/s]  2%|▏         | 1077/45856 [07:53<5:28:35,  2.27it/s]  2%|▏         | 1078/45856 [07:54<5:29:09,  2.27it/s]  2%|▏         | 1079/45856 [07:54<5:29:22,  2.27it/s]  2%|▏         | 1080/45856 [07:55<5:29:29,  2.26it/s]  2%|▏         | 1081/45856 [07:55<5:29:35,  2.26it/s]  2%|▏         | 1082/45856 [07:55<5:29:16,  2.27it/s]  2%|▏         | 1083/45856 [07:56<5:29:04,  2.27it/s]  2%|▏         | 1084/45856 [07:56<5:29:00,  2.27it/s]  2%|▏         | 1085/45856 [07:57<5:28:49,  2.27it/s]  2%|▏         | 1086/45856 [07:57<5:28:16,  2.27it/s]  2%|▏         | 1087/45856 [07:58<5:28:06,  2.27it/s]  2%|▏         | 1088/45856 [07:58<5:28:19,  2.27it/s]  2%|▏         | 1089/45856 [07:59<5:28:05,  2.27it/s]  2%|▏         | 1090/45856 [07:59<5:27:52,  2.28it/s]  2%|▏         | 1091/45856 [07:59<5:27:13,  2.28it/s]  2%|▏         | 1092/45856 [08:00<5:26:36,  2.28it/s]  2%|▏         | 1093/45856 [08:00<5:25:52,  2.29it/s]  2%|▏         | 1094/45856 [08:01<5:25:41,  2.29it/s]  2%|▏         | 1095/45856 [08:01<5:25:22,  2.29it/s]  2%|▏         | 1096/45856 [08:02<5:25:39,  2.29it/s]  2%|▏         | 1097/45856 [08:02<5:25:39,  2.29it/s]  2%|▏         | 1098/45856 [08:02<5:24:49,  2.30it/s]  2%|▏         | 1099/45856 [08:03<5:24:38,  2.30it/s]  2%|▏         | 1100/45856 [08:03<5:25:19,  2.29it/s]  2%|▏         | 1101/45856 [08:04<5:25:45,  2.29it/s]  2%|▏         | 1102/45856 [08:04<5:26:19,  2.29it/s]  2%|▏         | 1103/45856 [08:05<5:26:29,  2.28it/s]  2%|▏         | 1104/45856 [08:05<5:26:31,  2.28it/s]  2%|▏         | 1105/45856 [08:05<5:26:26,  2.28it/s]  2%|▏         | 1106/45856 [08:06<5:26:42,  2.28it/s]  2%|▏         | 1107/45856 [08:06<5:26:16,  2.29it/s]  2%|▏         | 1108/45856 [08:07<5:26:32,  2.28it/s]  2%|▏         | 1109/45856 [08:07<5:26:12,  2.29it/s]  2%|▏         | 1110/45856 [08:08<5:25:43,  2.29it/s]  2%|▏         | 1111/45856 [08:08<5:25:40,  2.29it/s]  2%|▏         | 1112/45856 [08:09<5:25:41,  2.29it/s]  2%|▏         | 1113/45856 [08:09<5:25:26,  2.29it/s]  2%|▏         | 1114/45856 [08:09<5:25:44,  2.29it/s]  2%|▏         | 1115/45856 [08:10<5:25:36,  2.29it/s]  2%|▏         | 1116/45856 [08:10<5:25:43,  2.29it/s]  2%|▏         | 1117/45856 [08:11<5:25:41,  2.29it/s]  2%|▏         | 1118/45856 [08:11<5:25:21,  2.29it/s]  2%|▏         | 1119/45856 [08:12<5:25:20,  2.29it/s]  2%|▏         | 1120/45856 [08:12<5:25:02,  2.29it/s]  2%|▏         | 1121/45856 [08:12<5:25:11,  2.29it/s]  2%|▏         | 1122/45856 [08:13<5:25:38,  2.29it/s]  2%|▏         | 1123/45856 [08:13<5:26:17,  2.28it/s]  2%|▏         | 1124/45856 [08:14<5:27:00,  2.28it/s]  2%|▏         | 1125/45856 [08:14<5:27:19,  2.28it/s]  2%|▏         | 1126/45856 [08:15<5:27:11,  2.28it/s]  2%|▏         | 1127/45856 [08:15<5:26:46,  2.28it/s]  2%|▏         | 1128/45856 [08:16<5:26:20,  2.28it/s]  2%|▏         | 1129/45856 [08:16<5:25:21,  2.29it/s]  2%|▏         | 1130/45856 [08:16<5:24:55,  2.29it/s]  2%|▏         | 1131/45856 [08:17<5:24:46,  2.30it/s]  2%|▏         | 1132/45856 [08:17<5:24:36,  2.30it/s]  2%|▏         | 1133/45856 [08:18<5:24:42,  2.30it/s]  2%|▏         | 1134/45856 [08:18<5:24:29,  2.30it/s]  2%|▏         | 1135/45856 [08:19<5:24:05,  2.30it/s]  2%|▏         | 1136/45856 [08:19<5:24:04,  2.30it/s]  2%|▏         | 1137/45856 [08:19<5:24:38,  2.30it/s]  2%|▏         | 1138/45856 [08:20<5:25:21,  2.29it/s]  2%|▏         | 1139/45856 [08:20<5:25:54,  2.29it/s]  2%|▏         | 1140/45856 [08:21<5:26:38,  2.28it/s]  2%|▏         | 1141/45856 [08:21<5:26:59,  2.28it/s]  2%|▏         | 1142/45856 [08:22<5:27:16,  2.28it/s]  2%|▏         | 1143/45856 [08:22<5:27:56,  2.27it/s]  2%|▏         | 1144/45856 [08:23<5:27:53,  2.27it/s]  2%|▏         | 1145/45856 [08:23<5:27:50,  2.27it/s]  2%|▏         | 1146/45856 [08:23<5:27:51,  2.27it/s]  3%|▎         | 1147/45856 [08:24<5:27:56,  2.27it/s]  3%|▎         | 1148/45856 [08:24<5:27:49,  2.27it/s]  3%|▎         | 1149/45856 [08:25<5:27:27,  2.28it/s]  3%|▎         | 1150/45856 [08:25<5:27:32,  2.27it/s]  3%|▎         | 1151/45856 [08:26<5:27:25,  2.28it/s]  3%|▎         | 1152/45856 [08:26<5:27:16,  2.28it/s]  3%|▎         | 1153/45856 [08:27<5:27:37,  2.27it/s]  3%|▎         | 1154/45856 [08:27<5:27:46,  2.27it/s]  3%|▎         | 1155/45856 [08:27<5:27:52,  2.27it/s]  3%|▎         | 1156/45856 [08:28<5:28:04,  2.27it/s]  3%|▎         | 1157/45856 [08:28<5:28:20,  2.27it/s]  3%|▎         | 1158/45856 [08:29<5:28:15,  2.27it/s]  3%|▎         | 1159/45856 [08:29<5:27:23,  2.28it/s]  3%|▎         | 1160/45856 [08:30<5:27:14,  2.28it/s]  3%|▎         | 1161/45856 [08:30<5:27:10,  2.28it/s]  3%|▎         | 1162/45856 [08:30<5:27:05,  2.28it/s]  3%|▎         | 1163/45856 [08:31<5:27:25,  2.27it/s]  3%|▎         | 1164/45856 [08:31<5:27:44,  2.27it/s]  3%|▎         | 1165/45856 [08:32<5:27:38,  2.27it/s]  3%|▎         | 1166/45856 [08:32<5:27:20,  2.28it/s]  3%|▎         | 1167/45856 [08:33<5:27:01,  2.28it/s]  3%|▎         | 1168/45856 [08:33<5:26:59,  2.28it/s]  3%|▎         | 1169/45856 [08:34<5:26:45,  2.28it/s]  3%|▎         | 1170/45856 [08:34<5:26:48,  2.28it/s]  3%|▎         | 1171/45856 [08:34<5:27:02,  2.28it/s]  3%|▎         | 1172/45856 [08:35<5:27:31,  2.27it/s]  3%|▎         | 1173/45856 [08:35<5:27:44,  2.27it/s]  3%|▎         | 1174/45856 [08:36<5:28:04,  2.27it/s]  3%|▎         | 1175/45856 [08:36<5:28:33,  2.27it/s]  3%|▎         | 1176/45856 [08:37<5:28:23,  2.27it/s]  3%|▎         | 1177/45856 [08:37<5:28:08,  2.27it/s]  3%|▎         | 1178/45856 [08:37<5:25:38,  2.29it/s]  3%|▎         | 1179/45856 [08:38<5:23:15,  2.30it/s]  3%|▎         | 1180/45856 [08:38<5:22:14,  2.31it/s]  3%|▎         | 1181/45856 [08:39<5:21:30,  2.32it/s]  3%|▎         | 1182/45856 [08:39<5:21:08,  2.32it/s]  3%|▎         | 1183/45856 [08:40<5:20:45,  2.32it/s]  3%|▎         | 1184/45856 [08:40<5:20:38,  2.32it/s]  3%|▎         | 1185/45856 [08:40<5:20:28,  2.32it/s]  3%|▎         | 1186/45856 [08:41<5:20:29,  2.32it/s]  3%|▎         | 1187/45856 [08:41<5:20:23,  2.32it/s]  3%|▎         | 1188/45856 [08:42<5:20:25,  2.32it/s]  3%|▎         | 1189/45856 [08:42<5:20:10,  2.33it/s]  3%|▎         | 1190/45856 [08:43<5:19:57,  2.33it/s]  3%|▎         | 1191/45856 [08:43<5:19:56,  2.33it/s]  3%|▎         | 1192/45856 [08:44<5:20:09,  2.33it/s]  3%|▎         | 1193/45856 [08:44<5:20:04,  2.33it/s]  3%|▎         | 1194/45856 [08:44<5:19:50,  2.33it/s]  3%|▎         | 1195/45856 [08:45<5:19:51,  2.33it/s]  3%|▎         | 1196/45856 [08:45<5:19:15,  2.33it/s]  3%|▎         | 1197/45856 [08:46<5:19:21,  2.33it/s]  3%|▎         | 1198/45856 [08:46<5:19:13,  2.33it/s]  3%|▎         | 1199/45856 [08:47<5:19:20,  2.33it/s]  3%|▎         | 1200/45856 [08:47<5:19:35,  2.33it/s]  3%|▎         | 1201/45856 [08:47<5:19:55,  2.33it/s]  3%|▎         | 1202/45856 [08:48<5:19:50,  2.33it/s]  3%|▎         | 1203/45856 [08:48<5:19:54,  2.33it/s]  3%|▎         | 1204/45856 [08:49<5:19:41,  2.33it/s]  3%|▎         | 1205/45856 [08:49<5:20:04,  2.33it/s]  3%|▎         | 1206/45856 [08:50<5:20:05,  2.32it/s]  3%|▎         | 1207/45856 [08:50<5:20:09,  2.32it/s]  3%|▎         | 1208/45856 [08:50<5:20:01,  2.33it/s]  3%|▎         | 1209/45856 [08:51<5:19:59,  2.33it/s]  3%|▎         | 1210/45856 [08:51<5:19:49,  2.33it/s]  3%|▎         | 1211/45856 [08:52<5:19:54,  2.33it/s]  3%|▎         | 1212/45856 [08:52<5:19:51,  2.33it/s]  3%|▎         | 1213/45856 [08:53<5:20:04,  2.32it/s]  3%|▎         | 1214/45856 [08:53<5:19:57,  2.33it/s]  3%|▎         | 1215/45856 [08:53<5:19:57,  2.33it/s]  3%|▎         | 1216/45856 [08:54<5:20:09,  2.32it/s]  3%|▎         | 1217/45856 [08:54<5:19:59,  2.32it/s]  3%|▎         | 1218/45856 [08:55<5:20:08,  2.32it/s]  3%|▎         | 1219/45856 [08:55<5:20:00,  2.32it/s]  3%|▎         | 1220/45856 [08:56<5:20:01,  2.32it/s]  3%|▎         | 1221/45856 [08:56<5:20:13,  2.32it/s]  3%|▎         | 1222/45856 [08:56<5:20:25,  2.32it/s]  3%|▎         | 1223/45856 [08:57<5:20:19,  2.32it/s]  3%|▎         | 1224/45856 [08:57<5:20:15,  2.32it/s]  3%|▎         | 1225/45856 [08:58<5:20:13,  2.32it/s]  3%|▎         | 1226/45856 [08:58<5:20:10,  2.32it/s]  3%|▎         | 1227/45856 [08:59<5:20:05,  2.32it/s]  3%|▎         | 1228/45856 [08:59<5:20:11,  2.32it/s]  3%|▎         | 1229/45856 [08:59<5:20:01,  2.32it/s]  3%|▎         | 1230/45856 [09:00<5:20:00,  2.32it/s]  3%|▎         | 1231/45856 [09:00<5:19:49,  2.33it/s]  3%|▎         | 1232/45856 [09:01<5:19:58,  2.32it/s]  3%|▎         | 1233/45856 [09:01<5:19:57,  2.32it/s]  3%|▎         | 1234/45856 [09:02<5:19:59,  2.32it/s]  3%|▎         | 1235/45856 [09:02<5:19:38,  2.33it/s]  3%|▎         | 1236/45856 [09:02<5:19:49,  2.33it/s]  3%|▎         | 1237/45856 [09:03<5:20:01,  2.32it/s]  3%|▎         | 1238/45856 [09:03<5:19:54,  2.32it/s]  3%|▎         | 1239/45856 [09:04<5:20:12,  2.32it/s]  3%|▎         | 1240/45856 [09:04<5:20:19,  2.32it/s]  3%|▎         | 1241/45856 [09:05<5:20:06,  2.32it/s]  3%|▎         | 1242/45856 [09:05<5:19:54,  2.32it/s]  3%|▎         | 1243/45856 [09:05<5:19:59,  2.32it/s]  3%|▎         | 1244/45856 [09:06<5:20:00,  2.32it/s]  3%|▎         | 1245/45856 [09:06<5:20:14,  2.32it/s]  3%|▎         | 1246/45856 [09:07<5:22:55,  2.30it/s]  3%|▎         | 1247/45856 [09:07<5:22:10,  2.31it/s]  3%|▎         | 1248/45856 [09:08<5:21:45,  2.31it/s]  3%|▎         | 1249/45856 [09:08<5:21:03,  2.32it/s]  3%|▎         | 1250/45856 [09:08<5:20:39,  2.32it/s]  3%|▎         | 1251/45856 [09:09<5:20:26,  2.32it/s]  3%|▎         | 1252/45856 [09:09<5:19:36,  2.33it/s]  3%|▎         | 1253/45856 [09:10<5:19:42,  2.33it/s]  3%|▎         | 1254/45856 [09:10<5:19:34,  2.33it/s]  3%|▎         | 1255/45856 [09:11<5:19:36,  2.33it/s]  3%|▎         | 1256/45856 [09:11<5:19:40,  2.33it/s]  3%|▎         | 1257/45856 [09:11<5:19:13,  2.33it/s]  3%|▎         | 1258/45856 [09:12<5:19:35,  2.33it/s]  3%|▎         | 1259/45856 [09:12<5:19:33,  2.33it/s]  3%|▎         | 1260/45856 [09:13<5:19:37,  2.33it/s]  3%|▎         | 1261/45856 [09:13<5:19:43,  2.32it/s]  3%|▎         | 1262/45856 [09:14<5:19:52,  2.32it/s]  3%|▎         | 1263/45856 [09:14<5:19:49,  2.32it/s]  3%|▎         | 1264/45856 [09:14<5:19:44,  2.32it/s]  3%|▎         | 1265/45856 [09:15<5:19:56,  2.32it/s]  3%|▎         | 1266/45856 [09:15<5:19:47,  2.32it/s]  3%|▎         | 1267/45856 [09:16<5:19:56,  2.32it/s]  3%|▎         | 1268/45856 [09:16<5:19:35,  2.33it/s]  3%|▎         | 1269/45856 [09:17<5:19:40,  2.32it/s]  3%|▎         | 1270/45856 [09:17<5:19:59,  2.32it/s]  3%|▎         | 1271/45856 [09:17<5:19:59,  2.32it/s]  3%|▎         | 1272/45856 [09:18<5:19:53,  2.32it/s]  3%|▎         | 1273/45856 [09:18<5:19:46,  2.32it/s]  3%|▎         | 1274/45856 [09:19<5:19:49,  2.32it/s]  3%|▎         | 1275/45856 [09:19<5:19:52,  2.32it/s]  3%|▎         | 1276/45856 [09:20<5:19:51,  2.32it/s]  3%|▎         | 1277/45856 [09:20<5:19:57,  2.32it/s]  3%|▎         | 1278/45856 [09:21<5:19:34,  2.32it/s]  3%|▎         | 1279/45856 [09:21<5:19:32,  2.33it/s]  3%|▎         | 1280/45856 [09:21<5:19:39,  2.32it/s]  3%|▎         | 1281/45856 [09:22<5:19:49,  2.32it/s]  3%|▎         | 1282/45856 [09:22<5:20:03,  2.32it/s]  3%|▎         | 1283/45856 [09:23<5:19:45,  2.32it/s]  3%|▎         | 1284/45856 [09:23<5:19:47,  2.32it/s]  3%|▎         | 1285/45856 [09:24<5:19:50,  2.32it/s]  3%|▎         | 1286/45856 [09:24<5:19:58,  2.32it/s]  3%|▎         | 1287/45856 [09:24<5:20:00,  2.32it/s]  3%|▎         | 1288/45856 [09:25<5:19:58,  2.32it/s]  3%|▎         | 1289/45856 [09:25<5:19:41,  2.32it/s]  3%|▎         | 1290/45856 [09:26<5:19:33,  2.32it/s]  3%|▎         | 1291/45856 [09:26<5:19:40,  2.32it/s]  3%|▎         | 1292/45856 [09:27<5:19:41,  2.32it/s]  3%|▎         | 1293/45856 [09:27<5:19:48,  2.32it/s]  3%|▎         | 1294/45856 [09:27<5:19:45,  2.32it/s]  3%|▎         | 1295/45856 [09:28<5:19:48,  2.32it/s]  3%|▎         | 1296/45856 [09:28<5:19:53,  2.32it/s]  3%|▎         | 1297/45856 [09:29<5:20:06,  2.32it/s]  3%|▎         | 1298/45856 [09:29<5:19:41,  2.32it/s]  3%|▎         | 1299/45856 [09:30<5:19:31,  2.32it/s]  3%|▎         | 1300/45856 [09:30<5:19:30,  2.32it/s]  3%|▎         | 1301/45856 [09:30<5:19:25,  2.32it/s]  3%|▎         | 1302/45856 [09:31<5:19:27,  2.32it/s]  3%|▎         | 1303/45856 [09:31<5:19:29,  2.32it/s]  3%|▎         | 1304/45856 [09:32<5:19:35,  2.32it/s]  3%|▎         | 1305/45856 [09:32<5:19:36,  2.32it/s]  3%|▎         | 1306/45856 [09:33<5:19:31,  2.32it/s]  3%|▎         | 1307/45856 [09:33<5:19:43,  2.32it/s]  3%|▎         | 1308/45856 [09:33<5:19:49,  2.32it/s]  3%|▎         | 1309/45856 [09:34<5:19:48,  2.32it/s]  3%|▎         | 1310/45856 [09:34<5:19:44,  2.32it/s]  3%|▎         | 1311/45856 [09:35<5:19:44,  2.32it/s]  3%|▎         | 1312/45856 [09:35<5:20:04,  2.32it/s]  3%|▎         | 1313/45856 [09:36<5:24:52,  2.29it/s]  3%|▎         | 1314/45856 [09:36<5:22:42,  2.30it/s]  3%|▎         | 1315/45856 [09:36<5:21:52,  2.31it/s]  3%|▎         | 1316/45856 [09:37<5:21:07,  2.31it/s]  3%|▎         | 1317/45856 [09:37<5:20:49,  2.31it/s]  3%|▎         | 1318/45856 [09:38<5:20:17,  2.32it/s]  3%|▎         | 1319/45856 [09:38<5:20:01,  2.32it/s]  3%|▎         | 1320/45856 [09:39<5:19:56,  2.32it/s]  3%|▎         | 1321/45856 [09:39<5:19:39,  2.32it/s]  3%|▎         | 1322/45856 [09:39<5:19:52,  2.32it/s]  3%|▎         | 1323/45856 [09:40<5:20:01,  2.32it/s]  3%|▎         | 1324/45856 [09:40<5:19:44,  2.32it/s]  3%|▎         | 1325/45856 [09:41<5:19:07,  2.33it/s]  3%|▎         | 1326/45856 [09:41<5:19:20,  2.32it/s]  3%|▎         | 1327/45856 [09:42<5:19:26,  2.32it/s]  3%|▎         | 1328/45856 [09:42<5:19:36,  2.32it/s]  3%|▎         | 1329/45856 [09:42<5:19:43,  2.32it/s]  3%|▎         | 1330/45856 [09:43<5:19:44,  2.32it/s]  3%|▎         | 1331/45856 [09:43<5:19:44,  2.32it/s]  3%|▎         | 1332/45856 [09:44<5:19:55,  2.32it/s]  3%|▎         | 1333/45856 [09:44<5:19:45,  2.32it/s]  3%|▎         | 1334/45856 [09:45<5:19:47,  2.32it/s]  3%|▎         | 1335/45856 [09:45<5:19:55,  2.32it/s]  3%|▎         | 1336/45856 [09:46<5:19:44,  2.32it/s]  3%|▎         | 1337/45856 [09:46<5:19:50,  2.32it/s]  3%|▎         | 1338/45856 [09:46<5:19:44,  2.32it/s]  3%|▎         | 1339/45856 [09:47<5:19:29,  2.32it/s]  3%|▎         | 1340/45856 [09:47<5:19:26,  2.32it/s]  3%|▎         | 1341/45856 [09:48<5:19:23,  2.32it/s]  3%|▎         | 1342/45856 [09:48<5:18:41,  2.33it/s]  3%|▎         | 1343/45856 [09:49<5:18:46,  2.33it/s]  3%|▎         | 1344/45856 [09:49<5:18:57,  2.33it/s]  3%|▎         | 1345/45856 [09:49<5:19:03,  2.33it/s]  3%|▎         | 1346/45856 [09:50<5:19:16,  2.32it/s]  3%|▎         | 1347/45856 [09:50<5:19:21,  2.32it/s]  3%|▎         | 1348/45856 [09:51<5:19:12,  2.32it/s]  3%|▎         | 1349/45856 [09:51<5:19:20,  2.32it/s]  3%|▎         | 1350/45856 [09:52<5:19:22,  2.32it/s]  3%|▎         | 1351/45856 [09:52<5:23:01,  2.30it/s]  3%|▎         | 1352/45856 [09:52<5:24:00,  2.29it/s]  3%|▎         | 1353/45856 [09:53<5:22:45,  2.30it/s]  3%|▎         | 1354/45856 [09:53<5:21:50,  2.30it/s]  3%|▎         | 1355/45856 [09:54<5:20:59,  2.31it/s]  3%|▎         | 1356/45856 [09:54<5:20:31,  2.31it/s]  3%|▎         | 1357/45856 [09:55<5:20:26,  2.31it/s]  3%|▎         | 1358/45856 [09:55<5:19:55,  2.32it/s]  3%|▎         | 1359/45856 [09:55<5:19:25,  2.32it/s]  3%|▎         | 1360/45856 [09:56<5:19:28,  2.32it/s]  3%|▎         | 1361/45856 [09:56<5:19:12,  2.32it/s]  3%|▎         | 1362/45856 [09:57<5:19:17,  2.32it/s]  3%|▎         | 1363/45856 [09:57<5:19:11,  2.32it/s]  3%|▎         | 1364/45856 [09:58<5:19:35,  2.32it/s]  3%|▎         | 1365/45856 [09:58<5:19:47,  2.32it/s]  3%|▎         | 1366/45856 [09:58<5:19:59,  2.32it/s]  3%|▎         | 1367/45856 [09:59<5:20:03,  2.32it/s]  3%|▎         | 1368/45856 [09:59<5:19:44,  2.32it/s]  3%|▎         | 1369/45856 [10:00<5:19:40,  2.32it/s]  3%|▎         | 1370/45856 [10:00<5:19:44,  2.32it/s]  3%|▎         | 1371/45856 [10:01<5:19:50,  2.32it/s]  3%|▎         | 1372/45856 [10:01<5:20:10,  2.32it/s]  3%|▎         | 1373/45856 [10:01<5:20:06,  2.32it/s]  3%|▎         | 1374/45856 [10:02<5:19:45,  2.32it/s]  3%|▎         | 1375/45856 [10:02<5:19:07,  2.32it/s]  3%|▎         | 1376/45856 [10:03<5:19:00,  2.32it/s]  3%|▎         | 1377/45856 [10:03<5:18:25,  2.33it/s]  3%|▎         | 1378/45856 [10:04<5:18:33,  2.33it/s]  3%|▎         | 1379/45856 [10:04<5:18:39,  2.33it/s]  3%|▎         | 1380/45856 [10:04<5:19:04,  2.32it/s]  3%|▎         | 1381/45856 [10:05<5:19:04,  2.32it/s]  3%|▎         | 1382/45856 [10:05<5:19:07,  2.32it/s]  3%|▎         | 1383/45856 [10:06<5:18:43,  2.33it/s]  3%|▎         | 1384/45856 [10:06<5:18:04,  2.33it/s]  3%|▎         | 1385/45856 [10:07<5:17:33,  2.33it/s]  3%|▎         | 1386/45856 [10:07<5:17:29,  2.33it/s]  3%|▎         | 1387/45856 [10:07<5:18:52,  2.32it/s]  3%|▎         | 1388/45856 [10:08<5:18:57,  2.32it/s]  3%|▎         | 1389/45856 [10:08<5:19:12,  2.32it/s]  3%|▎         | 1390/45856 [10:09<5:19:59,  2.32it/s]  3%|▎         | 1391/45856 [10:09<5:21:10,  2.31it/s]  3%|▎         | 1392/45856 [10:10<5:22:09,  2.30it/s]  3%|▎         | 1393/45856 [10:10<5:22:00,  2.30it/s]  3%|▎         | 1394/45856 [10:11<5:21:10,  2.31it/s]  3%|▎         | 1395/45856 [10:11<5:20:34,  2.31it/s]  3%|▎         | 1396/45856 [10:11<5:20:55,  2.31it/s]  3%|▎         | 1397/45856 [10:12<5:21:48,  2.30it/s]  3%|▎         | 1398/45856 [10:12<5:22:43,  2.30it/s]  3%|▎         | 1399/45856 [10:13<5:22:27,  2.30it/s]  3%|▎         | 1400/45856 [10:13<5:21:51,  2.30it/s]  3%|▎         | 1401/45856 [10:14<5:21:05,  2.31it/s]  3%|▎         | 1402/45856 [10:14<5:21:29,  2.30it/s]  3%|▎         | 1403/45856 [10:14<5:22:25,  2.30it/s]  3%|▎         | 1404/45856 [10:15<5:22:35,  2.30it/s]  3%|▎         | 1405/45856 [10:15<5:22:16,  2.30it/s]  3%|▎         | 1406/45856 [10:16<5:21:16,  2.31it/s]  3%|▎         | 1407/45856 [10:16<5:21:05,  2.31it/s]  3%|▎         | 1408/45856 [10:17<5:21:36,  2.30it/s]  3%|▎         | 1409/45856 [10:17<5:22:52,  2.29it/s]  3%|▎         | 1410/45856 [10:17<5:22:51,  2.29it/s]  3%|▎         | 1411/45856 [10:18<5:22:04,  2.30it/s]  3%|▎         | 1412/45856 [10:18<5:21:23,  2.30it/s]  3%|▎         | 1413/45856 [10:19<5:21:24,  2.30it/s]  3%|▎         | 1414/45856 [10:19<5:21:44,  2.30it/s]  3%|▎         | 1415/45856 [10:20<5:22:34,  2.30it/s]  3%|▎         | 1416/45856 [10:20<5:22:41,  2.30it/s]  3%|▎         | 1417/45856 [10:21<5:21:48,  2.30it/s]  3%|▎         | 1418/45856 [10:21<5:20:59,  2.31it/s]  3%|▎         | 1419/45856 [10:21<5:21:02,  2.31it/s]  3%|▎         | 1420/45856 [10:22<5:21:50,  2.30it/s]  3%|▎         | 1421/45856 [10:22<5:22:51,  2.29it/s]  3%|▎         | 1422/45856 [10:23<5:22:16,  2.30it/s]  3%|▎         | 1423/45856 [10:23<5:21:49,  2.30it/s]  3%|▎         | 1424/45856 [10:24<5:21:11,  2.31it/s]  3%|▎         | 1425/45856 [10:24<5:20:58,  2.31it/s]  3%|▎         | 1426/45856 [10:24<5:21:27,  2.30it/s]  3%|▎         | 1427/45856 [10:25<5:22:18,  2.30it/s]  3%|▎         | 1428/45856 [10:25<5:22:16,  2.30it/s]  3%|▎         | 1429/45856 [10:26<5:21:19,  2.30it/s]  3%|▎         | 1430/45856 [10:26<5:20:42,  2.31it/s]  3%|▎         | 1431/45856 [10:27<5:20:45,  2.31it/s]  3%|▎         | 1432/45856 [10:27<5:21:26,  2.30it/s]  3%|▎         | 1433/45856 [10:27<5:12:09,  2.37it/s]loss: 2.2740204334259033
+===========================
+epoch 1/32 | loss: 2.2740204334259033
+---------------------------
+example true genres: 
+tensor([ 5,  1, 13,  2,  8], device='cuda:0')
+---------------------------
+example predicted genres: 
+tensor([8, 7, 8, 5, 7], device='cuda:0')
+---------------------------
+Validation Classifier Accuracy: 0.14770962732919254
+===========================
+Using pad_token, but it is not set yet.
+---------------------------
+example input paragraph: 
+["It's fun, and it's easy - - so easy that there is time left after cooking, and tent keeping, for the women to get out and enjoy outdoor fun with their families. Camp meals are no great problem.", "Impartiality to him meant an unwillingness to generalize and to search for a synthesis. He deplored the impact of German historiography on the writing of history, terming it a ` ` dismal monster''.", 'Here they were at the mercy of anyone who chose to come by. These stray people nearly always insisted on Dolores showing them around the apartment.', 'It seems to me the time has come for the American press to start experimenting with ways of reporting the news that will do a better job of communicating and will be less subject to abuse by those who have learned how to manipulate the present stereotype to serve their own ends. The objective should be to provide a method of getting into print a higher percentage than is now possible of the relevant information in the possession of reporters and editors.', 'Staggeringly condensed versions of famous novels and famous plays were presented. Great actors and actresses - - the most notable being Sarah Bernhardt - - were hired to repeat their stage performances before the camera.']
+---------------------------
+example output paragraph: 
+["was s s to but and was s ', - - so, and is is to to the the and and,, and the time, eat the in the the the. the own,ing, in,,,", "wascted of of the the the idea of of the, the the the the a good of wasceivedre the the man of the. philosophyistism. the world of the of and. the the aptctisticl of '.", 'was were not the last of the, could to go the the peoples were were were to the, a to. city.', 'was to be be way of been been the time,, the the with the the the the world news is will be little way to the the the be be less to the of the, are have the about learn and public,,s the the the own in first of be the the the good of the the the. future, of the the the to the the information of the world of the. and,', '##dly of of the,, the of, the in of were the were - - great of of the,,, - - the by be the the roles in the stage.']
+---------------------------
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 570, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 513, in main
+    model, classifier = train_all(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 459, in train_all
+    score = metric.compute(model_id='gpt2')
+  File "/home/mitryand/.local/lib/python3.10/site-packages/evaluate/module.py", line 444, in compute
+    output = self._compute(**inputs, **compute_kwargs)
+  File "/home/mitryand/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--perplexity/23c7f61948a6e59ecbd1e92ea827a525b0a412dcef1f1a5bec3dc007452c8fa8/perplexity.py", line 153, in _compute
+    assert torch.all(torch.ge(attn_masks.sum(1), 1)), "Each input text must be at least one token long."
+AssertionError: Each input text must be at least one token long.
+  3%|▎         | 1433/45856 [11:08<5:45:25,  2.14it/s]

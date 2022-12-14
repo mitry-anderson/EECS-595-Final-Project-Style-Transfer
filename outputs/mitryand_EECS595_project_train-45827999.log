@@ -1,0 +1,1150 @@
+Some weights of the model checkpoint at bert-base-cased were not used when initializing BertModel: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.seq_relationship.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of the model checkpoint at bert-base-cased were not used when initializing BertLMHeadModel: ['cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertLMHeadModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertLMHeadModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertLMHeadModel were not initialized from the model checkpoint at bert-base-cased and are newly initialized: ['bert.encoder.layer.8.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.10.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.9.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.2.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.5.crossattention.self.query.bias', 'bert.encoder.layer.4.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.3.crossattention.self.query.bias', 'bert.encoder.layer.8.crossattention.self.key.bias', 'bert.encoder.layer.9.crossattention.self.value.bias', 'bert.encoder.layer.11.crossattention.self.key.weight', 'bert.encoder.layer.2.crossattention.self.query.weight', 'bert.encoder.layer.3.crossattention.self.value.weight', 'bert.encoder.layer.2.crossattention.self.key.bias', 'bert.encoder.layer.10.crossattention.self.query.bias', 'bert.encoder.layer.8.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.self.value.weight', 'bert.encoder.layer.7.crossattention.self.key.bias', 'bert.encoder.layer.10.crossattention.self.value.weight', 'bert.encoder.layer.6.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.1.crossattention.output.dense.bias', 'bert.encoder.layer.0.crossattention.output.dense.weight', 'bert.encoder.layer.5.crossattention.self.key.weight', 'bert.encoder.layer.0.crossattention.self.value.bias', 'bert.encoder.layer.3.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.2.crossattention.self.query.bias', 'bert.encoder.layer.0.crossattention.output.dense.bias', 'bert.encoder.layer.9.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.self.key.bias', 'bert.encoder.layer.11.crossattention.self.key.bias', 'bert.encoder.layer.5.crossattention.self.value.bias', 'bert.encoder.layer.4.crossattention.output.dense.bias', 'bert.encoder.layer.11.crossattention.self.value.weight', 'bert.encoder.layer.5.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.9.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.11.crossattention.output.dense.bias', 'bert.encoder.layer.5.crossattention.output.dense.bias', 'bert.encoder.layer.0.crossattention.self.key.bias', 'bert.encoder.layer.5.crossattention.output.dense.weight', 'bert.encoder.layer.9.crossattention.self.query.weight', 'bert.encoder.layer.4.crossattention.self.key.weight', 'bert.encoder.layer.11.crossattention.self.query.bias', 'bert.encoder.layer.11.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.6.crossattention.self.query.weight', 'bert.encoder.layer.6.crossattention.self.query.bias', 'bert.encoder.layer.8.crossattention.self.query.weight', 'bert.encoder.layer.11.crossattention.output.dense.weight', 'bert.encoder.layer.9.crossattention.self.key.bias', 'bert.encoder.layer.9.crossattention.self.key.weight', 'bert.encoder.layer.3.crossattention.self.query.weight', 'bert.encoder.layer.5.crossattention.self.query.weight', 'bert.encoder.layer.3.crossattention.self.key.weight', 'bert.encoder.layer.2.crossattention.self.value.weight', 'bert.encoder.layer.6.crossattention.self.key.weight', 'bert.encoder.layer.6.crossattention.self.key.bias', 'bert.encoder.layer.2.crossattention.output.dense.weight', 'bert.encoder.layer.7.crossattention.self.key.weight', 'bert.encoder.layer.3.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.4.crossattention.self.value.weight', 'bert.encoder.layer.8.crossattention.self.key.weight', 'bert.encoder.layer.0.crossattention.self.query.weight', 'bert.encoder.layer.3.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.value.bias', 'bert.encoder.layer.11.crossattention.self.query.weight', 'bert.encoder.layer.1.crossattention.self.query.weight', 'bert.encoder.layer.2.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.0.crossattention.self.value.weight', 'bert.encoder.layer.6.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.1.crossattention.self.value.bias', 'bert.encoder.layer.4.crossattention.self.value.bias', 'bert.encoder.layer.4.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.10.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.key.weight', 'bert.encoder.layer.0.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.0.crossattention.self.query.bias', 'bert.encoder.layer.6.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.key.bias', 'bert.encoder.layer.6.crossattention.output.dense.bias', 'bert.encoder.layer.4.crossattention.self.query.weight', 'bert.encoder.layer.9.crossattention.output.dense.bias', 'bert.encoder.layer.8.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.6.crossattention.self.value.weight', 'bert.encoder.layer.1.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.1.crossattention.self.query.bias', 'bert.encoder.layer.7.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.9.crossattention.self.value.weight', 'bert.encoder.layer.10.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.11.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.5.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.8.crossattention.self.value.weight', 'bert.encoder.layer.7.crossattention.output.dense.bias', 'bert.encoder.layer.1.crossattention.self.key.weight', 'bert.encoder.layer.1.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.7.crossattention.self.value.bias', 'bert.encoder.layer.10.crossattention.self.query.weight', 'bert.encoder.layer.5.crossattention.self.value.weight', 'bert.encoder.layer.1.crossattention.output.dense.weight', 'bert.encoder.layer.4.crossattention.self.query.bias', 'bert.encoder.layer.7.crossattention.self.value.weight', 'bert.encoder.layer.8.crossattention.self.value.bias', 'bert.encoder.layer.4.crossattention.self.key.bias', 'bert.encoder.layer.10.crossattention.output.dense.bias', 'bert.encoder.layer.2.crossattention.self.key.weight', 'bert.encoder.layer.8.crossattention.output.dense.bias', 'bert.encoder.layer.5.crossattention.self.key.bias', 'bert.encoder.layer.7.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.7.crossattention.self.query.weight', 'bert.encoder.layer.3.crossattention.self.key.bias', 'bert.encoder.layer.3.crossattention.output.dense.bias', 'bert.encoder.layer.2.crossattention.self.value.bias', 'bert.encoder.layer.7.crossattention.output.dense.weight', 'bert.encoder.layer.11.crossattention.self.value.bias', 'bert.encoder.layer.9.crossattention.self.query.bias', 'bert.encoder.layer.0.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.4.crossattention.output.dense.weight', 'bert.encoder.layer.7.crossattention.self.query.bias', 'bert.encoder.layer.0.crossattention.self.key.weight', 'bert.encoder.layer.8.crossattention.self.query.bias', 'bert.encoder.layer.3.crossattention.self.value.bias', 'bert.encoder.layer.6.crossattention.self.value.bias', 'bert.encoder.layer.2.crossattention.output.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+loaded 39 training samples
+loaded 9 validation samples
+loaded 2 test samples
+EncoderDecoderModel(
+  (encoder): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(28996, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (decoder): BertLMHeadModel(
+    (bert): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(28996, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (1): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (2): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (3): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (4): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (5): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (6): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (7): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (8): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (9): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (10): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (11): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (crossattention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+    (cls): BertOnlyMLMHead(
+      (predictions): BertLMPredictionHead(
+        (transform): BertPredictionHeadTransform(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (transform_act_fn): GELUActivation()
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (decoder): Linear(in_features=768, out_features=28996, bias=True)
+      )
+    )
+  )
+)
+Begin training autoencoder!
+  0%|          | 0/780 [00:00<?, ?it/s]/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:634: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+  0%|          | 1/780 [00:01<13:36,  1.05s/it]  0%|          | 2/780 [00:01<08:24,  1.54it/s]  0%|          | 3/780 [00:01<06:44,  1.92it/s]  1%|          | 4/780 [00:02<05:58,  2.17it/s]  1%|          | 5/780 [00:02<05:31,  2.33it/s]  1%|          | 6/780 [00:02<05:16,  2.45it/s]  1%|          | 7/780 [00:03<05:06,  2.53it/s]  1%|          | 8/780 [00:03<04:59,  2.58it/s]  1%|          | 9/780 [00:04<04:54,  2.62it/s]  1%|▏         | 10/780 [00:04<04:50,  2.65it/s]  1%|▏         | 11/780 [00:04<04:47,  2.67it/s]  2%|▏         | 12/780 [00:05<04:46,  2.68it/s]  2%|▏         | 13/780 [00:05<04:44,  2.70it/s]  2%|▏         | 14/780 [00:05<04:43,  2.70it/s]  2%|▏         | 15/780 [00:06<04:42,  2.71it/s]  2%|▏         | 16/780 [00:06<04:41,  2.71it/s]  2%|▏         | 17/780 [00:06<04:41,  2.71it/s]  2%|▏         | 18/780 [00:07<04:40,  2.71it/s]  2%|▏         | 19/780 [00:07<04:40,  2.71it/s]  3%|▎         | 20/780 [00:08<04:40,  2.71it/s]  3%|▎         | 21/780 [00:08<04:39,  2.71it/s]  3%|▎         | 22/780 [00:08<04:39,  2.72it/s]  3%|▎         | 23/780 [00:09<04:38,  2.72it/s]  3%|▎         | 24/780 [00:09<04:38,  2.71it/s]  3%|▎         | 25/780 [00:09<04:38,  2.71it/s]  3%|▎         | 26/780 [00:10<04:38,  2.71it/s]  3%|▎         | 27/780 [00:10<04:37,  2.71it/s]  4%|▎         | 28/780 [00:11<04:37,  2.71it/s]  4%|▎         | 29/780 [00:11<04:37,  2.71it/s]  4%|▍         | 30/780 [00:11<04:36,  2.71it/s]  4%|▍         | 31/780 [00:12<04:36,  2.71it/s]  4%|▍         | 32/780 [00:12<04:36,  2.71it/s]  4%|▍         | 33/780 [00:12<04:35,  2.71it/s]  4%|▍         | 34/780 [00:13<04:35,  2.71it/s]  4%|▍         | 35/780 [00:13<04:35,  2.71it/s]  5%|▍         | 36/780 [00:13<04:34,  2.71it/s]  5%|▍         | 37/780 [00:14<04:34,  2.70it/s]  5%|▍         | 38/780 [00:14<04:34,  2.70it/s]  5%|▌         | 39/780 [00:14<03:38,  3.39it/s]Using pad_token, but it is not set yet.
+loss: 7.070283889770508
+===========================
+epoch 1/20 | loss: 7.070283889770508
+---------------------------
+example input sentences: 
+['[CLS] Of course it was water he really craved ; ; down in the broil of the sun he was becoming dried out. The marine shouted for it until it seemed that his voice had to crack. Matsuo shook his head. He had no water for an enemy. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] If one follows the reports of the Congress, one finds that there still seems considerable uncertainty in the minds of the leaders themselves about what exactly to do in this matter. The Draft Program was interesting in other respects, too. It contained, for example, a number of curious admissions about the peasants, who enjoy no sickness benefits, no old - age pensions, no paid holidays ; ; they still benefit far less than the ` ` other'' 50 per cent of the nation from that ` [SEP]", '[CLS] We can mass our fleet against the Trujillos, but not against the Castros. We can vote in the UN against South African apartheid or Portuguese rule in Angola, but we cannot even introduce a motion on the Berlin Wall - - much less, give the simple order to push the Wall down. We officially receive the anti - French, Moscow - allied Algerian FLN, but we denounce the pro - Europe, anti - Communist OAS as criminal. In the very [SEP]', "[CLS] ` ` Where from''?? He mused. ` ` Out. I been riding train for a ways now''. They lapsed into silence, and the freight wallowed up a hill, scooted down the other side, shaking and clanking to itself. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] at the peaks of the nuclear test and the Berlin cycles ; ; in relation to Laos, Algeria, South Africa ; ; right now, with almost cartoon emphasis, in the temporally linked complex of Tshombe - Gizenga - Goa - Ghana. What the moments revealThis prime element of the truth may be stated as follows : Under prevailing policy, the U. S. can take the initiative against the Right, but cannot take the initiative against the Left. [SEP] [PAD] [PAD] [PAD]']
+---------------------------
+example output sentences: 
+[',...... and... and. ; and, and,.. the the, the the, the... the. the to it, that the, had to the.... the. head.. had the.. the the.. andcturecture ị ء ء ءதத↔↔↔↔↔ ţ↔↔ ல ல ல ல∨ ல↔↔↔↔↔↔↔↔↔₤ [PAD] [PAD]∨↔∨ [PAD]த₤', "..... the the of the to, the the of the the the of of the the of of the of of the the of to to the the of.... the the the the the, the..... the, a. of the the the the.,.. the. the, the.. the.., the..... the.. the. the the the.. '.... the the. the the", '... could.... the.....,. not. the,.... the. the.,...,.,... but.. the the a. of the.,. -. the,. the, the to the the. to... the the.. the, the. the,,,, but..,, the,..,,.,,,, the.. the.', ",..,..''..... '...... the...,''......, and the., the,.,,,,,,,, the the the. the... andckingckingƒ∨∨∨∨∨∨∨∨∨ ň∨∨∨∨∨∨∨∧∧∧∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨", '.... and of the and,, and., ; ;.. to.,.,.,. ;.,, and the,,,. the.,, of the.... -... -. -... the. to... - of the.. be..... the the, the....,. the, of the., but,, the the of the... ⊕Ω']
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.59it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.82it/s][A100%|██████████| 18/18 [00:00<00:00, 68.55it/s]
+Mean Perplexity: 197.06493285462096
+===========================
+  5%|▌         | 40/780 [00:18<17:56,  1.45s/it]  5%|▌         | 41/780 [00:19<13:54,  1.13s/it]  5%|▌         | 42/780 [00:19<11:05,  1.11it/s]  6%|▌         | 43/780 [00:20<09:06,  1.35it/s]  6%|▌         | 44/780 [00:20<07:44,  1.58it/s]  6%|▌         | 45/780 [00:20<06:46,  1.81it/s]  6%|▌         | 46/780 [00:21<06:05,  2.01it/s]  6%|▌         | 47/780 [00:21<05:37,  2.17it/s]  6%|▌         | 48/780 [00:21<05:17,  2.31it/s]  6%|▋         | 49/780 [00:22<05:03,  2.41it/s]  6%|▋         | 50/780 [00:22<04:53,  2.49it/s]  7%|▋         | 51/780 [00:23<04:46,  2.55it/s]  7%|▋         | 52/780 [00:23<04:41,  2.59it/s]  7%|▋         | 53/780 [00:23<04:37,  2.62it/s]  7%|▋         | 54/780 [00:24<04:34,  2.64it/s]  7%|▋         | 55/780 [00:24<04:33,  2.66it/s]  7%|▋         | 56/780 [00:24<04:31,  2.67it/s]  7%|▋         | 57/780 [00:25<04:30,  2.67it/s]  7%|▋         | 58/780 [00:25<04:29,  2.68it/s]  8%|▊         | 59/780 [00:26<04:28,  2.68it/s]  8%|▊         | 60/780 [00:26<04:28,  2.68it/s]  8%|▊         | 61/780 [00:26<04:27,  2.69it/s]  8%|▊         | 62/780 [00:27<04:27,  2.69it/s]  8%|▊         | 63/780 [00:27<04:26,  2.69it/s]  8%|▊         | 64/780 [00:27<04:26,  2.69it/s]  8%|▊         | 65/780 [00:28<04:26,  2.69it/s]  8%|▊         | 66/780 [00:28<04:25,  2.69it/s]  9%|▊         | 67/780 [00:29<04:25,  2.69it/s]  9%|▊         | 68/780 [00:29<04:24,  2.69it/s]  9%|▉         | 69/780 [00:29<04:24,  2.69it/s]  9%|▉         | 70/780 [00:30<04:23,  2.69it/s]  9%|▉         | 71/780 [00:30<04:23,  2.69it/s]  9%|▉         | 72/780 [00:30<04:23,  2.69it/s]  9%|▉         | 73/780 [00:31<04:22,  2.69it/s]  9%|▉         | 74/780 [00:31<04:22,  2.69it/s] 10%|▉         | 75/780 [00:31<04:21,  2.69it/s] 10%|▉         | 76/780 [00:32<04:21,  2.69it/s] 10%|▉         | 77/780 [00:32<04:21,  2.69it/s] 10%|█         | 78/780 [00:32<03:26,  3.40it/s]Using pad_token, but it is not set yet.
+loss: 6.9621076583862305
+===========================
+epoch 2/20 | loss: 6.9621076583862305
+---------------------------
+example input sentences: 
+["[CLS] Last week it opened at the J. B. Speed Museum in Louisville, at the very moment that a second Schiele exhibit was being made ready at the Felix Landau gallery in Los Angeles. Schiele's paintings are anything but pleasant. His people ( see color ) are angular and knobby - knuckled, sometimes painfully stretched, sometimes grotesquely foreshortened. His colors are dark and murky, and his landscapes and cityscapes seem swallowed [SEP]", "[CLS] A graduate of Hollywood High School, she likes to imagine herself, as she takes the floor, ` ` a village girl coming in to a festival''. Gloria ( surname : Ziraldo ), circa 30, who was born in Italy and once did ` ` chorus work'' in Toronto, has been around longer than most of the others, wistfully remembers the old days when ` ` we used to get the seamen from the ships, you know, with big turtle [SEP]", "[CLS] Though the slave's dying words about the woman troubled the coroner's panel, Dandy's accusation was adjudged an aberration by the jury and disregarded. The Lalauries were at the top rung of the social ladder, and even a jury didn't feel privileged to doubt the veracity of so illustrious a lady. Moreover, runaway slaves frequently got into serious trouble in New Orleans'dives. So the verdict [SEP]", "[CLS] Fifty yards away from the barn he dodged inside a barber's shop and came out at the back. Here he couldn't be seen by Blue Throat and his gang. All he had to do was light the fuses of the dynamite sticks, run to within ten yards of an open window in the barn and hurl the sticks through. Billy Tilghman did just that. Within seconds the big barn was blasted into smoking splinters, [SEP]", "[CLS] Delphine was a pace - setter in high society. She was a top horsewoman and one of the city's most gracious hostesses. Although New Orleans was not to learn of it for a spell, she also was a sadist, a nymphomaniac and unobtrusively mad - - the perpetrator of some of the worst crimes against humanity ever committed on American soil. Madame Lalaurie gestured with her riding crop toward the 20 - year [SEP]"]
+---------------------------
+example output sentences: 
+["..... the the the........, the the the the of a,.... the a a the the the..., the,.....'', of. the,.... the,..,,,, -..,.,,, the...,, the the,....,...., and his, and... to the", "..., of...,. the the the the, as the to the,, the,,,,,, the the,''.'' '.''. ', ',,'' the the'and, the'' '.'''','the the'the the of the ','''''''of'''' the the the,'the the ', the know, the,,", ".....'' of. the the, the the.. s'','''s'the'to to'''' the the, the thes the the.....'the the of of. of the and,, and the,,.'t the the the the the,., of the the. of ',.., the to of,. the the the the,. '.s.. the of", "...., the ', was, the the a. the's the the he out the the back. was he'' t be the the'T '. and.,. the he had the do the the the.. of the s'and., the the the yards of the ', the the, and'' s the of the.. T He.,, a.. the the the,, the the the, '....", "..,,. a. - the the the the... the.... the the the the. '. the.. the. the..... the the the the the the a., she was the a, the,,. the.., the. the the the the - - of.. of of the. the of of the the the the the.....ly. the the her, of to the. -."]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.37it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.73it/s][A100%|██████████| 18/18 [00:00<00:00, 68.44it/s]
+Mean Perplexity: 261.82190782595904
+===========================
+ 10%|█         | 79/780 [00:36<16:54,  1.45s/it] 10%|█         | 80/780 [00:37<13:07,  1.12s/it] 10%|█         | 81/780 [00:37<10:28,  1.11it/s] 11%|█         | 82/780 [00:38<08:37,  1.35it/s] 11%|█         | 83/780 [00:38<07:19,  1.59it/s] 11%|█         | 84/780 [00:38<06:24,  1.81it/s] 11%|█         | 85/780 [00:39<05:46,  2.01it/s] 11%|█         | 86/780 [00:39<05:19,  2.17it/s] 11%|█         | 87/780 [00:39<05:00,  2.30it/s] 11%|█▏        | 88/780 [00:40<04:47,  2.41it/s] 11%|█▏        | 89/780 [00:40<04:38,  2.49it/s] 12%|█▏        | 90/780 [00:41<04:31,  2.54it/s] 12%|█▏        | 91/780 [00:41<04:26,  2.58it/s] 12%|█▏        | 92/780 [00:41<04:23,  2.61it/s] 12%|█▏        | 93/780 [00:42<04:20,  2.63it/s] 12%|█▏        | 94/780 [00:42<04:18,  2.65it/s] 12%|█▏        | 95/780 [00:42<04:17,  2.66it/s] 12%|█▏        | 96/780 [00:43<04:16,  2.67it/s] 12%|█▏        | 97/780 [00:43<04:15,  2.67it/s] 13%|█▎        | 98/780 [00:44<04:14,  2.68it/s] 13%|█▎        | 99/780 [00:44<04:14,  2.68it/s] 13%|█▎        | 100/780 [00:44<04:13,  2.68it/s] 13%|█▎        | 101/780 [00:45<04:13,  2.68it/s] 13%|█▎        | 102/780 [00:45<04:12,  2.68it/s] 13%|█▎        | 103/780 [00:45<04:12,  2.68it/s] 13%|█▎        | 104/780 [00:46<04:12,  2.68it/s] 13%|█▎        | 105/780 [00:46<04:11,  2.68it/s] 14%|█▎        | 106/780 [00:47<04:11,  2.68it/s] 14%|█▎        | 107/780 [00:47<04:11,  2.68it/s] 14%|█▍        | 108/780 [00:47<04:10,  2.68it/s] 14%|█▍        | 109/780 [00:48<04:10,  2.68it/s] 14%|█▍        | 110/780 [00:48<04:09,  2.68it/s] 14%|█▍        | 111/780 [00:48<04:09,  2.68it/s] 14%|█▍        | 112/780 [00:49<04:09,  2.68it/s] 14%|█▍        | 113/780 [00:49<04:08,  2.68it/s] 15%|█▍        | 114/780 [00:50<04:08,  2.68it/s] 15%|█▍        | 115/780 [00:50<04:08,  2.68it/s] 15%|█▍        | 116/780 [00:50<04:07,  2.68it/s] 15%|█▌        | 117/780 [00:50<03:15,  3.40it/s]Using pad_token, but it is not set yet.
+loss: 5.6709303855896
+===========================
+epoch 3/20 | loss: 5.6709303855896
+---------------------------
+example input sentences: 
+["[CLS] So instead I come up''. ` ` Was it my equipment''?? The German asked. ` ` Was it something went bad with the breathing''?? ` ` The equipment was fine'', Rob stated, standing up. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] After a while, Kitty murmured something to Cappy, and he held her close, answering, ` ` We'll just have to wait till we pull into Philly, honey''. ` ` What's the matter, she wanna go the bathroom''?? Ernie found it immensely funny. The boy scowled at him, and the girl looked shocked. ` ` No!! [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] As his feet slowed, he felt ashamed of the panic and resolved to make a stand. He crossed the next meadow and climbed a tree where the jungle trail resumed. In the leafiest part of the tree, straddling a broad horizontal limb, he could see over the meadow. For a while he was content to let events develop in their good time. He had no doubt the marine was the lead scout of a column, and while his shot had probably bred indecision, they [SEP]', '[CLS] The family is largely broken up ; ; and where it is not, it is left with no residue, and the social meaning of this is enormous. For it is the family that, in China, has always provided social security for the indigent, the sick, the down - and - out members of the clan. Now the government must do that ; ; but the government is left with no reserve granary, under the agricultural system it has ordained. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] Public men come and go but great issues of policy remain. Now, everyone knows - - or knew in the week of December 10 - - that something had gone shockingly wrong with American foreign policy. The United States was engaged in a military attack on a peaceful, orderly people governed by a regime that had proved itself the most pro - Western and anti - Communist within any of the new nations - - the only place in Africa, moreover, where a productive relationship between whites and blacks had [SEP]']
+---------------------------
+example output sentences: 
+["''' of I'the'''''''''' '??''..entpt''. and to the '.''?? 'pt''''''?...,, '. [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "...'a,.,, go,,. and was the to,.,.,,'s ll'have to'' we'the,ly,'''' 'ly's s'of,'' go '.''??'' ',, I ',, the.'and ', at at He. '.!!. [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", ".. was was,, he was was, the the of and, the the man, He was the ground,, the it foot tree was was was was and He the the of, of the forest, and 'loping the tree,,, the was see the the the, He. a long was in, the the,, the.,. He was been seen doubt... the.. the a of. and the eyes. been been the the the,, were", '.... to to of the... the is is the the is is the the, of, the. of is the the is. The he is a the of of is the. China been been the,, the the the of of the the. the the, - the - the. the the of. is. of have the to..,. of the the the to of.... the the,, is has to The. [PAD] [PAD] [PAD] [PAD]', '..., to the to the man of the and to The is he can is - - or he the the. of,, - - was like been to toly to the American, policy But... to in the war of. the war,,, to by the war of was been to to war of - -., - -, the the of the,, - - of, in the the the than the the was government of of of and the the been']
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.59it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.93it/s][A100%|██████████| 18/18 [00:00<00:00, 68.62it/s]
+Mean Perplexity: 522.8816754686964
+===========================
+ 15%|█▌        | 118/780 [00:54<15:17,  1.39s/it] 15%|█▌        | 119/780 [00:55<11:55,  1.08s/it] 15%|█▌        | 120/780 [00:55<09:33,  1.15it/s] 16%|█▌        | 121/780 [00:55<07:54,  1.39it/s] 16%|█▌        | 122/780 [00:56<06:45,  1.62it/s] 16%|█▌        | 123/780 [00:56<05:56,  1.84it/s] 16%|█▌        | 124/780 [00:57<05:22,  2.03it/s] 16%|█▌        | 125/780 [00:57<04:59,  2.19it/s] 16%|█▌        | 126/780 [00:57<04:42,  2.32it/s] 16%|█▋        | 127/780 [00:58<04:30,  2.41it/s] 16%|█▋        | 128/780 [00:58<04:22,  2.48it/s] 17%|█▋        | 129/780 [00:58<04:16,  2.54it/s] 17%|█▋        | 130/780 [00:59<04:11,  2.58it/s] 17%|█▋        | 131/780 [00:59<04:08,  2.61it/s] 17%|█▋        | 132/780 [01:00<04:06,  2.63it/s] 17%|█▋        | 133/780 [01:00<04:04,  2.64it/s] 17%|█▋        | 134/780 [01:00<04:03,  2.65it/s] 17%|█▋        | 135/780 [01:01<04:02,  2.66it/s] 17%|█▋        | 136/780 [01:01<04:01,  2.67it/s] 18%|█▊        | 137/780 [01:01<04:01,  2.67it/s] 18%|█▊        | 138/780 [01:02<04:00,  2.67it/s] 18%|█▊        | 139/780 [01:02<04:00,  2.67it/s] 18%|█▊        | 140/780 [01:03<03:59,  2.67it/s] 18%|█▊        | 141/780 [01:03<03:59,  2.67it/s] 18%|█▊        | 142/780 [01:03<03:59,  2.67it/s] 18%|█▊        | 143/780 [01:04<03:58,  2.67it/s] 18%|█▊        | 144/780 [01:04<03:58,  2.67it/s] 19%|█▊        | 145/780 [01:04<03:57,  2.67it/s] 19%|█▊        | 146/780 [01:05<03:57,  2.67it/s] 19%|█▉        | 147/780 [01:05<03:56,  2.67it/s] 19%|█▉        | 148/780 [01:06<03:56,  2.67it/s] 19%|█▉        | 149/780 [01:06<03:56,  2.67it/s] 19%|█▉        | 150/780 [01:06<03:56,  2.67it/s] 19%|█▉        | 151/780 [01:07<03:55,  2.67it/s] 19%|█▉        | 152/780 [01:07<03:55,  2.67it/s] 20%|█▉        | 153/780 [01:07<03:55,  2.67it/s] 20%|█▉        | 154/780 [01:08<03:54,  2.67it/s] 20%|█▉        | 155/780 [01:08<03:54,  2.67it/s] 20%|██        | 156/780 [01:08<03:04,  3.38it/s]Using pad_token, but it is not set yet.
+loss: 3.705075979232788
+===========================
+epoch 4/20 | loss: 3.705075979232788
+---------------------------
+example input sentences: 
+["[CLS] Matsuo put the bottle to his own lips. The marine reached up a hand. Matsuo shook his head. ` ` None for you''. The marine blinked, soon dropping his hand. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] I guess you're right''. He sloshed his drink around and drained it in a few large gulps. The story was shaping up nicely in his mind : the young pioneer, as of old, altruistically braving the unknown ; ; the rewards prompt and juicy in modern big - business America. ` ` Join me in another''?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` I'm Billy Tilghman'', said the stranger, ` ` and I've come for Pat Conyers'body''. ` ` And what makes you think you're going to get it, pretty boy''?? ` ` Because I'm asking. Most of the time I get what I ask for''. Blue Throat winked at his six cronies. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] It was the abrupt end of Blue Throat's dictatorship in Petrie. Though only slightly injured himself the big hoodlum never returned to those parts. To Tilghman the incident was just one of a long list of hair - raising, smash -'em - down adventures on the side of the law which started in 1872 when he was only eighteen years old, and did not end till fifty years later when he was shot dead after warning a drunk to be quiet. Of [SEP]", "[CLS] Create a free market here, give us a sound, debt - free money system, and we'll compete with anyone, Europe and Asia combined. In short, get this governmental monstrosity off our backs and we won't have to worry about European competition or Communism either. If we want to preserve our sovereignty, this is the way to do it ; ; not acquiesce to an international planning board. If we go into this Common Market, [SEP]"]
+---------------------------
+example output sentences: 
+["He He'''the man. the head,, He man. the the man hand He.ed, his head. He ` `. the. s s He man.. and he, head. He । [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "The The'''s s'''I'''' '. the the his. the little few.ulpulp. He man of the the the, the pocket mind. man.. he he the, and the.....'man.. ; man of 'bing thearui. the the. -.. He ` `'''the.''??uations [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "''''' t t'''''''' he man'' ` `'''been been to'''''''I ` `'' you'to'''to'the'' ',''?? ` `'''t to I'you man'''''' you'' I'''', him face'''' I ∪ [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "The The'a man of of the,. 'e's of the,, He the the the, in man man,, had to the'of He have'',,, of the a a the the. of the, -, and, -'the - the. the city of of city of was was the., was a a years years. and and the have the the,. in he was was in in the the little, the.. The the", "The The ', man man,, he the the'of and, -,,, and and have ve ve, the, and, the,, The the,, a,,,,, the own, the have have s'to to the the,, the,..., The the we do do the own, and. a government to the the... to problemll.. the '.,, The to can to the the.. and"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.73it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.90it/s][A100%|██████████| 18/18 [00:00<00:00, 68.61it/s]
+Mean Perplexity: 581.5792417002248
+===========================
+ 20%|██        | 157/780 [01:12<14:44,  1.42s/it] 20%|██        | 158/780 [01:13<11:27,  1.11s/it] 20%|██        | 159/780 [01:13<09:09,  1.13it/s] 21%|██        | 160/780 [01:13<07:33,  1.37it/s] 21%|██        | 161/780 [01:14<06:26,  1.60it/s] 21%|██        | 162/780 [01:14<05:39,  1.82it/s] 21%|██        | 163/780 [01:15<05:06,  2.01it/s] 21%|██        | 164/780 [01:15<04:43,  2.17it/s] 21%|██        | 165/780 [01:15<04:27,  2.30it/s] 21%|██▏       | 166/780 [01:16<04:15,  2.40it/s] 21%|██▏       | 167/780 [01:16<04:07,  2.47it/s] 22%|██▏       | 168/780 [01:16<04:01,  2.53it/s] 22%|██▏       | 169/780 [01:17<03:57,  2.57it/s] 22%|██▏       | 170/780 [01:17<03:54,  2.60it/s] 22%|██▏       | 171/780 [01:18<03:52,  2.62it/s] 22%|██▏       | 172/780 [01:18<03:50,  2.63it/s] 22%|██▏       | 173/780 [01:18<03:49,  2.64it/s] 22%|██▏       | 174/780 [01:19<03:48,  2.65it/s] 22%|██▏       | 175/780 [01:19<03:47,  2.66it/s] 23%|██▎       | 176/780 [01:19<03:47,  2.66it/s] 23%|██▎       | 177/780 [01:20<03:46,  2.66it/s] 23%|██▎       | 178/780 [01:20<03:46,  2.66it/s] 23%|██▎       | 179/780 [01:21<03:45,  2.66it/s] 23%|██▎       | 180/780 [01:21<03:45,  2.66it/s] 23%|██▎       | 181/780 [01:21<03:45,  2.66it/s] 23%|██▎       | 182/780 [01:22<03:44,  2.66it/s] 23%|██▎       | 183/780 [01:22<03:43,  2.67it/s] 24%|██▎       | 184/780 [01:22<03:43,  2.67it/s] 24%|██▎       | 185/780 [01:23<03:43,  2.66it/s] 24%|██▍       | 186/780 [01:23<03:42,  2.66it/s] 24%|██▍       | 187/780 [01:24<03:42,  2.67it/s] 24%|██▍       | 188/780 [01:24<03:42,  2.67it/s] 24%|██▍       | 189/780 [01:24<03:41,  2.66it/s] 24%|██▍       | 190/780 [01:25<03:41,  2.66it/s] 24%|██▍       | 191/780 [01:25<03:41,  2.66it/s] 25%|██▍       | 192/780 [01:25<03:40,  2.66it/s] 25%|██▍       | 193/780 [01:26<03:40,  2.66it/s] 25%|██▍       | 194/780 [01:26<03:40,  2.66it/s] 25%|██▌       | 195/780 [01:26<02:53,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.812510967254639
+===========================
+epoch 5/20 | loss: 4.812510967254639
+---------------------------
+example input sentences: 
+['[CLS] They hope that if history vouchsafes the West another Budapest, we will receive the opportunity gladly. I remarked jocularly to the President that the future of China would be far more certain if he would invite a planeload of selected American Liberals to Quemoy on an odd day. He affected ( most properly ) not to understand my point. But he - - and all of China - - wears the scars of American indecisiveness, and he knows [SEP]', "[CLS] He's a nice guy''. She started to move toward the hay bags, dragging the reluctant Cappy behind her. Feathertop watched the smooth scissoring of her slim, trim legs as she walked to the bags, and tucked them beneath her, smoothing the skirt out in a wide circle. He cleared his throat ; ; it had been a long, hot while since he'd seen anything as nice as this within grabbin'distance. [SEP] [PAD] [PAD] [PAD]", "[CLS] On the eve of the ` ` great debate'' on the proposal to give the President broad powers to make across - the - board tariff concessions which could practically bring us into the Atlantic Community, we should face the alternatives on this proposition. What we will be sacrificing in any such arrangement will be our power to be selective which is contained in the reciprocal trade principle under which we now operate. Without this power we lay open any American industry which the [SEP]", "[CLS] ` ` OK, Tilghman, I'm quitting''. ` ` And me'', said another Blue Throat henchman. Somebody brought a light. Tilghman and his partner, George Rust, herded the men into a corner. ` ` And now'', said Tilghman with deadly calm, ` ` I'll repeat what I said. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] Pope was convicted last year of having aided North Celebes rebels by flying bombing missions. He has been in prison since May, 1958, when his aircraft was shot down over Moluccas. He may appeal to President Sukarno for clemency''. As we see, Pope may appeal to President Sukarno, Khrushchev's friend, for clemency. This possibility is anything but reassuring. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+['The The have to he he theitaes,., the of.. and would have a best of to to The am,allyalally the man of is man of the, be a to than than he he be the meeting of of the people., the,mo, the American,, The was his the of than. to speak the., The the is - - he the the, - - the man of the. the thectly of and the was is', "He He was d s'man,'' He'' go the the wall.. and the man.., the. Heptpt, the man,hinting., the eyes, and,, a could. the man of and and her. the her and, her legs.. the little. of He was the face.. and was been a little time and., the was d d seen. much, the the the.. '. He ashamed [PAD] [PAD]", "The The the man of the city ` `s,'' the world of the the opinion tos of the the the the world - ofrriff to are be be to to the city.. and have have the government of the the, The is have have toringringri of the the way way for be be own to the a,, a in the public -vocropropcal and of the the will have to The the objective of have the the of American and is government", "` ` ` `'I `'''I've t going'''I ` ` I'''I he time'' `'said'' He'me man, `'''' the friend.'' 'uff Ier. man'the house corner ` ` ` I, '. I he'''' the.. and ` `'ll be you'' said I ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "The The, the to of of the the to..ne.'the the, of The was been to the prison the.., and he home was in in. theve... The was be to the.mot, therippledrippled, s'The the have the he. be to the.momo. he..er is'son, he theredemency The is is the to a. Thecard [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.60it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.94it/s][A100%|██████████| 18/18 [00:00<00:00, 68.69it/s]
+Mean Perplexity: 590.6542629479488
+===========================
+ 25%|██▌       | 196/780 [01:30<13:55,  1.43s/it] 25%|██▌       | 197/780 [01:31<10:49,  1.11s/it] 25%|██▌       | 198/780 [01:31<08:39,  1.12it/s] 26%|██▌       | 199/780 [01:31<07:08,  1.36it/s] 26%|██▌       | 200/780 [01:32<06:04,  1.59it/s] 26%|██▌       | 201/780 [01:32<05:19,  1.81it/s] 26%|██▌       | 202/780 [01:33<04:48,  2.00it/s] 26%|██▌       | 203/780 [01:33<04:26,  2.17it/s] 26%|██▌       | 204/780 [01:33<04:10,  2.30it/s] 26%|██▋       | 205/780 [01:34<04:00,  2.40it/s] 26%|██▋       | 206/780 [01:34<03:52,  2.47it/s] 27%|██▋       | 207/780 [01:34<03:47,  2.52it/s] 27%|██▋       | 208/780 [01:35<03:42,  2.57it/s] 27%|██▋       | 209/780 [01:35<03:40,  2.60it/s] 27%|██▋       | 210/780 [01:36<03:38,  2.61it/s] 27%|██▋       | 211/780 [01:36<03:36,  2.63it/s] 27%|██▋       | 212/780 [01:36<03:35,  2.64it/s] 27%|██▋       | 213/780 [01:37<03:34,  2.65it/s] 27%|██▋       | 214/780 [01:37<03:33,  2.65it/s] 28%|██▊       | 215/780 [01:37<03:32,  2.65it/s] 28%|██▊       | 216/780 [01:38<03:32,  2.66it/s] 28%|██▊       | 217/780 [01:38<03:31,  2.66it/s] 28%|██▊       | 218/780 [01:39<03:31,  2.66it/s] 28%|██▊       | 219/780 [01:39<03:30,  2.66it/s] 28%|██▊       | 220/780 [01:39<03:30,  2.66it/s] 28%|██▊       | 221/780 [01:40<03:29,  2.66it/s] 28%|██▊       | 222/780 [01:40<03:29,  2.66it/s] 29%|██▊       | 223/780 [01:40<03:29,  2.66it/s] 29%|██▊       | 224/780 [01:41<03:28,  2.66it/s] 29%|██▉       | 225/780 [01:41<03:28,  2.66it/s] 29%|██▉       | 226/780 [01:42<03:27,  2.66it/s] 29%|██▉       | 227/780 [01:42<03:27,  2.66it/s] 29%|██▉       | 228/780 [01:42<03:27,  2.66it/s] 29%|██▉       | 229/780 [01:43<03:27,  2.66it/s] 29%|██▉       | 230/780 [01:43<03:26,  2.66it/s] 30%|██▉       | 231/780 [01:43<03:26,  2.66it/s] 30%|██▉       | 232/780 [01:44<03:25,  2.66it/s] 30%|██▉       | 233/780 [01:44<03:25,  2.66it/s] 30%|███       | 234/780 [01:44<02:41,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 5.00806999206543
+===========================
+epoch 6/20 | loss: 5.00806999206543
+---------------------------
+example input sentences: 
+['[CLS] Matsuo laughed, slung the rifle. The marine was a winehead. His superiors had said that all marines were depraved. The marine slumped forward into a bow like a priest before an idol. Remembering his own thirst, Matsuo took out his water bottle. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] It is both great writing and profound religion. N. C. has said something important so well that this preacher will many times be tempted to quote the whole piece. I feel that N. C. hit the very core of our existence in the editorial ` ` Confrontation''. Personally, it meant a great deal ; ; my only hope is that it will be shared by many, many others. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] You don't see me stretched out on the deck, do you''?? ` ` You know what they say about two deep dives in one day'', Artie went on, still twirling the snorkle and studying it intently. ` ` I don't think you should go down again''. Early that day Matsuo saw a marine. The enemy came looming around a bend in the trail and Matsuo took a hasty shot [SEP]", '[CLS] But as the more concrete plans for the work of the Council gradually became known, there was a rather sharp and abrupt disappointment on all sides. The Council we now know will concern itself directly only with the internal affairs of the Church. As it has turned out, however, the excessive enthusiasm in the first instance and the loss of hope in the second were both wrong responses. Two things have happened in recent months to bring the Council into perspective : each provides a basis for renewed hope and joy. [SEP]', "[CLS] Create a free market here, give us a sound, debt - free money system, and we'll compete with anyone, Europe and Asia combined. In short, get this governmental monstrosity off our backs and we won't have to worry about European competition or Communism either. If we want to preserve our sovereignty, this is the way to do it ; ; not acquiesce to an international planning board. If we go into this Common Market, [SEP]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS]esu was, and his man, He man, in man,, He eyes eyes been it he thess indreptionly He mans,, the wall of, a,, army of The, a eyes eyes, heesu, the the own.. He ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] [CLS] was a of of in thely. He '... been a about about that, he man is be times times.. be the man of of He am that that '... the man very of the own. the world. ` ` [SEP]ing of '. Thely, I is to little man of of and own one is a. is be be in the people and people of The draws [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "` `'' t t the ', out the saddle, he'' re s?? ` `'' you'' it days,ss the ',?? he'' to to and,roting the waterhinock, the him., ` ` `'' t know you'have to to..? ` morning'was'''a little'` man was out.. little, the dark of thenesu. the breathtenten at", 'The The the the case than than, the city of the city is made a as as is a fact large of very of of the the of The city is are have that the the the, the the city of of the city is The the is been to of the the, case of of the world years of the public of the of the world, made madely to The years are been to the years, be a crisis. the that the in that fact for the interest hope the of The', "[CLS] [CLS] [SEP], man man,, he a to little of and, -,,, and and have ve ve, the, and, the,, The the,, a,,derus, the own, the have'''to to about the,, or,itsum., The the do to do the own, and is a problem to do it,. ; to goodlve,, the end -,. The we can to the world '. I"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.47it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.76it/s][A100%|██████████| 18/18 [00:00<00:00, 68.53it/s]
+Mean Perplexity: 221.9102099247468
+===========================
+ 30%|███       | 235/780 [01:48<12:39,  1.39s/it] 30%|███       | 236/780 [01:49<09:52,  1.09s/it] 30%|███       | 237/780 [01:49<07:54,  1.14it/s] 31%|███       | 238/780 [01:49<06:32,  1.38it/s] 31%|███       | 239/780 [01:50<05:35,  1.61it/s] 31%|███       | 240/780 [01:50<04:54,  1.83it/s] 31%|███       | 241/780 [01:51<04:26,  2.02it/s] 31%|███       | 242/780 [01:51<04:06,  2.18it/s] 31%|███       | 243/780 [01:51<03:52,  2.31it/s] 31%|███▏      | 244/780 [01:52<03:43,  2.40it/s] 31%|███▏      | 245/780 [01:52<03:36,  2.47it/s] 32%|███▏      | 246/780 [01:52<03:31,  2.53it/s] 32%|███▏      | 247/780 [01:53<03:27,  2.57it/s] 32%|███▏      | 248/780 [01:53<03:24,  2.60it/s] 32%|███▏      | 249/780 [01:54<03:22,  2.62it/s] 32%|███▏      | 250/780 [01:54<03:21,  2.63it/s] 32%|███▏      | 251/780 [01:54<03:20,  2.64it/s] 32%|███▏      | 252/780 [01:55<03:19,  2.65it/s] 32%|███▏      | 253/780 [01:55<03:18,  2.65it/s] 33%|███▎      | 254/780 [01:55<03:17,  2.66it/s] 33%|███▎      | 255/780 [01:56<03:17,  2.66it/s] 33%|███▎      | 256/780 [01:56<03:16,  2.66it/s] 33%|███▎      | 257/780 [01:57<03:16,  2.66it/s] 33%|███▎      | 258/780 [01:57<03:15,  2.66it/s] 33%|███▎      | 259/780 [01:57<03:15,  2.66it/s] 33%|███▎      | 260/780 [01:58<03:15,  2.66it/s] 33%|███▎      | 261/780 [01:58<03:14,  2.66it/s] 34%|███▎      | 262/780 [01:58<03:14,  2.66it/s] 34%|███▎      | 263/780 [01:59<03:14,  2.66it/s] 34%|███▍      | 264/780 [01:59<03:13,  2.66it/s] 34%|███▍      | 265/780 [02:00<03:13,  2.66it/s] 34%|███▍      | 266/780 [02:00<03:12,  2.66it/s] 34%|███▍      | 267/780 [02:00<03:12,  2.66it/s] 34%|███▍      | 268/780 [02:01<03:12,  2.66it/s] 34%|███▍      | 269/780 [02:01<03:12,  2.66it/s] 35%|███▍      | 270/780 [02:01<03:11,  2.66it/s] 35%|███▍      | 271/780 [02:02<03:11,  2.66it/s] 35%|███▍      | 272/780 [02:02<03:10,  2.66it/s] 35%|███▌      | 273/780 [02:02<02:30,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.211954593658447
+===========================
+epoch 7/20 | loss: 4.211954593658447
+---------------------------
+example input sentences: 
+["[CLS] For years he wore hand - me - down suits and homemade paper collars, was even driven to scrounging for cigarette butts in Vienna's gutters. Drafted into the Austrian army, he rebelliously rejected discipline, wangled a Vienna billet, went on painting. It was not until the last year of his life that he had his first moneymaking show. Melancholy obsession. The unabashed sexuality of so many of his paintings was [SEP]", "[CLS] So instead I come up''. ` ` Was it my equipment''?? The German asked. ` ` Was it something went bad with the breathing''?? ` ` The equipment was fine'', Rob stated, standing up. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` Where from''?? He mused. ` ` Out. I been riding train for a ways now''. They lapsed into silence, and the freight wallowed up a hill, scooted down the other side, shaking and clanking to itself. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] About that time Miss Langford straightened up and looked out the window directly at him, he thought, although probably she didn't even see him. He jumped back, ducked and ran, crouching, down the hill away from the school. He didn't look back and he ran until he was out of sight of the schoolhouse and out of breath ; ; then he slowed to a walk. The vision became even stronger now. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] He's a nice guy''. She started to move toward the hay bags, dragging the reluctant Cappy behind her. Feathertop watched the smooth scissoring of her slim, trim legs as she walked to the bags, and tucked them beneath her, smoothing the skirt out in a wide circle. He cleared his throat ; ; it had been a long, hot while since he'd seen anything as nice as this within grabbin'distance. [SEP] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS] the of was a, -, - the, the,,,,, and a a by thetagledd,, the,s, the. s s.. Thes, the olds. and hadly, the, andned from few,,. and to to, [SEP] was a a the war war of the war, he had done own,,,, Thetontonnly, He manwedstedly of the,, the own were a', "` ` ` I said out the'' ` ` ` I'own''.??''. ` ` `'' to to to it man''?? ` ` `'' '. '. I `.. up. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] ` ` I the ',? ` was, ` ` ` of `'' a, the time,,.? ` 'ing'the. and ran car wagon rode out up truck. and. on saddle side of and his theinging the. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] the was I was was was and and the at of street of, the. and was that he he he was't t know her. He was up and and and ran away andlumplump, and the porch.. the house. He was didn t see at at he was to the he in of the. the house.. the of the. he he he was, see little. [SEP] man of. more.. He [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] was d gone man man,'' He'to go the the wall.. and the other man., the. Heltathers him man oflopting., the ownes and,. a could. the wall of and and her into the her and, her legs. of the little, of He was the own.. and was been a little time and,, the was d d him. much, the a the.. '. He [PAD] [PAD] [PAD]"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.62it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.92it/s][A100%|██████████| 18/18 [00:00<00:00, 68.65it/s]
+Mean Perplexity: 131.4887168346307
+===========================
+ 35%|███▌      | 274/780 [02:06<11:55,  1.41s/it] 35%|███▌      | 275/780 [02:07<09:16,  1.10s/it] 35%|███▌      | 276/780 [02:07<07:25,  1.13it/s] 36%|███▌      | 277/780 [02:07<06:07,  1.37it/s] 36%|███▌      | 278/780 [02:08<05:13,  1.60it/s] 36%|███▌      | 279/780 [02:08<04:35,  1.82it/s] 36%|███▌      | 280/780 [02:09<04:08,  2.01it/s] 36%|███▌      | 281/780 [02:09<03:49,  2.17it/s] 36%|███▌      | 282/780 [02:09<03:36,  2.30it/s] 36%|███▋      | 283/780 [02:10<03:27,  2.40it/s] 36%|███▋      | 284/780 [02:10<03:20,  2.47it/s] 37%|███▋      | 285/780 [02:10<03:15,  2.53it/s] 37%|███▋      | 286/780 [02:11<03:12,  2.56it/s] 37%|███▋      | 287/780 [02:11<03:10,  2.59it/s] 37%|███▋      | 288/780 [02:12<03:08,  2.61it/s] 37%|███▋      | 289/780 [02:12<03:06,  2.63it/s] 37%|███▋      | 290/780 [02:12<03:05,  2.64it/s] 37%|███▋      | 291/780 [02:13<03:04,  2.65it/s] 37%|███▋      | 292/780 [02:13<03:04,  2.65it/s] 38%|███▊      | 293/780 [02:13<03:03,  2.65it/s] 38%|███▊      | 294/780 [02:14<03:03,  2.66it/s] 38%|███▊      | 295/780 [02:14<03:02,  2.66it/s] 38%|███▊      | 296/780 [02:15<03:02,  2.66it/s] 38%|███▊      | 297/780 [02:15<03:01,  2.66it/s] 38%|███▊      | 298/780 [02:15<03:01,  2.66it/s] 38%|███▊      | 299/780 [02:16<03:00,  2.66it/s] 38%|███▊      | 300/780 [02:16<03:00,  2.66it/s] 39%|███▊      | 301/780 [02:16<03:00,  2.66it/s] 39%|███▊      | 302/780 [02:17<02:59,  2.66it/s] 39%|███▉      | 303/780 [02:17<02:59,  2.66it/s] 39%|███▉      | 304/780 [02:18<02:58,  2.66it/s] 39%|███▉      | 305/780 [02:18<02:58,  2.66it/s] 39%|███▉      | 306/780 [02:18<02:58,  2.66it/s] 39%|███▉      | 307/780 [02:19<02:58,  2.66it/s] 39%|███▉      | 308/780 [02:19<02:57,  2.66it/s] 40%|███▉      | 309/780 [02:19<02:57,  2.66it/s] 40%|███▉      | 310/780 [02:20<02:56,  2.66it/s] 40%|███▉      | 311/780 [02:20<02:56,  2.66it/s] 40%|████      | 312/780 [02:20<02:18,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.28629732131958
+===========================
+epoch 8/20 | loss: 4.28629732131958
+---------------------------
+example input sentences: 
+['[CLS] A truth - revealing crisis erupted in Katanga for a couple of days this month, to be quickly smothered by the high pressure verbal fog that is kept on tap for such emergencies. Before memory, too, clouds over, let us make a note or two of what could be seen. The measure was instantly taken, as always in such cases, of public men at many levels. One knows better, now, who has bone and who has jelly in his spine. But [SEP]', '[CLS] And projecting wickedly through these curtains were the gleaming muzzles of six rifles, all trained on Billy Tilghman. The fighting marshal had walked right into a trap and at any moment six slugs might slam into his hide. Thinking fast, Tilghman never hesitated for one instant. He walked right up to the fire as though blissfully unaware of the guns covering him. The men behind them were Bill Doolin and five of his gang - - every man a killer [SEP]', '[CLS] His superiors had emphasized that marines tortured others for the sheer pleasure. Yesterday ; ; today ; ; tomorrow : no surrender. His remembering the self - dictate brought no peace - - only a faint chill of doubt. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] The upper part of his packet had stained dark. ` ` Marine. There is nothing for you'', Matsuo said. ` ` Your superiors will certainly beat you for your desertion, besides the dishonor of it. I've nothing for you''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] Reflex?? Rifle leveled on the man, he made a rush. Heat, in the sunlight, pressed in like an invisible crowd. He squatted by the head, gently placing the rifle on the ground. With a snakestrike motion he grasped the hair, and, twisting, pulled the marine over on his back. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]']
+---------------------------
+example output sentences: 
+['[CLS] [CLS] [CLS] is - the, in thea, a time years years,,, and be a -taginged the man -,,s was the to theing the aly, The the, he much he of the he the us a good of a more the the be a, The man of a a to and the, the a, the the interest, the times, The of that than he, the is beend the is beenunta and the the, The the', "[CLS] [CLS] the thely, the men of the last of of, the men, and were by the'' 'ey, The man was was been out into the corner, turned the moment,,tagter of be them the head. The,, heho 'ey, had, the time, The was forward into the the man, he heed,, the man. the. The man were the were armed 'ner'the men the men. - man corner had mile.", '[CLS] [CLS] [CLS] were been the thess by, a war of of The, ; ;, ; ;,. more to The men the man of -lationating the the war. - - the few of of the. The [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] [CLS] [CLS] [CLS] of the own, been the, ` ` `, ` was a more me to s. heersu,. ` ` ` friend'be be him'the jober. but that man `r. the. `'ll been to you, '. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] [CLS] [CLS] [CLS] He He [CLS], the man'he saw a move of Heer he the dark of the the the a arm arm. The movedledttedtted the wall of and, the pistol, the side. The a pistol,t,, turned the pistol. and pulled the, and the pistol, the the shoulder. The [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.70it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.89it/s][A100%|██████████| 18/18 [00:00<00:00, 68.65it/s]
+Mean Perplexity: 141.08337556748162
+===========================
+ 40%|████      | 313/780 [02:24<10:48,  1.39s/it] 40%|████      | 314/780 [02:25<08:25,  1.08s/it] 40%|████      | 315/780 [02:25<06:45,  1.15it/s] 41%|████      | 316/780 [02:25<05:35,  1.38it/s] 41%|████      | 317/780 [02:26<04:46,  1.62it/s] 41%|████      | 318/780 [02:26<04:12,  1.83it/s] 41%|████      | 319/780 [02:27<03:48,  2.02it/s] 41%|████      | 320/780 [02:27<03:31,  2.18it/s] 41%|████      | 321/780 [02:27<03:19,  2.30it/s] 41%|████▏     | 322/780 [02:28<03:10,  2.40it/s] 41%|████▏     | 323/780 [02:28<03:04,  2.47it/s] 42%|████▏     | 324/780 [02:28<03:00,  2.53it/s] 42%|████▏     | 325/780 [02:29<02:57,  2.57it/s] 42%|████▏     | 326/780 [02:29<02:55,  2.59it/s] 42%|████▏     | 327/780 [02:30<02:53,  2.61it/s] 42%|████▏     | 328/780 [02:30<02:52,  2.63it/s] 42%|████▏     | 329/780 [02:30<02:51,  2.64it/s] 42%|████▏     | 330/780 [02:31<02:50,  2.64it/s] 42%|████▏     | 331/780 [02:31<02:49,  2.65it/s] 43%|████▎     | 332/780 [02:31<02:48,  2.65it/s] 43%|████▎     | 333/780 [02:32<02:48,  2.66it/s] 43%|████▎     | 334/780 [02:32<02:47,  2.66it/s] 43%|████▎     | 335/780 [02:33<02:47,  2.66it/s] 43%|████▎     | 336/780 [02:33<02:47,  2.66it/s] 43%|████▎     | 337/780 [02:33<02:46,  2.66it/s] 43%|████▎     | 338/780 [02:34<02:46,  2.66it/s] 43%|████▎     | 339/780 [02:34<02:45,  2.66it/s] 44%|████▎     | 340/780 [02:34<02:45,  2.66it/s] 44%|████▎     | 341/780 [02:35<02:45,  2.66it/s] 44%|████▍     | 342/780 [02:35<02:44,  2.66it/s] 44%|████▍     | 343/780 [02:36<02:44,  2.66it/s] 44%|████▍     | 344/780 [02:36<02:43,  2.66it/s] 44%|████▍     | 345/780 [02:36<02:43,  2.66it/s] 44%|████▍     | 346/780 [02:37<02:43,  2.66it/s] 44%|████▍     | 347/780 [02:37<02:42,  2.66it/s] 45%|████▍     | 348/780 [02:37<02:42,  2.66it/s] 45%|████▍     | 349/780 [02:38<02:41,  2.66it/s] 45%|████▍     | 350/780 [02:38<02:41,  2.66it/s] 45%|████▌     | 351/780 [02:38<02:07,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.045874118804932
+===========================
+epoch 9/20 | loss: 4.045874118804932
+---------------------------
+example input sentences: 
+["[CLS] ` ` Well'', he announced, ` ` Guess I'll be going now, Ed, and thanks for the warmup''. He strolled back to the door, whistling softly, hands still clasped behind him. He left the house and almost certain death without even increasing his pace and wondered by what remarkable stroke of Providence he had been allowed to come out alive. But he knew well enough that those guns would still be trained on his back as he walked towards the wagon [SEP]", "[CLS] Two of the principal addresses were delivered by prominent Protestants, and when the speaker was a Catholic, one ` ` discussant'' on the dais tended to be of another religious persuasion. Several effects were immediately evident. Sessions devoted to ` ` Ethics and Foreign Policy Trends'', ` ` Moral Principle and Political Judgment'', ` ` Christian Ethics in the Cold War'' and related subjects proved to be much livelier under [SEP]", '[CLS] Customers often bring their children ; ; between performances, enthusiastic young men from the audience will take the floor to demonstrate their own amateur graces. Except for the odd uptown sex maniac or an overeager Greek sailor, the people watch in calm absorption. Small, shirt - sleeved orchestras play in 2 / 4 or 4 / 4 time, using guitars, violins, and more alien instruments with names that would open Sesame : the oud, grandfather of the lute [SEP]', "[CLS] ` ` I was expecting it, sure. But when it happens to you like that, I tell you, and you're a hundred feet from where you thought you were - - well, it makes you think. You don't head back down again. Not me, anyway. Not right away''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] The whole problem of ` ` peaceful coexistence and peaceful competition'' with the capitalist world is in the very center of this Congress. Mikoyan declared : ` ` Molotov altogether rejects the line of peaceful coexistence, reducing this concept merely to the state of peace or rather, the absence of war at a given moment, and to a denial of the possibility of averting a world war. His views, in fact, coincide with those of foreign enemies [SEP]"]
+---------------------------
+example output sentences: 
+["[CLS] [CLS] [CLS] ` [CLS] ', he said, and ` `'' m be a to. and said and he, the time welcome, '. He said to to the kitchen of andhing,. and. in together his. ` was the door. ran as the was a a speed eyes. the he the he was was the'had seen a to see... ` he had that,, he night were be be a. the own. a had. the house.", "[CLS] [CLS] [CLS] the first of to not to the leaders. and and the first was not speaker. the of ` ` the of'' the worldrned'to be a a. faithtinent `ve. The of of to to to ` were to the ` ` and the Relations..ren, '. and ` `joly ` `ve. and Affairs `g. '. and ` `ism'the United War. '. the issues to to be a.ful than the", '[CLS] [CLS] [CLS] [CLS] have a own to ; ; the of ands and, the city. be a time. the. own ownss. The the the young, -, - -s a outsider - -, -, the local of the the,. The men small - - -,,. the - - o the - - - minutes and the, andss and and thanly. a, they be theller. : musics. ands the cityim.', "[CLS] [CLS] ` `'going to'but, ` I I was'be'it. I'you that I I'll going little years,, you are I'going - -, I'you you of `'' t want to to to. ` to, but, ` to,,.. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] [CLS] of of the ` `,vocist, of of,.'' the worlds of a the world very of the world of Thelyhoyan to : ` `joho is is the world of the freedomvocistist. which the world of to be world of the. in, the world of the. least crisis time. and and be sense of the world of a nuclearive war nuclear.. The opinion of the the, the with the of the war war"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.80it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 68.00it/s][A100%|██████████| 18/18 [00:00<00:00, 68.69it/s]
+Mean Perplexity: 150.72318668330544
+===========================
+ 45%|████▌     | 352/780 [02:42<09:58,  1.40s/it] 45%|████▌     | 353/780 [02:43<07:45,  1.09s/it] 45%|████▌     | 354/780 [02:43<06:13,  1.14it/s] 46%|████▌     | 355/780 [02:43<05:08,  1.38it/s] 46%|████▌     | 356/780 [02:44<04:23,  1.61it/s] 46%|████▌     | 357/780 [02:44<03:51,  1.83it/s] 46%|████▌     | 358/780 [02:45<03:29,  2.02it/s] 46%|████▌     | 359/780 [02:45<03:13,  2.18it/s] 46%|████▌     | 360/780 [02:45<03:02,  2.30it/s] 46%|████▋     | 361/780 [02:46<02:54,  2.40it/s] 46%|████▋     | 362/780 [02:46<02:49,  2.47it/s] 47%|████▋     | 363/780 [02:46<02:45,  2.53it/s] 47%|████▋     | 364/780 [02:47<02:42,  2.57it/s] 47%|████▋     | 365/780 [02:47<02:39,  2.59it/s] 47%|████▋     | 366/780 [02:48<02:38,  2.61it/s] 47%|████▋     | 367/780 [02:48<02:37,  2.63it/s] 47%|████▋     | 368/780 [02:48<02:36,  2.64it/s] 47%|████▋     | 369/780 [02:49<02:35,  2.64it/s] 47%|████▋     | 370/780 [02:49<02:34,  2.65it/s] 48%|████▊     | 371/780 [02:49<02:34,  2.65it/s] 48%|████▊     | 372/780 [02:50<02:33,  2.65it/s] 48%|████▊     | 373/780 [02:50<02:33,  2.65it/s] 48%|████▊     | 374/780 [02:51<02:32,  2.66it/s] 48%|████▊     | 375/780 [02:51<02:32,  2.66it/s] 48%|████▊     | 376/780 [02:51<02:31,  2.66it/s] 48%|████▊     | 377/780 [02:52<02:31,  2.66it/s] 48%|████▊     | 378/780 [02:52<02:31,  2.66it/s] 49%|████▊     | 379/780 [02:52<02:30,  2.66it/s] 49%|████▊     | 380/780 [02:53<02:30,  2.66it/s] 49%|████▉     | 381/780 [02:53<02:30,  2.66it/s] 49%|████▉     | 382/780 [02:54<02:29,  2.66it/s] 49%|████▉     | 383/780 [02:54<02:29,  2.66it/s] 49%|████▉     | 384/780 [02:54<02:28,  2.66it/s] 49%|████▉     | 385/780 [02:55<02:28,  2.66it/s] 49%|████▉     | 386/780 [02:55<02:28,  2.66it/s] 50%|████▉     | 387/780 [02:55<02:27,  2.66it/s] 50%|████▉     | 388/780 [02:56<02:27,  2.66it/s] 50%|████▉     | 389/780 [02:56<02:27,  2.66it/s] 50%|█████     | 390/780 [02:56<01:55,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.471747398376465
+===========================
+epoch 10/20 | loss: 4.471747398376465
+---------------------------
+example input sentences: 
+["[CLS] Col. Henri Garvier was one of New Orleans'most important and enlightened slave owners. He chuckled and gave the signal for the dance to start. The slaves ran gaily to the center of Congo Square and gathered around a sweaty youth they called Johnny No - Name. Johnny vigorously pounded two bleached steer bones against the gourd which served as his drum. He showed his gleaming tusks of teeth and bellowed incoherently, his brass ear [SEP]", "[CLS] ` ` Bastards'', he would say, ` ` all I did was put a beat to that Vivaldi stuff, and the first chair clobbered me''!! Since then, and since the pure grain had gotten him divorced from every decent - - and even indecent - - group from Greenwich Village to the Embarcadero, he had become a sucker - rolling freight - jumper. ` ` There ain't nothin'[SEP]", '[CLS] there is a limit to how much the public will pay for shoddy performance. The only hope which good teachers have for being paid their due is to stop dragging the dead weight of poor teachers up the economic ladder with them. The only hope which the public has for getting good teachers is to pay teachers on the basis of merit rather than tenure. Here, as in all sectors of the economy, quality and justice are both dependent on the right of the individual to deal directly with his employer [SEP]', "[CLS] ` ` Please let me explain'', the German said earnestly, his face still devoid of deceit. ` ` I have in Europe a gross business of seven million dollars the year. Now I wish to enter the American market, where the competition is very strong. I must have a powerful representative here, a firm with a national distribution and ten, twenty thousand dollars to advertise my products. With all respect to a fine young man, Mr. Roy is not able [SEP]", "[CLS] She munched little ginger cakes called mulatto's belly and kept her green, somewhat hypnotic eyes fixed on a light - colored male who was prancing wildly with a 5 - foot king snake wrapped around his bronze neck. The youth with the snake had a natural pride and joy of life which appealed to the woman. Lithe and muscular, he had well - molded features, and his light color told of the European ancestors who had been intimate [SEP]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS] [CLS] C..ro was a of the York. s s streets importantlightredly,, The was, he a man, the night, be. The man were intoloatyy the street of the.. the in the corner,. were to., -. The was shook his horsesloseds. the wallllerl. was to a own. [SEP] was his teeth teethracs. the. theed. aconce. and teeth teeth.', "[CLS] [CLS] ` ` ` [CLS]'''he said be to but ` ` of'' to in little in the'' ','but I rest time,lamlol on in '.!! I, I I the time - was been to,, the man man - - the the thevel - - - - the ', the citybubarda,, he had a a aerer - in - - - ` ` ` 't t a a''", '[CLS] [CLS] is a kind of the the to amount public be to thetatop,. The public way to is the are been the a by own to to be the the schools of of the schools. and schools and. the. The school way to is best is been the the education. to be the. the education of theing than the. The is the the the schools, education education, the education education for not considered on the education education education education schools be the with the education.', "[CLS] [CLS] [CLS] `, me, to '. he man man,lyly and voice was, of hiscorction. ` ` ` am a the. little job. the years dollars in world of I, can to do the world.. but I American is in much. [SEP] can have a little business of in but little of a firm business and business thousand and thousand dollars, the `ise. business. [SEP] the that, the firm deal man, I.., a a to", "[CLS] [CLS] wasreading, littlelyly,,ushcorn,'mouth, g the eyes eyes and asui,lyic,, with her man of - color, was alumplum a, a g - - foot of, in a head hair. The man was the g was been long shape of he was the. was to him man. Heck was thely he was a known -ed the and and and face hair, to the man man man had been a with"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.51it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.83it/s][A100%|██████████| 18/18 [00:00<00:00, 68.58it/s]
+Mean Perplexity: 173.08059804168812
+===========================
+ 50%|█████     | 391/780 [03:00<09:17,  1.43s/it] 50%|█████     | 392/780 [03:01<07:12,  1.12s/it] 50%|█████     | 393/780 [03:01<05:45,  1.12it/s] 51%|█████     | 394/780 [03:01<04:45,  1.35it/s] 51%|█████     | 395/780 [03:02<04:02,  1.59it/s] 51%|█████     | 396/780 [03:02<03:32,  1.81it/s] 51%|█████     | 397/780 [03:03<03:11,  2.00it/s] 51%|█████     | 398/780 [03:03<02:56,  2.16it/s] 51%|█████     | 399/780 [03:03<02:46,  2.29it/s] 51%|█████▏    | 400/780 [03:04<02:38,  2.39it/s] 51%|█████▏    | 401/780 [03:04<02:33,  2.46it/s] 52%|█████▏    | 402/780 [03:04<02:29,  2.52it/s] 52%|█████▏    | 403/780 [03:05<02:27,  2.56it/s] 52%|█████▏    | 404/780 [03:05<02:25,  2.59it/s] 52%|█████▏    | 405/780 [03:06<02:23,  2.61it/s] 52%|█████▏    | 406/780 [03:06<02:22,  2.63it/s] 52%|█████▏    | 407/780 [03:06<02:21,  2.64it/s] 52%|█████▏    | 408/780 [03:07<02:20,  2.64it/s] 52%|█████▏    | 409/780 [03:07<02:20,  2.65it/s] 53%|█████▎    | 410/780 [03:08<02:19,  2.65it/s] 53%|█████▎    | 411/780 [03:08<02:18,  2.65it/s] 53%|█████▎    | 412/780 [03:08<02:18,  2.66it/s] 53%|█████▎    | 413/780 [03:09<02:18,  2.66it/s] 53%|█████▎    | 414/780 [03:09<02:17,  2.66it/s] 53%|█████▎    | 415/780 [03:09<02:17,  2.66it/s] 53%|█████▎    | 416/780 [03:10<02:16,  2.66it/s] 53%|█████▎    | 417/780 [03:10<02:16,  2.66it/s] 54%|█████▎    | 418/780 [03:11<02:16,  2.66it/s] 54%|█████▎    | 419/780 [03:11<02:15,  2.66it/s] 54%|█████▍    | 420/780 [03:11<02:15,  2.66it/s] 54%|█████▍    | 421/780 [03:12<02:15,  2.66it/s] 54%|█████▍    | 422/780 [03:12<02:14,  2.66it/s] 54%|█████▍    | 423/780 [03:12<02:14,  2.66it/s] 54%|█████▍    | 424/780 [03:13<02:13,  2.66it/s] 54%|█████▍    | 425/780 [03:13<02:13,  2.66it/s] 55%|█████▍    | 426/780 [03:14<02:13,  2.66it/s] 55%|█████▍    | 427/780 [03:14<02:12,  2.66it/s] 55%|█████▍    | 428/780 [03:14<02:12,  2.66it/s] 55%|█████▌    | 429/780 [03:14<01:44,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 3.6903107166290283
+===========================
+epoch 11/20 | loss: 3.6903107166290283
+---------------------------
+example input sentences: 
+["[CLS] ` ` Me neither'', others said, and soon the game broke up, the children going off in pairs, in larger groups and alone. Jack walked off alone out the road in the searing midday sun, past Robert Allen's three - room, tarpapered house, toward the field where the other boys were playing ball, thinking of what he would do in order to make Miss Langford have him stay in after school - - because this was the day he [SEP]", "[CLS] The coachman said softly. ` ` This one is a tender chicken, oui?? Such delicate beauty, such fine flesh. It will rip and shred easily for Madame''. ` ` Be quiet, Devol!! [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] In behalf of what?? Leninism - Marxism, as understood by Exegete Mao. To whom will the generals stay loyal?? There is little doubt if they had a secret ballot, they would vote for food for their family, in place of ideological purity out on the farm. It is another question whether ` ` they'' - - or a single general, off in a corner of China, secure for a few ( galvanizing?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] Fresh on his mind were events of the past day when his whole regiment was destroyed in the hills. They had fought from caves, and the marines resorted to burning them out. Even now, like a ringing in his ears, he heard the wooooosh of flame - throwers squirting great orange billows. A wave of flame rippling through their cave had reached Nagamo, his friend, and with a shriek the man bolted through the entrance, [SEP]', "[CLS] ` ` Well'', he announced, ` ` Guess I'll be going now, Ed, and thanks for the warmup''. He strolled back to the door, whistling softly, hands still clasped behind him. He left the house and almost certain death without even increasing his pace and wondered by what remarkable stroke of Providence he had been allowed to come out alive. But he knew well enough that those guns would still be trained on his back as he walked towards the wagon [SEP]"]
+---------------------------
+example output sentences: 
+["[CLS] [CLS] [CLS] `'' s, he,. and and the man was the and and man were to to the of and the houses of the, They had to to, of street. the dark., afternoon.. and the and, s house horses horses house andtterseds.. and the house. they horses men were waiting in. and that the they was be, the to get a 'ton'to.. the the. - - he time not best the was", "[CLS] [CLS] [CLS] was ',, ` ` ` is is a man '. and ` '?? a,, and a,, `'be you youwiim,, a's. ` ` `ss, Ier '!! [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] [CLS] the of the we?? is is -ismism and the by theisttistrism The the do be world of on,?? is no of of we are to chance secret of but are be for for, the country. and the of theism. of the world. [SEP] is a way of we ` ` are re? - - the kind man of but the the war of the. and the a war days -assmsm?? [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS] [CLS] the own, a in the night.. he eyes mind was a. the dark. The were been at the and and and enemys,inged the the. of The the the the the man of the head, he had the shotshistlinginginging the, -ers.lingshing outly -ing of [SEP] few of the andred from the eyes. been thegaon. and eyes was the the a roarhrillloping air. into the wall. and', "[CLS] [CLS] [CLS] `'', he said, and ` `'' m be a to. and said and he, the time welcome. '. He said out to the kitchen of andily,. and. in together his. ` was the kitchen. went as to was a a speed eyes. the what the he was was the'had made a to see back.. ` he had that,, he night were be be able. the own. a had. the house."]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.64it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.88it/s][A100%|██████████| 18/18 [00:00<00:00, 68.64it/s]
+Mean Perplexity: 194.09784929394286
+===========================
+ 55%|█████▌    | 430/780 [03:18<08:05,  1.39s/it] 55%|█████▌    | 431/780 [03:19<06:18,  1.08s/it] 55%|█████▌    | 432/780 [03:19<05:03,  1.15it/s] 56%|█████▌    | 433/780 [03:19<04:10,  1.38it/s] 56%|█████▌    | 434/780 [03:20<03:33,  1.62it/s] 56%|█████▌    | 435/780 [03:20<03:08,  1.83it/s] 56%|█████▌    | 436/780 [03:21<02:49,  2.02it/s] 56%|█████▌    | 437/780 [03:21<02:37,  2.18it/s] 56%|█████▌    | 438/780 [03:21<02:28,  2.31it/s] 56%|█████▋    | 439/780 [03:22<02:22,  2.40it/s] 56%|█████▋    | 440/780 [03:22<02:17,  2.47it/s] 57%|█████▋    | 441/780 [03:22<02:14,  2.53it/s] 57%|█████▋    | 442/780 [03:23<02:11,  2.57it/s] 57%|█████▋    | 443/780 [03:23<02:09,  2.60it/s] 57%|█████▋    | 444/780 [03:24<02:08,  2.61it/s] 57%|█████▋    | 445/780 [03:24<02:07,  2.62it/s] 57%|█████▋    | 446/780 [03:24<02:06,  2.64it/s] 57%|█████▋    | 447/780 [03:25<02:05,  2.64it/s] 57%|█████▋    | 448/780 [03:25<02:05,  2.65it/s] 58%|█████▊    | 449/780 [03:25<02:04,  2.65it/s] 58%|█████▊    | 450/780 [03:26<02:04,  2.66it/s] 58%|█████▊    | 451/780 [03:26<02:03,  2.66it/s] 58%|█████▊    | 452/780 [03:27<02:03,  2.66it/s] 58%|█████▊    | 453/780 [03:27<02:02,  2.66it/s] 58%|█████▊    | 454/780 [03:27<02:02,  2.66it/s] 58%|█████▊    | 455/780 [03:28<02:02,  2.66it/s] 58%|█████▊    | 456/780 [03:28<02:01,  2.66it/s] 59%|█████▊    | 457/780 [03:28<02:01,  2.66it/s] 59%|█████▊    | 458/780 [03:29<02:00,  2.66it/s] 59%|█████▉    | 459/780 [03:29<02:00,  2.66it/s] 59%|█████▉    | 460/780 [03:30<02:00,  2.66it/s] 59%|█████▉    | 461/780 [03:30<02:00,  2.66it/s] 59%|█████▉    | 462/780 [03:30<01:59,  2.66it/s] 59%|█████▉    | 463/780 [03:31<01:59,  2.66it/s] 59%|█████▉    | 464/780 [03:31<01:58,  2.66it/s] 60%|█████▉    | 465/780 [03:31<01:58,  2.66it/s] 60%|█████▉    | 466/780 [03:32<01:58,  2.66it/s] 60%|█████▉    | 467/780 [03:32<01:57,  2.66it/s] 60%|██████    | 468/780 [03:32<01:32,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 3.924691677093506
+===========================
+epoch 12/20 | loss: 3.924691677093506
+---------------------------
+example input sentences: 
+["[CLS] The man tilted back his head and went through the pantomime of drinking from a container. He performed the act twice more, and the begging in his tone grew more distinct. ` ` Sake''?? Matsuo called. The marine nodded vigorously. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] We run a respectable house here''. They whirled and saw him, standing there dim in the slatted light from the boarded freight wall. He was big, and filthy, and his toes stuck out of the flapping tops of his shoes. He held the black plastic kazoo lightly. ` ` Come sit'', said Feathertop, motioning them toward him. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` What is your name, boy?? Come a bit closer. I won't bite, you know''. He gaped at Madame Lalaurie and sniffed the Paris perfume which emanated from her. Then he smiled shyly. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` Me neither'', others said, and soon the game broke up, the children going off in pairs, in larger groups and alone. Jack walked off alone out the road in the searing midday sun, past Robert Allen's three - room, tarpapered house, toward the field where the other boys were playing ball, thinking of what he would do in order to make Miss Langford have him stay in after school - - because this was the day he [SEP]", "[CLS] In behalf of what?? Leninism - Marxism, as understood by Exegete Mao. To whom will the generals stay loyal?? There is little doubt if they had a secret ballot, they would vote for food for their family, in place of ideological purity out on the farm. It is another question whether ` ` they'' - - or a single general, off in a corner of China, secure for a few ( galvanizing?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+["[CLS] [CLS] man said slightly slightly head. said to the manopop. the the the bottle. He said a same of,, and then man for the eyes.. more. ` ` `bubu''? Heinji said him ` man was.. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] were out little,,, ', He were around ran the. and in inly the darkhacking, of the porch door door, He was a, and he, he he eyes were in. the wall of, of the coat. He was his bottle coat boxragle.. ` ` `,, '. he heather,s.ing his into the. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] ` You you you life, I,? He, little bit. `'' t want you but ', '. ` said at him.lye. said her girl '. wasptting. the. `, said.ly. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] [CLS] He'' s, he,. and the, man was out and and last were to to the of and the houses of the, They had to to to of street. the dark., afternoon.. and the and, s house horses horses house andtterseds,. and the house. they horses men were waiting in. and that the they was do, the to get a 'ton'to.. the the. - - he time not best the was", '[CLS] [CLS] the of the we?? is is -ism is and the by theisttistrism The the do be world of on,? The is no of about we are to chance secret of but are be for for, the country. and the of theism, of the world. The is a way of we ` ` are re? - - the kind man of and the the sense of the. and the the war days -assmsm?? [PAD] [PAD] [PAD] [PAD] [PAD]']
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.67it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.83it/s][A100%|██████████| 18/18 [00:00<00:00, 68.54it/s]
+Mean Perplexity: 206.85593677003743
+===========================
+ 60%|██████    | 469/780 [03:36<07:14,  1.40s/it] 60%|██████    | 470/780 [03:37<05:38,  1.09s/it] 60%|██████    | 471/780 [03:37<04:30,  1.14it/s] 61%|██████    | 472/780 [03:37<03:43,  1.38it/s] 61%|██████    | 473/780 [03:38<03:10,  1.61it/s] 61%|██████    | 474/780 [03:38<02:47,  1.83it/s] 61%|██████    | 475/780 [03:39<02:31,  2.02it/s] 61%|██████    | 476/780 [03:39<02:19,  2.17it/s] 61%|██████    | 477/780 [03:39<02:11,  2.30it/s] 61%|██████▏   | 478/780 [03:40<02:05,  2.40it/s] 61%|██████▏   | 479/780 [03:40<02:01,  2.47it/s] 62%|██████▏   | 480/780 [03:40<01:58,  2.53it/s] 62%|██████▏   | 481/780 [03:41<01:56,  2.56it/s] 62%|██████▏   | 482/780 [03:41<01:55,  2.59it/s] 62%|██████▏   | 483/780 [03:42<01:53,  2.61it/s] 62%|██████▏   | 484/780 [03:42<01:52,  2.63it/s] 62%|██████▏   | 485/780 [03:42<01:51,  2.64it/s] 62%|██████▏   | 486/780 [03:43<01:51,  2.64it/s] 62%|██████▏   | 487/780 [03:43<01:50,  2.65it/s] 63%|██████▎   | 488/780 [03:43<01:50,  2.65it/s] 63%|██████▎   | 489/780 [03:44<01:49,  2.65it/s] 63%|██████▎   | 490/780 [03:44<01:49,  2.66it/s] 63%|██████▎   | 491/780 [03:45<01:48,  2.65it/s] 63%|██████▎   | 492/780 [03:45<01:48,  2.66it/s] 63%|██████▎   | 493/780 [03:45<01:48,  2.66it/s] 63%|██████▎   | 494/780 [03:46<01:47,  2.66it/s] 63%|██████▎   | 495/780 [03:46<01:47,  2.66it/s] 64%|██████▎   | 496/780 [03:46<01:46,  2.66it/s] 64%|██████▎   | 497/780 [03:47<01:46,  2.66it/s] 64%|██████▍   | 498/780 [03:47<01:46,  2.66it/s] 64%|██████▍   | 499/780 [03:48<01:45,  2.66it/s] 64%|██████▍   | 500/780 [03:48<01:45,  2.66it/s] 64%|██████▍   | 501/780 [03:48<01:44,  2.66it/s] 64%|██████▍   | 502/780 [03:49<01:44,  2.66it/s] 64%|██████▍   | 503/780 [03:49<01:44,  2.66it/s] 65%|██████▍   | 504/780 [03:49<01:43,  2.66it/s] 65%|██████▍   | 505/780 [03:50<01:43,  2.66it/s] 65%|██████▍   | 506/780 [03:50<01:43,  2.66it/s] 65%|██████▌   | 507/780 [03:50<01:20,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.694401741027832
+===========================
+epoch 13/20 | loss: 4.694401741027832
+---------------------------
+example input sentences: 
+['[CLS] His thoughts for the swanlike neck, the full, high breasts, the slim waist, and the long legs were less than poetic, however. Zingggg - O!! Then the boy straight - armed himself up, twisting at the last moment so he landed sitting. He was less to see, but Feathertop took him in, too, just to keep the records straight. Curly hair, high cheekbones, wide gnomelike mouth, a pair of [SEP]', '[CLS] Hush followed. Like a mischievous boy expecting punishment, Matsuo awaited reaction from the jungle. How stupid to give his position away. The jungle did not retort. The sitter remained seated hugging the tree. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] The devil himself. The son of a railway stationmaster, Schiele lived most of his childhood in the drowsy Danubian town of Tulln, 14 miles northwest of Vienna. He was an emotional, lonely boy who spent so much time turning out drawings that he did scarcely any schoolwork. When he was 15, his parents finally allowed him to attend classes at the Academy of Fine Arts in Vienna. Even there he did not last for long. [SEP] [PAD] [PAD] [PAD] [PAD]', '[CLS] There ought to be a point beyond which we will not allow ourselves to go regardless of what Russia does. The refusal to resume atmospheric testing would be a good start. Ecumenical hopeswhen his Holiness Pope John 23, first called for an Ecumenical Council, and at the same time voiced his yearning for Christian unity, the enthusiasm among Catholic and Protestant ecumenicists was immediate. With good reason it appeared that a new day was upon divided Christendom. [SEP] [PAD] [PAD]', "[CLS] ` ` Well, I get it'', Artie said, still on the ladder. ` ` You are a big muscle - bound ape and you got this idea about setting a record. And you also got this little spark in your bird - brain that tells you to turn around before you drown yourself. So you turn around''. ` ` No, it wasn't that'', Rob said. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS] eyes were the timetagt,s and man of thin,, and whitely, and the white legs, in than the. and, Theakiingledly - -!!, man was was eyed,,, and the the neck,, he could on in [SEP] was in than see him and heldys a to the and, and as see the man,. [SEP]urt,, he,,, and.auntaw,.. and little of of', '[CLS] [CLS]dge [CLS] the He the manracanche,,, him. andesu, the. the man. [SEP] he he do up eyes.. He man jungle not movecoilt. [SEP] manaw, to in the wall. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS] [CLS] was had He man of the man,,, thehenonr in of the life years the cityrothop street.,,. therk,. and, from of the. He was a old man bitter man, had years long time in in of. he had not. more.. He he was a, he father were came him to see the. the school. the Arts, Munich, [SEP] the, was not see long a long [SEP] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS] is be be a few of the the are be be to to be to of the the is, The world of be the flight tests be impossible problem reason to The. [SEP] ofwe is ownff, is Paul, 000 to to the endst mission. he and least time time,, opposition.. theism. he first of the nations American leaderscumenicalmismsmsm. not. The the relations, was that the few nation of being the.... The [PAD] [PAD]', "[CLS] [CLS] ` `'I'to''. he ` said. ` looking the horse. ` ` You'going man man. - man manpe a'to way. you up fire. ` you'' a big thing of the eyes. -. you you you do it. you'' in ` I'out and '? ` ` ` more I'' t'' s. heey. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.87it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 68.07it/s][A100%|██████████| 18/18 [00:00<00:00, 68.78it/s]
+Mean Perplexity: 205.52409975519984
+===========================
+ 65%|██████▌   | 508/780 [03:54<06:19,  1.40s/it] 65%|██████▌   | 509/780 [03:55<04:55,  1.09s/it] 65%|██████▌   | 510/780 [03:55<03:56,  1.14it/s] 66%|██████▌   | 511/780 [03:55<03:14,  1.38it/s] 66%|██████▌   | 512/780 [03:56<02:46,  1.61it/s] 66%|██████▌   | 513/780 [03:56<02:25,  1.83it/s] 66%|██████▌   | 514/780 [03:57<02:11,  2.02it/s] 66%|██████▌   | 515/780 [03:57<02:01,  2.18it/s] 66%|██████▌   | 516/780 [03:57<01:54,  2.30it/s] 66%|██████▋   | 517/780 [03:58<01:49,  2.40it/s] 66%|██████▋   | 518/780 [03:58<01:46,  2.47it/s] 67%|██████▋   | 519/780 [03:58<01:43,  2.53it/s] 67%|██████▋   | 520/780 [03:59<01:41,  2.57it/s] 67%|██████▋   | 521/780 [03:59<01:39,  2.59it/s] 67%|██████▋   | 522/780 [04:00<01:38,  2.61it/s] 67%|██████▋   | 523/780 [04:00<01:37,  2.63it/s] 67%|██████▋   | 524/780 [04:00<01:37,  2.64it/s] 67%|██████▋   | 525/780 [04:01<01:36,  2.65it/s] 67%|██████▋   | 526/780 [04:01<01:35,  2.65it/s] 68%|██████▊   | 527/780 [04:01<01:35,  2.65it/s] 68%|██████▊   | 528/780 [04:02<01:34,  2.66it/s] 68%|██████▊   | 529/780 [04:02<01:34,  2.66it/s] 68%|██████▊   | 530/780 [04:03<01:34,  2.66it/s] 68%|██████▊   | 531/780 [04:03<01:33,  2.66it/s] 68%|██████▊   | 532/780 [04:03<01:33,  2.66it/s] 68%|██████▊   | 533/780 [04:04<01:32,  2.66it/s] 68%|██████▊   | 534/780 [04:04<01:32,  2.66it/s] 69%|██████▊   | 535/780 [04:04<01:32,  2.66it/s] 69%|██████▊   | 536/780 [04:05<01:31,  2.66it/s] 69%|██████▉   | 537/780 [04:05<01:31,  2.66it/s] 69%|██████▉   | 538/780 [04:06<01:31,  2.66it/s] 69%|██████▉   | 539/780 [04:06<01:30,  2.66it/s] 69%|██████▉   | 540/780 [04:06<01:30,  2.66it/s] 69%|██████▉   | 541/780 [04:07<01:29,  2.66it/s] 69%|██████▉   | 542/780 [04:07<01:29,  2.66it/s] 70%|██████▉   | 543/780 [04:07<01:29,  2.66it/s] 70%|██████▉   | 544/780 [04:08<01:28,  2.66it/s] 70%|██████▉   | 545/780 [04:08<01:28,  2.66it/s] 70%|███████   | 546/780 [04:08<01:09,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.465805530548096
+===========================
+epoch 14/20 | loss: 4.465805530548096
+---------------------------
+example input sentences: 
+['[CLS] The knife, an ammunition pouch, and a half - filled bottle of purified water hung on his belt. Besides the belt he wore a loin cloth. As he looked up from picking at a leg ulcer, he saw a marine in the jungle across the clearing. Gloom receded. The marine came to the edge of the green jungle mist and stayed, as though debating whether to brave the sunlight. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] Four billion dollars of the spending increase is for defense, an expenditure necessitated by the penny - wise policies of the Eisenhhower Administration, quite apart from the recent crises in Berlin and elsewhere. Four hundred million dollars of the increase is for the expanded space program, a responsibility similarly neglected by Mr. Eisenhower. The farm program will cost an additional 1. 5 billion, because of unusual weather factors, the Food for Peace program and other new measures. Anti - recession programs [SEP]', "[CLS] It is both great writing and profound religion. N. C. has said something important so well that this preacher will many times be tempted to quote the whole piece. I feel that N. C. hit the very core of our existence in the editorial ` ` Confrontation''. Personally, it meant a great deal ; ; my only hope is that it will be shared by many, many others. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] What explains this uni - directional paralysis?? It is the consequence of the system of ideas that constitutes the frame of our international - - and in some degree our domestic - - policy. The Suez - Hungary crisis proves that this system was not invented by the new Administration, but only made more consistent and more active. Key to the puzzlesMost immediately relevant to these episodes in Goa, Katanga and Ghana, as to the Suez - Hungary crisis before them, is the belief that [SEP]', '[CLS] But as the more concrete plans for the work of the Council gradually became known, there was a rather sharp and abrupt disappointment on all sides. The Council we now know will concern itself directly only with the internal affairs of the Church. As it has turned out, however, the excessive enthusiasm in the first instance and the loss of hope in the second were both wrong responses. Two things have happened in recent months to bring the Council into perspective : each provides a basis for renewed hope and joy. [SEP]']
+---------------------------
+example output sentences: 
+['[CLS] [CLS] [CLS] was the old,, a a pistol dozen length case of waterffed powder,, the back. The, bottle, had a smallrk,, The a was, at the the the bottle,or, the had a small, the back. the jungle. Theradybered, [SEP] man was out the rear of the tent,., stood there and he he whether whether do. man. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS] yearss, dollars United of in in the, but increase ofuterution by the government tax tax tax, the United.cerer,, which a from the government recessionlam. the. the in The years million dollars dollars American United in the the German budget to, and new for to the the. Kennedy Eisenhower The budget is is be the increase hour billion billion billion dollars 000 the the measures,, the new Administration Defense,, the other programs, The the -s,', "[CLS] [CLS] is not of of. aly. It.... been it to to far, I is is be years times a. be the word of of [SEP] am that that.... the word very of the life. the world. ` Itraing of '. [SEP]ity, I is to greatness of ; ; wife friend is to the is be so in the people and people. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] [CLS] is is is ` - - [CLS]des is? The is not first of the world of the. is a new of the own relations - - and the sense of world problems - - policy The problem - - - is that the crisis is is a by the Soviet - of but it in it sense. practical efficient. The - the new areKatic,, the problems. thet whichan, the, which the the other - - -, the. the the first that that', '[CLS] [CLS] the the case important,, the new of the United, made more as as is a fact large problem veryness of the the of The situation is have have that not the.. to the fact problems of the United and The the is been out of the,, situation of of the West years, the fact of the of the West year not madely to The of that been to the years. be the crisis. the. the year that few for the interest and the that The']
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.57it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.93it/s][A100%|██████████| 18/18 [00:00<00:00, 68.63it/s]
+Mean Perplexity: 210.04390182949248
+===========================
+ 70%|███████   | 547/780 [04:12<05:31,  1.42s/it] 70%|███████   | 548/780 [04:13<04:17,  1.11s/it] 70%|███████   | 549/780 [04:13<03:25,  1.12it/s] 71%|███████   | 550/780 [04:13<02:49,  1.36it/s] 71%|███████   | 551/780 [04:14<02:23,  1.59it/s] 71%|███████   | 552/780 [04:14<02:05,  1.81it/s] 71%|███████   | 553/780 [04:15<01:53,  2.00it/s] 71%|███████   | 554/780 [04:15<01:44,  2.16it/s] 71%|███████   | 555/780 [04:15<01:38,  2.29it/s] 71%|███████▏  | 556/780 [04:16<01:33,  2.39it/s] 71%|███████▏  | 557/780 [04:16<01:30,  2.47it/s] 72%|███████▏  | 558/780 [04:16<01:28,  2.52it/s] 72%|███████▏  | 559/780 [04:17<01:26,  2.56it/s] 72%|███████▏  | 560/780 [04:17<01:24,  2.59it/s] 72%|███████▏  | 561/780 [04:18<01:23,  2.61it/s] 72%|███████▏  | 562/780 [04:18<01:23,  2.62it/s] 72%|███████▏  | 563/780 [04:18<01:22,  2.64it/s] 72%|███████▏  | 564/780 [04:19<01:21,  2.64it/s] 72%|███████▏  | 565/780 [04:19<01:21,  2.65it/s] 73%|███████▎  | 566/780 [04:19<01:20,  2.65it/s] 73%|███████▎  | 567/780 [04:20<01:20,  2.65it/s] 73%|███████▎  | 568/780 [04:20<01:19,  2.66it/s] 73%|███████▎  | 569/780 [04:21<01:19,  2.66it/s] 73%|███████▎  | 570/780 [04:21<01:18,  2.66it/s] 73%|███████▎  | 571/780 [04:21<01:18,  2.66it/s] 73%|███████▎  | 572/780 [04:22<01:18,  2.66it/s] 73%|███████▎  | 573/780 [04:22<01:17,  2.66it/s] 74%|███████▎  | 574/780 [04:22<01:17,  2.66it/s] 74%|███████▎  | 575/780 [04:23<01:17,  2.66it/s] 74%|███████▍  | 576/780 [04:23<01:16,  2.66it/s] 74%|███████▍  | 577/780 [04:24<01:16,  2.66it/s] 74%|███████▍  | 578/780 [04:24<01:16,  2.66it/s] 74%|███████▍  | 579/780 [04:24<01:15,  2.66it/s] 74%|███████▍  | 580/780 [04:25<01:15,  2.66it/s] 74%|███████▍  | 581/780 [04:25<01:14,  2.66it/s] 75%|███████▍  | 582/780 [04:26<01:14,  2.66it/s] 75%|███████▍  | 583/780 [04:26<01:14,  2.66it/s] 75%|███████▍  | 584/780 [04:26<01:13,  2.66it/s] 75%|███████▌  | 585/780 [04:26<00:57,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 3.6692121028900146
+===========================
+epoch 15/20 | loss: 3.6692121028900146
+---------------------------
+example input sentences: 
+["[CLS] whispers : he heard none of these. Only the hum of insects and the distant fluttering call of a bird. Because he couldn't hear them, he was more convinced they were there. A spectacle occurred across the meadow : the lone marine took a seat on the ground ; ; leaning sidewise on a tree trunk, he embraced it. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] One of the little girls said. ` ` No more today. Maybe some other day''. ` ` Oh, shucks'', the girl said. ` ` I don't believe I'll play any more neither''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] From the convulsive quivers of the man's shoulders it was plain he had resumed the weeping. He reminded Matsuo of a similar thing he had witnessed in China. In China it was a baby sitting on a railroad platform, smudged, blood - specked, with the village burning about him and shells exploding. Chairs scraped back and customers hastily vacated their tables as the tall young buffalo hunter pushed open the swing doors and walked towards the bar. Only [SEP]", '[CLS] This time, added to that which I had already spent in school prior to my induction in 1954, makes a total of twenty - two ( 22 ) years of education. The possibility of recall into the Army is part of the price that a modern American has to pay for the enviable heritage of liberty which he enjoys. With this no loyal citizen can quarrel. However, it seems axiomatic that the government has an obligation ` ` to exercise its mandate reasonably, e [SEP]', "[CLS] Amen''. He crossed himself again and rose. He felt a good deal less shaky. As he reached for the door there was a knock on it and when he opened he found Artie, who came in and sat down on a bunk. Artie had picked up a snorkle and was twirling it on his forefinger. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+["[CLS] [CLS] [CLS] He was the of the men He the man of the, the wind wind of of of the distant, The the was't see the. but could a than that were not. He man of. the wall. a man manr a few in the ground. ; the on,, the rock.. and was the. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] `'the two little ', ` ` `,,, ` you'people'', ` ` You, Itagck'', I girl said. ` ` You'' t know you'm be'more. of '. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] the wallfineslsivelyuivering, the dead's s. were a as was been his slack of He was himinsu'the man man. had seen. the. He the, was a man, in a rock,, andtagttering by andied stainedwikled in and a sun.. the. the. in Thes were against from the were fled. seats. they men men men were were them open windows.. the into them door. [SEP] the", '[CLS] [CLS] is is the the the of is have been been the the, years the year, the, and the good difference one years years years ( years ), the, The first of the of the public, the of the program of the new education soldier been be the the expensesignted education of the. is has, The the fact reason to of beuouo with The,, is that factgibleble of the American of been issue to with ` the the right. that thatmis', "[CLS] [CLS]er, s, He turned the, and then to He was the little man of than. He he was the the door, was a man on the. he he turned the was a '. he was in through was down in the chairale. He was was been up the littletume. looked lookingreadinging. the own.. He [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.68it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.93it/s][A100%|██████████| 18/18 [00:00<00:00, 68.64it/s]
+Mean Perplexity: 229.55161208198183
+===========================
+ 75%|███████▌  | 586/780 [04:30<04:30,  1.40s/it] 75%|███████▌  | 587/780 [04:31<03:30,  1.09s/it] 75%|███████▌  | 588/780 [04:31<02:48,  1.14it/s] 76%|███████▌  | 589/780 [04:31<02:18,  1.38it/s] 76%|███████▌  | 590/780 [04:32<01:57,  1.61it/s] 76%|███████▌  | 591/780 [04:32<01:43,  1.83it/s] 76%|███████▌  | 592/780 [04:33<01:33,  2.02it/s] 76%|███████▌  | 593/780 [04:33<01:26,  2.17it/s] 76%|███████▌  | 594/780 [04:33<01:20,  2.30it/s] 76%|███████▋  | 595/780 [04:34<01:17,  2.40it/s] 76%|███████▋  | 596/780 [04:34<01:14,  2.47it/s] 77%|███████▋  | 597/780 [04:34<01:12,  2.52it/s] 77%|███████▋  | 598/780 [04:35<01:11,  2.56it/s] 77%|███████▋  | 599/780 [04:35<01:09,  2.59it/s] 77%|███████▋  | 600/780 [04:36<01:08,  2.61it/s] 77%|███████▋  | 601/780 [04:36<01:08,  2.63it/s] 77%|███████▋  | 602/780 [04:36<01:07,  2.63it/s] 77%|███████▋  | 603/780 [04:37<01:07,  2.64it/s] 77%|███████▋  | 604/780 [04:37<01:06,  2.64it/s] 78%|███████▊  | 605/780 [04:37<01:06,  2.65it/s] 78%|███████▊  | 606/780 [04:38<01:05,  2.65it/s] 78%|███████▊  | 607/780 [04:38<01:05,  2.65it/s] 78%|███████▊  | 608/780 [04:39<01:04,  2.65it/s] 78%|███████▊  | 609/780 [04:39<01:04,  2.65it/s] 78%|███████▊  | 610/780 [04:39<01:04,  2.66it/s] 78%|███████▊  | 611/780 [04:40<01:03,  2.66it/s] 78%|███████▊  | 612/780 [04:40<01:03,  2.66it/s] 79%|███████▊  | 613/780 [04:40<01:02,  2.66it/s] 79%|███████▊  | 614/780 [04:41<01:02,  2.66it/s] 79%|███████▉  | 615/780 [04:41<01:02,  2.65it/s] 79%|███████▉  | 616/780 [04:42<01:01,  2.66it/s] 79%|███████▉  | 617/780 [04:42<01:01,  2.66it/s] 79%|███████▉  | 618/780 [04:42<01:00,  2.66it/s] 79%|███████▉  | 619/780 [04:43<01:00,  2.66it/s] 79%|███████▉  | 620/780 [04:43<01:00,  2.65it/s] 80%|███████▉  | 621/780 [04:44<00:59,  2.65it/s] 80%|███████▉  | 622/780 [04:44<00:59,  2.65it/s] 80%|███████▉  | 623/780 [04:44<00:59,  2.66it/s] 80%|████████  | 624/780 [04:44<00:46,  3.36it/s]Using pad_token, but it is not set yet.
+loss: 3.930032968521118
+===========================
+epoch 16/20 | loss: 3.930032968521118
+---------------------------
+example input sentences: 
+["[CLS] The law - abiding citizens of Petrie had gathered inside Kaster's Store, halfway down the street. Several were firing into the barn when Billy Tilghman arrived. He sized up the situation and shook his head. ` ` If Blue Throat has his way he'll keep us all cooped up in here for days'', he said. ` ` There's only one thing to move him fast, and we have it right here in this [SEP]", '[CLS] But this is not the real problem ; ; the rub arises from the fact that teachers are usually paid on the basis of time served rather than quality. Hence all teachers, good and bad, who have been teaching for a given number of years are paid the same salary. I am firmly convinced that considering the average quality of teachers in this country, the profession is grossly overpaid. It follows that teachers as a group cannot expect any marked salary increases ; ; [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] ` ` That ain't your name, Mister'', the boy accused. ` ` And you know - - you're right''!! Feathertop aimed a finger at him. ` ` Oh, come on, Cappy'', the girl chided. ` ` He's okay. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] Of the handful of painters that Austria has produced in the 20th century, only one, Oskar Kokoschka, is widely known in the U. S.. This state of unawareness may not last much longer. For ten years a small group of European and U. S. critics has been calling attention to the half - forgotten Austrian expressionist Egon Schiele, who died 42 years ago at the age of 28. The critics'campaign finally inspired the first major U [SEP]", "[CLS] Perhaps Khrushchev is in a more difficult position than any since 1957, when the ` ` anti - party group'' nearly liquidated him. He seems strong enough inside the party to cope with any internal opposition ; ; but if he is up against China's crusading spirit in world affairs, he is going to be faced with the most agonizing choice in his life. He may support China ( but he won't ) ; ; he may break with China [SEP]"]
+---------------------------
+example output sentences: 
+["[CLS] [CLS] [CLS] was - few ` of'thero'been a thesh's house, and to the street. ` men there from the house. they '.'s ', ` had the his rifle. took his head. ` ` You you 'ruock, been own to'll be it..urt'in the'a''. he said. ` ` `'s a a thing to do the '. [SEP] [SEP]'to to.'the town", "[CLS] [CLS] the is not a same reason of the ; facty from the fact that the'not taught by the job of the,. than than. The, of'in teachers teachers teachers are are been paid in a long time of years ago not for most education for The have not qualified that that that fact of of education, the country, the school of notly. -tri. [SEP] is that that'the result of be to more degree.. ; ; [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` `'' t'name'ain'', ` man said. ` ` You you'what - -'re going, ',! ` ` `s his pistol. the. ` ` `, you on,''''! he man saidap. ` ` You's going, ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] [CLS] the New of of, have is been a the years century, and the of the.,marur,, is the known. the West.... The fact is thes is be be long longer. The the years, year few of members scientists scientists. S.. have been in to to the new - century centurysism...nererr and has in in after in the time of the years The first of s, was the new year of.', "[CLS] [CLS],rughr is is not the con than than. the other the is the the Soviet `'' -'is s, theating the in The is to to to the world'be with the problem problems. and [SEP], the is not to against, s slocation.. the., he is not to be a by the Soviet dangerousvocties of of the own. [SEP] is be the'' he is't '. ; ; is not the the '"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.97it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 68.18it/s][A100%|██████████| 18/18 [00:00<00:00, 68.88it/s]
+Mean Perplexity: 237.66216579898372
+===========================
+ 80%|████████  | 625/780 [04:48<03:43,  1.44s/it] 80%|████████  | 626/780 [04:49<02:52,  1.12s/it] 80%|████████  | 627/780 [04:49<02:17,  1.12it/s] 81%|████████  | 628/780 [04:50<01:52,  1.35it/s] 81%|████████  | 629/780 [04:50<01:35,  1.59it/s] 81%|████████  | 630/780 [04:50<01:23,  1.81it/s] 81%|████████  | 631/780 [04:51<01:14,  2.00it/s] 81%|████████  | 632/780 [04:51<01:08,  2.16it/s] 81%|████████  | 633/780 [04:51<01:04,  2.29it/s] 81%|████████▏ | 634/780 [04:52<01:01,  2.39it/s] 81%|████████▏ | 635/780 [04:52<00:58,  2.47it/s] 82%|████████▏ | 636/780 [04:53<00:57,  2.52it/s] 82%|████████▏ | 637/780 [04:53<00:55,  2.56it/s] 82%|████████▏ | 638/780 [04:53<00:54,  2.59it/s] 82%|████████▏ | 639/780 [04:54<00:53,  2.61it/s] 82%|████████▏ | 640/780 [04:54<00:53,  2.63it/s] 82%|████████▏ | 641/780 [04:54<00:52,  2.64it/s] 82%|████████▏ | 642/780 [04:55<00:52,  2.64it/s] 82%|████████▏ | 643/780 [04:55<00:51,  2.65it/s] 83%|████████▎ | 644/780 [04:56<00:51,  2.65it/s] 83%|████████▎ | 645/780 [04:56<00:50,  2.66it/s] 83%|████████▎ | 646/780 [04:56<00:50,  2.66it/s] 83%|████████▎ | 647/780 [04:57<00:50,  2.66it/s] 83%|████████▎ | 648/780 [04:57<00:49,  2.66it/s] 83%|████████▎ | 649/780 [04:57<00:49,  2.66it/s] 83%|████████▎ | 650/780 [04:58<00:48,  2.66it/s] 83%|████████▎ | 651/780 [04:58<00:48,  2.66it/s] 84%|████████▎ | 652/780 [04:59<00:48,  2.66it/s] 84%|████████▎ | 653/780 [04:59<00:47,  2.66it/s] 84%|████████▍ | 654/780 [04:59<00:47,  2.66it/s] 84%|████████▍ | 655/780 [05:00<00:46,  2.66it/s] 84%|████████▍ | 656/780 [05:00<00:46,  2.66it/s] 84%|████████▍ | 657/780 [05:00<00:46,  2.66it/s] 84%|████████▍ | 658/780 [05:01<00:45,  2.66it/s] 84%|████████▍ | 659/780 [05:01<00:45,  2.66it/s] 85%|████████▍ | 660/780 [05:02<00:45,  2.66it/s] 85%|████████▍ | 661/780 [05:02<00:44,  2.66it/s] 85%|████████▍ | 662/780 [05:02<00:44,  2.66it/s] 85%|████████▌ | 663/780 [05:02<00:34,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.998411655426025
+===========================
+epoch 17/20 | loss: 4.998411655426025
+---------------------------
+example input sentences: 
+['[CLS] They hope that if history vouchsafes the West another Budapest, we will receive the opportunity gladly. I remarked jocularly to the President that the future of China would be far more certain if he would invite a planeload of selected American Liberals to Quemoy on an odd day. He affected ( most properly ) not to understand my point. But he - - and all of China - - wears the scars of American indecisiveness, and he knows [SEP]', '[CLS] He had been conning the freights for a long, long time now. Ever since the hooch, and the trouble with the Quartet, and Midge and the child. Ever since all that. It had been a very long time that had no form and no end. He was - - as he told himself in the vernacular of a trade no longer his own - - riding the dark train out. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] He called the store owner and together they went into the stockroom. Billy returned with six sticks of dynamite. ` ` I'm gonna drop these into Blue Throat's lap'', he announced, ` ` and I'd like every gun to be firing into that barn while I get near enough to toss'em through the window''. He slipped outside, hugging the walls of buildings and dodging into doorways. Blue Throat's men [SEP]", "[CLS] I've come for Pat Conyers'body''. In two minutes the body of Tilghman's former comrade, who had been killed by Blue Throat in a gambling brawl the previous night, was carried into the town's funeral parlor to be prepared for decent burial. Blue Throat, nursing an aching jaw and a collosal dose of wounded pride, rode out of town with the survivors of the fight. ` ` That crit [SEP]", "[CLS] He saw a pint - sized man with a graying spade beard and an unusually large head. Dr. Lalaurie wore a maroon smoking jacket, and his myopic eyes were blurry and glistened behind thick octagonal lenses. He was about 50 years old. ` ` Another young man, my dear?? Really, you are most indiscreet to drive him here yourself'', he said, frowning with displeasure. [SEP] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS] are to he he isitaes,, the peoplemen way, the can not a same toly to If am,estacylyly the man of he President of the will be a better than than he would not a party to of the aircraft troops. thenchmo. the airplane day. The is his the of ) ) to be the position. [SEP] if is - - he the us is - - the g of the troops thequiiveness. and the is the', '[CLS] [CLS] was been aned himself maner, the long time long long,. He,, lastveler he he old of the horses, he the -r the other, He, the the was He was been been long long time, it been longer of been longer of It had a - - he had him that the dark of the small,vice,.. - - the horses -, of [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] [CLS] saw him man.. the they had to the houseing. He'to the men of therot and He ` You'm going going the horses the Mountainireust,'house. '. he said. and ` You he'll ve to day. shoot in. the corner. we'to to to see the '. the door. '. ` said into the and him door of the. thedge the thess ` wasraceeps s s.", "[CLS] [CLS] was m been to aoney'', s. He the years of morning of theran 'ey'' s secretarypt, the had been killed by themenracraws the mob saloonwl. night year of and killed out the saloon. s s.. the killed for thely. [SEP] wasranongs the his old leg, a pistolbrabra of of blood blood. and to of the, the dead of the dead. [SEP] ` ` 'licter", "[CLS] [CLS] was the man of of - man man a beard hair hairsm.. a old large man. He. Bee was a blackff hat hat. and a hat eyesop hair. blackry. darklintened with the hair hair. He was a half -,, [SEP] ` I man man was a father,? [SEP], I'a certainly aciable. me me... '? he said. and. aligentsunce of [SEP] [PAD] [PAD] [PAD]"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.87it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 68.16it/s][A100%|██████████| 18/18 [00:00<00:00, 68.86it/s]
+Mean Perplexity: 244.25526050944904
+===========================
+ 85%|████████▌ | 664/780 [05:07<02:44,  1.42s/it] 85%|████████▌ | 665/780 [05:07<02:07,  1.11s/it] 85%|████████▌ | 666/780 [05:07<01:41,  1.13it/s] 86%|████████▌ | 667/780 [05:08<01:22,  1.36it/s] 86%|████████▌ | 668/780 [05:08<01:10,  1.60it/s] 86%|████████▌ | 669/780 [05:08<01:01,  1.82it/s] 86%|████████▌ | 670/780 [05:09<00:54,  2.01it/s] 86%|████████▌ | 671/780 [05:09<00:50,  2.17it/s] 86%|████████▌ | 672/780 [05:10<00:47,  2.30it/s] 86%|████████▋ | 673/780 [05:10<00:44,  2.40it/s] 86%|████████▋ | 674/780 [05:10<00:42,  2.47it/s] 87%|████████▋ | 675/780 [05:11<00:41,  2.52it/s] 87%|████████▋ | 676/780 [05:11<00:40,  2.56it/s] 87%|████████▋ | 677/780 [05:11<00:39,  2.59it/s] 87%|████████▋ | 678/780 [05:12<00:39,  2.61it/s] 87%|████████▋ | 679/780 [05:12<00:38,  2.62it/s] 87%|████████▋ | 680/780 [05:13<00:37,  2.63it/s] 87%|████████▋ | 681/780 [05:13<00:37,  2.64it/s] 87%|████████▋ | 682/780 [05:13<00:37,  2.65it/s] 88%|████████▊ | 683/780 [05:14<00:36,  2.65it/s] 88%|████████▊ | 684/780 [05:14<00:36,  2.66it/s] 88%|████████▊ | 685/780 [05:14<00:35,  2.66it/s] 88%|████████▊ | 686/780 [05:15<00:35,  2.66it/s] 88%|████████▊ | 687/780 [05:15<00:34,  2.66it/s] 88%|████████▊ | 688/780 [05:16<00:34,  2.66it/s] 88%|████████▊ | 689/780 [05:16<00:34,  2.66it/s] 88%|████████▊ | 690/780 [05:16<00:33,  2.66it/s] 89%|████████▊ | 691/780 [05:17<00:33,  2.66it/s] 89%|████████▊ | 692/780 [05:17<00:33,  2.66it/s] 89%|████████▉ | 693/780 [05:17<00:32,  2.66it/s] 89%|████████▉ | 694/780 [05:18<00:32,  2.66it/s] 89%|████████▉ | 695/780 [05:18<00:31,  2.66it/s] 89%|████████▉ | 696/780 [05:19<00:31,  2.66it/s] 89%|████████▉ | 697/780 [05:19<00:31,  2.66it/s] 89%|████████▉ | 698/780 [05:19<00:30,  2.66it/s] 90%|████████▉ | 699/780 [05:20<00:30,  2.66it/s] 90%|████████▉ | 700/780 [05:20<00:30,  2.66it/s] 90%|████████▉ | 701/780 [05:20<00:29,  2.66it/s] 90%|█████████ | 702/780 [05:21<00:23,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 2.4604222774505615
+===========================
+epoch 18/20 | loss: 2.4604222774505615
+---------------------------
+example input sentences: 
+["[CLS] Matsuo took the small knife from its scabbard and laid it on the ground, out of the marine's reach and away from their shadows. He waited in his squat, gripping the hair. Every so often he turned the knife. Its blade was dazzling in the intense sunlight. The sun was noon high and Matsuo perspired until his body was dripping. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` It's nothing to fool with. It can kill you. Personally, I don't blame him for giving up the dive, much as I regret losing the story''. ` ` Nobody's giving anything up'', Robinson said. He stood there, towering over them all : gentle, mighty, determined, the moving force in the group ; ; [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] About that time Miss Langford straightened up and looked out the window directly at him, he thought, although probably she didn't even see him. He jumped back, ducked and ran, crouching, down the hill away from the school. He didn't look back and he ran until he was out of sight of the schoolhouse and out of breath ; ; then he slowed to a walk. The vision became even stronger now. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] Training?? Morale?? It is generally conceded that the Formosan air force is the best by far in Asia, and the army the best trained. The morale is very high. Even so, it adds up to impossible odds, except that the question arises, On whose side would the Mainland Chinese army fight?? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] He was gifted with animal magnetism and a potent allure for women of any race. But Dandy had had little experience with girls on his master's plantation in Bayou St. John. Shy, actually, he avoided feminine overtures and seemed truly ignorant of the girls'desires when they sought to make liaisons with him in the open fields, in carriages and in boathouses. This young slave was therefore quite unprepared when Delphine Lalaurie signaled [SEP]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS]esu was the lead man. his sidehinbla s, the down down the ground. and of the saddle. s s. drew from the own. He was for the armsuetted, and the handlepin [SEP] time he he turned to other. [SEP] s was opennk, the dark light. [SEP] sun was still.. theisu wassuiti. he eyes was still with [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] [CLS] ` `'s a, do him him He'' him'Hely, he don't want you. the him the job. but more he'' it job. '. ` ` I's a up to to '. he said. ` said up, and, the.. `, `, and. he man man of his air. ; ; [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] [CLS] the morning he waston was up and looked at of street of at the. and was that that he he was't know know her. He was up and and into went away androuching in and the steps. from the house. He was't know at at looked saw to he was gone of the. the house.. the of the. ; [SEP] he saw down look little. [SEP] man of clearer clearer,. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] [CLS] [CLS]? It `ly is? The is not not that the man ofble is is is not most of the, the. but not most is most fighter fighter The military is not low. The the, the is to to the. of the for the most is, and the course is be worldtain, is is against?? [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', "[CLS] [CLS] was a by a andism, a good of - of the, the kind, He he was was a a of with the, the own, s s, theou,.., Henellwell a was he was the beauty -, the to like of the man who '. he were out be as. them. the South,. and the, a the -, He was man was a a afitrovedlicitable by heeteeee, a"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.71it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 67.92it/s][A100%|██████████| 18/18 [00:00<00:00, 68.66it/s]
+Mean Perplexity: 256.2199654771295
+===========================
+ 90%|█████████ | 703/780 [05:25<01:53,  1.47s/it] 90%|█████████ | 704/780 [05:25<01:26,  1.14s/it] 90%|█████████ | 705/780 [05:26<01:08,  1.10it/s] 91%|█████████ | 706/780 [05:26<00:55,  1.33it/s] 91%|█████████ | 707/780 [05:26<00:46,  1.57it/s] 91%|█████████ | 708/780 [05:27<00:40,  1.79it/s] 91%|█████████ | 709/780 [05:27<00:35,  1.98it/s] 91%|█████████ | 710/780 [05:27<00:32,  2.15it/s] 91%|█████████ | 711/780 [05:28<00:30,  2.28it/s] 91%|█████████▏| 712/780 [05:28<00:28,  2.38it/s] 91%|█████████▏| 713/780 [05:29<00:27,  2.46it/s] 92%|█████████▏| 714/780 [05:29<00:26,  2.52it/s] 92%|█████████▏| 715/780 [05:29<00:25,  2.56it/s] 92%|█████████▏| 716/780 [05:30<00:24,  2.59it/s] 92%|█████████▏| 717/780 [05:30<00:24,  2.61it/s] 92%|█████████▏| 718/780 [05:30<00:23,  2.62it/s] 92%|█████████▏| 719/780 [05:31<00:23,  2.63it/s] 92%|█████████▏| 720/780 [05:31<00:22,  2.64it/s] 92%|█████████▏| 721/780 [05:32<00:22,  2.65it/s] 93%|█████████▎| 722/780 [05:32<00:21,  2.65it/s] 93%|█████████▎| 723/780 [05:32<00:21,  2.65it/s] 93%|█████████▎| 724/780 [05:33<00:21,  2.65it/s] 93%|█████████▎| 725/780 [05:33<00:20,  2.66it/s] 93%|█████████▎| 726/780 [05:33<00:20,  2.66it/s] 93%|█████████▎| 727/780 [05:34<00:19,  2.66it/s] 93%|█████████▎| 728/780 [05:34<00:19,  2.66it/s] 93%|█████████▎| 729/780 [05:35<00:19,  2.66it/s] 94%|█████████▎| 730/780 [05:35<00:18,  2.66it/s] 94%|█████████▎| 731/780 [05:35<00:18,  2.66it/s] 94%|█████████▍| 732/780 [05:36<00:18,  2.66it/s] 94%|█████████▍| 733/780 [05:36<00:17,  2.66it/s] 94%|█████████▍| 734/780 [05:36<00:17,  2.66it/s] 94%|█████████▍| 735/780 [05:37<00:16,  2.66it/s] 94%|█████████▍| 736/780 [05:37<00:16,  2.66it/s] 94%|█████████▍| 737/780 [05:38<00:16,  2.66it/s] 95%|█████████▍| 738/780 [05:38<00:15,  2.66it/s] 95%|█████████▍| 739/780 [05:38<00:15,  2.66it/s] 95%|█████████▍| 740/780 [05:39<00:15,  2.66it/s] 95%|█████████▌| 741/780 [05:39<00:11,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 3.6537704467773438
+===========================
+epoch 19/20 | loss: 3.6537704467773438
+---------------------------
+example input sentences: 
+["[CLS] ` ` I was expecting it, sure. But when it happens to you like that, I tell you, and you're a hundred feet from where you thought you were - - well, it makes you think. You don't head back down again. Not me, anyway. Not right away''. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` Are you sick''?? ` ` No'', he said. ` ` I'll be all right. I guess it's this hot weather''. ` ` Don't you play hard today then. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] One swallow was all he would have ; ; he was very thirsty, but he must observe water discipline. His years of campaigning had taught him the value of water discipline. He began to uncap the bottle, the rusty cap squealing on its threads. Popping upright, the marine waved both hands and shouted. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] But a resumption does not seem justifiable now. What we need to realize is that the increasingly great contamination of the atmosphere by the Soviet tests had radically increased our own moral obligations. We now have to think not only of our national security but also of the future generations who will suffer from any tests we might undertake. This is an ethical demand which cannot be evaded or glossed over by talking exclusively of weapon superiority or even of the evil of Communism. [SEP]', "[CLS] Led by Bill Doolin, these mobsters specialized in train robberies but as a sideline they looted stores and robbed banks, making liberal use of their guns. Bill Doolin's ambition, it appeared, was to carve out his name with bullets alongside those of Jesse James and Billy the Kid, and Bill Tilghman had sworn he would stop him. Tilghman knew that some ranchers were hand - in - glove with the Doolin gang [SEP]"]
+---------------------------
+example output sentences: 
+["[CLS] [CLS] ` You don going to, but, I you I was'be'it, I don you that but I're going little years away away you are I were going - -, I'you sound that I'' t think off to to. ` you, but, ` you,, '. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] ` ` ` you going? '?? ` ` `''. I said. ` ` You'm take there right'I'''s all''''. ` ` You't'want'''' ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] [CLS] of, a of had be to ; ; was not tiredy, and he was be the.. He eyes, his was been him. old of the.. He was to bereadsat water. and bottle bottle.uaaking, the side. Heping the, he bottle, his,. he. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS] the fewvoc of not not to as as, The is are to do, that that idea factness of the world is the world Union, beenlyly and nuclear own problems. The are have a be that to to the own interest of the that the world of. have be to the nuclear. have have. The is the un question that is be justifiedquid by byreeded by the the of about the and. the even course world of thebaltonsum. The', "[CLS] [CLS] [CLS] the,d, who weres were in theingustinging., a result of of hadbb the of other of. and a money of the money. The waslin was s s was was was that was the beb out of own. a. the who the.. the. Big. had he '..ey, been to had never him. He. hadey was the the of ranch had iny gun the the. the maney'had"]
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.71it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 68.04it/s][A100%|██████████| 18/18 [00:00<00:00, 68.75it/s]
+Mean Perplexity: 271.5507902976794
+===========================
+ 95%|█████████▌| 742/780 [05:43<00:54,  1.43s/it] 95%|█████████▌| 743/780 [05:43<00:41,  1.11s/it] 95%|█████████▌| 744/780 [05:44<00:32,  1.12it/s] 96%|█████████▌| 745/780 [05:44<00:25,  1.36it/s] 96%|█████████▌| 746/780 [05:44<00:21,  1.59it/s] 96%|█████████▌| 747/780 [05:45<00:18,  1.81it/s] 96%|█████████▌| 748/780 [05:45<00:15,  2.00it/s] 96%|█████████▌| 749/780 [05:45<00:14,  2.16it/s] 96%|█████████▌| 750/780 [05:46<00:13,  2.29it/s] 96%|█████████▋| 751/780 [05:46<00:12,  2.39it/s] 96%|█████████▋| 752/780 [05:47<00:11,  2.47it/s] 97%|█████████▋| 753/780 [05:47<00:10,  2.52it/s] 97%|█████████▋| 754/780 [05:47<00:10,  2.56it/s] 97%|█████████▋| 755/780 [05:48<00:09,  2.59it/s] 97%|█████████▋| 756/780 [05:48<00:09,  2.61it/s] 97%|█████████▋| 757/780 [05:48<00:08,  2.63it/s] 97%|█████████▋| 758/780 [05:49<00:08,  2.64it/s] 97%|█████████▋| 759/780 [05:49<00:07,  2.64it/s] 97%|█████████▋| 760/780 [05:50<00:07,  2.65it/s] 98%|█████████▊| 761/780 [05:50<00:07,  2.65it/s] 98%|█████████▊| 762/780 [05:50<00:06,  2.65it/s] 98%|█████████▊| 763/780 [05:51<00:06,  2.65it/s] 98%|█████████▊| 764/780 [05:51<00:06,  2.66it/s] 98%|█████████▊| 765/780 [05:51<00:05,  2.66it/s] 98%|█████████▊| 766/780 [05:52<00:05,  2.66it/s] 98%|█████████▊| 767/780 [05:52<00:04,  2.66it/s] 98%|█████████▊| 768/780 [05:53<00:04,  2.66it/s] 99%|█████████▊| 769/780 [05:53<00:04,  2.66it/s] 99%|█████████▊| 770/780 [05:53<00:03,  2.66it/s] 99%|█████████▉| 771/780 [05:54<00:03,  2.66it/s] 99%|█████████▉| 772/780 [05:54<00:03,  2.66it/s] 99%|█████████▉| 773/780 [05:54<00:02,  2.66it/s] 99%|█████████▉| 774/780 [05:55<00:02,  2.66it/s] 99%|█████████▉| 775/780 [05:55<00:01,  2.66it/s] 99%|█████████▉| 776/780 [05:56<00:01,  2.66it/s]100%|█████████▉| 777/780 [05:56<00:01,  2.66it/s]100%|█████████▉| 778/780 [05:56<00:00,  2.66it/s]100%|█████████▉| 779/780 [05:57<00:00,  2.66it/s]100%|██████████| 780/780 [05:57<00:00,  3.37it/s]Using pad_token, but it is not set yet.
+loss: 4.853399276733398
+===========================
+epoch 20/20 | loss: 4.853399276733398
+---------------------------
+example input sentences: 
+['[CLS] The Minutemen were instructed in the use of terrain for concealment. They were shown how to advance against an enemy outpost atop a cleared ridge. They practiced movement behind a smoke screen laid by smoke grenades ; ; and they attempted a skirmish line of advance against a camouflaged enemy encampment. Eleven dummy rounds were fired by Lauchli in a demonstration of rapid - fire mortar shooting. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] The miserable people of China, the largest cast ever conscripted to enact an ideological passion play, cannot themselves resist overtly. They think, perforce, of physical survival : everything else is secondary. But the army which Mao continues to feed well, where are its sympathies?? The psychological strategists in Taiwan stress the great sense of family, cultivated in China over thousands of years. It has not been extirpated by ten years of Communist [SEP]', "[CLS] He had asked. ` ` Thank you'', the German had said courteously. ` ` I do not drink so much''. Now, in that same cabin, Robinson fell to his knees beside a bunk. Fear and relief mingled in his churning emotions. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] Next September, after receiving a degree from Yale's Master of Arts in Teaching Program, I will be teaching somewhere - - that much is guaranteed by the present shortage of mathematics teachers. I will also be underpaid. The amazing thing is that this too is caused by the dearth of teachers. Teaching is at present a sellers'market ; ; as a result buyers, the public, must be satisfied with second - rate teachers. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", "[CLS] Thus the government simultaneously undertook the vast burden of social security which had traditionally been privately discharged, and created a national scarcity which has engendered calamitous problems of social security. The second mistake is Tibet. Tibet has historically served China as a buffer state. A friendly state, sometimes only semi - independent, but never hostile. China never tried to integrate Tibet by extirpating the people's religion and institutions. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"]
+---------------------------
+example output sentences: 
+['[CLS] [CLS] [CLS]ute was were armed to the same of the. theing. The were not to to be the the enemy.. the hill area. The were the and the few gun. on the.. ; [SEP] the were to fewoperop.. fire. the enemy. line.lightpment. The menilo rifles were fired. thedernerli the single. the fire fire fire rifles. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS] [CLS] world are the, which world nation of eververstraed to theganment army policy.. which be be to the - The are that thatsud are the force, the is is a to The, world is is is to be the, is it the owncumpies,? The government forcescumnsts are the,ing mostness of the. and by the. all of years, [SEP] is been been beenertmisiet by the years ago the.', "[CLS] [CLS] was been him He ` ` you, ', he man man said,eouslyly ` ` You'not know, much, ', He,, the morning way, I'into the knees. the logul, `ful the,gled in the throatores,. ` [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]", '[CLS] [CLS] [CLS], the the the new in the University s s of Education, the,, which have not able in in - - I of expected to the university time of education.. The am not have able arent for The school job is that that one is not by the lackest of the, The the not the, good of, s. ; and the result of of the school will and be paid. the - year tuition. [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]', '[CLS] [CLS], [CLS] is has to same extent of the welfare and is been been made held. but not a new programy of has beensuced thedenceationouslyly that the welfare and The government, of that is The is been been the as a neutral of of The small country is which the as - - states and the has to The has has to negotiate the into achangingmuiable government country. s government. the. The [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]']
+---------------------------
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 39%|███▉      | 7/18 [00:00<00:00, 67.86it/s][A
+ 78%|███████▊  | 14/18 [00:00<00:00, 68.04it/s][A100%|██████████| 18/18 [00:00<00:00, 68.79it/s]
+Mean Perplexity: 263.89041204766914
+===========================
+100%|██████████| 780/780 [06:01<00:00,  2.16it/s]
+Begin testing style transfer!
+Traceback (most recent call last):
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 432, in <module>
+    main(params)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 413, in main
+    evaluate_transfer(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 202, in evaluate_transfer
+    z_alt = fgim_attack(model, classifier, ((cls_pred + 1)%2), z)
+  File "/home/mitryand/EECS-595-Final-Project-Style-Transfer/train_model.py", line 75, in fgim_attack
+    sentence_og = model.decoder(data)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 1228, in forward
+    outputs = self.bert(
+  File "/home/mitryand/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mitryand/.local/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 968, in forward
+    batch_size, seq_length = input_shape
+ValueError: too many values to unpack (expected 2)
