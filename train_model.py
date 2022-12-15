@@ -25,21 +25,22 @@ def set_seed(seed):
 SEED = 595
 set_seed(SEED)
 device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
-# device = torch.device("cpu")
+device = torch.device("cpu")
 # device = torch.device("cpu")
 
 MAX_LENGTH = 100
 
-class GenreClassifier(torch.nn.Module):
-
-    def __init__(self, hidden_dim, middle_dim, num_class):
+class InputGenreClassifier(torch.nn.Module):
+    def __init__(self, hidden_dim, middle_dim, num_class, max_len, inputi=False):
         super(GenreClassifier, self).__init__()
-        self.lin1 = torch.nn.Linear(hidden_dim*MAX_LENGTH, middle_dim)
+        self.lstm = torch.nn.LSTM(input_size=hidden_dim, hidden_size=50, num_layers=2, batch_first=True, bidirectional=True)
+        self.lin1 = torch.nn.Linear(hidden_dim*max_len, middle_dim)
         self.relu1 = torch.nn.LeakyReLU()
         self.lin2 = torch.nn.Linear(middle_dim, 50)
         self.relu2 = torch.nn.LeakyReLU()
         self.lin3 = torch.nn.Linear(50, num_class)
         self.init_weights()
+        self.input = inputi
 
     def init_weights(self):
         initrange = 0.5
@@ -51,7 +52,36 @@ class GenreClassifier(torch.nn.Module):
         self.lin3.bias.data.zero_()
 
     def forward(self, hidden_outputs):
-        return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(torch.flatten(hidden_outputs,1,2))))))
+        
+        return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(hidden_outputs)))))
+        
+
+class GenreClassifier(torch.nn.Module):
+
+    def __init__(self, hidden_dim, middle_dim, num_class, max_len, inputi=False):
+        super(GenreClassifier, self).__init__()
+        self.lin1 = torch.nn.Linear(hidden_dim*max_len, middle_dim)
+        self.relu1 = torch.nn.LeakyReLU()
+        self.lin2 = torch.nn.Linear(middle_dim, 50)
+        self.relu2 = torch.nn.LeakyReLU()
+        self.lin3 = torch.nn.Linear(50, num_class)
+        self.init_weights()
+        self.input = inputi
+
+    def init_weights(self):
+        initrange = 0.5
+        self.lin1.weight.data.uniform_(-initrange, initrange)
+        self.lin1.bias.data.zero_()
+        self.lin2.weight.data.uniform_(-initrange, initrange)
+        self.lin2.bias.data.zero_()
+        self.lin3.weight.data.uniform_(-initrange, initrange)
+        self.lin3.bias.data.zero_()
+
+    def forward(self, hidden_outputs):
+        if self.input:
+            return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(hidden_outputs)))))
+        else:
+            return self.lin3(self.relu2(self.lin2(self.relu1(self.lin1(torch.flatten(hidden_outputs,1,2))))))
 
 def sent_vec_to_bow2(sent_vec):
     num_samples, num_words = sent_vec.shape
@@ -74,10 +104,19 @@ def sent_vec_to_bow(sent_vec):
 def bow_criterion(guess, target):
     return torch.mean((target - guess)/torch.abs(target - guess))
 
+def unigram_word_overlap(sent_alt, sent_og):
+    num_samples, num_words = sent_alt.shape
+    score = 0
+    for i in range(num_samples):
+        tmp_alt = set(sent_alt[i,:].tolist())
+        tmp_og = set(sent_og[i,:].tolist())
+        score += len(tmp_alt.intersection(tmp_og))/len(tmp_alt.union(tmp_og))
+    return score/i
+
 
 # fast gradient iterative method from paper Wang et al 2019
 def fgim_attack(model, classifier, target_class, origen_data, sentence_input):
-    print(origen_data.shape)
+    # print(origen_data.shape)
     i = 0
     data = Variable(origen_data.data.clone(), requires_grad=True)
     epsilon = 1.0 # modify and play with this
@@ -118,7 +157,7 @@ def fgim_attack(model, classifier, target_class, origen_data, sentence_input):
         if i >= 5:
             break
 
-    print(data.shape)
+    # print(data.shape)
     return data
 
 # custom dataset class to load data from the .txt files
@@ -211,6 +250,12 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
     classifier.eval()
     pred = []
     truth = []
+
+    overlap = 0
+    perplexity_z = evaluate.load("perplexity", module_type='metric')
+    perplexity_z_alt = evaluate.load("perplexity", module_type='metric')
+    acc = evaluate.load("accuracy")
+
     for batch in eval_dataloader:
         with torch.no_grad():
             outputs = model(input_ids=batch["input_sentences"], labels=batch["output_sentences"], output_hidden_states=True)
@@ -235,13 +280,18 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         pred_alt = output_tokenizer.batch_decode(guess_alt, skip_special_tokens=True)
         truth = input_tokenizer.batch_decode(batch['input_sentences'], skip_special_tokens=True)
 
+        overlap += unigram_word_overlap(guess_alt, guess)/len(eval_dataloader)
+        perplexity_z.add_batch(predictions=pred, references=truth)
+        perplexity_z_alt.add_batch(predictions=pred_alt, references=truth)
+        acc.add_batch(predictions=cls_pred, references=cls_truth)
+
         print("---------------------------")
-        print("example input sentences: ")
+        print("example input paragraphs: ")
         print(truth[0:5])
         print("---------------------------")
-        print("example initial output sentences: ")
+        print("example initial output paragraphs: ")
         print(pred[0:5])
-        print("example altered output sentences: ")
+        print("example altered output paragraphs: ")
         print(pred_alt[0:5])
         print("---------------------------")
         print("true class: ")
@@ -250,7 +300,27 @@ def evaluate_transfer(model, classifier, train_dataloader, eval_dataloader, para
         print("predicted class: ")
         print(cls_pred[0:5])
         print("---------------------------")
-        print("===========================",flush=True)
+        print(f"Unigram word overlap: {overlap}")
+        # score = perplexity_z.compute(model_id=f'gpt2')
+        # score_alt = perplexity_z_alt.compute(model_id=f'gpt2')
+        # print('Mean AE Perplexity:', score['mean_perplexity'])
+        # print('Mean AE + Transfer Perplexity:', score_alt['mean_perplexity'])
+        # score_acc = acc.compute()
+        # print('Accuracy: ',score_acc['accuracy'])
+        # print("===========================",flush=True)
+    print("===========================")
+    print("Metrics: ")
+    print(f"Unigram word overlap: {overlap}")
+    try:
+        score = perplexity_z.compute(model_id='gpt2')
+        score_alt = perplexity_z_alt.compute(model_id=f'gpt2')
+        print('Mean AE Perplexity:', score['mean_perplexity'])
+        print('Mean AE + Transfer Perplexity:', score_alt['mean_perplexity'])
+    except:
+        print('failed to calculate perplexity')
+    score_acc = acc.compute()
+    print('Accuracy: ',score_acc['accuracy'])
+    print("===========================")
 
 def train_classifier(model, classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
     print("Begin training classifier!")
@@ -314,7 +384,7 @@ def train_classifier(model, classifier, train_dataloader, eval_dataloader, param
 
 
 def train_input_classifier(classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer):
-    print("Begin training classifier!")
+    print("Begin training input classifier!")
     
     num_training_steps = params.num_epochs * len(train_dataloader)
 
@@ -331,7 +401,7 @@ def train_input_classifier(classifier, train_dataloader, eval_dataloader, params
 
         classifier.train()
         for batch in train_dataloader:
-            cls_outputs = classifier(batch['input_sentences'])
+            cls_outputs = classifier(batch['input_sentences'].float())
             cls_loss = cls_criterion(cls_outputs, batch["genre_labels"])
             cls_loss.backward()
             cls_optimizer.step()
@@ -346,7 +416,7 @@ def train_input_classifier(classifier, train_dataloader, eval_dataloader, params
         classifier.eval()
         for batch in eval_dataloader:
             with torch.no_grad():
-                cls_outputs = classifier(batch['input_sentences']) 
+                cls_outputs = classifier(batch['input_sentences'].float()) 
             cls_pred = cls_outputs.argmax(1)
             cls_truth = batch['genre_labels']
             metric.add_batch(predictions=cls_pred, references=cls_truth)
@@ -567,14 +637,14 @@ def main(params):
 
     train_dataloader, eval_dataloader, test_dataloader = load_data(input_tokenizer, input_tokenizer, params)
     if params.train_input_classifier:
-        classifier = GenreClassifier(100, 256, 15)
+        classifier = GenreClassifier(100, 256, 15, 1,inputi=True)
         print(classifier)
         classifier = train_input_classifier(classifier,train_dataloader,eval_dataloader,params,input_tokenizer,output_tokenizer)
         torch.save(classifier.state_dict(), 'models/brown_input_classifier.torch')
         return
 
     if params.train_all:
-        classifier = GenreClassifier(768, 256, 15)
+        classifier = GenreClassifier(768, 256, 15, MAX_LENGTH)
         print(classifier)
 
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-cased", "bert-base-cased")
@@ -611,14 +681,14 @@ def main(params):
             model.to(device)
 
         if params.train_classifier:
-            classifier = GenreClassifier(768, 256, 15)
+            classifier = GenreClassifier(768, 256, 15, MAX_LENGTH)
             model.to(device)
             classifier.to(device)
             print(classifier)
             classifier = train_classifier(model,classifier, train_dataloader, eval_dataloader, params, input_tokenizer, output_tokenizer)
             torch.save(classifier.state_dict(), 'models/brown_latent_classifier.torch')
         else:
-            classifier = GenreClassifier(768, 256, 15)
+            classifier = GenreClassifier(768, 256, 15, MAX_LENGTH)
             classifier.load_state_dict(torch.load(f'models/{params.classifier_name}'))
             classifier.to(device)
 
